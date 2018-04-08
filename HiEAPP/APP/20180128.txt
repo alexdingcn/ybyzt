@@ -1,0 +1,9 @@
+﻿
+=========================[2018-01-28 14:20:49] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_Goods_ver3.ResellerProductSearch(String JSon) 位置 e:\医站通\code\hieapp\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 1051
+接口： CompanyProductSearch:
+时间： 2018/1/28 14:20:49
+
+=================================记录结束======================================

@@ -1,0 +1,27 @@
+﻿
+=========================[2016-12-26 14:29:45] 记录开始==============================
+描述： Instance of JsonData is not a dictionary:   在 LitJson.JsonData.EnsureDictionary()
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_Goods_ver3.EditGoods(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 1494
+接口： EditGoods:{"UserID":"1195","CompID":"1046","Product":[{"ProductID":"97559","ProductName":"宏基笔蜂鸟记本","ClassifyID":"1935","ClassifyName":"15寸","SalePrice":"8000.00","IsSale":"0","IsCollect":null,"Title":"超薄","Unit":"台","InStock":"1","ProductPicUrlList":[{"ProductID":"97559","IsDeafult":"1","PicUrl":"http://118.178.88.33:902/GoodsImg/c67b10d1-cad1-4e3b-8c14-447640278f1d.png"},{"ProductID":"97559","IsDeafult":"0","PicUrl":"http://118.178.88.33:902/GoodsImg/Xc67b10d1-cad1-4e3b-8c14-447640278f1d.png"}],"ProductAttributeList":[{"ProductID":"97559","ProductAttributeID":"49","ProductAttributeName":"尺寸","ProductAttValueList":[{"ProductID":"97559","ProductAttributeID":"49","ProductAttValueID":"51","ProductAttValueName":"寸"}]},{"ProductID":"97559","ProductAttributeID":"50","ProductAttributeName":"系统","ProductAttValueList":[{"ProductID":"97559","ProductAttributeID":"50","ProductAttValueID":"52","ProductAttValueName":"win"}]}],"SKUList":[{"ProductID":"97559","SKUID":"97911","SKUName":"宏基笔蜂鸟记本","BarCode":"P1046000017","ValueInfo":"尺寸:寸；系统:win；","SalePrice":"8000.0000","IsPro":null,"ProInfo":null,"TinkerPrice":"8000.0000","ProductAttValueIDList":[{"ProductAttributeValueID":"51"},{"ProductAttributeValueID":"52"}],"Inventory":"63.00","InStock":"1","ProductCode":null,"ProductName":null,"Delete":"0","SaleNum":"76000051.0000"}],"MaxPrice":"8000.0000","MinPrice":"8000.0000","Inventory":"63.00","IsShop":"1","IsRecommend":"1","SortIndex":"10","GoodsSpanList":[{"GoodsSpanValue":"新品上架"}],"TemplateID":"5","ts":"2016/9/14 13:35:47"}]}
+时间： 2016/12/26 14:29:45
+
+=================================记录结束======================================
+
+=========================[2016-12-26 14:33:36] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_Goods_ver3.EditGoods(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 1539
+接口： EditGoods:{"UserID":"1195","CompID":"1046","Product":{"ProductID":"97559","ProductName":"宏基笔蜂鸟记本","ClassifyID":"1935","ClassifyName":"15寸","SalePrice":"8000.00","IsSale":"0","IsCollect":null,"Title":"超薄","Unit":"台","InStock":"1","ProductPicUrlList":[{"ProductID":"97559","IsDeafult":"1","PicUrl":"http://118.178.88.33:902/GoodsImg/c67b10d1-cad1-4e3b-8c14-447640278f1d.png"},{"ProductID":"97559","IsDeafult":"0","PicUrl":"http://118.178.88.33:902/GoodsImg/Xc67b10d1-cad1-4e3b-8c14-447640278f1d.png"}],"ProductAttributeList":[{"ProductID":"97559","ProductAttributeID":"49","ProductAttributeName":"尺寸","ProductAttValueList":[{"ProductID":"97559","ProductAttributeID":"49","ProductAttValueID":"51","ProductAttValueName":"寸"}]},{"ProductID":"97559","ProductAttributeID":"50","ProductAttributeName":"系统","ProductAttValueList":[{"ProductID":"97559","ProductAttributeID":"50","ProductAttValueID":"52","ProductAttValueName":"win"}]}],"SKUList":[{"ProductID":"97559","SKUID":"97911","SKUName":"宏基笔蜂鸟记本","BarCode":"P1046000017","ValueInfo":"尺寸:寸；系统:win；","SalePrice":"8000.0000","IsPro":null,"ProInfo":null,"TinkerPrice":"8000.0000","ProductAttValueIDList":[{"ProductAttributeValueID":"51"},{"ProductAttributeValueID":"52"}],"Inventory":"63.00","InStock":"1","ProductCode":null,"ProductName":null,"Delete":"0","SaleNum":"76000051.0000"}],"MaxPrice":"8000.0000","MinPrice":"8000.0000","Inventory":"63.00","IsShop":"1","IsRecommend":"1","SortIndex":"10","GoodsSpanList":[{"GoodsSpanValue":"新品上架"}],"TemplateID":"5","ts":"2016/9/14 13:35:47"}}
+时间： 2016/12/26 14:33:36
+
+=================================记录结束======================================
+
+=========================[2016-12-26 17:11:34] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_GoodsCategory.SearchProductList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1299:给定关键字不在字典中。
+接口： SearchProductList : {"CompanyID":"","CriticalProductID":"-1","GetType":"0","ProductName":"测试","ResellerID":"1304","Rows":"10","Sort":"0","SortType":"0","UserID":"1392"}
+时间： 2016/12/26 17:11:34
+
+=================================记录结束======================================

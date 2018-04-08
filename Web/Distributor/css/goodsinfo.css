@@ -1,0 +1,307 @@
+﻿.sp-deta
+{
+    width: 530px;
+    margin-left: 25px;
+}
+.sp-deta .title
+{
+    font-size: 18px;
+    font-weight: normal;
+}
+.sp-deta .sale-box
+{
+    font-size: 12px;
+    padding-top: 0;
+}
+.sp-deta .txt
+{
+    padding: 10px 0 15px 0;
+    line-height: 18px;
+    font-size: 14px;
+    color: #999;
+}
+.sp-deta .price
+{
+    background: #f7f7f7;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+.sp-deta .price .red
+{
+    font-size: 20px;
+    font-weight: normal;
+    color: red;
+}
+.sp-deta .specs .li
+{
+    position: relative;
+    padding-left: 65px;
+    margin-top: 5px;
+}
+.sp-deta .specs .t
+{
+    line-height: 24px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    text-align: right;
+    width: 60px;
+}
+.sp-deta .specs .n a
+{
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    min-width: 50px;
+    text-align: center;
+    padding: 1px 10px;
+    margin: 7px 3px 0 5px;
+    position: relative;
+}
+.sp-deta .specs .n a.hover, .sp-deta .specs .n a:hover
+{
+    border: 2px solid #6080af;
+    padding: 0px 9px;
+}
+.sp-deta .specs .xz-icon
+{
+    position: absolute;
+    right: -2px;
+    bottom: -1px;
+    display: none;
+}
+.sp-deta .specs a.hover .xz-icon, .sp-deta .specs a:hover .xz-icon
+{
+    display: block;
+}
+.sp-deta .specs .sl
+{
+    margin: 8px 0 0 6px;
+    float: left;
+}
+.sp-deta .addCart, .sp-deta .keep
+{
+    background: #2d5a9e;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+}
+.sp-deta .addCart:hover
+{
+    background: #255295;
+}
+.sp-deta .gwc-icon, .sp-deta .addCart:hover .gwc-icon
+{
+    background-position: -60px -269px;
+    width: 22px;
+    height: 17px;
+}
+.sp-deta .keep
+{
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    color: #6383b2;
+    height: 38px;
+    line-height: 38px;
+}
+/*商品三级页-添加商品数量*/
+.sl .minus, .sl .add
+{
+    width: 28px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #cacbcb;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+}
+.sl .minus:hover, .sl .add:hover
+{
+    background: #fff;
+}
+.minus + .box
+{
+    width: 35px;
+    height: 22px;
+    line-height: 22px;
+    color: #797979;
+    border: 1px solid #cacbcb;
+    padding-top: 2px;
+    border-left: none;
+    border-right: none;
+    float: left;
+    text-align: center;
+}
+
+.addCart .gwc-icon, .sp-deta .addCart:hover .gwc-icon
+{
+    background-position: -25px -45px;
+    height: 18px;
+    margin-right: 4px;
+    position: relative;
+    top: 3px;
+    width: 18px;
+}
+
+.gwc-icon, .gwc-icon2
+{
+    width: 18px;
+    height: 18px;
+    background-position: -25px -45px;
+    position: relative;
+    top: 3px;
+    margin-right: 4px;
+}
+.goods-li .btn
+{
+    margin: 0px 1px;
+    margin-top: 7px;
+}
+.goods-li .keep, .goods-li .addCart
+{
+    border: 1px solid #ddd;
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 5px 0 0 5px;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+.goods-li .addCart
+{
+    width: 128px;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -1px;
+}
+.goods-li .keep:hover, .goods-li .addCart:hover
+{
+    border: 1px solid #eb2c3a;
+    z-index: 1;
+    color: #eb2c3a;
+}
+.sc-icon2, .keep:hover .sc-icon
+{
+    background-position: -0px -73px;
+}
+.addCart:hover .gwc-icon
+{
+    background-position: -25px -69px;
+}
+.fdj_icon, .k-icon, .k-icon2, .s-icon, .x-icon, .sc-icon, .gwc-icon, .jt-ico, .sx-icon, .qx-icon, .xx-icon2, .s-icon2, .x-icon2, .xs-icon
+{
+    background: rgba(0, 0, 0, 0) url("../../images/e-icon.png") no-repeat scroll 0 0;
+    display: inline-block;
+    position: relative;
+}
+/*商品大图列表-大图商品-加入购物车*/
+.sc-icon, .sc-icon2
+{
+    width: 15px;
+    height: 13px;
+    background-position: 0px -50px;
+    position: relative;
+    top: 2px;
+    margin-right: 4px;
+}
+.lanrenzhijia
+{
+    overflow: visible;
+}
+.control-input
+{
+    float: none;
+    line-height: 29px;
+    margin-left: 5px;
+    overflow: hidden;
+    padding-left: 0;
+}
+
+.div_content .tb td label
+{
+    display: inline-block;
+    line-height: 25px;
+    margin-left: 0;
+    min-width: 0;
+    padding: 0;
+}
+label.checked
+{
+    background-color: #648bc6;
+    border: 1px solid #648bc6;
+    color: #fff;
+}
+input[type="checkbox"]
+{
+    margin: 3px 3px 3px 4px;
+    vertical-align: middle;
+}
+.control-input label
+{
+    border: 1px solid #d6dee3;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 26px;
+    margin-right: 10px;
+    text-align: center;
+    width: 80px;
+}
+.sale-txt
+{
+    background: #fffbfb none repeat scroll 0 0;
+    border: 1px solid #f7d2d3;
+    color: #333;
+    display: none;
+    left: 0;
+    padding: 8px 11px;
+    position: absolute;
+    top: 33px;
+    width: 200px;
+    z-index: 99;
+}
+.sale-txt .arrow
+{
+    background: rgba(0, 0, 0, 0) url("../images/icon-1.png") no-repeat scroll -112px -225px;
+    display: inline-block;
+    height: 4px;
+    left: 10px;
+    position: absolute;
+    top: -5px;
+    width: 7px;
+}
+.sale
+{
+    background: #e4393c none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    line-height: 17px;
+    margin-right: 2px;
+    padding: 0 7px;
+}
+.sale-box
+{
+    font-size: 12px;
+    padding-top: 0;
+    display: inline-block;
+    margin-left: 5px;
+    padding-top: 5px;
+    position: relative;
+}
+.sale-box:hover .sale-txt
+{
+    display: block;
+}

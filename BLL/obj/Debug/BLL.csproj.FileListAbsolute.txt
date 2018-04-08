@@ -1,0 +1,11 @@
+D:\EBank\开发\基础版本\BLL\bin\Debug\BLL.dll
+D:\EBank\开发\基础版本\BLL\bin\Debug\BLL.pdb
+D:\EBank\开发\基础版本\BLL\bin\Debug\Model.dll
+D:\EBank\开发\基础版本\BLL\bin\Debug\SQLServerDAL.dll
+D:\EBank\开发\基础版本\BLL\bin\Debug\DBUtility.dll
+D:\EBank\开发\基础版本\BLL\bin\Debug\Model.pdb
+D:\EBank\开发\基础版本\BLL\bin\Debug\SQLServerDAL.pdb
+D:\EBank\开发\基础版本\BLL\bin\Debug\DBUtility.pdb
+D:\EBank\开发\基础版本\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\EBank\开发\基础版本\BLL\obj\Debug\BLL.dll
+D:\EBank\开发\基础版本\BLL\obj\Debug\BLL.pdb

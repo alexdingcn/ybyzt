@@ -1,0 +1,102 @@
+/*登录*/
+.login{ width:100%; background:url(../images/loginBg.jpg) no-repeat top center; height:560px;}
+.login .nr{ width:1200px; margin:0px auto; height:560px; position:relative;}
+.login .ad{ position:absolute; top:150px; left:-60px; z-index:99;}
+.logonBox{ width:600px; height:334px; overflow:hidden;box-shadow:0 0 5px #ddd; background:#fff; position:absolute; top:100px; right:40px; z-index:999;}
+.logonBox .wx{ width:255px; height:100%; overflow:hidden; background:url(../images/loginNr.jpg) no-repeat top left; float:left;}
+.logonBox .wx .pic{ display:inline-block; margin:67px 0 0 46px;}
+.logonBox .wx i{ display:inline-block; font-size:14px; font-style:normal; padding:18px 0 0 60px; color:#aaa;}
+.logonBox .wx .zc{ display:inline-block; text-align:center; width:100%; padding-top:10px;}
+.logonBox .wx .zc .btn{ display:inline-block; background:#2192e0; color:#fff; border-radius:5px; padding:2px 14px;}
+.logonBox .wx .zc .btn:hover{ background:#5ec116;}
+.logonBox .wx .zc:hover{ color:#5ec116;}
+
+.logonBox .con{ width:315px; float:left; padding:0px 20px 0 10px;}
+.logonBox .con h2{ font-size:18px; font-weight:normal; padding:20px 0 0px 0;}
+.logonBox .con .li{ overflow:hidden; width:100%; padding-top:18px;} 
+.logonBox .con .box{ border:1px solid #ddd; height:32px; line-height:32px; width:300px; color:#aaa; font-size:14px; padding-left:10px; font-size:14px;}
+.logonBox .con .wj{ display:block; text-align:right; margin:5px 5px 0 0; font-style:normal;}
+.logonBox .con .wj a{ color:#797979;}
+.logonBox .con .btn{ width:100%; height:40px; background:#f60; display:block; text-align:center; font-size:16px; color:#fff; line-height:40px;}
+.logonBox .con .btn:hover{ text-decoration:none; background:#2192e0;}
+.logonBox .con .li2{ padding-bottom:12px; overflow:hidden;}
+.logonBox .con .coo1{ background:url(../images/loginDl.jpg) no-repeat top left; width:251px; height:19px; display:inline-block;}
+.logonBox .con .fx{ width:14px; height:14px; overflow:hidden; float:left;}
+.logonBox .con .fxw { display:inline-block; line-height:20px;overflow:hidden; font-style:normal; float:left;}
+
+
+/*代理商注册*/
+.ad1200{ padding:15px 0;}
+.regBt{ height:40px; line-height:40px; background:#f5f5f5;}
+.regBt h2{ background:#2192e0; padding:0px 15px; color:#fff; font-weight:normal; font-size:18px; display:inline-block;}
+.regUl{ padding-top:20px; overflow:hidden; padding-left:150px;}
+.regUl li{ line-height:24px; position:relative; padding-top:15px;}
+.regUl .a1{ width:150px; text-align:right; display:inline-block; position:absolute; top:15px; left:-150px;}
+.regUl .a2{ padding:0px 10px; color:#999;}
+.regUl .a3{ display:block; color:#999;}
+.regUl .box{ border:1px solid #d1d1d1; height:24px; line-height:24px; width:280px;}
+.regUl .xl{ border:1px solid #d1d1d1; height:26px; line-height:26px; width:280px; background:#f6f6f6; color:#494949;}
+.regUl .box2{ border:1px solid #d1d1d1; height:100px; line-height:24px; width:550px; color:#797979;}
+
+.regUl .btn{ border:1px solid #d1d1d1; border-radius:5px; display:inline-block; height:24px; line-height:24px; padding:0px 10px; margin-left:10px;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5'); background: -webkit-linear-gradient(top, #ffffff, #e5e5e5);background: -moz-linear-gradient(top, #ffffff, #e5e5e5);background: -ms-linear-gradient(top, #ffffff, #e5e5e5);background: linear-gradient(top, #ffffff, #e5e5e5); cursor:pointer;}
+.regUl .btn:hover{ border:1px solid #f0a375;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffe6cd'); background: -webkit-linear-gradient(top, #ffffff, #ffe6cd);background: -moz-linear-gradient(top, #ffffff, #ffe6cd);background: -ms-linear-gradient(top, #ffffff, #ffe6cd);background: linear-gradient(top, #ffffff, #ffe6cd); color:#ff8300; text-decoration:none;}
+
+.regBtn { padding:10px 0 0 150px;}
+.regBtn .btn{ display:inline-block; font-size:16px; padding:0px 20px; height:40px; line-height:40px; border:1px solid #ff6600;border-radius:5px;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8a00', endColorstr='#ff7800'); background: -webkit-linear-gradient(top, #ff8a00, #ff7800);background: -moz-linear-gradient(top, #ff8a00, #ff7800);background: -ms-linear-gradient(top, #ff8a00, #ff7800);background: linear-gradient(top, #ff8a00, #ff7800); color:#fff;}
+.regBtn .btn:hover{border:1px solid #1a74b1;border-radius:5px;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2192e0', endColorstr='#2080c3'); background: -webkit-linear-gradient(top, #2192e0, #2080c3);background: -moz-linear-gradient(top, #2192e0, #2080c3);background: -ms-linear-gradient(top, #2192e0, #2080c3);background: linear-gradient(top, #2192e0, #2080c3); color:#fff; text-decoration:none;}
+
+.regTxt{ padding:12px 0 15px 150px; overflow:hidden; color:#999;}
+.regTxt .fx{ float:left;}
+
+
+
+/*注册首页*/
+.register{ background:url(../images/registerBg.jpg) no-repeat top center; height:560px;}
+.register .line{ background:#fff; width:1px; height:230px; overflow:hidden; left:49%; margin-left:2px; top:160px; position:absolute;}
+.register .con{ width:1120px; overflow:hidden; padding:0px 40px; margin:0px auto; position:relative;}
+.register .a1{ width:49%; display:inline-block; margin-top:160px; height:230px; position:relative;}
+.register .bg{background:#fff; width:100%; height:100%;opacity:0.5;filter: Alpha(Opacity=50) !important;}
+.register .nr{ position:absolute; top:50%; left:50%; margin-top:-65px; margin-left:-190px; padding-left:150px; z-index:99;}
+.register .nr .pic1{ width:131px; height:131px; background:url(../images/registerIcon.png) no-repeat 0 -139px; position:absolute; top:0; left:0;}
+.register .nr .bt{ font-size:28px; color:#2192e0; margin-top:15px;}
+.register .nr .txt{ color:#cfcfcf; font-size:16px;text-transform:uppercase; padding:5px 0 10px 0;}
+.register .nr .btn{ background:#2192e0;border-radius:5px; height:30px; line-height:30px; display:inline-block; color:#fff; font-size:14px;}
+.register .nr .btn a{color:#fff; display:block;border-radius:5px; padding:0px 15px;}
+.register .nr .btn a:hover{ background:#ff8400; text-decoration:none;}
+
+.register .nr2 .bt{ color:#ff8400;}
+.register .nr2 .btn{ background:#ff8400;}
+.register .nr2 .btn a:hover{background:#2192e0;}
+.register .nr .pic2{ width:133px; height:131px; background:url(../images/registerIcon.png) no-repeat 0 15px; position:absolute; top:0; left:0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

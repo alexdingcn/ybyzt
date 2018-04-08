@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--备注：首页所有配置的商品图片均要放在网站根目录下的/Config/image 文件夹里面-->
+
+
+
+  <!--首页Banner图配置     start-->
+   <!--配置说明 ： 一个Banner标签代表配置一幅Banner图的配置   多个复制Banner标签修改属性值即可
+  （Banner标签 属性说明 
+  Url：表示点击Banner图的链接地址
+  ImgName：表示Banner图的图片名称
+  bgColor：表示背景颜色
+）
+  -->
+  <IndexBanner>
+    <Banner>
+      <Url>https://www.yibanmed.com/contact/</Url>
+      <ImgName>banner1.jpg</ImgName>
+		<bgColor>#eaf5fb</bgColor>
+    </Banner>
+	   <Banner>
+      <Url></Url>
+      <ImgName>banner7.jpg</ImgName>
+	  <bgColor>#e5f8f4</bgColor>
+    </Banner>
+	  
+    <Banner>
+      <Url>http://47.100.16.185/e155047_1003.html</Url>
+      <ImgName>banner2.jpg</ImgName>
+	  <bgColor>#51b3da</bgColor>
+    </Banner>  
+	  <Banner>
+      <Url></Url>
+      <ImgName>banner4.jpg</ImgName>
+	  <bgColor>#faf2ef</bgColor>
+    </Banner>  
+	  <Banner>
+      <Url></Url>
+      <ImgName>banner6.jpg</ImgName>
+	  <bgColor>#eaf5fb</bgColor>
+    </Banner>
+
+	  
+     
+  </IndexBanner>
+ <!--首页Banner图配置 end-->
+
+  <!--优品推荐   start-->
+  <!--配置说明： Img1 代表图一配置  Img2代表图2配置 Img3 代表图三配置  Img4 代表图4配置
+    （Img标签 属性说明 
+    Name：显示的商品名称
+    Url：表示点击图片的跳转的链接地址
+    ImgName：表示图片的图片名称）
+-->
+  <ProductRecommend>
+
+    <Img1>
+      <Name>鱼跃保健制氧机YU300</Name>
+      <Url>http://47.100.16.185/e155044_1000.html</Url>
+      <ImgName>yp_pic1.jpg</ImgName>
+    </Img1>
+    
+    <Img2>
+      <Name>TDP神灯治疗仪CQG-10A</Name>
+      <Url>http://47.100.16.185/e155045_1003.html</Url>
+      <ImgName>yp_pic2.jpg</ImgName>
+    </Img2>
+    
+    <Img3>
+      <Name>医用儿童温度计</Name>
+      <Url>http://47.100.16.185/e155046_1003.html</Url>
+      <ImgName>yp_pic3.jpg</ImgName>
+    </Img3>
+    
+    <Img4>
+      <Name>巨仁制氧机DZ-3B台式</Name>
+      <Url></Url>
+      <ImgName>yp_pic4.jpg</ImgName>
+    </Img4>
+	  
+    </ProductRecommend>
+   <!--优品推荐 end-->
+
+  
+  
+  
+   <!--优惠促销 start-->
+   <!--配置说明： 一个Product标签代表配置一个促销产品  多个复制Product标签修改属性值即可
+     （Product标签 属性说明 
+     Name：显示促销的商品名称
+     Url：表示点击促销产品跳转的链接
+     ImgName：促销的图片名称
+     Title：表示促销描述）
+   -->
+   <ProductPromotion>
+     <Product>
+       <Name>爱给力乳腺治疗系统</Name>
+       <Url></Url>
+       <ImgName>cx_pic1.jpg</ImgName>
+       <Title>拍下打8.5折</Title>
+     </Product>
+     
+     <Product>
+       <Name>智能多普勒胎儿心率仪</Name>
+       <Url></Url>
+       <ImgName>cx_pic2.jpg</ImgName>
+       <Title>买五件送一件</Title>
+     </Product>
+     
+     <Product>
+       <Name>唾液褪黑素测定试剂盒</Name>
+       <Url></Url>
+       <ImgName>cx_pic3.jpg</ImgName>
+       <Title>买十件送一件</Title>
+     </Product>
+     
+     <Product>
+       <Name>亿百亿 电动轮椅</Name>
+       <Url></Url>
+       <ImgName>cx_pic4.jpg</ImgName>
+       <Title>满1000减100</Title>
+     </Product>
+  </ProductPromotion>
+   <!--优惠促销 end-->
+
+  <!--家用常备 start-->
+  <!--配置说明： Left 代表家用常备  左边第一个产品的配置    Right代表家用常备 右边产品列表的配置
+     （Product标签 属性说明 
+     Name：显示家用常备的商品名称
+     Url：表示点击家用常备产品跳转的链接
+     ImgName：家用常备的图片名称
+     Title：表示家用常备右边第一个商品的描述）
+   -->
+  <HomeStandby>
+    <Left>
+      
+      <Product>
+        <Name>欧姆龙 上臂式电子血压计</Name>
+        <Url></Url>
+        <ImgName>jy_zhu.jpg</ImgName>
+        <Title>HEM-8102A 功能精简</Title> 
+      </Product>
+      
+    </Left>
+    
+    <Right>
+
+      <Product>
+        <Name>罗氏卓越金锐血糖试纸100片装</Name>
+        <Url></Url>
+        <ImgName>jy_pic1.jpg</ImgName>
+      </Product>
+
+      <Product>
+        <Name>罗氏卓越金锐血糖试纸100片装</Name>
+        <Url></Url>
+        <ImgName>jy_pic2.jpg</ImgName>
+      </Product>
+
+      <Product>
+        <Name>罗氏卓越金锐血糖试纸100片装</Name>
+        <Url></Url>
+        <ImgName>jy_pic3.jpg</ImgName>
+      </Product>
+
+      <Product>
+        <Name>罗氏卓越金锐血糖试纸100片装</Name>
+        <Url></Url>
+        <ImgName>jy_pic4.jpg</ImgName>
+      </Product>
+
+      <Product>
+        <Name>罗氏卓越金锐血糖试纸100片装</Name>
+        <Url></Url>
+        <ImgName>jy_pic5.jpg</ImgName>
+      </Product>
+
+      <Product>
+        <Name>罗氏卓越金锐血糖试纸100片装</Name>
+        <Url></Url>
+        <ImgName>jy_pic6.jpg</ImgName>
+      </Product>
+      
+    </Right>
+  </HomeStandby>
+  <!--家用常备 end-->
+
+</root>

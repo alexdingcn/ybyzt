@@ -1,0 +1,312 @@
+﻿
+.part 
+{
+ width:980px;
+  height:543px;
+
+margin:0 auto;
+}
+
+.partT {
+height: 40px;
+line-height: 40px;
+}
+
+.partT h2 {
+float: left;
+display: inline;
+margin: 0 0 0 10px;
+font-size: 18px;
+font-family: "微软雅黑","SimHei";
+color: #f68800;
+padding-left: 10px;
+}
+
+.parc
+{
+ width:978px;
+ height:501px;
+    }
+    
+ .onlineFair 
+ {
+ width:978px;
+ height:501px;
+padding: 30px 20px 20px;
+zoom:1;
+}
+.teamLst
+{
+     width:938px;
+ height:415px;
+    }
+ .onlineFair .team {
+height: 55px;
+}
+.onlineFair .teamL {
+width: 140px;
+}
+
+.teamL {
+float: left;
+display: inline;
+font-size: 14px;
+margin: 8px 0 0;
+text-align: right;
+}
+
+.verSelect 
+{
+ width:478px;
+ height:35px;
+float: left;
+display: inline;
+position: relative;
+z-index: 1;
+}
+.onlineFair .teamR {
+width: 760px;
+}
+
+.verSelectBg 
+{
+  width:478px;
+  height:35px;
+height: 35px;
+display: inline-block;
+background: url(../images/contrls.gif) no-repeat right 0;
+padding: 0 30px 0 0;
+cursor: pointer;
+}
+
+.verSelectTxt {
+height: 35px;
+line-height: 35px;
+font-size: 14px;
+display: inline-block;
+background: url(../images/contrls.gif) no-repeat left 0;
+padding: 0 0 0 8px;
+cursor: pointer;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+.teamL i {
+color: red;
+font-style: normal;
+margin: 0 5px 0 0;
+}
+
+.verText 
+{
+ margin-left:15px;
+ width:254px;
+ height:35px;
+float: left;
+display: inline;
+position: relative;
+zoom: 1;
+    top: 0px;
+    left: 0px;
+}
+
+.verText input.inputText 
+{
+ height:36px;
+width:254px;
+background: url(../images/textBg.gif) repeat-x white;
+line-height: 33px;
+border: 1px solid #D5D5D5;
+padding: 0 5px;
+font-size: 14px;
+color: #444;
+width: 256px;
+-moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+.verText input.textFocus 
+{
+ border:1px solid #EEC194;
+ box-shadow:0px 0px 2px #EEC194;
+ background:#FFFBF6;
+}
+
+.verText input.textHov 
+{
+ border:1px solid #BBB;
+ box-shadow:0px 0px 2px #BBB;
+ background:#FAFAFA;
+}
+
+
+
+.verTxt {
+float: left;
+display: inline;
+margin: 14px 0 0 12px;
+}
+.onlineFair .teamR .verTxt {
+color: #999;
+}
+
+a.btn1:link, a.btn1:visited,.verFile:hover btn1:link
+{
+float:left;
+height: 23px;
+width: auto;
+line-height: 24px;
+font-size:13px;
+display: inline-block;
+background: url(../images/contrls.gif) repeat-x 0 -214px;
+color: #444;
+border: 1px solid #D8D8D8;
+padding: 0 10px;
+font-weight: normal;
+}
+
+.verFileCon {
+width: 80px;
+height: 26px;
+overflow: hidden;
+left: 0;
+top: 0;
+z-index: 2;
+position: absolute;
+cursor: pointer;
+filter: alpha(opacity=0);
+-moz-opacity: 0;
+-khtml-opacity: 0;
+opacity: 0;
+display:inline-block;
+}
+
+
+
+
+.verFileCon input[type=file] {
+position: absolute;
+width: 160px;
+height: 28px;
+left: -85px;
+left: -87px\9;
+left: -87px\0;
+font-size: 100px;
+z-index: 3;
+    top: 0px;
+}
+
+.verTextarea {
+float: left;
+display: inline;
+position: relative;
+zoom: 1;
+ margin-left:14px;
+    top: 0px;
+    left: 0px;
+}
+
+
+.onlineFair .teamR textarea.textarea {
+width: 465px;
+}
+
+textarea.textarea {
+background: url(../images/textBg.gif) repeat-x white;
+height: 105px;
+line-height: 20px;
+border: 1px solid #CBCACA;
+padding: 0 5px;
+font-size: 14px;
+color: #444;
+}
+
+.verTextarea textarea.textfocus
+{
+  border:1px solid #EEC194;
+  box-shadow:0px 0px 2px #EEC194;
+   background:#FFFBF6
+    }
+
+.verTextarea textarea.textHov
+{
+ border:1px solid #BBB;
+ box-shadow:0px 0px 2px #BBB;
+ background:#FAFAFA;
+    }
+    
+ .onlineFair .btn {
+margin: 10px 0 0 160px;
+}
+
+
+.btn13
+{
+ border:1px solid white;
+ height: 30px;
+line-height: 21px;
+font-size: 12px;
+color: white;
+position: relative;
+z-index: 1;
+zoom: 1;
+background: url(../weboa/images/contrls.gif) no-repeat 0px -1408px;
+display: inline-block;
+margin: 0 5px;
+padding: 0 10px;
+    top: 0px;
+    left: 0px;
+    width: 110px;
+}
+    
+.onlineFair .btn p {
+float: right;
+display: inline;
+margin-right:310px;
+}
+
+.onlineFair .teamR .verTextareaTxt {
+width: 465px;
+}
+
+.verTextareaTxt {
+height: 25px;
+display: block;
+line-height: 25px;
+width: 516px;
+color: #909393;
+margin-left:15px;
+}
+
+.verTextareaTxt em {
+float: right;
+display: inline;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 16px;
+color: #909393;
+}
+
+
+.verTextareaTxt a:link, .verTextareaTxt a:visited {
+color: #2094D1;
+text-decoration:none;
+}
+.pageCon {
+width: 980px;
+margin: 0 auto;
+text-align: left;
+position:absolute;
+top:500px;
+left:345px;
+*top:550px;
+}
+
+.verFile {
+position: relative;
+z-index: 1;
+overflow: hidden;
+width:100%;
+margin: 5px 0 5px 0;
+}
+.verFile:hover{ overflow:hidden;}
+.verFileCon,#uploadFile{ cursor:pointer;}

@@ -1,0 +1,252 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
+using System.Data.SqlClient;
+using DBUtility;
+
+/// <summary>
+///BehindService 的摘要说明
+/// </summary>
+[WebService(Namespace = "http://tempuri.org/")]
+[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+//若要允许使用 ASP.NET AJAX 从脚本中调用此 Web 服务，请取消对下行的注释。 
+// [System.Web.Script.Services.ScriptService]
+public class BehindService : System.Web.Services.WebService
+{
+
+    public BehindService()
+    {
+
+        //如果使用设计的组件，请取消注释以下行 
+        //InitializeComponent(); 
+    }
+
+    [WebMethod]
+    public string HelloWorld()
+    {
+
+
+
+        return "Hello World";
+
+
+
+
+    }
+    /// <summary>    
+    /// 修改后台通知过来的页面
+    /// </summary>
+    /// <param name="guid">推送过来的guid</param>    
+    /// <param name="status">支付状态</param>
+    /// <returns>回调修改状态</returns>
+    [WebMethod]
+    public string BehindUpdate(string guid, int status, decimal price)
+    {
+        string LocalSqlServer = SqlHelper.LocalSqlServer;
+
+        string str = string.Empty;
+
+        string strWhere2 = string.Empty;
+
+        strWhere2 += " number = '" + guid + "'";
+        Hi.Model.PAY_RegisterLog regM = new Hi.Model.PAY_RegisterLog();
+        List<Hi.Model.PAY_RegisterLog> regL = new Hi.BLL.PAY_RegisterLog().GetList("", strWhere2, "");
+        if (regL == null || regL.Count <= 0)
+            str = "未找到对应的支付日志记录！";
+
+        regM = regL[0];
+        string strWhere = string.Empty;
+        if (guid != "")
+        {
+            strWhere += " guid = '" + guid + "'";
+        }
+        strWhere += " and isnull(dr,0)=0";
+        Hi.Model.PAY_Payment payM = new Hi.Model.PAY_Payment();
+        List<Hi.Model.PAY_Payment> payL = new Hi.BLL.PAY_Payment().GetList("", strWhere, "");
+        if (payL == null || payL.Count <= 0)
+            str = "未找到对应的支付记录！";
+
+        payM = payL[0];
+
+        payM.PayDate = DateTime.Now;
+        payM.ts = DateTime.Now;
+        payM.status = status;
+        new Hi.BLL.PAY_Payment().Update(payM);
+        regM.Start = Convert.ToString(status);
+        new Hi.BLL.PAY_RegisterLog().Update(regM);
+
+        if (payM.IsAudit == 1)
+            str = "该支付记录状态已经修改成功，请不要重复操作！";
+
+        if (status != 20)
+            str = "支付失败！";
+        //！！！支付成功 ！！！
+        decimal prepayPrice = 0;
+
+        //企业钱包充值
+        Hi.Model.PAY_PrePayment prepayMnew = new Hi.Model.PAY_PrePayment();
+        string strWhere3 = string.Empty;
+        if (guid != "")
+            strWhere3 += " ID = " + payM.OrderID;
+
+        strWhere3 += " and isnull(dr,0)=0";
+        List<Hi.Model.PAY_PrePayment> plist = new Hi.BLL.PAY_PrePayment().GetList("", strWhere3, "");
+        if (plist.Count > 0)
+            prepayMnew = plist[0];
+
+        //订单
+        Hi.Model.DIS_Order orderModel = new Hi.BLL.DIS_Order().GetModel(payM.OrderID);
+        if (orderModel != null)
+        {
+            string strWhere1 = string.Empty;
+            strWhere1 += " vdef4 = '" + payM.ID + "'";
+            strWhere1 += " and isnull(dr,0)=0";
+            Hi.Model.PAY_PrePayment prepayM = new Hi.Model.PAY_PrePayment();
+            List<Hi.Model.PAY_PrePayment> prepayL = new Hi.BLL.PAY_PrePayment().GetList("", strWhere1, "");
+            if (prepayL != null && prepayL.Count > 0)
+            {
+                prepayM = prepayL[0];
+                prepayPrice = prepayM.price * -1;
+            }
+
+            int order = 0;
+            int prepay = 0;
+            int pay = 0;
+            //支付金额
+            SqlConnection con = new SqlConnection(LocalSqlServer);
+            con.Open();
+            SqlTransaction sqlTrans = con.BeginTransaction();
+            try
+            {
+                order = new Hi.BLL.DIS_Order().UpdateOrderPstate(con, orderModel.ID, payM.PayPrice + prepayPrice - Convert.ToDecimal(payM.vdef5), sqlTrans);
+                pay = new Hi.BLL.PAY_Payment().updatePayState(con, payM.ID, sqlTrans);
+
+                //修改免支付次数
+                try
+                {
+                    Common.UpmzfcsByCompid(orderModel.CompID);
+                }
+                catch { }
+
+                if (prepayPrice > 0)
+                    prepay = new Hi.BLL.PAY_PrePayment().updatePrepayState(con, prepayM.ID, sqlTrans);
+                else
+                    prepay = 1;
+                if (order > 0 && prepay > 0 && pay > 0)
+                {
+                    str = "支付回写成功！";
+                    sqlTrans.Commit();
+                }
+                else 
+                {
+                    str = "支付回写失败！";
+                    sqlTrans.Rollback();
+                }
+            }
+            catch
+            {
+                order = 0;
+                prepay = 0;
+                pay = 0;
+                sqlTrans.Rollback();
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            if (order <= 0 || prepay <= 0 || pay <= 0)
+                str = "支付成功，但修改支付状态失败，请联系系统管理员，勿重复操作！" + order + "--" + pay;
+
+            try
+            {
+                if (orderModel.Otype != 9)
+                    OrderInfoType.AddIntegral(orderModel.CompID, orderModel.DisID, "1", 1, orderModel.ID, (prepayPrice + (price / 100)), "订单支付", "", orderModel.CreateUserID);
+
+            }
+            catch { }
+
+            if (orderModel.Otype == (int)Enums.OType.推送账单)
+                Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "账单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
+            else
+                Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "订单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
+
+            //微信和安卓消息推送
+            try
+            {
+                new Common().GetWxService("2", orderModel.ID.ToString(), "1");
+            }
+            catch { }
+
+        }
+        else if (prepayMnew != null)
+        {
+            int prepay = 0;
+            int pay = 0;
+            SqlConnection con = new SqlConnection(LocalSqlServer);
+            con.Open();
+            SqlTransaction sqlTrans = con.BeginTransaction();
+            try
+            {
+                pay = new Hi.BLL.PAY_Payment().updatePayState(con, payM.ID, sqlTrans);
+                prepay = new Hi.BLL.PAY_PrePayment().updatePrepayState(con, prepayMnew.ID, sqlTrans);
+                if (pay > 0 && prepay > 0)
+                {
+                    str = "充值回写成功！";
+                    sqlTrans.Commit();
+                }
+                else
+                {
+                    str = "充值回写失败！";
+                    sqlTrans.Rollback();
+                }
+            }
+            catch
+            {
+                pay = 0;
+                prepay = 0;
+                sqlTrans.Rollback();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        else
+        {
+            str = "未找到支付实体！";
+        }
+
+        return str;
+    }
+
+    /// <summary>
+    ///  修改后台通知结算地址
+    /// </summary>
+    /// <param name="ordercode">订单编号</param>
+    /// <param name="status">结算状态</param>
+    /// <returns>修改状态</returns>
+   [WebMethod]
+    public string BehindUpJs(string ordercode, int status)
+    {
+        string str = string.Empty;
+        string sql = string.Format(@"update PAY_PayLog set MarkName='{2}',MarkNumber='{0}' where  Ordercode='{1}'", DateTime.Now.ToString(), ordercode, status);
+
+        try
+        {
+            int num = new Hi.BLL.PAY_PrePayment().Up_PayLog(sql);
+            if (num > 0)
+            {
+                str = "结算状态回调成功！";
+            }
+        }
+        catch
+        {
+            str = "结算状态回调失败！";
+        }
+        return str;
+    }
+
+}

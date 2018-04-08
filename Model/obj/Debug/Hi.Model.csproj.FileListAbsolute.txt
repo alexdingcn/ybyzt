@@ -1,0 +1,5 @@
+E:\医站通\code\Model\bin\Debug\Model.dll
+E:\医站通\code\Model\bin\Debug\Model.pdb
+E:\医站通\code\Model\obj\Debug\Model.dll
+E:\医站通\code\Model\obj\Debug\Model.pdb
+E:\医站通\code\Model\obj\Debug\Hi.Model.csprojResolveAssemblyReference.cache

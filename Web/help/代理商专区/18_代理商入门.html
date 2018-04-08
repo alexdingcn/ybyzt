@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>医站通 B2B电子商务平台</title>
+    <link href="../../css/global-2.0.css" rel="stylesheet" type="text/css" />
+
+    <script src="../../Company/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("li a", ".guidePic").on("click", function () {
+                $("li", ".guidePic").removeAttr("class");
+                $(this).parent().addClass("hover");
+                var index = $(this).parent().index();
+                $("div.wrap").children().addClass("none").eq(index).removeClass("none");
+            });
+            var T = request("T");
+            if (T != "" && T != null && parseInt(T) >= 0) {
+                $("li:eq(" + T + ") a", ".guidePic")[0].click();
+            }
+
+            function request(paras) {
+                var url = location.href;
+                var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+                var paraObj = {}
+                for (i = 0; j = paraString[i]; i++) {
+                    paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+                }
+                var returnValue = paraObj[paras.toLowerCase()];
+                if (typeof (returnValue) == "undefined") {
+                    return "";
+                } else {
+                    return returnValue;
+                }
+            }
+        })
+    </script>
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+      
+        <!--步骤流程图 start-->
+        <div class="guidePic hxli" style="width:980px">
+            <ul class="list">
+               <li class="hover"><a href="javascript:;" class="bg"><i class="gp-i1"></i></a><a href="" class="t">1.注 册</a></li>
+    	        <li><a href="javascript:;" class="bg"><i class="gp-i9"></i></a><a href="" class="t">2.找商机</a></li>
+                <li><a href="javascript:;" class="bg"><i class="gp-i10"></i></a><a href="" class="t">3.申请合作</a></li>
+                <li><a href="javascript:;" class="bg"><i class="gp-i2"></i></a><a href="" class="t">4.认 证</a></li>
+                <li><a href="javascript:;" class="bg"><i class="gp-i11"></i></a><a href="" class="t">5.查看商品</a></li>
+                <li><a href="javascript:;" class="bg"><i class="gp-i12"></i></a><a href="" class="t">6.下 单</a></li>
+                <li><a href="javascript:;" class="bg"><i class="gp-i13"></i></a><a href="" class="t">7.付 款</a></li>
+                <li><a href="javascript:;" class="bg"><i class="gp-i14"></i></a><a href="" class="t">8.收 货</a></li>
+            </ul>
+            <div class="line"><i class="dot"></i><i class="dot2"></i></div>
+        </div>
+        <!--步骤流程图 end-->
+
+
+
+        <div class="wrap">
+			<div class="guidenr1 ">
+                <div class="guideCur ">注册<div class="line"></div></div>
+                <div class="guidecont">
+                <p>
+                    第一步：注册代理商用户<br>
+                    <img width="850"  src="../image/厂商专区/clip_image002.png" alt="暂无图片">
+                </p>
+                <p>
+                    <br>
+                    第二步：选择代理商身份，根据提示完成第一部分注册<br>
+                     <img width="850"  src="../image/厂商专区/20180205111019.png" alt="暂无图片"></p><br>
+                    <img width="850" src="../image/代理商专区/20180205151925.png" alt="暂无图片">
+                </p>
+                <p>
+                    <br>
+                    第三步：进行第二部分注册<br>
+                    <img width="850" src="../image/代理商专区/20180205152114.png" alt="暂无图片">
+                </p>
+                <p>
+                    <br>
+                    第四步：注册成功后，通过后会有短信告知；输入注册的帐号密码进入代理商界面
+                </p>
+            </div>	
+            </div>
+            <div class="guidenr2 none">
+                <div class="guideCur">找商机<div class="line"></div></div>
+                <div class="guidecont">
+                    <p>
+                        <img src="../image/代理商专区/20180205162724.png" width="850" alt="暂无图片" />
+                    </p>
+                </div>
+            </div>
+            <div class="guidenr3 none">
+                <div class="guideCur">申请合作<div class="line"></div></div>
+                <div class="guidecont">
+                    <p>
+                        第一步：选择需要申请合作的招商信息
+                    </p>
+                    <p>
+                        <img src="../image/代理商专区/20180205152316.png" width="850"  alt="暂无图片" />
+                    </p>
+                   
+
+                    
+                </div>
+            </div>
+            <div class="guidenr4 none">
+                <div class="guideCur">认 证<div class="line"></div></div>
+                <div class="guidecont">
+                    <p>
+                      申请合作，等待厂商进行处理。处理通过后即可以代理对应招商商品。
+                    </p>
+                    <p>
+                        <img src="../image/代理商专区/20180205154157.png" width="850" alt="暂无图片" /><br>
+                          
+                        
+                    </p>
+                   
+                </div>
+            </div>
+            <div class="guidenr5 none">
+                <div class="guideCur">查看商品<div class="line"></div></div>
+                <div class="guidecont">
+                    <p>
+        第一步：打开设置-商品列表
+    </p>
+    <p>
+        <img src="../image/代理商专区/no23_1_1.png" width="850" alt="暂无图片" />
+    </p>
+    <p>
+        <img src="../image/代理商专区/no23_1_2.png" width="850"  alt="暂无图片" />
+    </p>
+    <p>
+        第二步：点击进入商品详细页面
+    </p>
+   
+    <p>
+        <img src="../image/代理商专区/no23_2_2.png" width="850"  alt="暂无图片" />
+    </p>
+                </div>
+            </div>
+            <div class="guidenr6 none">
+                <div class="guideCur">下 单<div class="line"></div></div>
+                <div class="guidecont">
+                    <p>
+        第一步：打开订货，点击新建订单
+    </p>
+    <p>
+        <img src="../image/代理商专区/20180205154719.png" width="850"  alt="暂无图片" />
+    </p>
+    <p>
+        第二步：输入订单信息
+    </p>
+    <p>
+        <img src="../image/代理商专区/1517816912(1).jpg" width="850"  alt="暂无图片" />
+    </p><p>
+            第三步：选购商品
+</p>
+<p>
+    <img src="../image/代理商专区/no25_3.png" width="850" alt="暂无图片" />
+</p><p>
+        第四步：新增地址界面
+</p>
+<p>
+    <img src="../image/代理商专区/no25_4.png" width="850"  alt="暂无图片" />
+</p><p>
+        第五步：提交订单
+</p>
+<p>
+    <img src="../image/代理商专区/no25_5.png" width="850"  alt="暂无图片" />
+</p>
+                </div>
+            </div>
+            <div class="guidenr7 none">
+                <div class="guideCur">付 款<div class="line"></div></div>
+                <div class="guidecont">
+                   <p>
+        第一步：打开支付-待支付订单
+    </p>
+    <p>
+        <img src="../image/代理商专区/no25_1_1.png" width="850"  alt="暂无图片" />
+    </p>
+    <p>
+        第二步：查找需要支付的订单
+    </p>
+    <p>
+        
+        <img src="../image/代理商专区/no25_2_1.png" width="850"  alt="暂无图片" />
+    </p>
+    <p>
+        <img src="../image/代理商专区/no25_2_2.png" width="850"  alt="暂无图片" />
+        
+    </p>
+	<p>
+        <img src="../image/代理商专区/no25_2_3.png" width="850"  alt="暂无图片" />
+        
+    </p>
+
+    <p>
+        第三步：订单支付（在线支付-快捷支付）
+    </p>
+    <p>
+        <img src="../image/代理商专区/20180205155617.png" width="850"  alt="暂无图片" />
+        
+    </p>
+    <p>
+        第四步：支付方式（支付方式：网银支付）
+    </p>
+    <p>
+        <img src="../image/代理商专区/20180205155731.png" width="1000" alt="暂无图片" />
+        
+		
+		
+    </p>
+	<p>
+        第五步：订单支付（线下支付）
+    </p>
+    <p>
+        <img src="../image/代理商专区/20180205155840.png" width="1000" alt="暂无图片" />
+        
+
+    </p>
+    <p>
+        第六步：确认支付结果，支付结果需要厂商审核后付款状态才生效
+    </p>
+    <p>
+        <img src="../image/代理商专区/20180205160024.png" width="1000" alt="暂无图片" />
+    </p>
+      
+
+
+        </div>
+            </div>
+		    <div class="guidenr8 none">
+                <div class="guideCur">收货<div class="line"></div></div>
+                <div class="guidecont">
+         <p>
+        第一步：打开订货
+    </p>
+    <p>
+        <img src="../image/代理商专区/20180205160153.png" width="850"  alt="暂无图片" />
+    </p>
+
+    <p>
+        第二步：查找需要收货的订单
+    </p>
+    <p>
+        <img src="../image/代理商专区/no26_2_1.png" width="850"  alt="暂无图片" />
+    </p>
+    <p>
+        第三：进入订单详情中确认信息
+    </p>
+    <p>
+        <img src="../image/代理商专区/no26_3_1.png" width="850" alt="暂无图片" />
+    </p>
+    <p>
+        第四步：确认收货查看订单状态，确认收货信息
+    </p>
+    <p>
+        <img src="../image/代理商专区/no26_4_1.png" width="850"  alt="暂无图片" />
+    </p>      </div>
+            </div>
+    </form>
+</body>
+</html>

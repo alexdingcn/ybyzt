@@ -1,0 +1,8 @@
+﻿
+=========================[2018-01-25 17:27:31] 记录开始==============================
+描述： 列名 'compid' 不明确。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 500
+   在 BD_Goods_ver3.ResellerProductSearch(String JSon) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 1289
+接口： CompanyProductSearch:{"CompID":1046,"Condition":"","CriticalProductID":"-1","Filter":{"Classif":"-1","IsSales":"","MaxPrice":"","MinPrice":"","ProductStatus":"0"},"GetType":"1","ResellerID":1302,"Type":"0","UserID":1387}
+时间： 2018/1/25 17:27:31
+
+=================================记录结束======================================

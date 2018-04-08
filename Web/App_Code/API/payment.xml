@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PaymentConfig>
+
+	<!--构的的签名证书和口令-->
+	<MyKeystoreFilename>1159144972ybjf_private.pfx</MyKeystoreFilename>
+	<MyKeystorePassword>Yiban#2018</MyKeystorePassword>
+	
+	<!--支付平台的公钥证书-->
+	<PaymentCertificateFilename>payment.cer</PaymentCertificateFilename>
+	
+	<!--支付平台支付接口地址-->
+	<PaymentUrl>https://www.china-clearing.com/Gateway/InterfaceI</PaymentUrl>
+	
+	<!--支付平台交易接口地址-->
+	<TxUrl>https://www.china-clearing.com/Gateway/InterfaceII</TxUrl>
+	
+	<!--支付平台小文件上传接口地址-->
+	<Gateway4fileUrl>https://www.china-clearing.com/Gateway4File/InterfaceII</Gateway4fileUrl>
+	
+	<!--支付平台支付接口地址-->
+	<CmbPaymentUrl>https://www.china-clearing.com/Gateway4cmbchina/InterfaceI</CmbPaymentUrl>
+	
+	<!--支付平台交易接口地址-->
+	<CmbTxUrl>https://www.china-clearing.com/Gateway4cmbchina/InterfaceII</CmbTxUrl>
+	
+	<!--支付平台支付接口地址-->
+	<PaymentUserPaymentUrl>https://payment.china-clearing.com/Gateway4PaymentUser/InterfaceI</PaymentUserPaymentUrl>
+	
+	<!--支付平台交易接口地址-->
+	<PaymentUserTxUrl>https://payment.china-clearing.com/Gateway4PaymentUser/InterfaceII</PaymentUserTxUrl>
+	
+	<!--徽商定制化异步接口-->
+	<DepositBankPaymentUrl>https://www.china-clearing.com/Gateway4DepositBank/InterfaceI</DepositBankPaymentUrl>
+	
+	<!--徽商定制化同步接口-->
+	<DepositBankTxUrl>https://www.china-clearing.com/Gateway4DepositBank/InterfaceII</DepositBankTxUrl>
+	
+	<!--消费金融定制化异步接口-->
+	<ConsumerPaymentUrl>https://www.china-clearing.com/Gateway4Consumer/InterfaceI</ConsumerPaymentUrl>
+	
+	<!--消费金融定制化同步接口-->
+	<ConsumerTxUrl>https://www.china-clearing.com/Gateway4Consumer/InterfaceII</ConsumerTxUrl>
+	
+	<!--跨境支付交易接口地址-->
+	<CrossBorderTxUrl>https://www.china-clearing.com/Gateway4CB/InterfaceII</CrossBorderTxUrl>
+
+</PaymentConfig>

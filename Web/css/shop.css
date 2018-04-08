@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* 整站全局公共样式的设定 */
+* html,* html body{background-image:url(about:blank);background-attachment:fixed}
+* html .ie6fixedTL{position:absolute;left:expression(eval(document.documentElement.scrollLeft));top:expression(eval(document.documentElement.scrollTop))}
+body {margin:0; padding:0; background:#eaeef1;color:#494949; font-size:12px; font-family:"微软雅黑";}
+html{-webkit-text-size-adjust: none;}
+div,form,img,ul,ol,li,dl,dt,dd,p,span,b,i{margin: 0; padding: 0; border: 0; font-style:normal;}
+li,dl{list-style-type:none;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;}
+a:link {color: #494949; text-decoration:none;}
+a:visited {color: #494949;text-decoration:none;}
+a:hover {color: #016bb5;text-decoration:underline; }
+a:active {color: #494949;text-decoration:none;}
+/* 其它常用样式的定义 */
+.left{ float: left;}
+.right{ float: right;}
+.clear{ clear: both;}
+.blank20{height:20px; font-size:1px; clear:both;overflow:hidden;}
+.blank15{height:15px; font-size:1px; clear:both;overflow:hidden;}
+.blank10{height:10px; font-size:1px; clear:both;overflow:hidden;}
+
+.mianDiv,.zBox{ width:1200px; margin:0px auto; position:relative;}
+.trigon{width:0;height:0;line-height:0;border-width:6px;border-style:solid;border-color: #d1d1d1 transparent transparent transparent; display:inline-table; }
+/*当前位置*/
+.info{ width:980px; margin:0px auto; background:url(../images/lb_inc.png) no-repeat 0 14px; height:30px; line-height:30px; padding:8px 0 5px 20px; color:#797979;}
+.info a{ margin:0px 5px;}
+
+/* topBar */
+.topBar{ width:100%; height:29px; line-height:29px; background:#353334; position:absolute; top:0; left:0;z-index:999; overflow:hidden; position:fixed; top:0; left:0;_position:absolute;_left:expression(eval(document.documentElement.scrollLeft));_top:expression(eval(document.documentElement.scrollTop)); border-bottom:1px solid #e2dede; min-width:1200px;}
+.topBar .nr{ width:1080px; padding:0px 10px; overflow:hidden; color:#999; margin:0px auto;min-width:1080px;}
+.topTxt{ float:left; }
+.topNav{ float:right;} 
+.topNav a{ margin:0px 10px; display:inline-block; color:#bbb;}
+.topNav a:hover{ text-decoration:underline;}
+
+/*header*/
+.header{ padding-top:40px; width:100%; border-bottom:2px solid #1d4a8d; background:#fff; height:70px; min-width:1200px;}
+.header .logo{ overflow:hidden;}
+.header .logo span{ float:left;min-width:120px;margin:5px 0 0 0px; text-align:center; font-size:18px;padding:0px; line-height:45px; display:inline-block;color:#047dc6;}
+.header .logo b{ color:#3c3c3c; font-size:22px; font-weight:normal; display:inline-block; padding:15px 0 0 25px;} 
+.header .nav{ position:absolute; bottom:-15px; right:0;}
+.header .nav li{ float:left; height:40px; line-height:40px; margin:0px 8px; font-size:16px;}
+.header .nav li a{padding:0px 20px;display:inline-block;}
+.header .nav li a:hover{ text-decoration:none;}
+.header .nav .hover a,.header .nav li a:hover{ background:#1d4a8d; color:#fff;}
+.header .zBox{ height:55px;}
+
+.ad1196{ border:2px solid #fff; margin:0px auto; width:1196px;}
+
+/*热销产品*/
+.hotProd {/* background:#f6f6f6;*/ background:#fff; padding-bottom:20px; min-height: 520px;}
+.zbt{/* background:#fff;*/ background:#f8f8f8; border-bottom:1px solid #e0e1e2; height:40px; line-height:40px; position:relative;}
+.hotProd .zbt b{font-size:18px; color:#333; font-weight:normal; margin-left:15px; padding-left:20px; background:url(../images/bsIcon.png) no-repeat 0 6px;}
+.zbt .more{ position:absolute; top:0; right:10px; color:#797979;}
+.hotProd .list{ overflow:hidden; height:223px;}
+.hotProd .list2{ height:auto;}
+.hotProd .list li{ float:left; margin:25px 0 0 37px; line-height:22px; text-align:center;}
+.hotProd .list .pic{ background:#fff; position:relative;}
+.hotProd .sale{ position:absolute; top:0; right:0; background:#fe7a00; padding:0px 8px; color:#fff; line-height:18px;}
+.hotProd .list .pic a{ overflow:hidden;display:block;}
+.hotProd .list .bt{ padding-top:5px; width:128px; overflow:hidden; white-space:nowrap;text-overflow: ellipsis;}
+.hotProd .list .txt{ color:#797979;}
+.hotProd .list .btn{ text-align:center; padding-top:3px;}
+.hotProd .list .btn a{ display:inline-block; border-radius:5px; padding:0px 8px; margin:0px 5px; color:#FFF;}
+.hotProd .list .btn .btnBule{color:#6694b3;}
+.btnRed{ border:1px solid #b50b0b; background:#c81f1f; color:#fff;}
+.btnBule{ border:1px solid #becbd5; background:#eef5f9; color:#6694b3;}
+.hotProd .list .btn .btnRed:hover{border:1px solid #cf2d2d;border-radius:5px; background:#e23a3a;color:#fff; text-decoration:none;}
+.hotProd .list .btn .btnBule:hover{border:1px solid #c7d0e5;border-radius:5px;color:#6694b3;background:#e3e8f4; text-decoration:none;}
+
+/*公司介绍*/
+.mianAbout{ width:49%; display:inline-block; background:#f6f6f6; }
+.mianAbout .zbt b{font-size:18px; color:#333; font-weight:normal; margin-left:15px; padding-left:28px; background:url(../images/bsIcon.png) no-repeat 0 -22px;}
+.mianAbout .txt{ padding:15px 25px; line-height:30px;}
+.mianAbout .txt p{ text-indent:2em;}
+.mianAbout .txt a{ color:red;}
+.mianAbout .btcon b{ background:url(../images/bsIcon.png) no-repeat 0 -51px;}
+
+/*footer*/
+.footer{ background:#626262; line-height:30px; min-width:1200px; height:30px;}
+.footer .telT{ font-size:15px; color:#e1e1e1; font-weight:bold;}
+.footer .txt{ display:inline-block; color:#aaa; position:absolute; top:0; right:0;}
+.tel{ width:18px; height:18px;  background:url(../images/bsIcon.png) no-repeat 0 -85px; display:inline-block; margin-right:7px; position:relative; top:2px;}
+
+/*footer-微信*/
+.page{ width:100%; text-align:center; overflow:hidden; padding:10px 0 15px 0;}
+.page a{ padding:5px 10px; display:inline-block; border:1px solid #ddd; margin:0px 4px; color:#797979; cursor:pointer;}
+.page span{ background:#eaeaea; color:#fff;border:1px solid #dad7dd; display:inline-block; padding:5px 10px;}
+.page .custompage{ line-height:26px; color:#797979; text-align:left;}
+.page .active{color:#6694b3;}
+.page a:hover{ color:#6694b3;background:#eaeaea;border:1px solid #dad7dd; text-decoration:none;}
+
+/*产品详细页*/
+.ProdView{ position:relative; background:#fff; border:1px solid #d1d1d1; overflow:hidden; min-height:520px; padding:0px 25px 0 500px;}
+.ProdView .pic{ width:400px; overflow:hidden; border:1px solid #d1d1d1; position:absolute; top:23px; left:20px; background:#f2f2f2;}
+.ProdView .bt{ padding-top:35px; font-size:18px;}
+.ProdView .txt{ color:#999; line-height:25px; padding:5px 0;font-size:14px;}
+
+.ProdView .li{ padding:4px 0px 4px 0px;  line-height:24px; position:relative;}
+.ProdView .bt2{ font-size:14px;  top:2px; left:0;}
+.ProdView .li .red{ color:#e50101; font-size:18px;}
+.ProdView .li .fun{ display:inline-block;}
+.ProdView .li .fun a{ border:1px solid #d1d1d1; padding:0px 10px; margin-right:10px; display:inline-block; line-height:21px; padding-top:1px; background:#fafafa; margin-bottom:5px;}
+.ProdView .li .fun a:hover,.ProdView .li .fun .hover{ border:1px solid #355fa8; background:#4870b4; color:#fff; text-decoration:none;}
+.ProdView .li .ash{ color:#797979;}
+
+.ProdView .btn{ overflow:hidden; padding-top:10px;}
+.ProdView .btn a{ width:180px; height:40px; line-height:40px; border:1px solid #a91c1d; display:inline-block; text-align:center; font-size:18px; color:#fff; margin-right:15px;}
+.ProdView .btn .red{ border:1px solid #a91c1d; background:#c81e1f;}
+.ProdView .btn .bule{ border:1px solid #becbd5; background:#eff2f7;color:#6694b3;}
+.ProdView .btn .bule:hover{ background:#dee6f1; text-decoration:none;}
+.ProdView .btn .red:hover{ background:#b91213; text-decoration:none;}
+
+.ProdNr{ min-height:auto;}
+.ProdNr .zbt b{ background: url(../images/pIcon.png) no-repeat 0 4px; font-size:16px}
+.ProdNr .detailed{ padding:20px 50px; font-size:14px;}
+/*公司简介*/
+.about{ width:100%;}
+.about .zbt{ background:#f8f8f8;}
+.about .nr{ background:#fff; padding:0px 80px 20px 80px; line-height:32px; color:#797979; font-size:14px;  min-height: 320px;}
+.about .nr p{ padding-top:20px;}
+
+/*联系我们*/
+.contact{ background:url(../images/bsImg3.jpg) no-repeat top left #fff; padding:30px 20px 30px 480px; min-height:320px; line-height:35px;}
+.contact b{ font-size:14px;}
+
+.hint{ display:inline-block; padding:2px 4px 2px 1px;letter-spacing:-0.2em; font-size:12px; font-weight:bold; font-family:Arial; line-height: 12px;margin-left:2px; color:#fff; text-align:center; background:#ff7100; border-radius:7px 7px 7px 0; min-width:12px;}
+
+/*2015-10-13 addClass start*/
+/* 热销商品左侧导航 */
+.expmenu{width:175px;font-family:"微软雅黑"; float:left; background:#f5f7f9; position:absolute; top:0; left:0;bottom:0; overflow-y:auto;}
+.expmenu .title{ height:40px; line-height:40px;  background:url(../images/arrow_f.png) no-repeat 10px 14px #1d4a8d; color:#fff; font-size:16px; padding-left:30px;}
+
+.expmenu .ul{position:absolute; top:40px; left:0; bottom:0; right:0; overflow-x:auto;}
+.expmenu li div.head{padding:12px 8px 12px 25px;border-bottom:1px #fff solid; position:relative;}/*标题*/
+.expmenu li:last-child div.head{border-bottom:none;}
+.expmenu li ul li {background-color:#e5eaf2;padding:12px 12px 12px 22px;border-bottom:1px solid #fff;color:#333; border-left:1px solid #ddd; cursor:pointer;}/*二级菜单LI*/
+.expmenu li ul li:last-child{border-bottom:none;}
+
+.expmenu div.head{font-size:14px;background:#f1f1f1;/*标题*/ border-left:2px solid #7aa8c4; position:relative;}
+.expmenu li div.head .label{background:no-repeat;color: #333;}
+.expmenu li div.head .arrow{display:block;width:16px;height:16px;background:no-repeat center;float:left; margin:2px 5px 0 0; position:absolute; top:12px; left:5px;}
+.expmenu li div.head .arrow.up{background-image:url(../images/arrow_u.png);}
+.expmenu li div.head .arrow.down{background-image:url(../images/arrow_d.png);}
+
+.expmenu li .menu{display:none;}	
+.expmenu div.head:hover{background:#e9e9e9;/* 标题鼠标移上去背景颜色 */cursor:pointer;}
+.expmenu li ul li:hover{background:#dbe4f0;/* 鼠标移上去背景颜色 */cursor:pointer;}
+
+.menu ol { padding-left:15px; border-left:#E7E7E7 1px solid;  border-right:#E7E7E7 1px solid; border-top:none;background: #fff; }
+.menu li i{background-color: #1d4a8d;padding:0px 1px 0px 2px;color: #fff;font-family: 宋体;font-style:normal; height:12px; overflow:hidden;margin-right:5px;}
+.menu a{color: #3f3f3f;text-decoration: none; font-size:13px;}
+.menu .no {display:none; }
+.menu ol a{display: block; line-height:36px; border-bottom:1px solid #ddd; background:url(../images/arrow_i.png) no-repeat 0 7px; padding-left:20px;}
+.menu ol a:hover{ color:#f36001;}
+.menu ol .cur{ color:#f36001; font-weight:bold;}
+/*2015-10-13 addClass end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

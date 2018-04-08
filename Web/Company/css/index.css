@@ -1,0 +1,180 @@
+/*banner*/
+.banner{ float:left;width:870px;  height:355px; overflow:hidden; margin:10px 10px 0 0; border:1px solid #ddd;}
+
+/*登录*/
+.mianLogin{ width:316px; border:1px solid #ddd; position:relative; float:left; margin-top:20px; padding-top:40px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee'); background: -webkit-linear-gradient(top, #ffffff, #eeeeee);background: -moz-linear-gradient(top, #ffffff, #eeeeee);background: -ms-linear-gradient(top, #ffffff, #eeeeee);background: linear-gradient(top, #ffffff, #eeeeee); }
+.mianLogin .bt{ background:url(../images/iconBg.png) no-repeat 0 -65px; width:170px; height:36px; line-height:35px; font-size:16px; overflow:hidden; position:absolute; top:-10px; left:80px; text-align:center;}
+.mianLogin .li{ padding-left:18px; overflow:hidden; padding-bottom:12px; position:relative;}
+.mianLogin .li i{ font-style:normal; font-size:14px;}
+.mianLogin .li .box,.mianLogin .li .box2{ width:200px; height:30px;  padding:0px 10px; color:#797979; background:#fff; border:1px solid #ddd;}
+.mianLogin .li .box2{ width:60px;}
+.mianLogin .captcha{ width:80px; height:30px; overflow:hidden; border:1px solid #ddd; overflow:hidden; position:absolute; top:0; left:163px;}
+.mianLogin .btn{ padding-left:75px;}
+.mianLogin .txt{ padding-left:78px; height:30px;padding-top:15px;}
+.mianLogin .txt a{display:inline-table; line-height:15px; height:15px; padding-right:10px;}
+.iconYz{ width:18px; height:13px; background:url(../images/icon.png) no-repeat 0px -32px; display:inline-table;}
+.iconMm{ background:url(../images/icon.png) no-repeat 0px -59px; width:16px; height:15px;display:inline-table;}
+/*btn-color*/
+.btnH,.btnL{ background:#fe7a00; border-radius:5px; height:28px; line-height:28px; padding:0px 30px; color:#fff; display:inline-block; font-size:14px; margin-right:10px;}
+.btnH:visited,.btnL:visited{ color:#fff;}
+.btnL{background:#016bb5; }
+.btn .btnH,.btn .btnL{ color:#fff;}
+
+/*公告*/
+.notice{ width:316px; overflow:hidden; border:1px solid #ddd; float:left; margin-top:10px; overflow:hidden; height:87px;}
+.notice .bt{ width:100%; height:30px; line-height:30px;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#fbfbfb'); background: -webkit-linear-gradient(top, #ededed, #fbfbfb); background: -moz-linear-gradient(top, #ededed, #fbfbfb); background: -ms-linear-gradient(top, #ededed, #fbfbfb);background: linear-gradient(top, #ededed, #fbfbfb); border-bottom:1px solid #e1e1e1; }
+.notice .bt li{ float:left; font-weight:bold; width:104px; border-left:1px solid #e1e1e1; text-align:center; cursor:pointer;}
+.notice .bt li:first-child{border-left-width: 0;}
+.notice .hover{ background:#fff; height:30px; position:relative; padding-top:1px;}
+.notice .list{ padding:8px 0 0 20px; display:none;}
+.notice .list li{ line-height:24px;background:url(../images/icon.png) no-repeat 0px -75px; padding-left:9px; }
+.notice .hover{ display:block;}
+
+/*首页商家LOGO*/
+.logoPic{ float:left; width:830px; overflow:hidden; padding:10px 18px 0 0; height:648px;}
+.logoPic li{ float:left; margin-left:18px; text-align:center; line-height:40px; padding-bottom:13px; font-size:14px;}
+.logoPic li span{ display:block; width:185px; height:105px; overflow:hidden; border:1px solid #ddd; padding:1px;} 
+.logoPic li a:hover span{ border:2px solid #ddd; padding:0;}
+.logoPic li a:hover{ color:#f66100; text-decoration:none;}
+.logoList{ width:100%; height:630px;}
+.logoList li span{ width:178px; height:101px;}
+.listNr{ float:left; width:1000px;}
+
+/*左边导航*/
+.leftsideBar{ width:180px; float:left; border:1px solid #ececec;}
+.leftsideBar .bt,.rightsideBar .bt{background:url(../images/iconBg.png) no-repeat 0px -111px; width:150px; height:35px; line-height:35px; color:#fff; font-size:14px; padding-left:35px;}
+.leftsideBar dd,.rightsideBar dd{ border-top:1px solid #ececec; line-height:35px; padding-top:1px;  font-size:14px;} 
+.leftsideBar dd a,.rightsideBar dd a{ line-height:36px; height:36px; display:block; position:relative;background:#fbfbfb;padding-left:35px;}
+.leftsideBar dd a:hover,.leftsideBar .hover a{ background:#fff; color:#f66100; text-decoration:none;}
+
+/*右边导航*/
+.rightsideBar{ width:168px; float:left; border:1px solid #ececec;}
+.rightsideBar .bt{ background:url(../images/iconBg.png) no-repeat 0px -156px;}
+.rightsideBar dd a:hover{ background:#fff; color:#016bb5; text-decoration:none;}
+
+/*左边导航图标*/
+.leftsideBar i{width:20px; height:25px;display:block;position:absolute; background-image:url(../images/icon2.png); background-repeat:no-repeat;}
+.leIn1{ background-position:0px 5px;  left:12px;top:0px;}
+.leIn2{ background-position:0px -39px; left:9px;top:6px;}
+.leIn3{ background-position:0px -79px; left:9px;top:6px;}
+.leIn4{ background-position:0px -112px; left:9px;top:6px;}
+.leIn5{ background-position:0px -151px; left:9px;top:6px;}
+.leIn6{ background-position:0px -189px; left:9px;top:6px;}
+.leIn7{ background-position:0px -225px; left:9px;top:6px;}
+.leIn8{ background-position:0px -262px; left:9px;top:6px;}
+.leIn9{ background-position:0px -300px; left:9px;top:6px;}
+.leIn10{ background-position:0px -336px; left:9px;top:6px;}
+.leIn11{ background-position:0px -377px; left:9px;top:6px;}
+.leIn12{ background-position:0px -409px; left:9px;top:6px;}
+.leIn13{ background-position:0px -443px; left:9px;top:6px;}
+.leIn14{ background-position:0px -483px; left:9px;top:6px;}
+.leIn15{ background-position:0px -522px; left:9px;top:6px;}
+.leIn16{ background-position:0px -558px; left:9px;top:6px;}
+
+/*右边导航图标*/
+.rightsideBar i{width:20px; height:25px;display:block;position:absolute; background-image:url(../images/icon2.png); background-repeat:no-repeat;}
+.riIn1{ background-position:0px -585px;  left:12px;top:0px;}
+.riIn2{ background-position:0px -623px;  left:12px;top:0px;}
+.riIn3{ background-position:0px -658px;  left:12px;top:0px;}
+.riIn4{ background-position:0px -698px;  left:12px;top:0px;}
+.riIn5{ background-position:0px -735px;  left:12px;top:0px;}
+.riIn8{ background-position:0px -846px;  left:12px;top:0px;}
+.riIn6{ background-position:0px -770px;  left:12px;top:0px;}
+.riIn7{ background-position:0px -806px;  left:12px;top:0px;}
+.riIn9{ background-position:0px -884px;  left:12px;top:0px;}
+.riIn10{ background-position:0px -920px;  left:12px;top:0px;}
+.riIn11{ background-position:0px -958px;  left:12px;top:0px;}
+.riIn12{ background-position:0px -993px;  left:12px;top:0px;}
+.riIn13{ background-position:0px -1030px;  left:12px;top:0px;}
+.riIn14{ background-position:0px -1067px;  left:12px;top:0px;}
+.riIn15{ background-position:0px -1106px;  left:12px;top:0px;}
+.riIn16{ background-position:0px -1142px;  left:12px;top:0px;}
+
+/*平台介绍*/
+.platform{ background:url(../images/aboutBg.jpg) no-repeat top center; width:100%; height:544px;}
+.platform .nr{ width:650px; margin:0px auto; background:url(../images/aboutImg.png) no-repeat 50px 140px; height:100%; padding:90px 0 0 550px; line-height:35px; font-size:14px;}
+.platform .bt{ font-size:26px; text-align:center; font-weight:normal;}
+.platform p{ padding-top:20px; text-indent:2em; color:#797979;}
+
+/*入驻加盟*/
+.access{ width:100%; height:656px; overflow:hidden; background:url(../images/accessBg.jpg) no-repeat top center;}
+.access .nr,.appBanner .nr,.appNr,.help{ width:1200px; margin:0px auto; position:relative;}
+.access .img1{ width:200px; height:656px; background:url(../images/accessBt2.jpg) no-repeat top left; float:left;}
+.access .img2{ width:200px; height:656px; background:url(../images/accessBt1.jpg) no-repeat top left; float:left;}
+.access .hover .img1,.access .hover .img2{ display:none; width:0;}
+.accessImg{ width:1000px; float:left; height:656px; overflow:hidden; display:none;}
+.accessImg.hover{ display:block;}
+
+/*手机app*/
+.appBanner{ background:url(../images/appBanner.jpg) no-repeat center top; width:100%; height:460px;}
+.appBaTel{ position:absolute; top:40px; left:200px; z-index:99;} 
+.appBaTxt{ padding:100px 0 0 540px;}
+.appBaTxt .txt{ line-height:24px; color:#fff; padding:18px 0; width:510px;}
+.appBaTxt .btn{ width:271px; height:59px; overflow:hidden; background:url(../images/appBaBtn.png) no-repeat top left;}
+.appBaTxt .btn a{ width:100%; height:100%; overflow:hidden; display:block;}
+.appBaTxt .gn{ overflow:hidden; padding:15px 0;}
+.appBaTxt .gn .a1{ background:url(../images/iconBg.png) no-repeat 0 -209px; width:55px; height:55px; display:inline-block; margin-right:20px;opacity:0.5;filter: Alpha(Opacity=50) !important;}
+.appBaTxt .gn .a2{ background:url(../images/iconBg.png) no-repeat -75px -209px; width:55px; height:55px; display:inline-block;opacity:0.5;filter: Alpha(Opacity=50) !important;}
+
+.appNr{ background:url(../images/appBg.gif) no-repeat center 80px; min-height:530px; position:relative; padding-top:35px;}
+.appNr .li{ width:510px; padding:90px 0 0 60px; float:left; position:relative;}
+.appNr .txt{ text-align:center; width:220px; line-height:24px; color:#797979; padding-left:20px;}
+.appNr .tel{ width:47px; height:84px; background:url(../images/iconBg.png) no-repeat 0 -289px; display:inline-block;}
+.appNr .txt b{ display:block; padding-top:5px; color:#494949;}
+.appNr .pic{ position:absolute; top:80px; right:60px; border:1px solid #d1d1d1\9;box-shadow: 0px 0px 10px #ccc;}
+.appNr .san{width:0;height:0;line-height:0;border-width:10px;border-style:solid;border-color: transparent #ddd transparent transparent; position:absolute; top:20px; left:-20px;}
+
+/*帮助中心*/
+.helpCon{ width:558px; border-right:1px dashed #ddd; float:left; padding:30px 0 0 40px;}
+.helpCon .list{ line-height:30px; padding:10px 0 0 10px;}
+.helpCon .list a{color:#797979;padding-left:10px;background: url(../images/icon.png) no-repeat 0px -77px;}
+.helpCon .list a:hover{color:#f66100;}
+.helpCon .list .hover{ padding-top:30px; }
+.helpCon .bt{ width:250px; height:80px; background:url(../images/helpImg.gif) no-repeat top left;}
+.download .bt{ width:250px; height:80px; background:url(../images/helpImg.gif) no-repeat 0 -80px;}
+.download{border-right:none;}
+.help .page{ text-align:left; padding-top:30px;}
+
+/*帮助中心*/
+.about .circle{ background:#3d97d5; width:10px; height:10px; display:inline-block; border-radius:10px;}
+.about{ position:relative;}
+.aboutNr .sidebar{ width:110px; background:#3d97d5; position:absolute; top:30px; left:-140px; height:26px; line-height:26px; color:#fff; font-size:14px; text-align:center;}
+.aboutNr .sidebar .trigon{border-color:transparent transparent transparent #3d97d5 ;border-width:13px; position:absolute; top:0; right:-26px;}
+.aboutNr{ border-left:1px dashed #ccc; border-bottom:1px dashed #ccc; padding-left:20px; margin-left:140px; line-height:30px; font-size:14px;  position:relative; padding-bottom:30px;}
+.aboutNr dd{ color:#797979;font-family:"宋体";}
+.aboutNr dt{ padding-top:30px; font-weight:bold; position:relative; color:#494949;}
+.aboutNr dt .circle{ position:absolute; top:41px; left:-25px;}
+.aboutNr.yellow .circle,.aboutNr.yellow .sidebar{background:#fd9f01; }
+.aboutNr.yellow .trigon{border-color:transparent transparent transparent #fd9f01 ;}
+
+/*用户协议*/
+.agreement{ position:relative; padding-top:30px;}
+.agreement .sidebar{ position:absolute; top:0; left:0; text-align:right; width:150px; padding-top:30px; }
+.agreement .sidebar li{ margin-top:30px; position:relative; cursor:pointer;}
+.agreement .sidebar a{ display:inline-block; background:#ddf1ff; height:25px; line-height:25px; color:#588eb4; padding:0px 10px; border-radius:5px;}
+.agreement .sidebar .trigon{border-color: transparent #eeeeee transparent transparent; position:absolute; top:5px; right:-10px;}
+.agreement .sidebar .circle{ background:#e4e4e4; width:7px; height:7px; display:inline-block; border-radius:7px; position:absolute; top:-30px; right:-14px;}
+.agreement .sidebar .hover a,.agreement .sidebar a:hover{ background:#fcaf00; color:#fff; font-weight:bold; text-decoration:none;}
+.agreement .sidebar .hover .trigon,.agreement .sidebar li:hover .trigon{border-color: transparent #fcaf00 transparent transparent;}
+
+.agreement .txtNr{ margin-left:160px; border-left:1px solid #eee; padding:0px 35px;}
+.agreement .txtNr{ line-height:35px; color:#797979; font-size:14px;}
+.agreement .txtNr h1{ text-align:center; font-size:22px; font-weight:normal; padding:20px 0; color:#494949;}
+.agreement .txtNr p{ text-indent:2em; padding-top:5px;}
+.agreement .txtNr h3{ font-size:14px; color:#333; padding-top:30px;}
+
+.float{ background:#fcaf00; width:30px; height:28px; position:fixed; top:70%; right:20px; border-radius:5px;}
+.float .trigon{border-color: transparent transparent  #ffffff transparent; position:absolute; top:5px; right:9px;}
+
+
+
+
+
+
+
+
+
+
+
+
+

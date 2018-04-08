@@ -1,0 +1,121 @@
+﻿
+a {
+    outline: none;
+}
+.myPagination {
+    text-align: right;
+    padding: 10px 40px;
+} 
+.myPagination  span
+{
+    padding: 0px 5px;
+ }
+.myPagination .pre:hover,.myPagination .cur_dft:hover,.myPagination .next:hover
+{
+    background: #f1f1f1;
+    }
+.myPagination .pre
+{
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #494949;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 14px;
+    margin-left: 5px;
+    }
+    
+.myPagination .preNo
+{
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: rgb(234,234,234);
+    border: 1px solid #ddd;
+    color: #494949;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 14px;
+    margin-left: 5px;
+    cursor:default;
+       }
+    
+    .myPagination .next
+{
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #494949;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 14px;
+    margin-left: 5px;
+    }
+    
+        .myPagination .nextNo
+{
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: rgb(234,234,234);
+    border: 1px solid #ddd;
+    color: #494949;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 14px;
+    margin-left: 5px;
+    cursor:default;
+       }
+    
+    .myPagination .cur_index
+    {
+            padding: 0px 10px 0px 15px;
+        }  
+ .myPagination .cur_dft
+ {   
+      height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #494949;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 14px;
+    margin-left: 5px;
+     }
+     
+.myPagination input[type=text]
+ {   
+    width: 30px !important;
+    padding: 0 2px 0 0 !important;
+    margin-right: 5px;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #494949;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 10px;
+    margin-left: 5px;
+   }
+   .myPagination .goto
+   {
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #494949;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 10px;
+    margin-left: 5px;
+       }

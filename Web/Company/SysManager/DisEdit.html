@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>代理商信息维护	</title>
+<link href="../css/global-2.0.css" rel="stylesheet" type="text/css" />
+
+</head>
+<!--头部 start-->
+<div class="topBar">
+<div class="nr">
+	<div class="logo">
+        <span><img src="../images/al-logo.png" width="94"></span>
+        <i id="disName"><a target="_blank" href="/EShop/index.aspx?Comid=1112">张小泉</a></i>
+    </div>
+    <ul class="right topNav">
+        <li class="name"><a href="/Distributor/UserIndex.aspx"><i class="me-icon"></i>贺国虎<i class="triangle"></i></a>
+            <span class="tgn">
+                <a href="/Distributor/UserEdit.aspx">基本信息</a>
+                <a href="/Distributor/UserPWDEdit.aspx">修改密码</a>
+                <a href="/Distributor/MessAgeList.aspx">我要咨询</a>
+                <a href="javascript:__doPostBack('Head1$ctl00','')">退出</a>
+            </span>
+        </li>
+        <li style=""><a href="/Distributor/CompNewList.aspx"><i class="xx-icon"></i>消息</a></li>
+        <li id="eDis" style=""><a target="_blank" href="/EShop/index.aspx?Comid=1112"><i class="dp-icon"></i>店铺</a></li>
+        <li style=""><a target="_blank" href="/index.aspx"><i class="home-icon"></i>医站通首页</a></li>
+    </ul>
+</div>
+</div>
+<!--头部 end-->
+<!--左侧 start-->
+<div class="leftsideBar">
+  <ul class="nav" id="moveNav">
+    <li class="nav-1"> <a href="/Distributor/OrderList.aspx" id="Left1_Dis20" class="a1"> <span class="dd-icon"></span><i class="bt">订货</i> </a>
+      <div class="submenu" style="visibility: hidden;"></div>
+    </li>
+    <li class="nav-2"> <a href="/Distributor/CompGoodsList.aspx" id="Left1_Dis21" class="a1"> <span class="sp-icon"></span><i class="bt">商品</i> </a>
+      <div class="submenu" style="width: 98px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2110"><a href="/Distributor/CompGoodsList.aspx">商品列表</a></dd>
+          <dd id="Left1_Dis2111"><a href="/Distributor/FavoriteList.aspx">收藏商品</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-3"> <a href="/Distributor/pay/orderPayList.aspx" id="Left1_Dis22" class="a1"> <span class="zf-icon"></span><i class="bt">支付</i> </a>
+      <div class="submenu wd" style="width: 324px;">
+        <dl>
+          <dt>订单支付</dt>
+          <dd id="Left1_Dis2210"><a href="/Distributor/pay/orderPayList.aspx">待支付订单</a></dd>
+          <dd id="Left1_Dis2211"><a href="/Distributor/Rep/RepDetailsList.aspx">订单支付明细</a></dd>
+        </dl>
+        <dl>
+          <dt>账单支付</dt>
+          <dd id="Left1_Dis2212"><a href="/Distributor/pay/orderZDList.aspx">我的账单</a></dd>
+          <dd id="Left1_Dis2213"><a href="/Distributor/Rep/RepZdzfDetailsList.aspx">账单支付明细</a></dd>
+        </dl>
+        <dl>
+          <dt>企业钱包</dt>
+          <dd id="Left1_Dis2214"><a href="/Distributor/pay/PrePayList.aspx">我的钱包</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-4"> <a href="/Distributor/ReceivingList.aspx" id="Left1_Dis23" class="a1"> <span class="st-icon"></span><i class="bt">收退货</i> </a>
+      <div class="submenu wid" style="width: 98px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2310"><a href="/Distributor/ReceivingList.aspx">我要收货</a></dd>
+          <dd id="Left1_Dis2311"><a href="/Distributor/ReturnOrderList1.aspx">申请退货</a></dd>
+          <dd id="Left1_Dis2312"><a href="/Distributor/ReturnOrderList.aspx">退货查询</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-5"> <a href="/Distributor/Rep/RepOrderList.aspx" id="Left1_Dis24" class="a1"> <span class="bb-icon"></span><i class="bt">报表</i> </a>
+      <div class="submenu" style="width: 146px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2410"><a href="/Distributor/Rep/RepOrderList.aspx">进货订单明细</a></dd>
+          <dd id="Left1_Dis2411"><a href="/Distributor/Rep/RepGoodsList.aspx">商品进货数据</a></dd>
+          <dd id="Left1_Dis2412"><a href="/Distributor/Rep/RepMonthList.aspx">进货数据月份变动</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-6"> <a href="/Distributor/DeliveryList.aspx" id="Left1_Dis25" class="a1"> <span class="sz-icon"></span><i class="bt">设置</i> </a>
+      <div class="submenu" style="width: 134px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2511"><a href="/Distributor/DeliveryList.aspx">收货地址维护</a></dd>
+          <dd id="Left1_Dis2512"><a href="/Distributor/pay/PayQuickly.aspx">修改快捷银行卡</a></dd>
+          <dd id="Left1_Dis2513"><a href="/Distributor/PhoneEdit.aspx">修改绑定手机</a></dd>
+          <dd id="Left1_Dis2514"><a href="/Distributor/RoleList.aspx">设置岗位权限</a></dd>
+          <dd id="Left1_Dis2515"><a href="/Distributor/PayPWDEdit.aspx">修改支付密码</a></dd>
+        </dl>
+      </div>
+    </li>
+  </ul>
+</div>
+<!--左侧 end-->
+
+<div class="rightinfo">
+<!--当前位置 start-->
+<div class="info"><a href="../jsc.aspx">我的桌面</a>><a href="javascript:;">代理商查询</a>><a href="javascript:;">代理商信息维护</a></div>
+<!--当前位置 end-->
+<!--代理商信息 start-->
+<div class="c-n-title">代理商信息</div>
+<ul class="coreInfo">
+	<li class="lb fl"><i class="name"><i class="red">*</i>代理商名称</i><input type="text" class="box1" placeholder="P1046000017"></li>
+	<li class="lb fl"><i class="name">客户编码</i><input type="text" class="box1" placeholder="P1046000017"></li>
+    <li class="lb clear">
+    	<i class="name fl"><i class="red">*</i>详细地址</i>
+    	<div class="pullDown fl">
+			<ul><li><input type="button" class="box1 p-box" onclick="beginSelect(this);" value="上海市　"><span class="arrow"></span></li>
+			<li class="select"><p class="">上海市</p><p class=" ">采购</p><p class=" ">外协</p><p class=" ">临时</p></li></ul>
+		</div>
+    	<div class="pullDown fl">
+			<ul><li><input type="button" class="box1 p-box" onclick="beginSelect(this);" value="上海市　"><span class="arrow"></span></li>
+			<li class="select"><p class="">上海市</p><p class=" ">采购</p><p class=" ">外协</p><p class=" ">临时</p></li></ul>
+		</div>
+        <div class="pullDown fl">
+			<ul><li><input type="button" class="box1 p-box" onclick="beginSelect(this);" value="上海市　"><span class="arrow"></span></li>
+			<li class="select"><p class="">上海市</p><p class=" ">采购</p><p class=" ">外协</p><p class=" ">临时</p></li></ul>
+		</div>
+    	<input type="text" class="box1 p-box2 fl" placeholder="上海市">
+    </li>
+
+    <li class="lb fl">
+    	<i class="name">代理商分类</i><input type="text" class="box1"><span class="arrow cur"></span>
+    	<div class="pop-menu" style="width:605px; display:none;">
+        	<ul class="menu-item"><li class="cur">华南地区</li><li>华东地区</li><li>华北</li><li>上海</li><li>华东地区</li><li>华北</li><li>上海</li><li>华东地区</li><li>华北</li><li>上海</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+            <ul class="menu-item"><li class="no">华南地区</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+            <ul class="menu-item"><li>华南地区</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+            <ul class="menu-item"><li>华南地区</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+    	</div>
+    </li>
+	<li class="lb fl"><i class="name">代理商等级</i><input type="text" class="box1" placeholder="A"></li>
+    <li class="lb fl">
+    	<i class="name">代理商地区</i><input type="text" class="box1">
+    	<div class="pop-menu" style="width:605px; display:none;">
+        	<ul class="menu-item"><li class="cur">华南地区</li><li>华东地区</li><li>华北</li><li>上海</li><li>华东地区</li><li>华北</li><li>上海</li><li>华东地区</li><li>华北</li><li>上海</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+            <ul class="menu-item"><li>华南地区</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+            <ul class="menu-item"><li>华南地区</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+            <ul class="menu-item"><li>华南地区</li><li>华东地区</li><li>华北</li><li>上海</li></ul>
+    	</div>
+    </li>
+    <li class="lb fl"><i class="name"></i><i class="more">更多功能</i></li>
+</ul>
+<!--代理商信息 end-->
+
+<div class="blank10"></div>
+<!--账户信息 start-->
+<div class="c-n-title">账户信息</div>
+<ul class="coreInfo">
+	<li class="lb fl"><i class="name"><i class="red">*</i>帐号</i><input type="text" class="box1" placeholder="P1046000017"></li>
+	<li class="lb fl"><i class="name"><i class="red">*</i>姓名</i><input type="text" class="box1" placeholder="P1046000017"></li>
+    <li class="lb fl"><i class="name"><i class="red">*</i>密码</i><input type="text" class="box1" placeholder="P1046000017"></li>
+    <li class="lb fl"><i class="name"><i class="red">*</i>确认密码</i><input type="text" class="box1" placeholder="P1046000017"></li>
+    <li class="lb fl"><i class="name"><i class="red">*</i>手机号码</i><input type="text" class="box1" placeholder="P1046000017"></li>
+</ul>
+<!--账户信息 end-->
+
+<div class="blank10"></div>
+<!--参数设置　start-->
+<div class="c-n-title">参数设置</div>
+<ul class="coreInfo">
+	<li class="lb fl">
+    	<i class="name"><i class="red">*</i>启用帐号</i>
+    	<div class="single">
+        	<input type="radio" id="check-1-1" class="regular-check" /><label for="check-1-1"></label><i class="t">启用</i>
+            <input type="radio" id="check-1-2" class="regular-check" /><label for="check-1-2"></label><i class="t">禁用</i>
+         </div>
+     </li>
+     <li class="lb fl">
+    	<i class="name">订单是否审核</i>
+    	<div class="single">
+        	<input type="radio" id="check-1-1" class="regular-check" /><label for="check-1-1"></label><i class="t">需要审核</i>
+            <input type="radio" id="check-1-2" class="regular-check" /><label for="check-1-2"></label><i class="t">无需审核</i>
+         </div>
+     </li>
+     <li class="lb fl">
+    	<i class="name">启用授信</i>
+    	<div class="single">
+        	<input type="radio" id="check-1-1" class="regular-check" /><label for="check-1-1"></label><i class="t">启用</i>
+            <input type="radio" id="check-1-2" class="regular-check" /><label for="check-1-2"></label><i class="t">禁用</i>
+         </div>
+     </li>
+     <li class="lb fl">
+    	<i class="name">授信额度</i>
+    	<div class="single">
+        	<input type="text" class="box2" placeholder="P1046000017">
+         </div>
+     </li>
+     <li class="lb clear">
+    	<i class="name">上传三证</i>
+    	<div class="con upload">
+        	<a href="javascript:;" class="a-upload bclor le"><input type="file" name="AddBanner" id="AddBanner" class="AddBanner">+新增附件</a>
+            <i class="gclor9">（附件最大20M，支持格式：PDF、Word、Excel、Txt、JPG、PNG、BMP、GIF、RAR、ZIP）</i>
+         </div>
+         <ul class="l-upload">
+        	<li>新建 Microsoft Word 文）.docx<div class="link"><a href="" class="bclor">下载</a><a href="" class="bclor">删除</a></div></li>
+            <li>新建 Microsoft Word 文）.docx<div class="link"><a href="" class="bclor">下载</a><a href="" class="bclor">删除</a></div></li>
+            <li>新建 Microsoft Word 文）.docx<div class="link"><a href="" class="bclor">下载</a><a href="" class="bclor">删除</a></div></li>
+            <li>新建 Microsoft Word 文）.docx<div class="link"><a href="" class="bclor">下载</a><a href="" class="bclor">删除</a></div></li>
+        </ul>
+     </li>
+</ul>
+<!--参数设置 end-->
+
+<div class="blank60"></div>
+<div class="btn-box">
+	<div class="btn"><a href="javascript:;" class="btn-area">提交</a><a href="javascript:;" class="gray-btn">取消</a></div>
+	<div class="bg"></div>
+</div>
+
+</div>
+<script type="text/javascript">
+function beginSelect(elem){
+	if(elem.className == "btn"){
+		elem.className = "btn btnhover"
+		elem.onmouseup = function(){
+			this.className = "btn"
+		}
+	}
+	var ul = elem.parentNode.parentNode;
+	var li = ul.getElementsByTagName("li");
+	var selectArea = li[li.length-1];
+	if(selectArea.style.display == "block"){
+		selectArea.style.display = "none";
+	}
+	else{
+		selectArea.style.display = "block";
+		mouseoverBg(selectArea);
+	}
+}
+function mouseoverBg(elem1){
+	var input = elem1.parentNode.getElementsByTagName("input")[0];
+	var p = elem1.getElementsByTagName("p");
+	var pLength = p.length;
+	for(var i = 0; i < pLength; i++){
+		p[i].onmouseover = showBg;
+		p[i].onmouseout = showBg;
+		p[i].onclick = postText;
+	}
+	function showBg(){
+		this.className == "hover"?this.className = " ":this.className = "hover";
+	}
+	function postText(){
+		var selected = this.innerHTML;
+		input.setAttribute("value",selected);
+		elem1.style.display = "none";
+	}
+}</script>
+</body>
+</html>

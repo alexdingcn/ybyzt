@@ -1,0 +1,5 @@
+D:\EBank\开发\基础版本\Model\bin\Debug\Model.dll
+D:\EBank\开发\基础版本\Model\bin\Debug\Model.pdb
+D:\EBank\开发\基础版本\Model\obj\Debug\ResolveAssemblyReference.cache
+D:\EBank\开发\基础版本\Model\obj\Debug\Model.dll
+D:\EBank\开发\基础版本\Model\obj\Debug\Model.pdb

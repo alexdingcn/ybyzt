@@ -1,0 +1,148 @@
+﻿
+=========================[2018-01-04 14:41:44] 记录开始==============================
+描述：    在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 DBUtility.SqlHelper.PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, String cmdText, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 856
+   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 809
+   在 Hi.SQLServerDAL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\SqlServerDAL\Code\SYS_Users.cs:行号 373
+   在 Hi.BLL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\BLL\Code\SYS_Users.cs:行号 95
+   在 Common.IsLegitUser(Int32 userID, SYS_Users& one, Int32 compID, Int32 disID) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\Common\Common.cs:行号 72
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 794:超时时间已到。超时时间已到，但是尚未从池中获取连接。出现这种情况可能是因为所有池连接均在使用，并且达到了最大池大小。
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:41:44
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:42:09] 记录开始==============================
+描述：    在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 DBUtility.SqlHelper.PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, String cmdText, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 856
+   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 809
+   在 Hi.SQLServerDAL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\SqlServerDAL\Code\SYS_Users.cs:行号 373
+   在 Hi.BLL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\BLL\Code\SYS_Users.cs:行号 95
+   在 Common.IsLegitUser(Int32 userID, SYS_Users& one, Int32 compID, Int32 disID) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\Common\Common.cs:行号 72
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 794:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:42:09
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:43:41] 记录开始==============================
+描述：    在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 DBUtility.SqlHelper.PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, String cmdText, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 856
+   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 809
+   在 Hi.SQLServerDAL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\SqlServerDAL\Code\SYS_Users.cs:行号 373
+   在 Hi.BLL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\BLL\Code\SYS_Users.cs:行号 95
+   在 Common.IsLegitUser(Int32 userID, SYS_Users& one, Int32 compID, Int32 disID) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\Common\Common.cs:行号 72
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 794:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:43:41
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:47:42] 记录开始==============================
+描述：    在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 845:未将对象引用设置到对象的实例。
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:47:42
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:47:43] 记录开始==============================
+描述：    在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 845:未将对象引用设置到对象的实例。
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:47:43
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:48:36] 记录开始==============================
+描述：    在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 845:未将对象引用设置到对象的实例。
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:48:36
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:49:01] 记录开始==============================
+描述：    在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 845:未将对象引用设置到对象的实例。
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:49:01
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:49:22] 记录开始==============================
+描述：    在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 DBUtility.SqlHelper.PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, String cmdText, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 856
+   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 809
+   在 Hi.SQLServerDAL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\SqlServerDAL\Code\SYS_Users.cs:行号 373
+   在 Hi.BLL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\BLL\Code\SYS_Users.cs:行号 95
+   在 Common.IsLegitUser(Int32 userID, SYS_Users& one, Int32 compID, Int32 disID) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\Common\Common.cs:行号 72
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 794:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:49:22
+
+=================================记录结束======================================
+
+=========================[2018-01-04 14:51:30] 记录开始==============================
+描述：    在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 DBUtility.SqlHelper.PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, String cmdText, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 856
+   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 D:\EBank\医站通\资料\OldCode\DBUtility\SqlHelper.cs:行号 809
+   在 Hi.SQLServerDAL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\SqlServerDAL\Code\SYS_Users.cs:行号 373
+   在 Hi.BLL.SYS_Users.GetModel(Int32 ID) 位置 D:\EBank\医站通\资料\OldCode\BLL\Code\SYS_Users.cs:行号 95
+   在 Common.IsLegitUser(Int32 userID, SYS_Users& one, Int32 compID, Int32 disID) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\Common\Common.cs:行号 72
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 794:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+接口： SearchGoodsList : {"CompanyID":"","GoodsID":"97311","ResellerID":1319,"UserID":1149}
+时间： 2018/1/4 14:51:30
+
+=================================记录结束======================================

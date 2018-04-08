@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* 整站全局公共样式的设定 */
+body {margin:0; padding:0; font-size:12px; font-family:"微软雅黑";}
+html{-webkit-text-size-adjust: none;}
+div,form,img,ul,ol,li,dl,dt,dd,p,span,b,input{margin: 0; padding: 0; border: 0;font-family:normal 12px/1.5 'Microsoft YaHei','SimSun';}
+li,dl{list-style-type:none;}i,em{ font-style:normal;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;}
+a:link {color: #666; text-decoration:none;}a:visited {color: #666;text-decoration:none;}a:hover {color: #3369b9; text-decoration:none;}a:active {color: #666;}
+::-ms-clear, ::-ms-reveal{display: none;}/*去掉文本框的叉*/
+.box{outline:none;blr:expression(this.onFocus=this.blur()); }/*去掉游览器自带文本框边框*/
+/* 其它常用样式的定义 */
+.fl{ float: left;}
+.fr{ float: right;}
+.clear{ clear: both;}
+.blank20{height:20px; font-size:1px; clear:both;overflow:hidden;}.blank10{height:10px; font-size:1px; clear:both;overflow:hidden;}
+.none{ display:none;}.red{ color:#f40000;}
+
+/*banner*/
+.banner{ background: url(../images/bannerbg.jpg) no-repeat center top; height:700px;}
+.w1170{ width:1170px; margin:0 auto;}
+.banner img{ display:block;}
+
+/*四大店铺*/
+.store{width:100%; height:210px;background:#2c345b; padding-top:14px; }
+.storenr{ width:1170px; margin:0px auto;}
+.storenr li{ float:left; width:270px; height:200px; margin-right:30px; display:block;}
+#storezh{ margin-right:0px;}
+
+/*店铺1*/
+.store1{width:100%; height:871px;background:#2c345b;}
+.store .title{ width:1170px; height:138px; margin:0px auto; padding-bottom:35px;}
+.store1nr{ width:1170px; margin:0px auto;}
+.store1 li{float:left; width:270px; height:304px; margin-right:30px; display:block; padding-bottom:30px;}
+
+/*店铺2*/
+.store2{width:100%; height:1028px;background:#fce038; padding-top:60px;}
+.store2nr{ width:1086px; margin:0px auto;}
+.store2 li{float:left;display:block; padding-bottom:35px; margin-right:117px;}
+
+
+/*店铺3*/
+.store3{width:100%; height:809px;background:#4cacff;padding-top:60px;}
+.store3 li{float:left; width:270px; height:273px; margin-right:30px; display:block; padding-bottom:30px;}
+
+/*店铺4*/
+.store4{width:100%; height:813px;background:#f17d8b;padding-top:60px;}
+.store4 li{float:left; width:270px; height:275px; margin-right:30px; display:block; padding-bottom:35px;}

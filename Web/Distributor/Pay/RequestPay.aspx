@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RequestPay.aspx.cs" Inherits="Distributor_Pay_RequestPay" %>

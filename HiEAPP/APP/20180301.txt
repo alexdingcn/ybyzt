@@ -1,0 +1,36 @@
+﻿
+=========================[2018-03-01 13:47:45] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 DIS_OrderSub.SubResellerOrder(String JSon, String version) 位置 e:\医站通\code\hieapp\App_Code\App_Android\DIS_OrderSub.cs:行号 58
+接口： SubResellerOrder:{"Result":"1","Description":"总价已过期","IsCheck":null,"OrderList":[{"OrderID":null,"CompID":null,"CompName":null,"State":null,"OState":null,"AddType":null,"PayState":null,"Otype":null,"ReturnState":null,"DisID":null,"DisName":null,"DisUserID":null,"DisUserName":null,"AddrID":null,"ReceiptNo":null,"ArriveDate":null,"Address":null,"Zip":null,"Contact":null,"Phone":null,"TotalAmount":"1348.00","AuditTotalAmount":"1348.00","PayedAmount":null,"CreateUserID":null,"CreateDate":null,"ReturnMoneyDate":null,"ReturnMoneyUserId":null,"ReturnMoneyUser":null,"SendID":null,"SendDate":null,"Express":null,"ExpressNo":null,"ExpressPerson":null,"ExpressTel":null,"ExpressBao":null,"PostFee":null,"ActionUser":null,"OrderRemark":null,"SendRemark":null,"IsAudit":null,"AuditUserID":null,"AuditDate":null,"AuditRemark":null,"SignDate":null,"IsSign":null,"SignUserId":null,"SignUser":null,"SignRemark":null,"SortIndex":null,"IsDel":null,"OrderDetailList":null,"IsEnSend":null,"IsEnPay":null,"IsEnAudit":null,"IsEnReceive":null,"IsEnReturn":null,"OrderPro":null,"LogList":null,"Bill":null,"BillState":null,"PayLogList":null,"Rebate":null,"IsOrderPro":null,"RebateAmount":null}]}
+时间： 2018/3/1 13:47:45
+
+=================================记录结束======================================
+
+=========================[2018-03-01 13:47:59] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 DIS_OrderSub.SubResellerOrder(String JSon, String version) 位置 e:\医站通\code\hieapp\App_Code\App_Android\DIS_OrderSub.cs:行号 58
+接口： SubResellerOrder:{"Result":"1","Description":"总价已过期","IsCheck":null,"OrderList":[{"OrderID":null,"CompID":null,"CompName":null,"State":null,"OState":null,"AddType":null,"PayState":null,"Otype":null,"ReturnState":null,"DisID":null,"DisName":null,"DisUserID":null,"DisUserName":null,"AddrID":null,"ReceiptNo":null,"ArriveDate":null,"Address":null,"Zip":null,"Contact":null,"Phone":null,"TotalAmount":"1348.00","AuditTotalAmount":"1348.00","PayedAmount":null,"CreateUserID":null,"CreateDate":null,"ReturnMoneyDate":null,"ReturnMoneyUserId":null,"ReturnMoneyUser":null,"SendID":null,"SendDate":null,"Express":null,"ExpressNo":null,"ExpressPerson":null,"ExpressTel":null,"ExpressBao":null,"PostFee":null,"ActionUser":null,"OrderRemark":null,"SendRemark":null,"IsAudit":null,"AuditUserID":null,"AuditDate":null,"AuditRemark":null,"SignDate":null,"IsSign":null,"SignUserId":null,"SignUser":null,"SignRemark":null,"SortIndex":null,"IsDel":null,"OrderDetailList":null,"IsEnSend":null,"IsEnPay":null,"IsEnAudit":null,"IsEnReceive":null,"IsEnReturn":null,"OrderPro":null,"LogList":null,"Bill":null,"BillState":null,"PayLogList":null,"Rebate":null,"IsOrderPro":null,"RebateAmount":null}]}
+时间： 2018/3/1 13:47:59
+
+=================================记录结束======================================
+
+=========================[2018-03-01 13:48:49] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 DIS_OrderSub.SubResellerOrder(String JSon, String version) 位置 e:\医站通\code\hieapp\App_Code\App_Android\DIS_OrderSub.cs:行号 58
+接口： SubResellerOrder:{"Result":"1","Description":"总价已过期","IsCheck":null,"OrderList":[{"OrderID":null,"CompID":null,"CompName":null,"State":null,"OState":null,"AddType":null,"PayState":null,"Otype":null,"ReturnState":null,"DisID":null,"DisName":null,"DisUserID":null,"DisUserName":null,"AddrID":null,"ReceiptNo":null,"ArriveDate":null,"Address":null,"Zip":null,"Contact":null,"Phone":null,"TotalAmount":"1348.00","AuditTotalAmount":"1348.00","PayedAmount":null,"CreateUserID":null,"CreateDate":null,"ReturnMoneyDate":null,"ReturnMoneyUserId":null,"ReturnMoneyUser":null,"SendID":null,"SendDate":null,"Express":null,"ExpressNo":null,"ExpressPerson":null,"ExpressTel":null,"ExpressBao":null,"PostFee":null,"ActionUser":null,"OrderRemark":null,"SendRemark":null,"IsAudit":null,"AuditUserID":null,"AuditDate":null,"AuditRemark":null,"SignDate":null,"IsSign":null,"SignUserId":null,"SignUser":null,"SignRemark":null,"SortIndex":null,"IsDel":null,"OrderDetailList":null,"IsEnSend":null,"IsEnPay":null,"IsEnAudit":null,"IsEnReceive":null,"IsEnReturn":null,"OrderPro":null,"LogList":null,"Bill":null,"BillState":null,"PayLogList":null,"Rebate":null,"IsOrderPro":null,"RebateAmount":null}]}
+时间： 2018/3/1 13:48:49
+
+=================================记录结束======================================
+
+=========================[2018-03-01 13:49:10] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 DIS_OrderSub.SubResellerOrder(String JSon, String version) 位置 e:\医站通\code\hieapp\App_Code\App_Android\DIS_OrderSub.cs:行号 58
+接口： SubResellerOrder:{"Result":"1","Description":"总价已过期","IsCheck":null,"OrderList":[{"OrderID":null,"CompID":null,"CompName":null,"State":null,"OState":null,"AddType":null,"PayState":null,"Otype":null,"ReturnState":null,"DisID":null,"DisName":null,"DisUserID":null,"DisUserName":null,"AddrID":null,"ReceiptNo":null,"ArriveDate":null,"Address":null,"Zip":null,"Contact":null,"Phone":null,"TotalAmount":"1348.00","AuditTotalAmount":"1348.00","PayedAmount":null,"CreateUserID":null,"CreateDate":null,"ReturnMoneyDate":null,"ReturnMoneyUserId":null,"ReturnMoneyUser":null,"SendID":null,"SendDate":null,"Express":null,"ExpressNo":null,"ExpressPerson":null,"ExpressTel":null,"ExpressBao":null,"PostFee":null,"ActionUser":null,"OrderRemark":null,"SendRemark":null,"IsAudit":null,"AuditUserID":null,"AuditDate":null,"AuditRemark":null,"SignDate":null,"IsSign":null,"SignUserId":null,"SignUser":null,"SignRemark":null,"SortIndex":null,"IsDel":null,"OrderDetailList":null,"IsEnSend":null,"IsEnPay":null,"IsEnAudit":null,"IsEnReceive":null,"IsEnReturn":null,"OrderPro":null,"LogList":null,"Bill":null,"BillState":null,"PayLogList":null,"Rebate":null,"IsOrderPro":null,"RebateAmount":null}]}
+时间： 2018/3/1 13:49:10
+
+=================================记录结束======================================

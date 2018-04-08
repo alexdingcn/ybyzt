@@ -1,0 +1,82 @@
+﻿
+=========================[2018-01-26 14:06:11] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_GoodsCategory.ResellerSearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1601:给定关键字不在字典中。
+接口： SearchGoodsList : {"CompID":1003,"Condition":"","CriticalProductID":"-1","Filter":{"Classif":"-1","IsSales":"","MaxPrice":"","MinPrice":"","ProductStatus":"0"},"GetType":"1","ResellerID":1601,"Type":"0","UserID":1005}
+时间： 2018/1/26 14:06:11
+
+=================================记录结束======================================
+
+=========================[2018-01-26 14:13:45] 记录开始==============================
+描述：    在 BD_GoodsCategory.ResellerSearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1694:未将对象引用设置到对象的实例。
+接口： SearchGoodsList : {"CompanyID":1003,"GoodsID":"155042","ResellerID":1601,"UserID":1005}
+时间： 2018/1/26 14:13:45
+
+=================================记录结束======================================
+
+=========================[2018-01-26 14:14:52] 记录开始==============================
+描述：    在 BD_GoodsCategory.ResellerSearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1694:未将对象引用设置到对象的实例。
+接口： SearchGoodsList : {"CompanyID":1003,"GoodsID":"155042","ResellerID":1601,"UserID":1005}
+时间： 2018/1/26 14:14:52
+
+=================================记录结束======================================
+
+=========================[2018-01-26 14:15:38] 记录开始==============================
+描述：    在 BD_GoodsCategory.ResellerSearchGoodsList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1694:未将对象引用设置到对象的实例。
+接口： SearchGoodsList : {"CompanyID":1003,"GoodsID":"155042","ResellerID":1601,"UserID":1005}
+时间： 2018/1/26 14:15:38
+
+=================================记录结束======================================
+
+=========================[2018-01-26 14:57:29] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_GoodsCategory.SearchProductList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1283:给定关键字不在字典中。
+接口： SearchProductList : {"UserID":1005,"GoodsID":"155042,155043","ResellerID":1601,"CompanyID":1003}
+时间： 2018/1/26 14:57:29
+
+=================================记录结束======================================
+
+=========================[2018-01-26 14:58:28] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_GoodsCategory.SearchProductList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1283:给定关键字不在字典中。
+接口： SearchProductList : {"UserID":1005,"GoodsID":"155042,155043","ResellerID":1601,"CompanyID":1003}
+时间： 2018/1/26 14:58:28
+
+=================================记录结束======================================
+
+=========================[2018-01-26 14:59:45] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_GoodsCategory.SearchProductList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 1283:给定关键字不在字典中。
+接口： SearchProductList : {"UserID":1005,"GoodsID":"155042,155043","ResellerID":1601,"CompanyID":1003}
+时间： 2018/1/26 14:59:45
+
+=================================记录结束======================================
+
+=========================[2018-01-26 15:17:13] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 BD_Goods_ver3.ResellerProductSearch(String JSon) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 1051
+接口： CompanyProductSearch:{"UserID":1005,"GoodsID":"155042,155043","ResellerID":1601,"CompanyID":1003}
+时间： 2018/1/26 15:17:13
+
+=================================记录结束======================================
+
+=========================[2018-01-26 19:21:56] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2656
+接口： GetResellerList:{"UserID":1000,"CompID":1000,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"-1","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/1/26 19:21:56
+
+=================================记录结束======================================
+
+=========================[2018-01-26 19:23:31] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 g:\xiangmu\YZT\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2656
+接口： GetResellerList:{"UserID":1000,"CompID":1000,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"-1","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/1/26 19:23:31
+
+=================================记录结束======================================

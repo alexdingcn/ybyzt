@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80106719-8219-4348-91FD-493DAA19B5A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BD_Attribute.cs" />
+    <Compile Include="BD_AttributeValues.cs" />
+    <Compile Include="BD_CategoryAttribute.cs" />
+    <Compile Include="BD_ComLogistics.cs" />
+    <Compile Include="BD_Company.cs" />
+    <Compile Include="BD_CompNews.cs" />
+    <Compile Include="BD_DefDoc.cs" />
+    <Compile Include="BD_DefDoc_B.cs" />
+    <Compile Include="BD_DisAccount.cs" />
+    <Compile Include="BD_DisAddr.cs" />
+    <Compile Include="BD_DisArea.cs" />
+    <Compile Include="BD_DisCollect.cs" />
+    <Compile Include="BD_DisPrice.cs" />
+    <Compile Include="BD_DisPriceInfo.cs" />
+    <Compile Include="BD_DisSalesMan.cs" />
+    <Compile Include="BD_Distributor.cs" />
+    <Compile Include="BD_DisType.cs" />
+    <Compile Include="BD_Ereceipt.cs" />
+    <Compile Include="BD_Goods.cs" />
+    <Compile Include="BD_GoodsAreas.cs" />
+    <Compile Include="BD_GoodsAttrs.cs" />
+    <Compile Include="BD_GoodsAttrsInfo.cs" />
+    <Compile Include="BD_GoodsCategory.cs" />
+    <Compile Include="BD_GoodsCustoms.cs" />
+    <Compile Include="BD_GoodsInfo.cs" />
+    <Compile Include="BD_GoodsLabels.cs" />
+    <Compile Include="BD_GoodsPrice.cs" />
+    <Compile Include="BD_ImageList.cs" />
+    <Compile Include="BD_Org.cs" />
+    <Compile Include="BD_PaymentAccount.cs" />
+    <Compile Include="BD_PrePayment.cs" />
+    <Compile Include="BD_Promotion.cs" />
+    <Compile Include="BD_PromotionDetail.cs" />
+    <Compile Include="BD_PromotionDetail2.cs" />
+    <Compile Include="BD_Rebate.cs" />
+    <Compile Include="BD_RebateDetail.cs" />
+    <Compile Include="BD_SalesMan.cs" />
+    <Compile Include="BD_ShopGoodsList.cs" />
+    <Compile Include="BD_ShopImageList.cs" />
+    <Compile Include="BD_ShopMessage.cs" />
+    <Compile Include="BD_Template.cs" />
+    <Compile Include="BD_TemplateAttribute.cs" />
+    <Compile Include="BD_TemplateAttrValue.cs" />
+    <Compile Include="BF_ZD_CITY.cs" />
+    <Compile Include="BF_ZD_PAYBANK.cs" />
+    <Compile Include="BF_ZD_PROVINCE.cs" />
+    <Compile Include="DIS_GoodsStock.cs" />
+    <Compile Include="DIS_Integral.cs" />
+    <Compile Include="DIS_Logistics.cs" />
+    <Compile Include="DIS_Order.cs" />
+    <Compile Include="DIS_OrderDetail.cs" />
+    <Compile Include="DIS_OrderExt.cs" />
+    <Compile Include="DIS_OrderLog.cs" />
+    <Compile Include="DIS_OrderOut.cs" />
+    <Compile Include="DIS_OrderOutDetail.cs" />
+    <Compile Include="DIS_OrderReturn.cs" />
+    <Compile Include="DIS_ShopCart.cs" />
+    <Compile Include="DIS_StockChk.cs" />
+    <Compile Include="DIS_StockInOut.cs" />
+    <Compile Include="DIS_StockOrder.cs" />
+    <Compile Include="DIS_Suggest.cs" />
+    <Compile Include="PAY_BankInfo.cs" />
+    <Compile Include="PAY_FastPayMent.cs" />
+    <Compile Include="PAY_Financing.cs" />
+    <Compile Include="PAY_OpenAccount.cs" />
+    <Compile Include="PAY_PayLog.cs" />
+    <Compile Include="PAY_Payment.cs" />
+    <Compile Include="PAY_PaymentAccount.cs" />
+    <Compile Include="PAY_PaymentAccountdtl.cs" />
+    <Compile Include="PAY_PaymentBank.cs" />
+    <Compile Include="PAY_PaymentLog.cs" />
+    <Compile Include="Pay_PaymentSettings.cs" />
+    <Compile Include="Pay_PayWxandAli.cs" />
+    <Compile Include="PAY_PrePayment.cs" />
+    <Compile Include="PAY_RegisterLog.cs" />
+    <Compile Include="Pay_Service.cs" />
+    <Compile Include="PAY_Withdrawals.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYS_AdminUser.cs" />
+    <Compile Include="SYS_CompUser.cs" />
+    <Compile Include="SYS_GoodsType.cs" />
+    <Compile Include="SYS_GType.cs" />
+    <Compile Include="SYS_Hospital.cs" />
+    <Compile Include="SYS_Industry.cs" />
+    <Compile Include="SYS_Information.cs" />
+    <Compile Include="SYS_NewsNotice.cs" />
+    <Compile Include="SYS_PaymentBank.cs" />
+    <Compile Include="SYS_PhoneCode.cs" />
+    <Compile Include="SYS_Role.cs" />
+    <Compile Include="SYS_RoleSysFun.cs" />
+    <Compile Include="SYS_RoleUser.cs" />
+    <Compile Include="SYS_Select.cs" />
+    <Compile Include="SYS_SysBusinessLog.cs" />
+    <Compile Include="SYS_SysCode.cs" />
+    <Compile Include="SYS_SysFun.cs" />
+    <Compile Include="SYS_SysName.cs" />
+    <Compile Include="SYS_UserMessage.cs" />
+    <Compile Include="SYS_Users.cs" />
+    <Compile Include="YZT_Annex.cs" />
+    <Compile Include="YZT_CMerchants.cs" />
+    <Compile Include="YZT_Contract.cs" />
+    <Compile Include="YZT_ContractDetail.cs" />
+    <Compile Include="YZT_FCArea.cs" />
+    <Compile Include="YZT_FCDis.cs" />
+    <Compile Include="YZT_FCmaterials.cs" />
+    <Compile Include="YZT_FirstCamp.cs" />
+    <Compile Include="YZT_GoodsStock.cs" />
+    <Compile Include="YZT_Library.cs" />
+    <Compile Include="YZT_LibraryDetail.cs" />
+    <Compile Include="YZT_Logistics.cs" />
+    <Compile Include="YZT_Payment.cs" />
+    <Compile Include="YZT_PaymentDetail.cs" />
+    <Compile Include="YZT_Storage.cs" />
+    <Compile Include="YZT_StorageDetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

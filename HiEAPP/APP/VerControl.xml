@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Version>
+  <CompVerName>1.0.1</CompVerName>
+  <CompVerLog></CompVerLog>
+  <!--企业app版本-->
+  <CompControl>2</CompControl>
+  <!--企业app下载地址-->
+  <CompURL>http://www.moreware.net/AppDown.aspx?type=Comp</CompURL>
+  <VIU>1</VIU>
+  <PackageSize>50.4M</PackageSize>
+</Version>

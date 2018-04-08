@@ -1,0 +1,213 @@
+﻿
+=========================[2016-12-16 11:21:38] 记录开始==============================
+描述： Input doesn't evaluate to proper JSON text:   在 LitJson.JsonReader.Read()
+   在 LitJson.JsonMapper.ReadValue(WrapperFactory factory, JsonReader reader)
+   在 LitJson.JsonMapper.ReadValue(WrapperFactory factory, JsonReader reader)
+   在 LitJson.JsonMapper.ToWrapper(WrapperFactory factory, String json)
+   在 LitJson.JsonMapper.ToObject(String json)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 353
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌"},"AreaID":"51","AreaName":"上海","Fax":"88888888","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"贵州省 铜仁市碧江区  ","ResellerArea":"碧江区  ","ResellerCity":"铜仁市","ResellerClassify":"A级分类","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"贵州省 ","Tel":"88888888","Zip":"88888888"},"UserID":"1195
+时间： 2016/12/16 11:21:38
+
+=================================记录结束======================================
+
+=========================[2016-12-16 11:22:13] 记录开始==============================
+描述： Input doesn't evaluate to proper JSON text:   在 LitJson.JsonReader.Read()
+   在 LitJson.JsonMapper.ReadValue(WrapperFactory factory, JsonReader reader)
+   在 LitJson.JsonMapper.ReadValue(WrapperFactory factory, JsonReader reader)
+   在 LitJson.JsonMapper.ToWrapper(WrapperFactory factory, String json)
+   在 LitJson.JsonMapper.ToObject(String json)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 353
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌"},"AreaID":"51","AreaName":"上海","Fax":"88888888","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"贵州省 铜仁市碧江区  ","ResellerArea":"碧江区  ","ResellerCity":"铜仁市","ResellerClassify":"A级分类","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"贵州省 ","Tel":"88888888","Zip":"88888888"},"UserID":"1195
+时间： 2016/12/16 11:22:13
+
+=================================记录结束======================================
+
+=========================[2016-12-16 11:23:01] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 378
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌"},"AreaID":"51","AreaName":"上海","Fax":"88888888","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"贵州省 铜仁市碧江区  ","ResellerArea":"碧江区  ","ResellerCity":"铜仁市","ResellerClassify":"A级分类","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"贵州省 ","Tel":"88888888","Zip":"88888888"},"UserID":"1195"}
+时间： 2016/12/16 11:23:01
+
+=================================记录结束======================================
+
+=========================[2016-12-16 11:23:15] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 378
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌"},"AreaID":"51","AreaName":"上海","Fax":"88888888","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"贵州省 铜仁市碧江区  ","ResellerArea":"碧江区  ","ResellerCity":"铜仁市","ResellerClassify":"A级分类","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"贵州省 ","Tel":"88888888","Zip":"88888888"},"UserID":"1195"}
+时间： 2016/12/16 11:23:15
+
+=================================记录结束======================================
+
+=========================[2016-12-16 14:17:27] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 394
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌"},"AreaID":"51","AreaName":"上海","Fax":"","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"福建省福州市鼓楼区","ResellerArea":"鼓楼区","ResellerCity":"福州市","ResellerClassify":"A级分类","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"福建省","Tel":"","Zip":"","ts":"2016/11/22 16:06:08"},"UserID":"1195"}
+时间： 2016/12/16 14:17:27
+
+=================================记录结束======================================
+
+=========================[2016-12-16 14:32:09] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 394
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌"},"AreaID":"51","AreaName":"上海","Fax":"","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"福建省福州市鼓楼区","ResellerArea":"鼓楼区","ResellerCity":"福州市","ResellerClassify":"A级分类","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"福建省","Tel":"","Zip":"","ts":"2016/11/22 16:06:08"},"UserID":"1195"}
+时间： 2016/12/16 14:32:09
+
+=================================记录结束======================================
+
+=========================[2016-12-16 14:32:55] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 403
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌","ts":"2016/11/15 14:59:58"},"Address":"顾戴路30号","AreaID":"60","AreaName":"华东大区","Fax":"100000","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"上海市市辖区嘉定区","ResellerArea":"嘉定区","ResellerCity":"市辖区","ResellerClassify":"二级","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"上海市","Tel":"888888","Zip":"888888","ts":"2016/11/22 16:06:08"},"UserID":"1195"}
+时间： 2016/12/16 14:32:55
+
+=================================记录结束======================================
+
+=========================[2016-12-16 14:33:08] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.EditReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 403
+接口： EditReseller:{"CompID":"1046","Reseller":{"Account":{"AccountID":"1196","Phone":"18616641448","TrueName":"阮雯斌","UserName":"阮雯斌","ts":"2016/11/15 14:59:58"},"Address":"顾戴路30号","AreaID":"60","AreaName":"华东大区","Fax":"100000","InvoceList":[],"IsEnabled":"1","Phone":"18616641448","Principal":"阮雯斌","ResellerAddr":"上海市市辖区嘉定区","ResellerArea":"嘉定区","ResellerCity":"市辖区","ResellerClassify":"二级","ResellerCode":"","ResellerID":"1137","ResellerName":"上海阮雯斌贸易有限公司","ResellerProvince":"上海市","Tel":"888888","Zip":"888888","ts":"2016/11/22 16:06:08"},"UserID":"1195"}
+时间： 2016/12/16 14:33:08
+
+=================================记录结束======================================
+
+=========================[2016-12-16 16:06:59] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 GetRebate.GetRebateList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\GetRebate.cs:行号 76
+接口： GetRebate: {"ResellerID":"1137"}
+时间： 2016/12/16 16:06:59
+
+=================================记录结束======================================
+
+=========================[2016-12-16 16:07:13] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 GetRebate.GetRebateList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\GetRebate.cs:行号 76
+接口： GetRebate: {"ResellerID":"1137"}
+时间： 2016/12/16 16:07:13
+
+=================================记录结束======================================
+
+=========================[2016-12-16 16:10:27] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 GetRebate.GetRebateList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\GetRebate.cs:行号 76
+接口： GetRebate: {"ResellerID":"1137"}
+时间： 2016/12/16 16:10:27
+
+=================================记录结束======================================
+
+=========================[2016-12-16 16:11:08] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 GetRebate.GetRebateList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\GetRebate.cs:行号 76
+接口： GetRebate: {"ResellerID":"1137"}
+时间： 2016/12/16 16:11:08
+
+=================================记录结束======================================
+
+=========================[2016-12-16 16:11:56] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 GetRebate.GetRebateList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\GetRebate.cs:行号 76
+接口： GetRebate: {"ResellerID":"1137"}
+时间： 2016/12/16 16:11:56
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:00:17] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 535
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15618785698","TrueName":"777777777","UserName":"飞飞"},"Address":"488号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"上海市市辖区徐汇区","ResellerArea":"徐汇区","ResellerCity":"市辖区","ResellerClassify":"","ResellerName":"窦飞","ResellerProvince":"上海市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:00:17
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:00:36] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 535
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15618785698","TrueName":"777777777","UserName":"飞飞"},"Address":"488号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"上海市市辖区徐汇区","ResellerArea":"徐汇区","ResellerCity":"市辖区","ResellerClassify":"","ResellerName":"窦飞","ResellerProvince":"上海市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:00:36
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:02:00] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 535
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15618785698","TrueName":"777777777","UserName":"飞飞"},"Address":"488号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"上海市市辖区徐汇区","ResellerArea":"徐汇区","ResellerCity":"市辖区","ResellerClassify":"","ResellerName":"窦飞","ResellerProvince":"上海市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:02:00
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:14:26] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 538
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15678786598","TrueName":"lq","UserName":"刘琦"},"Address":"8号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"北京市市辖区东城区","ResellerArea":"东城区","ResellerCity":"市辖区","ResellerClassify":"","ResellerCode":"","ResellerName":"刘琦","ResellerProvince":"北京市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:14:26
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:14:26] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 538
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15678786598","TrueName":"lq","UserName":"刘琦"},"Address":"8号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"北京市市辖区东城区","ResellerArea":"东城区","ResellerCity":"市辖区","ResellerClassify":"","ResellerCode":"","ResellerName":"刘琦","ResellerProvince":"北京市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:14:26
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:15:35] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 538
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15678786598","TrueName":"lq","UserName":"刘琦"},"Address":"8号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"北京市市辖区东城区","ResellerArea":"东城区","ResellerCity":"市辖区","ResellerClassify":"","ResellerCode":"","ResellerName":"刘琦","ResellerProvince":"北京市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:15:35
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:22:06] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 538
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15678786598","TrueName":"lq","UserName":"刘琦"},"Address":"8号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"北京市市辖区东城区","ResellerArea":"东城区","ResellerCity":"市辖区","ResellerClassify":"","ResellerCode":"","ResellerName":"刘琦","ResellerProvince":"北京市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:22:06
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:30:04] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 538
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15678786598","TrueName":"lq","UserName":"刘琦"},"Address":"8号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"北京市市辖区东城区","ResellerArea":"东城区","ResellerCity":"市辖区","ResellerClassify":"","ResellerCode":"","ResellerName":"刘琦","ResellerProvince":"北京市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:30:04
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:52:31] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 538
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15678786598","TrueName":"lq","UserName":"刘琦"},"Address":"8号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"北京市市辖区东城区","ResellerArea":"东城区","ResellerCity":"市辖区","ResellerClassify":"","ResellerCode":"","ResellerName":"刘琦","ResellerProvince":"北京市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:52:31
+
+=================================记录结束======================================
+
+=========================[2016-12-16 18:54:58] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.AddReseller(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 538
+接口： AddReseller:{"CompID":"1046","Reseller":{"Account":{"Phone":"15678786598","TrueName":"lq","UserName":"刘琦"},"Address":"8号","AreaName":"","Fax":"","Phone":"","Principal":"","ResellerAddr":"北京市市辖区东城区","ResellerArea":"东城区","ResellerCity":"市辖区","ResellerClassify":"","ResellerCode":"","ResellerName":"刘琦","ResellerProvince":"北京市","Tel":"","Zip":""},"UserID":"1195"}
+时间： 2016/12/16 18:54:58
+
+=================================记录结束======================================

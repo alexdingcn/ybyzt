@@ -1,0 +1,25 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ShowPic.aspx.cs" Inherits="Company_Goods_ShowPic" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            var path = '<%=pic %>';
+            if (path == "../images/最新qq截图.gif") {
+                $("img").css("width", "730px");
+                $("img").css("height", "470px");
+            }
+        })
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <img src='<%=pic %>' width="600px" height="370px" />
+    </div>
+    </form>
+</body>
+</html>

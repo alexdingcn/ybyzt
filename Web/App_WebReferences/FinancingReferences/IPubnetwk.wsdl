@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:tns="test.com/IPubnetwk" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" targetNamespace="test.com/IPubnetwk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="test.com/IPubnetwk">
+      <xsd:element name="trd17000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd17000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd15000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd15000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd17010">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd17010Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd10010">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd10010Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd71000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd71000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd13010">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd13010Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd60000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd60000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd11000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd11000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd16000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd16000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd70000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd70000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd12000">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd12000Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd18100">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="trd18100Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BOLogin">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BOLoginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="trd11000Response">
+    <wsdl:part name="parameters" element="tns:trd11000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd16000Request">
+    <wsdl:part name="parameters" element="tns:trd16000" />
+  </wsdl:message>
+  <wsdl:message name="trd18100Request">
+    <wsdl:part name="parameters" element="tns:trd18100" />
+  </wsdl:message>
+  <wsdl:message name="trd10010Request">
+    <wsdl:part name="parameters" element="tns:trd10010" />
+  </wsdl:message>
+  <wsdl:message name="trd13010Response">
+    <wsdl:part name="parameters" element="tns:trd13010Response" />
+  </wsdl:message>
+  <wsdl:message name="trd12000Request">
+    <wsdl:part name="parameters" element="tns:trd12000" />
+  </wsdl:message>
+  <wsdl:message name="trd17000Response">
+    <wsdl:part name="parameters" element="tns:trd17000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd70000Response">
+    <wsdl:part name="parameters" element="tns:trd70000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd15000Request">
+    <wsdl:part name="parameters" element="tns:trd15000" />
+  </wsdl:message>
+  <wsdl:message name="trd12000Response">
+    <wsdl:part name="parameters" element="tns:trd12000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd70000Request">
+    <wsdl:part name="parameters" element="tns:trd70000" />
+  </wsdl:message>
+  <wsdl:message name="BOLoginResponse">
+    <wsdl:part name="parameters" element="tns:BOLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="trd17000Request">
+    <wsdl:part name="parameters" element="tns:trd17000" />
+  </wsdl:message>
+  <wsdl:message name="trd13010Request">
+    <wsdl:part name="parameters" element="tns:trd13010" />
+  </wsdl:message>
+  <wsdl:message name="trd60000Response">
+    <wsdl:part name="parameters" element="tns:trd60000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd60000Request">
+    <wsdl:part name="parameters" element="tns:trd60000" />
+  </wsdl:message>
+  <wsdl:message name="trd71000Response">
+    <wsdl:part name="parameters" element="tns:trd71000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd15000Response">
+    <wsdl:part name="parameters" element="tns:trd15000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd16000Response">
+    <wsdl:part name="parameters" element="tns:trd16000Response" />
+  </wsdl:message>
+  <wsdl:message name="trd71000Request">
+    <wsdl:part name="parameters" element="tns:trd71000" />
+  </wsdl:message>
+  <wsdl:message name="trd17010Response">
+    <wsdl:part name="parameters" element="tns:trd17010Response" />
+  </wsdl:message>
+  <wsdl:message name="BOLoginRequest">
+    <wsdl:part name="parameters" element="tns:BOLogin" />
+  </wsdl:message>
+  <wsdl:message name="trd10010Response">
+    <wsdl:part name="parameters" element="tns:trd10010Response" />
+  </wsdl:message>
+  <wsdl:message name="trd17010Request">
+    <wsdl:part name="parameters" element="tns:trd17010" />
+  </wsdl:message>
+  <wsdl:message name="trd18100Response">
+    <wsdl:part name="parameters" element="tns:trd18100Response" />
+  </wsdl:message>
+  <wsdl:message name="trd11000Request">
+    <wsdl:part name="parameters" element="tns:trd11000" />
+  </wsdl:message>
+  <wsdl:portType name="IPubnetwkPortType">
+    <wsdl:operation name="trd17000">
+      <wsdl:input name="trd17000Request" message="tns:trd17000Request" />
+      <wsdl:output name="trd17000Response" message="tns:trd17000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd15000">
+      <wsdl:input name="trd15000Request" message="tns:trd15000Request" />
+      <wsdl:output name="trd15000Response" message="tns:trd15000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd17010">
+      <wsdl:input name="trd17010Request" message="tns:trd17010Request" />
+      <wsdl:output name="trd17010Response" message="tns:trd17010Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd10010">
+      <wsdl:input name="trd10010Request" message="tns:trd10010Request" />
+      <wsdl:output name="trd10010Response" message="tns:trd10010Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd71000">
+      <wsdl:input name="trd71000Request" message="tns:trd71000Request" />
+      <wsdl:output name="trd71000Response" message="tns:trd71000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd13010">
+      <wsdl:input name="trd13010Request" message="tns:trd13010Request" />
+      <wsdl:output name="trd13010Response" message="tns:trd13010Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd60000">
+      <wsdl:input name="trd60000Request" message="tns:trd60000Request" />
+      <wsdl:output name="trd60000Response" message="tns:trd60000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd11000">
+      <wsdl:input name="trd11000Request" message="tns:trd11000Request" />
+      <wsdl:output name="trd11000Response" message="tns:trd11000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd16000">
+      <wsdl:input name="trd16000Request" message="tns:trd16000Request" />
+      <wsdl:output name="trd16000Response" message="tns:trd16000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd70000">
+      <wsdl:input name="trd70000Request" message="tns:trd70000Request" />
+      <wsdl:output name="trd70000Response" message="tns:trd70000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd12000">
+      <wsdl:input name="trd12000Request" message="tns:trd12000Request" />
+      <wsdl:output name="trd12000Response" message="tns:trd12000Response" />
+    </wsdl:operation>
+    <wsdl:operation name="trd18100">
+      <wsdl:input name="trd18100Request" message="tns:trd18100Request" />
+      <wsdl:output name="trd18100Response" message="tns:trd18100Response" />
+    </wsdl:operation>
+    <wsdl:operation name="BOLogin">
+      <wsdl:input name="BOLoginRequest" message="tns:BOLoginRequest" />
+      <wsdl:output name="BOLoginResponse" message="tns:BOLoginResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IPubnetwkHttpBinding" type="tns:IPubnetwkPortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="trd17000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd17000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd17000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd15000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd15000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd15000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd17010">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd17010Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd17010Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd10010">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd10010Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd10010Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd71000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd71000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd71000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd13010">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd13010Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd13010Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd60000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd60000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd60000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd11000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd11000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd11000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd16000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd16000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd16000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd70000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd70000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd70000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd12000">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd12000Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd12000Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trd18100">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="trd18100Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="trd18100Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BOLogin">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="BOLoginRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="BOLoginResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IPubnetwk">
+    <wsdl:port name="IPubnetwkHttpPort" binding="tns:IPubnetwkHttpBinding">
+      <wsdlsoap:address location="http://118.178.88.33:8089/Xfire/services/IPubnetwk" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

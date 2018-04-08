@@ -1,0 +1,4368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginByPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginByPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginByPhoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResellerLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResellerLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResellerLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompanyLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompanyLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerCompanyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerProductClassifyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerProductClassifyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerProductClassifyListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchProductList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchProductListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchProductListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGoodst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGoodstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchGoodstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGoodsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchGoodsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchGoodsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCollect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCollectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetCollectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCollectList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCollectListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCollectListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerOrderListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerOrderDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyOrderList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyOrderListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompanyOrderListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyOrderDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyOrderDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompanyOrderDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubCompanyApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubCompanyApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubCompanyApproveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubProductResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmReceiptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubResellerOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubResellerOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubResellerOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubOrderReturn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubOrderReturnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubOrderReturnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditOrderReturn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditOrderReturnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuditOrderReturnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderCheckList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderCheckListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderCheckListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderProListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderProListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComOrderSta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComOrderStaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetComOrderStaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderStaList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderStaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerOrderStaListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderSta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerOrderStaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerOrderStaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDisNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDisNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDisNumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompNumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnnouncement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnnouncementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnnouncementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompNewsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompNewsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompNewsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewsInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompNewsAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompNewsAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompNewsAddResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageDeleteId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageDeleteIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageDeleteIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerShippingAddressList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerShippingAddressListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerShippingAddressListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResellerAddrAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResellerAddrAddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResellerAddrAddResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogisticsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogisticsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogisticsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhoneCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhoneCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPhoneCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNewPrePayPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNewPrePayPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendNewPrePayPwdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnPush">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sendType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnPushResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MsgPush">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MsgPushResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Transfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransferResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Maker">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Maker_MD5">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Maker_MD5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Maker_MD5Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Version_New">
+        <s:complexType />
+      </s:element>
+      <s:element name="Version_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Version_NewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WriteLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRebate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRebateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRebateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerBillList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResellerBillListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResellerBillListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginByPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginByPhone" />
+  </wsdl:message>
+  <wsdl:message name="LoginByPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginByPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResellerLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:ResellerLogin" />
+  </wsdl:message>
+  <wsdl:message name="ResellerLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:ResellerLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompanyLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CompanyLogin" />
+  </wsdl:message>
+  <wsdl:message name="CompanyLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CompanyLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerProductClassifyListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerProductClassifyList" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerProductClassifyListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerProductClassifyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductList" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductListSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchProductList" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductListSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodstSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchGoodst" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodstSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchGoodstResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodsListSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchGoodsList" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodsListSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchGoodsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCollectSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCollect" />
+  </wsdl:message>
+  <wsdl:message name="SetCollectSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCollectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCollectList" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCollectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderList" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyOrderList" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubCompanyApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:SubCompanyApprove" />
+  </wsdl:message>
+  <wsdl:message name="SubCompanyApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:SubCompanyApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SubProduct" />
+  </wsdl:message>
+  <wsdl:message name="SubProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SubProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmReceipt" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubResellerOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:SubResellerOrder" />
+  </wsdl:message>
+  <wsdl:message name="SubResellerOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:SubResellerOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubOrderReturnSoapIn">
+    <wsdl:part name="parameters" element="tns:SubOrderReturn" />
+  </wsdl:message>
+  <wsdl:message name="SubOrderReturnSoapOut">
+    <wsdl:part name="parameters" element="tns:SubOrderReturnResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuditOrderReturnSoapIn">
+    <wsdl:part name="parameters" element="tns:AuditOrderReturn" />
+  </wsdl:message>
+  <wsdl:message name="AuditOrderReturnSoapOut">
+    <wsdl:part name="parameters" element="tns:AuditOrderReturnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderCheckListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderCheckList" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderCheckListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderCheckListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderProList" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderProListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetComOrderStaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComOrderSta" />
+  </wsdl:message>
+  <wsdl:message name="GetComOrderStaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetComOrderStaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderStaList" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderStaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderSta" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerOrderStaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDisNumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDisNum" />
+  </wsdl:message>
+  <wsdl:message name="GetDisNumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDisNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompNumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompNum" />
+  </wsdl:message>
+  <wsdl:message name="GetCompNumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnouncementSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnnouncement" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnouncementSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsListSoapIn">
+    <wsdl:part name="parameters" element="tns:CompNewsList" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsListSoapOut">
+    <wsdl:part name="parameters" element="tns:CompNewsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsAddSoapIn">
+    <wsdl:part name="parameters" element="tns:CompNewsAdd" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsAddSoapOut">
+    <wsdl:part name="parameters" element="tns:CompNewsAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageDeleteIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageDeleteId" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageDeleteIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageDeleteIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerShippingAddressListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerShippingAddressList" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerShippingAddressListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerShippingAddressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResellerAddrAddSoapIn">
+    <wsdl:part name="parameters" element="tns:ResellerAddrAdd" />
+  </wsdl:message>
+  <wsdl:message name="ResellerAddrAddSoapOut">
+    <wsdl:part name="parameters" element="tns:ResellerAddrAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogisticsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogisticsList" />
+  </wsdl:message>
+  <wsdl:message name="GetLogisticsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogisticsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPhoneCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPhoneCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendNewPrePayPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:SendNewPrePayPwd" />
+  </wsdl:message>
+  <wsdl:message name="SendNewPrePayPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:SendNewPrePayPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AnPushSoapIn">
+    <wsdl:part name="parameters" element="tns:AnPush" />
+  </wsdl:message>
+  <wsdl:message name="AnPushSoapOut">
+    <wsdl:part name="parameters" element="tns:AnPushResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgPushSoapIn">
+    <wsdl:part name="parameters" element="tns:MsgPush" />
+  </wsdl:message>
+  <wsdl:message name="MsgPushSoapOut">
+    <wsdl:part name="parameters" element="tns:MsgPushResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransferSoapIn">
+    <wsdl:part name="parameters" element="tns:Transfer" />
+  </wsdl:message>
+  <wsdl:message name="TransferSoapOut">
+    <wsdl:part name="parameters" element="tns:TransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakerSoapIn">
+    <wsdl:part name="parameters" element="tns:Maker" />
+  </wsdl:message>
+  <wsdl:message name="MakerSoapOut">
+    <wsdl:part name="parameters" element="tns:MakerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Maker_MD5SoapIn">
+    <wsdl:part name="parameters" element="tns:Maker_MD5" />
+  </wsdl:message>
+  <wsdl:message name="Maker_MD5SoapOut">
+    <wsdl:part name="parameters" element="tns:Maker_MD5Response" />
+  </wsdl:message>
+  <wsdl:message name="Version_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:Version_New" />
+  </wsdl:message>
+  <wsdl:message name="Version_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:Version_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginLog" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteLog" />
+  </wsdl:message>
+  <wsdl:message name="WriteLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRebateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRebate" />
+  </wsdl:message>
+  <wsdl:message name="GetRebateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRebateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerBillListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResellerBillList" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerBillListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResellerBillListResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginByPhoneHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginByPhoneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerLoginHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompanyLoginHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompanyLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerCompanyHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerCompanyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerProductClassifyListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerProductClassifyListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodstHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodstHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodsListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCollectHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCollectHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderDetailHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderDetailHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubCompanyApproveHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubCompanyApproveHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubProductHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubProductHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmReceiptHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmReceiptHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubResellerOrderHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubResellerOrderHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubOrderReturnHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubOrderReturnHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditOrderReturnHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditOrderReturnHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderCheckListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderCheckListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetComOrderStaHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetComOrderStaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisNumHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisNumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompNumHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompNumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnouncementHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnouncementHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInfoHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsAddHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsAddHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageDeleteIdHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageDeleteIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerInfoHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerShippingAddressListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerShippingAddressListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerAddrAddHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerAddrAddHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLogisticsListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLogisticsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneCodeHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNewPrePayPwdHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNewPrePayPwdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AnPushHttpGetIn">
+    <wsdl:part name="userType" type="s:string" />
+    <wsdl:part name="sendType" type="s:string" />
+    <wsdl:part name="orderID" type="s:string" />
+    <wsdl:part name="money" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AnPushHttpGetOut" />
+  <wsdl:message name="MsgPushHttpGetIn">
+    <wsdl:part name="msgID" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MsgPushHttpGetOut" />
+  <wsdl:message name="TransferHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransferHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="MakerHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MakerHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Maker_MD5HttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Maker_MD5HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Version_NewHttpGetIn" />
+  <wsdl:message name="Version_NewHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpGetIn" />
+  <wsdl:message name="VersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="loginUrl" type="s:string" />
+    <wsdl:part name="UType" type="s:string" />
+    <wsdl:part name="IsLogin" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogHttpGetOut" />
+  <wsdl:message name="WriteLogHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRebateHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRebateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerBillListHttpGetIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerBillListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginByPhoneHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginByPhoneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerLoginHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompanyLoginHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompanyLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerCompanyHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerCompanyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerProductClassifyListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerProductClassifyListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchProductListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodstHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodstHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodsListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchGoodsListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCollectHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCollectHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCollectListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderDetailHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderDetailHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderDetailHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyOrderDetailHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubCompanyApproveHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubCompanyApproveHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubProductHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubProductHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmReceiptHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmReceiptHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubResellerOrderHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubResellerOrderHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SubOrderReturnHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubOrderReturnHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditOrderReturnHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditOrderReturnHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderCheckListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderCheckListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderProListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetComOrderStaHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetComOrderStaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerOrderStaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisNumHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisNumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompNumHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompNumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnouncementHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAnnouncementHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInfoHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsAddHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompNewsAddHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageDeleteIdHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageDeleteIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerInfoHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerShippingAddressListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerShippingAddressListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerAddrAddHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResellerAddrAddHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLogisticsListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLogisticsListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneCodeHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPhoneCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNewPrePayPwdHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNewPrePayPwdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AnPushHttpPostIn">
+    <wsdl:part name="userType" type="s:string" />
+    <wsdl:part name="sendType" type="s:string" />
+    <wsdl:part name="orderID" type="s:string" />
+    <wsdl:part name="money" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AnPushHttpPostOut" />
+  <wsdl:message name="MsgPushHttpPostIn">
+    <wsdl:part name="msgID" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MsgPushHttpPostOut" />
+  <wsdl:message name="TransferHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransferHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="MakerHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MakerHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Maker_MD5HttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Maker_MD5HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Version_NewHttpPostIn" />
+  <wsdl:message name="Version_NewHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpPostIn" />
+  <wsdl:message name="VersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="loginUrl" type="s:string" />
+    <wsdl:part name="UType" type="s:string" />
+    <wsdl:part name="IsLogin" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+    <wsdl:part name="remark" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginLogHttpPostOut" />
+  <wsdl:message name="WriteLogHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRebateHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRebateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerBillListHttpPostIn">
+    <wsdl:part name="JSon" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResellerBillListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="AppServiceSoap">
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">普通方式登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginByPhone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">手机登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginByPhoneSoapIn" />
+      <wsdl:output message="tns:LoginByPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResellerLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商登录</wsdl:documentation>
+      <wsdl:input message="tns:ResellerLoginSoapIn" />
+      <wsdl:output message="tns:ResellerLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业登录</wsdl:documentation>
+      <wsdl:input message="tns:CompanyLoginSoapIn" />
+      <wsdl:output message="tns:CompanyLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerCompany">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业信息列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerCompanySoapIn" />
+      <wsdl:output message="tns:GetResellerCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerProductClassifyList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业商品分类列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerProductClassifyListSoapIn" />
+      <wsdl:output message="tns:GetResellerProductClassifyListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取某一分类产品信息</wsdl:documentation>
+      <wsdl:input message="tns:GetProductListSoapIn" />
+      <wsdl:output message="tns:GetProductListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品列表</wsdl:documentation>
+      <wsdl:input message="tns:SearchProductListSoapIn" />
+      <wsdl:output message="tns:SearchProductListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodst">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品</wsdl:documentation>
+      <wsdl:input message="tns:SearchGoodstSoapIn" />
+      <wsdl:output message="tns:SearchGoodstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品</wsdl:documentation>
+      <wsdl:input message="tns:SearchGoodsListSoapIn" />
+      <wsdl:output message="tns:SearchGoodsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCollect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品收藏与取消</wsdl:documentation>
+      <wsdl:input message="tns:SetCollectSoapIn" />
+      <wsdl:output message="tns:SetCollectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">收藏商品列表</wsdl:documentation>
+      <wsdl:input message="tns:GetCollectListSoapIn" />
+      <wsdl:output message="tns:GetCollectListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderListSoapIn" />
+      <wsdl:output message="tns:GetResellerOrderListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商订单详情</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderDetailSoapIn" />
+      <wsdl:output message="tns:GetResellerOrderDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyOrderListSoapIn" />
+      <wsdl:output message="tns:GetCompanyOrderListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单详情</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyOrderDetailSoapIn" />
+      <wsdl:output message="tns:GetCompanyOrderDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubCompanyApprove">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单审核</wsdl:documentation>
+      <wsdl:input message="tns:SubCompanyApproveSoapIn" />
+      <wsdl:output message="tns:SubCompanyApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单发货</wsdl:documentation>
+      <wsdl:input message="tns:SubProductSoapIn" />
+      <wsdl:output message="tns:SubProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmReceipt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单签收</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmReceiptSoapIn" />
+      <wsdl:output message="tns:ConfirmReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubResellerOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单提交:支持批量操，支持非同一操作</wsdl:documentation>
+      <wsdl:input message="tns:SubResellerOrderSoapIn" />
+      <wsdl:output message="tns:SubResellerOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubOrderReturn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">退货申请</wsdl:documentation>
+      <wsdl:input message="tns:SubOrderReturnSoapIn" />
+      <wsdl:output message="tns:SubOrderReturnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditOrderReturn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">退货审核</wsdl:documentation>
+      <wsdl:input message="tns:AuditOrderReturnSoapIn" />
+      <wsdl:output message="tns:AuditOrderReturnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCheckList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品检测</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderCheckListSoapIn" />
+      <wsdl:output message="tns:GetOrderCheckListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单促销</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProListSoapIn" />
+      <wsdl:output message="tns:GetOrderProListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComOrderSta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询厂商统计</wsdl:documentation>
+      <wsdl:input message="tns:GetComOrderStaSoapIn" />
+      <wsdl:output message="tns:GetComOrderStaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderStaList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询代理商订单统计列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderStaListSoapIn" />
+      <wsdl:output message="tns:GetResellerOrderStaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderSta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询代理商订单统计</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderStaSoapIn" />
+      <wsdl:output message="tns:GetResellerOrderStaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商统计数据</wsdl:documentation>
+      <wsdl:input message="tns:GetDisNumSoapIn" />
+      <wsdl:output message="tns:GetDisNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业统计数据</wsdl:documentation>
+      <wsdl:input message="tns:GetCompNumSoapIn" />
+      <wsdl:output message="tns:GetCompNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnouncement">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">未读新闻公告个数</wsdl:documentation>
+      <wsdl:input message="tns:GetAnnouncementSoapIn" />
+      <wsdl:output message="tns:GetAnnouncementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻公告列表</wsdl:documentation>
+      <wsdl:input message="tns:CompNewsListSoapIn" />
+      <wsdl:output message="tns:CompNewsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻公告详情</wsdl:documentation>
+      <wsdl:input message="tns:GetNewsInfoSoapIn" />
+      <wsdl:output message="tns:GetNewsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻添加</wsdl:documentation>
+      <wsdl:input message="tns:CompNewsAddSoapIn" />
+      <wsdl:output message="tns:CompNewsAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageDeleteId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">过期列表</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageDeleteIdSoapIn" />
+      <wsdl:output message="tns:GetMessageDeleteIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商获取个人信息</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerInfoSoapIn" />
+      <wsdl:output message="tns:GetResellerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerShippingAddressList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取代理商收货地址列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerShippingAddressListSoapIn" />
+      <wsdl:output message="tns:GetResellerShippingAddressListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResellerAddrAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商收货地址新增</wsdl:documentation>
+      <wsdl:input message="tns:ResellerAddrAddSoapIn" />
+      <wsdl:output message="tns:ResellerAddrAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取厂商物流绑定列表</wsdl:documentation>
+      <wsdl:input message="tns:GetLogisticsListSoapIn" />
+      <wsdl:output message="tns:GetLogisticsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取短信验证码</wsdl:documentation>
+      <wsdl:input message="tns:GetPhoneCodeSoapIn" />
+      <wsdl:output message="tns:GetPhoneCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNewPrePayPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过短信验证码修改密码</wsdl:documentation>
+      <wsdl:input message="tns:SendNewPrePayPwdSoapIn" />
+      <wsdl:output message="tns:SendNewPrePayPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AnPush">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单推送</wsdl:documentation>
+      <wsdl:input message="tns:AnPushSoapIn" />
+      <wsdl:output message="tns:AnPushSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MsgPush">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻推送</wsdl:documentation>
+      <wsdl:input message="tns:MsgPushSoapIn" />
+      <wsdl:output message="tns:MsgPushSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">解密</wsdl:documentation>
+      <wsdl:input message="tns:TransferSoapIn" />
+      <wsdl:output message="tns:TransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maker">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">加密</wsdl:documentation>
+      <wsdl:input message="tns:MakerSoapIn" />
+      <wsdl:output message="tns:MakerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maker_MD5">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">MD5加密</wsdl:documentation>
+      <wsdl:input message="tns:Maker_MD5SoapIn" />
+      <wsdl:output message="tns:Maker_MD5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取版本号: 0 企业app版本号，1 代理商app版本号,2.0以后版本用</wsdl:documentation>
+      <wsdl:input message="tns:Version_NewSoapIn" />
+      <wsdl:output message="tns:Version_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取版本号: 0 企业app版本号，1 代理商app版本号，2.0及以前版本用</wsdl:documentation>
+      <wsdl:input message="tns:VersionSoapIn" />
+      <wsdl:output message="tns:VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登录日志</wsdl:documentation>
+      <wsdl:input message="tns:LoginLogSoapIn" />
+      <wsdl:output message="tns:LoginLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">记录手机异常</wsdl:documentation>
+      <wsdl:input message="tns:WriteLogSoapIn" />
+      <wsdl:output message="tns:WriteLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRebate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取可用返利</wsdl:documentation>
+      <wsdl:input message="tns:GetRebateSoapIn" />
+      <wsdl:output message="tns:GetRebateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerBillList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取代理商开票信息</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerBillListSoapIn" />
+      <wsdl:output message="tns:GetResellerBillListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AppServiceHttpGet">
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">普通方式登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginByPhone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">手机登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginByPhoneHttpGetIn" />
+      <wsdl:output message="tns:LoginByPhoneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResellerLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商登录</wsdl:documentation>
+      <wsdl:input message="tns:ResellerLoginHttpGetIn" />
+      <wsdl:output message="tns:ResellerLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业登录</wsdl:documentation>
+      <wsdl:input message="tns:CompanyLoginHttpGetIn" />
+      <wsdl:output message="tns:CompanyLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerCompany">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业信息列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerCompanyHttpGetIn" />
+      <wsdl:output message="tns:GetResellerCompanyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerProductClassifyList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业商品分类列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerProductClassifyListHttpGetIn" />
+      <wsdl:output message="tns:GetResellerProductClassifyListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取某一分类产品信息</wsdl:documentation>
+      <wsdl:input message="tns:GetProductListHttpGetIn" />
+      <wsdl:output message="tns:GetProductListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品列表</wsdl:documentation>
+      <wsdl:input message="tns:SearchProductListHttpGetIn" />
+      <wsdl:output message="tns:SearchProductListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodst">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品</wsdl:documentation>
+      <wsdl:input message="tns:SearchGoodstHttpGetIn" />
+      <wsdl:output message="tns:SearchGoodstHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品</wsdl:documentation>
+      <wsdl:input message="tns:SearchGoodsListHttpGetIn" />
+      <wsdl:output message="tns:SearchGoodsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCollect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品收藏与取消</wsdl:documentation>
+      <wsdl:input message="tns:SetCollectHttpGetIn" />
+      <wsdl:output message="tns:SetCollectHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">收藏商品列表</wsdl:documentation>
+      <wsdl:input message="tns:GetCollectListHttpGetIn" />
+      <wsdl:output message="tns:GetCollectListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderListHttpGetIn" />
+      <wsdl:output message="tns:GetResellerOrderListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商订单详情</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderDetailHttpGetIn" />
+      <wsdl:output message="tns:GetResellerOrderDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyOrderListHttpGetIn" />
+      <wsdl:output message="tns:GetCompanyOrderListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单详情</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyOrderDetailHttpGetIn" />
+      <wsdl:output message="tns:GetCompanyOrderDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubCompanyApprove">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单审核</wsdl:documentation>
+      <wsdl:input message="tns:SubCompanyApproveHttpGetIn" />
+      <wsdl:output message="tns:SubCompanyApproveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单发货</wsdl:documentation>
+      <wsdl:input message="tns:SubProductHttpGetIn" />
+      <wsdl:output message="tns:SubProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmReceipt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单签收</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmReceiptHttpGetIn" />
+      <wsdl:output message="tns:ConfirmReceiptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubResellerOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单提交:支持批量操，支持非同一操作</wsdl:documentation>
+      <wsdl:input message="tns:SubResellerOrderHttpGetIn" />
+      <wsdl:output message="tns:SubResellerOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubOrderReturn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">退货申请</wsdl:documentation>
+      <wsdl:input message="tns:SubOrderReturnHttpGetIn" />
+      <wsdl:output message="tns:SubOrderReturnHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditOrderReturn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">退货审核</wsdl:documentation>
+      <wsdl:input message="tns:AuditOrderReturnHttpGetIn" />
+      <wsdl:output message="tns:AuditOrderReturnHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCheckList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品检测</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderCheckListHttpGetIn" />
+      <wsdl:output message="tns:GetOrderCheckListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单促销</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProListHttpGetIn" />
+      <wsdl:output message="tns:GetOrderProListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComOrderSta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询厂商统计</wsdl:documentation>
+      <wsdl:input message="tns:GetComOrderStaHttpGetIn" />
+      <wsdl:output message="tns:GetComOrderStaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderStaList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询代理商订单统计列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderStaListHttpGetIn" />
+      <wsdl:output message="tns:GetResellerOrderStaListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderSta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询代理商订单统计</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderStaHttpGetIn" />
+      <wsdl:output message="tns:GetResellerOrderStaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商统计数据</wsdl:documentation>
+      <wsdl:input message="tns:GetDisNumHttpGetIn" />
+      <wsdl:output message="tns:GetDisNumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业统计数据</wsdl:documentation>
+      <wsdl:input message="tns:GetCompNumHttpGetIn" />
+      <wsdl:output message="tns:GetCompNumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnouncement">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">未读新闻公告个数</wsdl:documentation>
+      <wsdl:input message="tns:GetAnnouncementHttpGetIn" />
+      <wsdl:output message="tns:GetAnnouncementHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻公告列表</wsdl:documentation>
+      <wsdl:input message="tns:CompNewsListHttpGetIn" />
+      <wsdl:output message="tns:CompNewsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻公告详情</wsdl:documentation>
+      <wsdl:input message="tns:GetNewsInfoHttpGetIn" />
+      <wsdl:output message="tns:GetNewsInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻添加</wsdl:documentation>
+      <wsdl:input message="tns:CompNewsAddHttpGetIn" />
+      <wsdl:output message="tns:CompNewsAddHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageDeleteId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">过期列表</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageDeleteIdHttpGetIn" />
+      <wsdl:output message="tns:GetMessageDeleteIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商获取个人信息</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerInfoHttpGetIn" />
+      <wsdl:output message="tns:GetResellerInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerShippingAddressList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取代理商收货地址列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerShippingAddressListHttpGetIn" />
+      <wsdl:output message="tns:GetResellerShippingAddressListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResellerAddrAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商收货地址新增</wsdl:documentation>
+      <wsdl:input message="tns:ResellerAddrAddHttpGetIn" />
+      <wsdl:output message="tns:ResellerAddrAddHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取厂商物流绑定列表</wsdl:documentation>
+      <wsdl:input message="tns:GetLogisticsListHttpGetIn" />
+      <wsdl:output message="tns:GetLogisticsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取短信验证码</wsdl:documentation>
+      <wsdl:input message="tns:GetPhoneCodeHttpGetIn" />
+      <wsdl:output message="tns:GetPhoneCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNewPrePayPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过短信验证码修改密码</wsdl:documentation>
+      <wsdl:input message="tns:SendNewPrePayPwdHttpGetIn" />
+      <wsdl:output message="tns:SendNewPrePayPwdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AnPush">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单推送</wsdl:documentation>
+      <wsdl:input message="tns:AnPushHttpGetIn" />
+      <wsdl:output message="tns:AnPushHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MsgPush">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻推送</wsdl:documentation>
+      <wsdl:input message="tns:MsgPushHttpGetIn" />
+      <wsdl:output message="tns:MsgPushHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">解密</wsdl:documentation>
+      <wsdl:input message="tns:TransferHttpGetIn" />
+      <wsdl:output message="tns:TransferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maker">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">加密</wsdl:documentation>
+      <wsdl:input message="tns:MakerHttpGetIn" />
+      <wsdl:output message="tns:MakerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maker_MD5">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">MD5加密</wsdl:documentation>
+      <wsdl:input message="tns:Maker_MD5HttpGetIn" />
+      <wsdl:output message="tns:Maker_MD5HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取版本号: 0 企业app版本号，1 代理商app版本号,2.0以后版本用</wsdl:documentation>
+      <wsdl:input message="tns:Version_NewHttpGetIn" />
+      <wsdl:output message="tns:Version_NewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取版本号: 0 企业app版本号，1 代理商app版本号，2.0及以前版本用</wsdl:documentation>
+      <wsdl:input message="tns:VersionHttpGetIn" />
+      <wsdl:output message="tns:VersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登录日志</wsdl:documentation>
+      <wsdl:input message="tns:LoginLogHttpGetIn" />
+      <wsdl:output message="tns:LoginLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">记录手机异常</wsdl:documentation>
+      <wsdl:input message="tns:WriteLogHttpGetIn" />
+      <wsdl:output message="tns:WriteLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRebate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取可用返利</wsdl:documentation>
+      <wsdl:input message="tns:GetRebateHttpGetIn" />
+      <wsdl:output message="tns:GetRebateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerBillList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取代理商开票信息</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerBillListHttpGetIn" />
+      <wsdl:output message="tns:GetResellerBillListHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AppServiceHttpPost">
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">普通方式登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginByPhone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">手机登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginByPhoneHttpPostIn" />
+      <wsdl:output message="tns:LoginByPhoneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResellerLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商登录</wsdl:documentation>
+      <wsdl:input message="tns:ResellerLoginHttpPostIn" />
+      <wsdl:output message="tns:ResellerLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业登录</wsdl:documentation>
+      <wsdl:input message="tns:CompanyLoginHttpPostIn" />
+      <wsdl:output message="tns:CompanyLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerCompany">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业信息列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerCompanyHttpPostIn" />
+      <wsdl:output message="tns:GetResellerCompanyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerProductClassifyList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业商品分类列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerProductClassifyListHttpPostIn" />
+      <wsdl:output message="tns:GetResellerProductClassifyListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取某一分类产品信息</wsdl:documentation>
+      <wsdl:input message="tns:GetProductListHttpPostIn" />
+      <wsdl:output message="tns:GetProductListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品列表</wsdl:documentation>
+      <wsdl:input message="tns:SearchProductListHttpPostIn" />
+      <wsdl:output message="tns:SearchProductListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodst">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品</wsdl:documentation>
+      <wsdl:input message="tns:SearchGoodstHttpPostIn" />
+      <wsdl:output message="tns:SearchGoodstHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜索商品</wsdl:documentation>
+      <wsdl:input message="tns:SearchGoodsListHttpPostIn" />
+      <wsdl:output message="tns:SearchGoodsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCollect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品收藏与取消</wsdl:documentation>
+      <wsdl:input message="tns:SetCollectHttpPostIn" />
+      <wsdl:output message="tns:SetCollectHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">收藏商品列表</wsdl:documentation>
+      <wsdl:input message="tns:GetCollectListHttpPostIn" />
+      <wsdl:output message="tns:GetCollectListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderListHttpPostIn" />
+      <wsdl:output message="tns:GetResellerOrderListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商订单详情</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderDetailHttpPostIn" />
+      <wsdl:output message="tns:GetResellerOrderDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单列表</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyOrderListHttpPostIn" />
+      <wsdl:output message="tns:GetCompanyOrderListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单详情</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyOrderDetailHttpPostIn" />
+      <wsdl:output message="tns:GetCompanyOrderDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubCompanyApprove">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单审核</wsdl:documentation>
+      <wsdl:input message="tns:SubCompanyApproveHttpPostIn" />
+      <wsdl:output message="tns:SubCompanyApproveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单发货</wsdl:documentation>
+      <wsdl:input message="tns:SubProductHttpPostIn" />
+      <wsdl:output message="tns:SubProductHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmReceipt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业订单签收</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmReceiptHttpPostIn" />
+      <wsdl:output message="tns:ConfirmReceiptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubResellerOrder">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单提交:支持批量操，支持非同一操作</wsdl:documentation>
+      <wsdl:input message="tns:SubResellerOrderHttpPostIn" />
+      <wsdl:output message="tns:SubResellerOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubOrderReturn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">退货申请</wsdl:documentation>
+      <wsdl:input message="tns:SubOrderReturnHttpPostIn" />
+      <wsdl:output message="tns:SubOrderReturnHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditOrderReturn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">退货审核</wsdl:documentation>
+      <wsdl:input message="tns:AuditOrderReturnHttpPostIn" />
+      <wsdl:output message="tns:AuditOrderReturnHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCheckList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">商品检测</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderCheckListHttpPostIn" />
+      <wsdl:output message="tns:GetOrderCheckListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单促销</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderProListHttpPostIn" />
+      <wsdl:output message="tns:GetOrderProListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComOrderSta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询厂商统计</wsdl:documentation>
+      <wsdl:input message="tns:GetComOrderStaHttpPostIn" />
+      <wsdl:output message="tns:GetComOrderStaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderStaList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询代理商订单统计列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderStaListHttpPostIn" />
+      <wsdl:output message="tns:GetResellerOrderStaListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderSta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询代理商订单统计</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerOrderStaHttpPostIn" />
+      <wsdl:output message="tns:GetResellerOrderStaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商统计数据</wsdl:documentation>
+      <wsdl:input message="tns:GetDisNumHttpPostIn" />
+      <wsdl:output message="tns:GetDisNumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">企业统计数据</wsdl:documentation>
+      <wsdl:input message="tns:GetCompNumHttpPostIn" />
+      <wsdl:output message="tns:GetCompNumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnouncement">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">未读新闻公告个数</wsdl:documentation>
+      <wsdl:input message="tns:GetAnnouncementHttpPostIn" />
+      <wsdl:output message="tns:GetAnnouncementHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻公告列表</wsdl:documentation>
+      <wsdl:input message="tns:CompNewsListHttpPostIn" />
+      <wsdl:output message="tns:CompNewsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻公告详情</wsdl:documentation>
+      <wsdl:input message="tns:GetNewsInfoHttpPostIn" />
+      <wsdl:output message="tns:GetNewsInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻添加</wsdl:documentation>
+      <wsdl:input message="tns:CompNewsAddHttpPostIn" />
+      <wsdl:output message="tns:CompNewsAddHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageDeleteId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">过期列表</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageDeleteIdHttpPostIn" />
+      <wsdl:output message="tns:GetMessageDeleteIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商获取个人信息</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerInfoHttpPostIn" />
+      <wsdl:output message="tns:GetResellerInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerShippingAddressList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取代理商收货地址列表</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerShippingAddressListHttpPostIn" />
+      <wsdl:output message="tns:GetResellerShippingAddressListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResellerAddrAdd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">代理商收货地址新增</wsdl:documentation>
+      <wsdl:input message="tns:ResellerAddrAddHttpPostIn" />
+      <wsdl:output message="tns:ResellerAddrAddHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取厂商物流绑定列表</wsdl:documentation>
+      <wsdl:input message="tns:GetLogisticsListHttpPostIn" />
+      <wsdl:output message="tns:GetLogisticsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取短信验证码</wsdl:documentation>
+      <wsdl:input message="tns:GetPhoneCodeHttpPostIn" />
+      <wsdl:output message="tns:GetPhoneCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNewPrePayPwd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过短信验证码修改密码</wsdl:documentation>
+      <wsdl:input message="tns:SendNewPrePayPwdHttpPostIn" />
+      <wsdl:output message="tns:SendNewPrePayPwdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AnPush">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">订单推送</wsdl:documentation>
+      <wsdl:input message="tns:AnPushHttpPostIn" />
+      <wsdl:output message="tns:AnPushHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MsgPush">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新闻推送</wsdl:documentation>
+      <wsdl:input message="tns:MsgPushHttpPostIn" />
+      <wsdl:output message="tns:MsgPushHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">解密</wsdl:documentation>
+      <wsdl:input message="tns:TransferHttpPostIn" />
+      <wsdl:output message="tns:TransferHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maker">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">加密</wsdl:documentation>
+      <wsdl:input message="tns:MakerHttpPostIn" />
+      <wsdl:output message="tns:MakerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maker_MD5">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">MD5加密</wsdl:documentation>
+      <wsdl:input message="tns:Maker_MD5HttpPostIn" />
+      <wsdl:output message="tns:Maker_MD5HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取版本号: 0 企业app版本号，1 代理商app版本号,2.0以后版本用</wsdl:documentation>
+      <wsdl:input message="tns:Version_NewHttpPostIn" />
+      <wsdl:output message="tns:Version_NewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取版本号: 0 企业app版本号，1 代理商app版本号，2.0及以前版本用</wsdl:documentation>
+      <wsdl:input message="tns:VersionHttpPostIn" />
+      <wsdl:output message="tns:VersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登录日志</wsdl:documentation>
+      <wsdl:input message="tns:LoginLogHttpPostIn" />
+      <wsdl:output message="tns:LoginLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">记录手机异常</wsdl:documentation>
+      <wsdl:input message="tns:WriteLogHttpPostIn" />
+      <wsdl:output message="tns:WriteLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRebate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取可用返利</wsdl:documentation>
+      <wsdl:input message="tns:GetRebateHttpPostIn" />
+      <wsdl:output message="tns:GetRebateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerBillList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取代理商开票信息</wsdl:documentation>
+      <wsdl:input message="tns:GetResellerBillListHttpPostIn" />
+      <wsdl:output message="tns:GetResellerBillListHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AppServiceSoap" type="tns:AppServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginByPhone">
+      <soap:operation soapAction="http://tempuri.org/LoginByPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerLogin">
+      <soap:operation soapAction="http://tempuri.org/ResellerLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyLogin">
+      <soap:operation soapAction="http://tempuri.org/CompanyLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerCompany">
+      <soap:operation soapAction="http://tempuri.org/GetResellerCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerProductClassifyList">
+      <soap:operation soapAction="http://tempuri.org/GetResellerProductClassifyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <soap:operation soapAction="http://tempuri.org/GetProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductList">
+      <soap:operation soapAction="http://tempuri.org/SearchProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodst">
+      <soap:operation soapAction="http://tempuri.org/SearchGoodst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodsList">
+      <soap:operation soapAction="http://tempuri.org/SearchGoodsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCollect">
+      <soap:operation soapAction="http://tempuri.org/SetCollect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectList">
+      <soap:operation soapAction="http://tempuri.org/GetCollectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderList">
+      <soap:operation soapAction="http://tempuri.org/GetResellerOrderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/GetResellerOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderList">
+      <soap:operation soapAction="http://tempuri.org/GetCompanyOrderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/GetCompanyOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubCompanyApprove">
+      <soap:operation soapAction="http://tempuri.org/SubCompanyApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubProduct">
+      <soap:operation soapAction="http://tempuri.org/SubProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmReceipt">
+      <soap:operation soapAction="http://tempuri.org/ConfirmReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubResellerOrder">
+      <soap:operation soapAction="http://tempuri.org/SubResellerOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubOrderReturn">
+      <soap:operation soapAction="http://tempuri.org/SubOrderReturn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditOrderReturn">
+      <soap:operation soapAction="http://tempuri.org/AuditOrderReturn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCheckList">
+      <soap:operation soapAction="http://tempuri.org/GetOrderCheckList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProList">
+      <soap:operation soapAction="http://tempuri.org/GetOrderProList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComOrderSta">
+      <soap:operation soapAction="http://tempuri.org/GetComOrderSta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderStaList">
+      <soap:operation soapAction="http://tempuri.org/GetResellerOrderStaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderSta">
+      <soap:operation soapAction="http://tempuri.org/GetResellerOrderSta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisNum">
+      <soap:operation soapAction="http://tempuri.org/GetDisNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompNum">
+      <soap:operation soapAction="http://tempuri.org/GetCompNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnouncement">
+      <soap:operation soapAction="http://tempuri.org/GetAnnouncement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsList">
+      <soap:operation soapAction="http://tempuri.org/CompNewsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInfo">
+      <soap:operation soapAction="http://tempuri.org/GetNewsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsAdd">
+      <soap:operation soapAction="http://tempuri.org/CompNewsAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageDeleteId">
+      <soap:operation soapAction="http://tempuri.org/GetMessageDeleteId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetResellerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerShippingAddressList">
+      <soap:operation soapAction="http://tempuri.org/GetResellerShippingAddressList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerAddrAdd">
+      <soap:operation soapAction="http://tempuri.org/ResellerAddrAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsList">
+      <soap:operation soapAction="http://tempuri.org/GetLogisticsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneCode">
+      <soap:operation soapAction="http://tempuri.org/GetPhoneCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNewPrePayPwd">
+      <soap:operation soapAction="http://tempuri.org/SendNewPrePayPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnPush">
+      <soap:operation soapAction="http://tempuri.org/AnPush" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MsgPush">
+      <soap:operation soapAction="http://tempuri.org/MsgPush" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <soap:operation soapAction="http://tempuri.org/Transfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker">
+      <soap:operation soapAction="http://tempuri.org/Maker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker_MD5">
+      <soap:operation soapAction="http://tempuri.org/Maker_MD5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version_New">
+      <soap:operation soapAction="http://tempuri.org/Version_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="http://tempuri.org/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginLog">
+      <soap:operation soapAction="http://tempuri.org/LoginLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <soap:operation soapAction="http://tempuri.org/WriteLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRebate">
+      <soap:operation soapAction="http://tempuri.org/GetRebate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerBillList">
+      <soap:operation soapAction="http://tempuri.org/GetResellerBillList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AppServiceSoap12" type="tns:AppServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginByPhone">
+      <soap12:operation soapAction="http://tempuri.org/LoginByPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerLogin">
+      <soap12:operation soapAction="http://tempuri.org/ResellerLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyLogin">
+      <soap12:operation soapAction="http://tempuri.org/CompanyLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerCompany">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerProductClassifyList">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerProductClassifyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <soap12:operation soapAction="http://tempuri.org/GetProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductList">
+      <soap12:operation soapAction="http://tempuri.org/SearchProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodst">
+      <soap12:operation soapAction="http://tempuri.org/SearchGoodst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodsList">
+      <soap12:operation soapAction="http://tempuri.org/SearchGoodsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCollect">
+      <soap12:operation soapAction="http://tempuri.org/SetCollect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectList">
+      <soap12:operation soapAction="http://tempuri.org/GetCollectList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderList">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerOrderList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerOrderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderList">
+      <soap12:operation soapAction="http://tempuri.org/GetCompanyOrderList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetCompanyOrderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubCompanyApprove">
+      <soap12:operation soapAction="http://tempuri.org/SubCompanyApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubProduct">
+      <soap12:operation soapAction="http://tempuri.org/SubProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmReceipt">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubResellerOrder">
+      <soap12:operation soapAction="http://tempuri.org/SubResellerOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubOrderReturn">
+      <soap12:operation soapAction="http://tempuri.org/SubOrderReturn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditOrderReturn">
+      <soap12:operation soapAction="http://tempuri.org/AuditOrderReturn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCheckList">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderCheckList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProList">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderProList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComOrderSta">
+      <soap12:operation soapAction="http://tempuri.org/GetComOrderSta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderStaList">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerOrderStaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderSta">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerOrderSta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisNum">
+      <soap12:operation soapAction="http://tempuri.org/GetDisNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompNum">
+      <soap12:operation soapAction="http://tempuri.org/GetCompNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnouncement">
+      <soap12:operation soapAction="http://tempuri.org/GetAnnouncement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsList">
+      <soap12:operation soapAction="http://tempuri.org/CompNewsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetNewsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsAdd">
+      <soap12:operation soapAction="http://tempuri.org/CompNewsAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageDeleteId">
+      <soap12:operation soapAction="http://tempuri.org/GetMessageDeleteId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerShippingAddressList">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerShippingAddressList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerAddrAdd">
+      <soap12:operation soapAction="http://tempuri.org/ResellerAddrAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsList">
+      <soap12:operation soapAction="http://tempuri.org/GetLogisticsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneCode">
+      <soap12:operation soapAction="http://tempuri.org/GetPhoneCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNewPrePayPwd">
+      <soap12:operation soapAction="http://tempuri.org/SendNewPrePayPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnPush">
+      <soap12:operation soapAction="http://tempuri.org/AnPush" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MsgPush">
+      <soap12:operation soapAction="http://tempuri.org/MsgPush" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <soap12:operation soapAction="http://tempuri.org/Transfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker">
+      <soap12:operation soapAction="http://tempuri.org/Maker" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker_MD5">
+      <soap12:operation soapAction="http://tempuri.org/Maker_MD5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version_New">
+      <soap12:operation soapAction="http://tempuri.org/Version_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="http://tempuri.org/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginLog">
+      <soap12:operation soapAction="http://tempuri.org/LoginLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <soap12:operation soapAction="http://tempuri.org/WriteLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRebate">
+      <soap12:operation soapAction="http://tempuri.org/GetRebate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerBillList">
+      <soap12:operation soapAction="http://tempuri.org/GetResellerBillList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AppServiceHttpGet" type="tns:AppServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginByPhone">
+      <http:operation location="/LoginByPhone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerLogin">
+      <http:operation location="/ResellerLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyLogin">
+      <http:operation location="/CompanyLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerCompany">
+      <http:operation location="/GetResellerCompany" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerProductClassifyList">
+      <http:operation location="/GetResellerProductClassifyList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <http:operation location="/GetProductList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductList">
+      <http:operation location="/SearchProductList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodst">
+      <http:operation location="/SearchGoodst" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodsList">
+      <http:operation location="/SearchGoodsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCollect">
+      <http:operation location="/SetCollect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectList">
+      <http:operation location="/GetCollectList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderList">
+      <http:operation location="/GetResellerOrderList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderDetail">
+      <http:operation location="/GetResellerOrderDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderList">
+      <http:operation location="/GetCompanyOrderList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderDetail">
+      <http:operation location="/GetCompanyOrderDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubCompanyApprove">
+      <http:operation location="/SubCompanyApprove" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubProduct">
+      <http:operation location="/SubProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmReceipt">
+      <http:operation location="/ConfirmReceipt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubResellerOrder">
+      <http:operation location="/SubResellerOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubOrderReturn">
+      <http:operation location="/SubOrderReturn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditOrderReturn">
+      <http:operation location="/AuditOrderReturn" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCheckList">
+      <http:operation location="/GetOrderCheckList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProList">
+      <http:operation location="/GetOrderProList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComOrderSta">
+      <http:operation location="/GetComOrderSta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderStaList">
+      <http:operation location="/GetResellerOrderStaList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderSta">
+      <http:operation location="/GetResellerOrderSta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisNum">
+      <http:operation location="/GetDisNum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompNum">
+      <http:operation location="/GetCompNum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnouncement">
+      <http:operation location="/GetAnnouncement" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsList">
+      <http:operation location="/CompNewsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInfo">
+      <http:operation location="/GetNewsInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsAdd">
+      <http:operation location="/CompNewsAdd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageDeleteId">
+      <http:operation location="/GetMessageDeleteId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerInfo">
+      <http:operation location="/GetResellerInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerShippingAddressList">
+      <http:operation location="/GetResellerShippingAddressList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerAddrAdd">
+      <http:operation location="/ResellerAddrAdd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsList">
+      <http:operation location="/GetLogisticsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneCode">
+      <http:operation location="/GetPhoneCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNewPrePayPwd">
+      <http:operation location="/SendNewPrePayPwd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnPush">
+      <http:operation location="/AnPush" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="MsgPush">
+      <http:operation location="/MsgPush" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <http:operation location="/Transfer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker">
+      <http:operation location="/Maker" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker_MD5">
+      <http:operation location="/Maker_MD5" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version_New">
+      <http:operation location="/Version_New" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginLog">
+      <http:operation location="/LoginLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <http:operation location="/WriteLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRebate">
+      <http:operation location="/GetRebate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerBillList">
+      <http:operation location="/GetResellerBillList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AppServiceHttpPost" type="tns:AppServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginByPhone">
+      <http:operation location="/LoginByPhone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerLogin">
+      <http:operation location="/ResellerLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyLogin">
+      <http:operation location="/CompanyLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerCompany">
+      <http:operation location="/GetResellerCompany" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerProductClassifyList">
+      <http:operation location="/GetResellerProductClassifyList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <http:operation location="/GetProductList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProductList">
+      <http:operation location="/SearchProductList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodst">
+      <http:operation location="/SearchGoodst" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchGoodsList">
+      <http:operation location="/SearchGoodsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCollect">
+      <http:operation location="/SetCollect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectList">
+      <http:operation location="/GetCollectList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderList">
+      <http:operation location="/GetResellerOrderList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderDetail">
+      <http:operation location="/GetResellerOrderDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderList">
+      <http:operation location="/GetCompanyOrderList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOrderDetail">
+      <http:operation location="/GetCompanyOrderDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubCompanyApprove">
+      <http:operation location="/SubCompanyApprove" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubProduct">
+      <http:operation location="/SubProduct" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmReceipt">
+      <http:operation location="/ConfirmReceipt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubResellerOrder">
+      <http:operation location="/SubResellerOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubOrderReturn">
+      <http:operation location="/SubOrderReturn" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditOrderReturn">
+      <http:operation location="/AuditOrderReturn" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCheckList">
+      <http:operation location="/GetOrderCheckList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderProList">
+      <http:operation location="/GetOrderProList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComOrderSta">
+      <http:operation location="/GetComOrderSta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderStaList">
+      <http:operation location="/GetResellerOrderStaList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerOrderSta">
+      <http:operation location="/GetResellerOrderSta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisNum">
+      <http:operation location="/GetDisNum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompNum">
+      <http:operation location="/GetCompNum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnnouncement">
+      <http:operation location="/GetAnnouncement" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsList">
+      <http:operation location="/CompNewsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsInfo">
+      <http:operation location="/GetNewsInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompNewsAdd">
+      <http:operation location="/CompNewsAdd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageDeleteId">
+      <http:operation location="/GetMessageDeleteId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerInfo">
+      <http:operation location="/GetResellerInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerShippingAddressList">
+      <http:operation location="/GetResellerShippingAddressList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResellerAddrAdd">
+      <http:operation location="/ResellerAddrAdd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsList">
+      <http:operation location="/GetLogisticsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoneCode">
+      <http:operation location="/GetPhoneCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNewPrePayPwd">
+      <http:operation location="/SendNewPrePayPwd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnPush">
+      <http:operation location="/AnPush" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="MsgPush">
+      <http:operation location="/MsgPush" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <http:operation location="/Transfer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker">
+      <http:operation location="/Maker" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maker_MD5">
+      <http:operation location="/Maker_MD5" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version_New">
+      <http:operation location="/Version_New" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginLog">
+      <http:operation location="/LoginLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <http:operation location="/WriteLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRebate">
+      <http:operation location="/GetRebate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResellerBillList">
+      <http:operation location="/GetResellerBillList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppService">
+    <wsdl:port name="AppServiceSoap" binding="tns:AppServiceSoap">
+      <soap:address location="http://118.178.88.33:93/MobileService/AppService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AppServiceSoap12" binding="tns:AppServiceSoap12">
+      <soap12:address location="http://118.178.88.33:93/MobileService/AppService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AppServiceHttpGet" binding="tns:AppServiceHttpGet">
+      <http:address location="http://118.178.88.33:93/MobileService/AppService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AppServiceHttpPost" binding="tns:AppServiceHttpPost">
+      <http:address location="http://118.178.88.33:93/MobileService/AppService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

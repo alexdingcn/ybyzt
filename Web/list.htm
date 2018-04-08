@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>医站通列表</title>
+<link href="css/global-2.0.css?v=2.7.8.1" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script src="js/menu.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" type="text/javascript"></script>
+
+	
+</head>
+
+<body>
+<!--顶部导航栏开始-->
+<div class="topnav">
+     
+ <div class="n">
+        <div id="top1_mlogin" class="fl mt-login">
+           <a href="/login.html">登录</a>| <a href="/compOrdisRegister.html">
+                注册</a>
+        <div class="role-cur" style="right:0;padding-left:30px;"><a href="javascript:void(0)" class="out" style="color:#008be3">退出</a></div></div>
+        
+        
+        <ul id="top1_disTop" class="fr">
+            <li class="fore1"><a href="javascript:;" class="a1">我的医站通</a> <i class="down-i"></i>
+                <div class="cur">
+                    <a href="/Distributor/OrderList.aspx">我的订单</a> <a href="/Distributor/pay/orderPayList.aspx">
+                        待支付订单</a> <a href="/Distributor/pay/orderZDList.aspx">我的账单</a> <a href="/Distributor/GoodsList.aspx?sc=sc">
+                            我的收藏</a>
+                </div>
+            </li>
+            <li class="line"><em>|</em></li>
+            <li class="fore2"><a href="/Distributor/Shop.aspx" class="a2">
+                <i class="shop-i"></i>购物车<i class="red">(<i id="top1_TopE_CartNum" class="TopE_CartNum">0</i>)</i>
+            </a><i class="down-i"></i>
+                <div id="top1_TopE_StoreCart" class="cur"><a href="javascript:void(0);"><i class="name" tip="title">购物车没有商品，赶紧选购吧！</i></a></div>
+            </li>
+            <li class="line"><em>|</em></li>
+
+
+            <li class="fore3"><a href="https://www.yibanmed.com/AppDown.aspx?type=Comp">APP下载</a><i class="down-i"></i><div class="cur"><img alt="关注官方微信" src="images/app-qr.png" width="110" height="110"></div></li>
+            <li class="line"><em>|</em></li> 
+            <li class="fore1"><a href="javascript:void(0)">网站导航</a><i class="down-i"></i>
+				<div class="cur2">
+                	<div class="title">行业市场</div>
+                    <ul class="name">
+                        
+                                <li><a href="/comlist_10.html">临床检验/医用化验</a></li>
+                            
+                                <li><a href="/comlist_11.html">电子/超声/光学/激光</a></li>
+                            
+                                <li><a href="/comlist_12.html">射线/核素/磁共振/高频</a></li>
+                            
+                                <li><a href="/comlist_13.html">消毒/灭菌/冷用</a></li>
+                            
+                                <li><a href="/comlist_14.html">体外循环/血液处理</a></li>
+                            
+                                <li><a href="/comlist_15.html">康复/理疗</a></li>
+                            
+                                <li><a href="/comlist_16.html">口腔设备器具</a></li>
+                            
+                                <li><a href="/comlist_17.html">手术急救/诊疗护理</a></li>
+                            
+                                <li><a href="/comlist_18.html">科室手术器械</a></li>
+                            
+                                <li><a href="/comlist_19.html">普通诊察/注射穿刺</a></li>
+                            
+                                <li><a href="/comlist_20.html">中医器械</a></li>
+                    </ul>
+                    <div class="title">主题频道</div>
+                    <ul class="name">
+                    	<li><a href="/compnew.html">最新入驻</a></li><li><a href="/comphot.html">精品品牌</a></li><li><a href="/goodsHotlist.html">优质货源</a></li><li><a href="/news_1.html">新闻资讯</a></li>
+                    </ul>
+                    
+                    <div class="title">帮助中心</div>
+                    <ul class="name">
+                    	<li><a href="/guide.html">入市指南</a></li><li><a href="/help/help_6.html">卖家入门</a></li><li><a href="/help/help_7.html">卖家进阶</a></li><li><a href="/help/help_8.html">买家入门</a></li><li><a href="/help/help_9.html">买家进阶</a></li>
+                        <li><a href="/help/help_10.html">常见问题</a></li>
+                    </ul>
+                    <div class="title">更多热点</div>
+                    <ul class="name">
+                    	<li><a href="http://www.moreyou.cn/" target="_blank">医伴金服</a></li>
+                        <li><a href="http://www.my1818.com/" target="_blank">医站通</a></li>
+                        <li><a href="http://www.b2b1818.com/" target="_blank">陌远易家</a></li>
+                        <li><a href="http://www.fi1818.com/" target="_blank">陌远易融</a></li>
+                    </ul>
+				</div>
+                </li><li class="line"><em>|</em></li> 
+            	<li class="fore1"><a href="http://localhost:90">医站通首页</a>
+               
+            </li>
+        </ul>
+        
+
+        
+    </div>
+</div>
+<!--顶部导航结束-->	
+<!--页头开始-->
+<div class="header">
+  <div class="m-logo"> <a href="http://localhost:90"> <img src="images/logo2.0.png" alt="医站通"></a></div>
+  <div class="search">
+    <div class="s-box">
+      <input name="TopNav1$txtcontent" type="text" id="TopNav1_txtcontent" autocomplete="off" class="box" value="产品关键词搜索" onfocus="if(value==defaultValue){value=''}" maxlength="40">
+		<i class="glass"></i>
+        <div class="search-li" id="selectul">
+			<a href="#">云南白药</a> <a href="#">听诊器</a> <a href="#">舒筋健腰丸 </a> <a href="#">血压测量仪</a> <a href="#">鼻腔冲洗器 </a><a href="#">维生素E</a><a href="#"> 关节呵护 </a>
+       </div>
+        <a id="btn_SearCh" href="#" class="btn sCompN" onclick="checkpro()">搜索</a> 
+    </div>
+    <div id="TopNav1_SelectValue" class="hot clear">
+    		
+    </div>
+  </div>
+  <div class="or-app"> <span> <img alt="医站通公众号" src="images/wx-qr.png" width="80" height="80"></span><i>医站通公众号</i></div>
+</div>
+<!--页头结束-->
+<!--主导航开始-->
+<div class="nav">
+  <div class="n">
+    <div class="navmenu fl n2"> <i class="hy-i"></i>产品类导航
+     
+      <!--左侧菜单 start-->
+      <div id="TopNav1_Nav" class="leftsideBar n3">  
+          <div class="submenu">
+            <h3 class="t" indid="10"><a href="/comlist_10.html" class="bt">临床检验/医用化验</a></h3>
+            <div class="cur">
+			 <h2 class="title"><a href="#">临床检验分析</a></h2> 
+			 <ul class="list">
+					<li><a href="#">免疫分析系统</a><i class="fg">|</i></li>
+					<li><a href="#">血液分析系统</a><i class="fg">|</i></li>
+					<li><a href="#">生化分析系统</a><i class="fg">|</i></li>
+					<li><a href="#">细菌分析系统</a><i class="fg">|</i></li>
+					<li><a href="#">尿液分析系统</a><i class="fg">|</i></li>
+					<li><a href="#">生物分离系统</a><i class="fg">|</i></li>
+					<li><a href="#">血气分析系统</a><i class="fg">|</i></li>
+					<li><a href="#">基因和生命科学仪器</a><i class="fg">|</i></li>
+					<li><a href="#">临床医学检验辅助设备</a></li>		
+				</ul>
+			 <h2 class="title"><a href="#">医用化验和基础设备器具</a></h2> 
+			 <ul class="list">
+					<li><a href="#">医用培养箱</a><i class="fg">|</i></li>
+					<li><a href="#">医用离心机</a><i class="fg">|</i></li>
+					<li><a href="#">病理分析前处理设备</a><i class="fg">|</i></li>
+					<li><a href="#">血液化验设备和器具 </a></li>
+							
+				</ul>
+			</div>
+          </div>
+          <div class="submenu">
+            <h3 class="t" indid="11"><a href="/comlist_11.html" class="bt">电子/超声/光学/激光</a></h3>
+            <div class="cur"> 
+				<h2 class="title"><a href="#">医用电子仪器设备</a></h2> 
+				<ul class="list">
+					<li><a href="#">用于心脏的治疗、急救装置</a><i class="fg">|</i></li>
+					<li><a href="#">有创式电生理仪器及创新电生理仪器</a><i class="fg">|</i></li>
+					<li><a href="#">心电电极</a><i class="fg">|</i></li>
+					<li><a href="#">有创医用传感器</a><i class="fg">|</i></li>
+					<li><a href="#">无创医用传感器</a><i class="fg">|</i></li>
+					<li><a href="#">心电诊断仪器</a><i class="fg">|</i></li>
+					<li><a href="#">脑电诊断仪器</a><i class="fg">|</i></li>
+					<li><a href="#">肌电诊断仪器</a><i class="fg">|</i></li>
+					<li><a href="#">其他生物电诊断仪器</a><i class="fg">|</i></li>
+					<li><a href="#">电声诊断仪器</a><i class="fg">|</i></li>
+					<li><a href="#">无创监护仪器</a><i class="fg">|</i></li>
+					<li><a href="#">呼吸功能及气体分析测定装置</a><i class="fg">|</i></li>
+					<li><a href="#">医用刺激器</a><i class="fg">|</i></li>
+					<li><a href="#">光谱诊断设备</a><i class="fg">|</i></li>
+					<li><a href="#">血流量、容量测定装置</a><i class="fg">|</i></li>
+					<li><a href="#">电子压力测定装置</a><i class="fg">|</i></li>
+					<li><a href="#">生理研究实验仪器</a><i class="fg">|</i></li>
+					<li><a href="#">体外反搏及其辅助循环装置</a><i class="fg">|</i></li>
+					<li><a href="#">睡眠呼吸治疗系统</a><i class="fg">|</i></li>
+					<li><a href="#">心电导联线</a></li>			
+				</ul>
+				<h2 class="title"><a href="#">医用超声仪器及有关设备</a></h2> 
+				<ul class="list">
+					<li><a href="#">超声手术及聚焦治疗设备</a><i class="fg">|</i></li>
+					<li><a href="#">彩色超声成像设备及超声介入/腔内诊断设备</a><i class="fg">|</i></li>
+					<li><a href="#">超声母婴监护设备</a><i class="fg">|</i></li>
+					<li><a href="#">超声换能器</a><i class="fg">|</i></li>
+					<li><a href="#">便携式超声诊断设备</a><i class="fg">|</i></li>
+					<li><a href="#">超声理疗设备</a><i class="fg">|</i></li>
+					<li><a href="#">超声辅助材料</a></li>
+				</ul>
+				<h2 class="title"><a href="#">医用光学器具、仪器及内窥镜设备</a></h2> 
+				<ul class="list">
+					<li><a href="#">植入体内或长期接触体内的眼科光学器具</a><i class="fg">|</i></li>
+					<li><a href="#">植入体内或长期接触体内的眼科光学器具</a><i class="fg">|</i></li>
+					<li><a href="#">医用放大镜</a><i class="fg">|</i></li>
+					<li><a href="#">心及血管、有创、腔内手术用内窥镜</a><i class="fg">|</i></li>
+					<li><a href="#">电子内窥镜</a><i class="fg">|</i></li>
+					<li><a href="#">眼科光学仪器</a><i class="fg">|</i></li>
+					<li><a href="#">光学内窥镜及冷光源</a><i class="fg">|</i></li>
+					<li><a href="#">医用手术及诊断用显微设备</a><i class="fg">|</i></li>
+					
+					<li><a href="#">医用光学仪器配件及附件</a></li>
+				</ul> 
+				<h2 class="title"><a href="#">医用激光仪器设备</a></h2> 
+				<ul class="list">
+					<li><a href="#">激光手术和治疗设备</a><i class="fg">|</i></li>
+					<li><a href="#">激光诊断仪器</a><i class="fg">|</i></li>
+					<li><a href="#">介入式激光诊治仪器</a><i class="fg">|</i></li>
+					<li><a href="#">激光手术器械</a><i class="fg">|</i></li>
+					<li><a href="#">弱激光体外治疗仪器</a><i class="fg">|</i></li>
+					<li><a href="#">干色激光打印机</a></li>
+				</ul> 
+			  </div>
+          </div>
+          <div class="submenu">
+            <h3 class="t" indid="12"><a href="/comlist_12.html" class="bt">射线/核素/磁共振/高频</a></h3>
+            <div class="cur"></div>
+          </div>
+          <div class="submenu">
+            <h3 class="t" indid="13"><a href="/comlist_13.html" class="bt">消毒/灭菌/冷用</a></h3>
+            <div class="cur"> 
+			  </div>
+          </div>
+          <div class="submenu">
+            <h3 class="t" indid="14"><a href="/comlist_14.html" class="bt">体外循环/血液处理</a></h3>
+            <div class="cur"></div>
+          </div>
+          <div class="submenu">
+            <h3 class="t" indid="15"><a href="/comlist_15.html" class="bt">康复/理疗</a></h3>
+            <div class="cur">
+			  </div>
+          </div>
+		  <div class="submenu">
+            <h3 class="t" indid="15"><a href="/comlist_15.html" class="bt">口腔设备器具</a></h3>
+            <div class="cur">
+			  </div>
+          </div>
+		  <div class="submenu">
+            <h3 class="t" indid="15"><a href="/comlist_15.html" class="bt">手术急救/诊疗护理</a></h3>
+            <div class="cur">
+			  </div>
+          </div>
+		  <div class="submenu">
+            <h3 class="t" indid="15"><a href="/comlist_15.html" class="bt">科室手术器械</a></h3>
+            <div class="cur">
+			  </div>
+          </div>
+		  <div class="submenu">
+            <h3 class="t" indid="15"><a href="/comlist_15.html" class="bt">普通诊察/注射穿刺</a></h3>
+            <div class="cur">
+			  </div>
+          </div>
+		  <div class="submenu">
+            <h3 class="t" indid="15"><a href="/comlist_15.html" class="bt">中医器械</a></h3>
+            <div class="cur">
+			  </div>
+          </div>
+		 <div class="sortbox_bg"></div>
+        </div>
+      <div class="role-cur" style="right:0;padding-left:30px;"><a href="javascript:void(0)" class="out" style="color:#008be3">退出</a></div></div>
+      <!--左侧菜单 end-->      
+      <ul class="navitems fl">
+          <li><a href="http://localhost:90" class="cur">首页</a></li>
+          <li><a href="/compnew.html">招商信息</a></li>
+          <li><a href="/comphot.html">厂家列表</a></li>
+          <li><a href="/platform.html">平台介绍</a></li>
+          <li><a href="/news_1.html">新闻资讯</a></li>
+		  <li><a href="/financial.html">金融服务</a></li>
+          <li><a href="/help/help.html">帮助中心</a></li>
+   	 <div class="role-cur" style="right:0;padding-left:30px;"><a href="javascript:void(0)" class="out" style="color:#008be3">退出</a></div></ul> 
+    </div>
+    <div class=" clear"></div>
+</div>
+<div class="line2"></div>	
+<!--主导航结束-->
+<!--内容start-->	
+<div class="bgf5">
+	<div class="w1200">
+		<div class="m-crumbs" d="TitleDiv"><a href="#">首页</a> > <a href="#">临床检验/医用化验</a></div>
+		<div class="list-con">
+			<ul class="category">
+			<li><span class="name fl">生产厂家：</span>
+			<div class="changjia fl" id="contentid">
+				<a href="#" >三门峡广宇生物制药有限公司</a>
+				<a href="#" class="cur">中山市健禾中药饮片有限公司</a>
+				<a href="#">中山市恒生药业有限公司</a>
+				<a href="#">九芝堂股份有限公司</a>
+				<a href="#">云南白药集团无锡药业有限公司</a>
+			</div>
+			<a href="javascript:;" class=" more">更多 ▼</a>
+			</li>
+			<li><span class="name fl">商品分类：</span>
+			<div class="fen fl" id="contentid">
+				<a href="#" class="cur">中成药</a>
+				<a href="#">中药饮片</a>
+			</div>
+			<a href="javascript:;"  class=" more">更多 ▼</a>
+			</li>
+			<li><span class="name fl">剂型分类：</span>
+			<div class="fen fl" id="contentid">
+				<a href="#" >丸剂</a>
+				<a href="#" class="cur">其它剂型</a>
+				<a href="#">凝胶剂</a>
+				<a href="#">原料药</a>
+				<a href="#">口服溶液剂</a>
+				<a href="#">口服混悬剂</a>
+				<a href="#">口服乳剂</a>
+				<a href="#">吸入制剂</a>
+				<a href="#">喷雾剂</a>
+				<a href="#">搽剂</a>
+				<a href="#">散剂</a>
+			</div>
+			<a href="javascript:;" class=" more">更多 ▼</a>
+			</li>
+			</ul>
+			<ul class="pro">
+				<li>
+				  <div class="pic fl"><img src="images/pic1.jpg" width="178" height="128" alt=""/></div>
+					<div class="tex fl"><p class="t1">逐瘀通脉胶囊</p><p class="t2">4天前发布（2017-12-11 17:07）</p>
+						<p>全国  |  一类医疗器械  |  苏食药监械（准）字2014第1060421号</p>
+						<p>产品简介：主治血瘀型晕眩症，症见眩晕、头痛耳鸣、舌质暗红，脉沉涩。</p></div>
+					<div class="btn fr"><a class="btn-red" href="#">联系厂商</a><a class="btn-blue" href="#">申请合作</a></div>
+				
+				</li>
+				<li>
+				  <div class="pic fl"><img src="images/pic1.jpg" width="178" height="128" alt=""/></div>
+					<div class="tex fl"><p class="t1">逐瘀通脉胶囊</p><p class="t2">4天前发布（2017-12-11 17:07）</p>
+						<p>全国  |  一类医疗器械  |  苏食药监械（准）字2014第1060421号</p>
+						<p>产品简介：主治血瘀型晕眩症，症见眩晕、头痛耳鸣、舌质暗红，脉沉涩。</p></div>
+					<div class="btn fr"><a class="btn-red" href="#">联系厂商</a><a class="btn-blue" href="#">申请合作</a></div>
+				
+				</li>
+				<li>
+				  <div class="pic fl"><img src="images/pic1.jpg" width="178" height="128" alt=""/></div>
+					<div class="tex fl"><p class="t1">逐瘀通脉胶囊</p><p class="t2">4天前发布（2017-12-11 17:07）</p>
+						<p>全国  |  一类医疗器械  |  苏食药监械（准）字2014第1060421号</p>
+						<p>产品简介：主治血瘀型晕眩症，症见眩晕、头痛耳鸣、舌质暗红，脉沉涩。</p></div>
+					<div class="btn fr"><a class="btn-red" href="#">联系厂商</a><a class="btn-blue" href="#">申请合作</a></div>
+				
+				</li>
+				<li>
+				  <div class="pic fl"><img src="images/pic1.jpg" width="178" height="128" alt=""/></div>
+					<div class="tex fl"><p class="t1">逐瘀通脉胶囊</p><p class="t2">4天前发布（2017-12-11 17:07）</p>
+						<p>全国  |  一类医疗器械  |  苏食药监械（准）字2014第1060421号</p>
+						<p>产品简介：主治血瘀型晕眩症，症见眩晕、头痛耳鸣、舌质暗红，脉沉涩。</p></div>
+					<div class="btn fr"><a class="btn-red" href="#">联系厂商</a><a class="btn-blue" href="#">申请合作</a></div>
+				
+				</li>
+				<li>
+				  <div class="pic fl"><img src="images/pic1.jpg" width="178" height="128" alt=""/></div>
+					<div class="tex fl"><p class="t1">逐瘀通脉胶囊</p><p class="t2">4天前发布（2017-12-11 17:07）</p>
+						<p>全国  |  一类医疗器械  |  苏食药监械（准）字2014第1060421号</p>
+						<p>产品简介：主治血瘀型晕眩症，症见眩晕、头痛耳鸣、舌质暗红，脉沉涩。</p></div>
+					<div class="btn fr"><a class="btn-red" href="#">联系厂商</a><a class="btn-blue" href="#">申请合作</a></div>
+				
+				</li>
+				<li>
+				  <div class="pic fl"><img src="images/pic1.jpg" width="178" height="128" alt=""/></div>
+					<div class="tex fl"><p class="t1">逐瘀通脉胶囊</p><p class="t2">4天前发布（2017-12-11 17:07）</p>
+						<p>全国  |  一类医疗器械  |  苏食药监械（准）字2014第1060421号</p>
+						<p>产品简介：主治血瘀型晕眩症，症见眩晕、头痛耳鸣、舌质暗红，脉沉涩。</p></div>
+					<div class="btn fr"><a class="btn-red" href="#">联系厂商</a><a class="btn-blue" href="#">申请合作</a></div>
+				
+				</li>
+			</ul>
+			<div id="Pager_List" class="page" showinputbox="Always">
+<a class="tf" disabled="disabled" style="margin-right:5px;">首页</a><a class="tf" disabled="disabled" style="margin-right:5px;">上一页</a><span class="cur" style="margin-right:5px;">1</span><a href="javascript:__doPostBack('Pager_List','2')" class="tf" style="margin-right:5px;">2</a><a href="javascript:__doPostBack('Pager_List','3')" class="tf" style="margin-right:5px;">3</a><a class="tf" href="javascript:__doPostBack('Pager_List','4')" style="margin-right:5px;">...</a><a class="tf" href="javascript:__doPostBack('Pager_List','2')" style="margin-right:5px;">下一页</a><a class="tf" href="javascript:__doPostBack('Pager_List','44')" style="margin-right:5px;">尾页</a>&nbsp;&nbsp;跳转到<input type="text" value="1" name="Pager_List_input" id="Pager_List_input" onkeydown="ANP_keydown(event,'Pager_List_btn');" style="width:30px;"><input type="submit" value="跳转" name="Pager_List" id="Pager_List_btn" class="tf" onclick="if(ANP_checkInput('Pager_List_input',44)){__doPostBack('Pager_List','')} else{return false}">
+</div>
+		</div>
+		<div class="blank25"></div>
+	</div>	
+</div>
+<!--内容 end-->		
+	
+ 
+<!--foot start-->
+	<div class="foot1">
+	<ul class="w1200">
+	 <li><div class="foot-icon1 fl"></div><div class="fl"><h4>平台优势</h4>线上交易，在线拓展贸易渠道</div></li>
+	 <li><div class="foot-icon2 fl"></div><div class="fl"><h4>品质服务</h4>三级服务体系，7*24运营管理</div></li>
+	 <li><div class="foot-icon3 fl"></div><div class="fl"><h4>安全体系</h4>CFCA数字证书提供安全保障</div></li>
+	 <li><div class="foot-icon4 fl"></div><div class="fl"><h4>发展前景</h4>打造多领域的完整生态产业链</div></li>	
+	</ul>
+	</div>	
+	<div class="foot2 w1200">
+		<ul class="fl">
+			<li><h4>新手指南</h4><a href="#">卖家入驻</a><a href="#">买家加盟</a><a href="#">入市指南</a><a href="#">帮助中心</a></li>
+			<li><h4>网站申明</h4><a href="#">权利申明</a><a href="#">免责申明</a><a href="#">保密申明</a><a href="#">链接申明</a></li>
+			<li><h4>关于我们</h4><a href="#">医伴金服</a><a href="#">企业文化</a><a href="#">公司简介</a><a href="#">联系我们</a></li>
+		</ul>
+		<div class="foot-wx fl"></div><div class="fl lianxi"><p>客服热线：</p><p>40077-40088</p><p class="btn">在线客服</p></div>
+	</div>
+	<div class="blank25"></div>
+
+<div class="footer">	
+<div class="f-copy">
+    <a href="http://www.miitbeian.gov.cn" target="_blank" rel="noopener noreferrer">粤ICP备17130448号-3</a> Copyright © 2017 深圳前海医伴金服信息技术有限公司版权所有<a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener noreferrer"></a>
+</div>
+<div class="authentication"> 
+    <a href="http://icp.alexa.cn/index.php?q=www.my1818.com&amp;code=&amp;icp_host=lncainfo" target="_blank" rel="noopener noreferrer"></a>
+    <a key="599e7bff2548be755dd5f6b1" logo_size="83x30" logo_type="business" href="https://v.pinpaibao.com.cn/cert/site/?site=www.my1818.com&amp;at=business" target="_blank"></a>
+    <a id="_pingansec_bottomimagelarge_shiming" href="http://si.trustutn.org/info?sn=889170828030165944372&amp;certType=1" target="_blank" rel="noopener noreferrer"></a>
+    <a href="http://www.12377.cn/node_548446.htm" target="_blank" rel="noopener noreferrer"></a>
+</div>	
+</div>	
+<!--foot end-->		
+	
+</body>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>	
+</html>

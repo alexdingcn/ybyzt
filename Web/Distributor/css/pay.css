@@ -1,0 +1,216 @@
+﻿@charset "utf-8";
+/* 整站全局公共样式的设定 */
+body {margin:0; padding:0; background:#f6f6f6;color:#494949; font-size:12px; font-family:'微软雅黑', 'microsoft yahei', 宋体, Tahoma, Verdana, Arial, Helvetica, sans-serif;}
+html{-webkit-text-size-adjust: none;}
+div,form,img,ul,ol,li,dl,dt,dd,p,span,b,i,input,select{margin: 0; padding: 0; border: 0; font-style:normal;font-family:'微软雅黑', 'microsoft yahei', 宋体, Tahoma, Verdana, Arial, Helvetica, sans-serif;}
+li,dl{list-style-type:none;}h1,h2,h3,h4,h5,h6 { margin:0; padding:0;}
+a:link {color: #494949; text-decoration:none;}
+a:visited {color: #494949; text-decoration:none;}
+a:hover {color: #00a0e9;text-decoration:underline; }
+a:active {color: #494949; text-decoration:none;}
+a,img,input{ outline:none;star:expression(this.onFocus=this.blur());}
+/* 其它常用样式的定义 */ 
+.left{ float: left;}.right{ float: right;}.clear{ clear: both;}
+.blank10{height:10px; font-size:1px; clear:both;overflow:hidden;}
+.blank20{height:20px; font-size:1px; clear:both;overflow:hidden;}
+.red{ color:#fa0008;}.bule{ color:#058abe;}.gray{ color:#797979;}
+.trigon{width:0;height:0;line-height:0;border-width:6px;border-style:solid;border-color: #c2c2c2 transparent transparent transparent; display:inline-table; margin-left:6px; position:relative; top:5px;}
+
+/*header*/
+.header{ width:100%; min-width:1200px; height:50px; background:#fff; border-bottom:1px solid #d1d1d1; overflow:hidden;}
+.header .con,.payInfo,.question { width:1200px; margin:0px auto; position:relative;}
+.header .logo{ position:absolute; top:10px; left:0;}
+.header .logo i{ font-size:16px; position:relative; top:-12px; border-left:1px solid #ddd; padding-left:12px; margin-left:12px; line-height:24px; display:inline-block;}
+.header .topMenu{ float:right; color:#ccc; line-height:50px;}
+.header .topMenu a{ margin:0px 10px; color:#797979;}
+
+/*支付信息*/
+.payInfo{padding:30px 0;  position:relative;}
+.payInfo .number{ font-size:14px; padding-bottom:8px;}
+.payInfo .gray{ color:#999;}
+.payInfo .amount{ position:absolute; right:10px; top:7px;}
+.payInfo .amount li{ text-align:right; margin-top:13px; color:#999;}
+.payInfo .amount .money{ color:#ff4e02; font-size:24px; font-weight:normal; margin-right:5px;}
+.payInfo .amount .price{ padding-right:5px; color:#666; font-size:14px;}
+.payInfo .amount .ab{ color:#555; font-size:14px; }
+.payInfo .amount .box1{ padding:0px 5px;  border: 1px solid #ccc; color:#ff4e02; font-size:24px;background:#fff; height: 30px;line-height: 34px;line-height: 30px\0;text-align:center; color:#ff4e02; width:120px;  display:inline-block; position:relative; top:3px; }
+
+
+
+/*企业钱包支付*/
+.payOpt{ width:1180px; margin:0px auto; position:relative; padding:0px 10px 0px 10px; background:#fff; border-top:4px solid #ccc;border-bottom:1px solid #ccc;}
+.payOpt .li{ border-bottom:1px solid #d1d1d1; padding:10px 0 10px 125px; position:relative;height:34px; overflow:hidden;}
+.payOpt .check{ width:20px; height:20px; background:url(../images/fx.png) no-repeat top left; display:inline-block; position:absolute; top:15px; left:10px;cursor:pointer;}
+.payOpt .title{ position:absolute; top:12px; left:35px;line-height:26px; font-size:16px; width:90px;}
+.payOpt .amOpt{ display:inline-block; color:#797979; line-height:34px;}
+.payOpt .amount{ position:absolute; top:10px; right:10px; color:#797979; display:none;}
+.payOpt .amount b{color:#ff4e02; font-size:18px; padding:0px 5px; font-weight:normal;}
+.box{ width:70px; height:20px;line-height:20px;  border:1px solid #ececec;background:#f7f7f7; text-align:center; font-weight:bold; color:#ff4e02; margin-left:10px;}
+
+/*快捷支付*/
+.bankCard{ float:left;}
+.bankCard span,.card span{ float:left; margin-right:10px;}
+.bankCard li{ border:2px solid #b0c2e1;border-right:4px solid #b0c2e1; border-radius:3px; padding:2px 10px; margin-top:15px; width:500px; height:30px; line-height:30px; color:#999; cursor:pointer;}
+.bankCard li:hover{border:2px solid #f29450;border-right:4px solid #f29450;}
+.bankCard li:first-child{margin-top:0px; }
+.bankCard .quick,.card .quick{ background:#83a4dc; display:inline-block; border-radius:3px; padding:0px 8px; color:#fff; height:20px; line-height:20px; margin-right:5px;}
+.bankCard i,.card i{ color:#696969; padding:0px 5px;}
+.addCard{ float:left;font-weight:bold; position:relative; top:7px; left:5px;}
+.bankCard .border{border:2px solid #f29450;border-right:4px solid #f29450;}
+.bankCard li img{ height:30px;}
+
+/*网银支付*/
+.bankCard2{ position:relative; top:0; left:-88px; overflow:hidden;}
+.bankCard2 li{ border:2px solid #d1d1d1; float:left; margin:10px 10px 5px 0; width:180px; padding:1px 1px 1px 10px;height:30px; overflow:hidden;}
+.bankCard2 li img{outline:none;blr:expression(this.onFocus=this.blur());}
+.bankCard2 li:hover{ border:2px solid #f29450;}
+.bankCard2 li a{ display:inline-block;}
+.bankCard2 .more,.bankCard2 .more:hover{ border:none; line-height:30px; font-weight:bold;}
+.bankCard2 .more:hover .trigon{border-color: #00a0e9 transparent transparent transparent;}
+.amOpt .show{ position:absolute; left:290px; top:12px; border:1px solid #d1d1d1; padding:0px 10px;}
+.bankCard2 .border2{border:2px solid #f29450;}
+#a4 .bankCard2 .border2,#a4 .bankCard2 li:hover{border:2px solid #4870b4; background:#4870b4; color:#fff; cursor:pointer;}
+
+/*其他平台支付*/
+.platformPay{ position:relative; top:35px; left:-85px; overflow:hidden; display:none;}
+.platformPay a{ position:relative; height:40px; border:2px solid #ddd; float:left; padding:0 30px 0 45px; line-height:40px; font-size:14px; margin-right:20px;}
+.platformPay a:hover,.platformPay a.hover{ text-decoration:none; color:#ff4e02; background:#; border:2px solid #f29450;}
+.zfb-i,.wx-i{ background:url(../images/pay2.1.png) no-repeat 0 0; width:28px; height:28px; display:inline-block; position:absolute; top:5px; left:10px;}
+.wx-i{width:33px; height:29px; background-position:0 -48px; left:7px;}
+.center .platformPay{ display:block;}
+/*微信支付*/
+.pay-wechat{width:880px; margin:0px auto; position:relative; padding:0px 10px 50px 10px; background:#fff; border-top:4px solid #ccc;border-bottom:1px solid #ccc; padding-left:300px;}
+.pay-wechat .title{ font-size:18px; position:absolute; left:25px; top:25px;}
+.pay-wechat .return { margin-top:60px;}
+.pay-wechat .return a{ font-size:14px; color:#3975d3;}
+.pay-wechat .text { padding:12px 0;}
+.pay-wechat .tis{ background:#7697cb; height:65px; width:260px; font-size:14px; color:#fff; text-align:center; margin-top:7px;}
+.pay-wechat .sm-i{ display:inline-block; background:url(../images/pay2.1.png) no-repeat 0 -93px; width:40px; height:40px; position:relative; top:5px;}
+.pay-wechat .t{ padding-top:15px; display:inline-block; text-align:left; padding-left:10px;}
+.app-p{ width:256px; height:374px;  background:url(../images/pay2.1.png) no-repeat -78px -30px; display:inline-block; position:absolute; left:630px; top:95px;}
+.app-p2{ width:291px; height:380px;  background:url(../images/alipay.jpg) no-repeat; display:inline-block; position:absolute; left:630px; top:90px;}
+
+/*JS添加class*/
+.payOpt .li.center{border:2px solid #9cadd3; height:auto; min-height:34px;}
+.payOpt .li.center .bankCard li{ margin-bottom:8px;cursor:pointer;}
+/*.payOpt .li.center .bankCard2{ height:95px;}*/
+/*.payOpt .li.center .addCard{top:28px;}*/
+.payOpt .li.checkNo{height:auto;border:2px solid #9cadd3;}
+.payOpt .li.checkNo .more{ display:none;}
+.payOpt .li.center .amount{ display:block;}
+.payOpt .li.center .cur{background: url(../images/fx.png) no-repeat 0 -24px;}
+
+/*按钮*/
+.payBtn{ padding:20px 0 20px 20px;background:#fcfcfc;}
+.payBtn .btn,.redBtn,.bluBtn{ background:#f57403;height:40px; line-height:40px; width:115px; border:1px solid #d66500; display:inline-block; text-align:center; color:#fff; font-size:16px;}
+.payBtn .btn:hover{text-decoration:none;}
+.payBtn .txt{line-height:20px; height:45px; padding-right:10px; color:#797979;  display: inline-block;   vertical-align: middle;
+    display: table-cell; text-align:right;}
+.payPas .tis,.payBtn .tis{ padding-right:0px; display:inline-block; font-size:12px;float:right;}
+
+/*常见问题*/
+.question .title{ font-size:14px; font-weight:bold; border-bottom:2px solid #d1d1d1; line-height:30px; padding-left:10px; color:#666;}
+.question .list{ padding:0px 0 0 10px; line-height:26px;}
+.question .list dd{ color:#999; padding-left:18px;}
+.question .list dt{ padding-top:10px;}
+
+/*footer*/
+.footer{ text-align:center; color:#999; padding:20px 0 20px 0; margin-top:30px; border-top:1px solid #d1d1d1;}
+
+/*添加快捷支付弹窗*/
+.hidebg{ background:#000;opacity:0.3;filter: Alpha(Opacity=50) !important; width:100%; height:100%;z-index:997;}
+/*.cd-{ background:#000;opacity:0.3;filter: Alpha(Opacity=30) !important; width:690px; height:430px; padding:5px;position:fixed; top:50%; margin-top:-230px; left:50%; margin-left:-350px; z-index:998;}*/
+.addBank{ width:670px; height:410px; padding:10px; overflow:hidden; background:#fff; position:fixed; top:50%; margin-top:-225px; left:50%; margin-left:-345px; z-index:999; display:none;box-shadow: 0px 0px 0px 5px #333;}
+.addBank .title{ border-bottom:1px solid #d1d1d1; line-height:30px; font-size:14px; padding-left:5px;}
+.addBank .bankCard2{ left:10px; margin-right:10px;max-height:315px;overflow-y:auto; }
+.addBank .bankCard2 li{padding:3px 10px;}
+.addBank .bankCard2 li:hover{ border:2px solid #f29450;padding:3px 10px;}
+.addBank .bankCard2 .show{ padding:2px 10px;border:2px solid #f29450}
+/*.bankCard2 .cur2{border:2px solid #f29450; padding: 0px 0 0 10px;}*/
+.addBank .bankCard2 .border3{border:2px solid #f29450;}
+.addBank .bankCard2 img{ height:30px;}
+
+.addBank .payBtn{ padding-top:15px;}
+.addBank .close{ background:url(../images/fx.png) no-repeat 0 -52px; width:13px ; height:13px; display:block; position:absolute; top:10px; right:10px;}
+.addCardNr{ position:relative;}
+.addCardNr li{ position:relative; line-height:38px; padding-left:90px; margin-top:5px;}
+.addCardNr .bt{ position:absolute; top:0; left:0; text-align:right; width:80px;}
+.addCardNr .box2,.addCardNr .box3{ border:1px solid #d1d1d1; width:250px; height:28px; line-height:28px; background:#fff; padding:0 5px; color:#797979;}
+.addCardNr .box3{ width:100px;}
+.addCardNr .fx{ position:relative; top:2px;}
+.payBtn2 .btn{ margin-left:70px;}
+.addCardNr .dx{ width:14px; height:14px; background:url(../images/fx.png) no-repeat 0 -86px; display:inline-block; position:relative; top:3px; margin-right:5px;}
+.addCardNr .car{ margin-right:10px; cursor:pointer;}
+.addCardNr .cur .dx{background:url(../images/fx.png) no-repeat 0 -103px;}
+.addCardNr .xl{ height:30px; line-height:30px; width:80px; border:1px solid #d1d1d1; color:#797979; padding-left:5px; margin-right:5px;}
+.addBank.a7{ height:490px; margin-top:-250px; }
+.addCardNr .btn2{ border:1px solid #d1d1d1; background:#eee; height:26px; line-height:26px; display:inline-block; padding:0px 10px; position:relative; left:10px; top:-1px;}
+
+
+.addCardNr .card img{ height:30px;}
+.card{ border:1px solid #b0c2e1; border-radius:3px; padding:0px 10px; /*margin-top:15px;*/ width:240px; height:33px; line-height:30px; color:#999; cursor:pointer; }
+.addCardNr .return{ color:#2ea7e7; position:absolute; top:-3px; left:360px;}
+.return .icon{ width:13px; height:12px;background:url(../images/fx.png) no-repeat 0 -68px; display:inline-block; padding-right:5px;}
+.noOff{ display:block;}
+
+
+
+/*弹窗自带样式*/
+.img-replace {/* replace text with an image */display: inline-block;  overflow: hidden;  text-indent: 100%;  color: transparent;  white-space: nowrap}
+.cd-popup-trigger {display: block;}
+.cd-popup {  position: fixed;  left: 0;top: 0;z-index:999;height: 100%;width: 100%;background-color: rgba(0, 0, 0, 0.6); opacity:0.3; visibility: hidden;-webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;-moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;transition: opacity 0.3s 0s, visibility 0s 0.3s;display:none;}
+.cd-popup.is-visible {opacity: 1;visibility: visible;-webkit-transition: opacity 0.3s 0s, visibility 0s 0s;-moz-transition: opacity 0.3s 0s, visibility 0s 0s;transition: opacity 0.3s 0s, visibility 0s 0s;display:block;}
+
+/*成功页面*/
+.payOk{ text-align:center; padding:40px 0 20px 0; line-height:50px; font-size:24px; color:#28ac28;}
+.payOk img{ position:relative; top:7px; margin-right:10px;}
+.payLink{ text-align:center; color:#999;}
+.payLink a{ margin:0px 10px;}
+/*支付密码*/
+.payPas{ padding:20px 0; font-size:16px; padding-left:10px; border-bottom:1px solid #eee;}
+.payPas a{ font-weight:normal;line-height:30px; padding-left:10px; color:#4ea0d9;}
+.payPas .box3{ border:1px solid #d1d1d1; width:180px; height:33px; line-height:33px; padding:0 10px; margin-left:10px; color:#999;}
+
+.payOk,.payError{ text-align:center; padding:40px 0 20px 0; line-height:50px; font-size:24px; color:#28ac28;}
+.payOk img,.payError img{ position:relative; top:7px; margin-right:10px;}
+.payLink{ text-align:center; color:#999;}
+.payLink a{ margin:0px 10px;}
+.payError{ color:#eb4141;}
+
+
+.bankCard3{ position:relative; top:0; left:0; background:#fff; overflow:hidden;}
+.bankCard3 li { float:left;margin:10px 10px 5px 20px; overflow:hidden;}
+.bankCard3 li .dx{ position:relative; top:-10px; margin-right:5px;}
+.bankCard3 li span{ border:2px solid #d1d1d1; display:inline-block; width:180px; padding:1px 1px 1px 1px;height:30px; overflow:hidden;}
+.bankCard3 li span:hover{ border:2px solid #f29450;}
+.bankCard3 li a{ display:inline-block;}
+.bankCard3 .more,.bankCard3 .more:hover{ border:none; line-height:30px; font-weight:bold;}
+.bankCard3 .more:hover .trigon{border-color: #00a0e9 transparent transparent transparent;}
+.amOpt .show{ position:absolute; left:290px; top:12px; border:1px solid #d1d1d1; padding:0px 10px;}
+.bankCard3 .border3{border:2px solid #f29450;}
+
+/*2015-12-02 add支付提示 Joken start*/
+.payTis{ position:relative; width:100%; padding:40px 0 20px 230px;}
+.payTis .pic{ position:absolute; top:25px; left:50px;}
+.payTis i{ display:block; font-size:14px; color:#797979; line-height:28px; padding-bottom:10px;}
+.payTis .bluBtn{ background:#1c80c4; border:1px solid #1066a1; color:#fff; font-size:14px; margin-right:20px;}
+.payTis .redBtn{color:#fff; font-size:14px;}
+.payTis .bluBtn:hover{ background:#1172b4; text-decoration:none;}
+.payTis .redBtn:hover{ background:#ff7800; text-decoration:none;}
+/*2015-12-02 add支付提示 Joken end*/
+
+@media screen and (device-width:1024px){
+.root3 .header .con,.root3 .payInfo,.question { width:980px; margin:0px auto; position:relative;}
+.root3 .payOpt{ width:960px;}
+.root3 .header{ min-width:1000px;}	
+}
+
+
+
+
+
+
+
+
+
+

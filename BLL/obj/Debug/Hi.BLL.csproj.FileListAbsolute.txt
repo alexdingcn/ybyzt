@@ -1,0 +1,15 @@
+E:\医站通\code\BLL\bin\Debug\BLL.dll
+E:\医站通\code\BLL\bin\Debug\BLL.pdb
+E:\医站通\code\BLL\bin\Debug\DBUtility.dll
+E:\医站通\code\BLL\bin\Debug\LitJSON.dll
+E:\医站通\code\BLL\bin\Debug\Model.dll
+E:\医站通\code\BLL\bin\Debug\Newtonsoft.Json.dll
+E:\医站通\code\BLL\bin\Debug\SQLServerDAL.dll
+E:\医站通\code\BLL\bin\Debug\aliyun-net-sdk-core.dll
+E:\医站通\code\BLL\bin\Debug\aliyun-net-sdk-dysmsapi.dll
+E:\医站通\code\BLL\bin\Debug\DBUtility.pdb
+E:\医站通\code\BLL\bin\Debug\Model.pdb
+E:\医站通\code\BLL\bin\Debug\SQLServerDAL.pdb
+E:\医站通\code\BLL\obj\Debug\Hi.BLL.csprojResolveAssemblyReference.cache
+E:\医站通\code\BLL\obj\Debug\BLL.dll
+E:\医站通\code\BLL\obj\Debug\BLL.pdb

@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>医站通支付平台</title>
+    <link href="../css/pay.css" rel="stylesheet" type="text/css" />
+    <script src="../../Company/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../../js/pay.js" type="text/javascript"></script>
+</head>
+<body>
+<!--header start-->
+<div class="header"><div class="con">
+	<div class="logo"><a href=""><img src="../../images/logo.png" height="37" /></a><i>支付平台</i></div>
+    <div class="topMenu"><a href="">医站通首页</a>|<a href="">我的订单</a>|<a href="">支付帮助</a>|<a href="">问题反馈</a></div>
+</div></div>
+<!--header end-->
+
+<!--支付信息 start-->
+<div class="payInfo">
+	<div class="number">订单号：<a href="">2015052521001001280289569799</a></div>
+    <div class="gray">请您在提交订单后24小时内完成支付，否则订单会自动取消。</div>
+    <div class="amount"><b>￥8888.88</b>元</div>
+</div>
+<!--支付信息 end-->
+
+<div class="payOpt" id="checkId">
+	<!--企业钱包支付 start-->
+	<div class="li" id="a1">
+        <a href="javascript:void(0)" class="check"></a>
+        <div class="title">企业钱包支付</div>
+        <div class="amOpt"><i>可用企业钱包：2820.56 元 </i><input type="text" value="1250" class="box" /></div>
+        <div class="amount">支付<b>1250</b>元</div>
+    </div>
+    <!--企业钱包支付 end-->
+    
+    <!--快捷支付 start-->
+    <div class="li" id="a2">
+        <a href="javascript:void(0)" class="check"></a>
+        <div class="title">快捷支付</div>
+        <ul class="bankCard">
+        	<li><span><img src="../images/payBank.jpg" /></span><i class="quick">快捷</i><i>信用卡</i>|<i>尾号**7753</i>| 单笔限额1万　单日限额1万</li>
+            <li><span><img src="../images/payBank.jpg" /></span><i class="quick">快捷</i><i>信用卡</i>|<i>尾号**7753</i>| 单笔限额1万　单日限额1万</li>
+            <li><span><img src="../images/payBank.jpg" /></span><i class="quick">快捷</i><i>信用卡</i>|<i>尾号**7753</i>| 单笔限额1万　单日限额1万</li>
+        </ul>
+        <div class="addCard"><a href="#"  class="time cd-popup-trigger">添加银行卡</a></div>
+        <div class="amount">支付<b>1250</b>元</div>
+    </div>
+ 	<!--快捷支付 end-->
+    
+    <!--网银支付 start-->
+  	<div class="li" id="a3">
+    	 <a href="javascript:void(0)" class="check"></a>
+        <div class="title">网银支付</div>
+        <div class="amOpt">需要开通网银，跳转银行页面</div>
+        <div class="amount">支付<b>1250</b>元</div>
+        <ul class="bankCard2">
+        	<li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li class="more"><a href="javascript:void(0)" id="a4">选择其他银行<i class="trigon"></i></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+            <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+        </ul>
+    </div>
+    <!--网银支付 end-->
+    <div class="payBtn"><a href="" class="btn" >下一步</a></div>
+</div>
+
+
+<!--快捷支付弹窗 start-->
+<div class="cd-popup" id="addBank">
+	<div class="cd-popupBg"></div>
+    <div class="hidebg"></div>
+    <!--添加银行卡 start-->
+	<div class="cd-popup-container addBank a5 noOff" >
+	<div class="title"><b>添加银行卡</b></div>
+     <ul class="bankCard2">
+		<li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+		<li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+		<li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+        <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+        <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+        <li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+		<li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li><li><a href=""><img src="../images/payBank.jpg" /></a></li>
+     </ul>      
+    <div class="payBtn"><a href="#" class="btn btnId">下一步</a></div>
+    <a href="#" class="close cd-popup-close img-replace">关闭</a>
+    </div>
+    <!--添加银行卡 end-->
+    
+    <!--添加银行卡 start-->
+	<div class="cd-popup-container addBank a6">
+	<div class="title"><b>添加银行卡</b></div>
+     <ul class="addCardNr">
+    	<li><i class="bt">付款银行</i><div class="card"><span><img src="../images/payBank.jpg"></span> 单笔限额1万　单日限额1万</div><a href="#" class="return"><i class="icon"></i>择其他银行</a></li>
+    	<li><i class="bt">银行卡</i><input name="" type="text" class="box2"/></li>
+        <li><i class="bt">姓名</i><input name="" type="text" class="box3"/></li>
+        <li><i class="bt">身份证</i><input name="" type="text" class="box2"/></li>
+        <li><i class="bt">手机号</i><input name="" type="text" class="box3" value="银行预留号码"/></li>
+       	<li><input name="" type="checkbox" 	 value="" class="fx"/>《“my1818”企业电子商务服务平台用户服务协议》</li>
+    </ul>
+    <div class="payBtn payBtn2"><a href="" class="btn">确认绑定</a></div>
+    <a href="#" class="close cd-popup-close img-replace">关闭</a>
+    </div>
+    <!--添加银行卡 end--> 
+     
+</div> 
+<!--快捷支付弹窗 end-->
+
+
+
+<div class="blank20"></div>
+<!--常见问题 start-->
+<div class="question">
+	<div class="title">常见问题</div>
+    <dl class="list">
+    	<dt>1、经常需要动态给Div添加或者删除样式，利用jquery的addClass(id)与delete</dt>
+        <dd>在开发网页过程中常需要对A链接使用JS制作一个点击弹窗,那么在点击该A链接就不能发生跳转行为,于是我们取消A链接的跳转</dd>
+        <dt>1、经常需要动态给Div添加或者删除样式，利用jquery的addClass(id)与delete</dt>
+        <dd>在开发网页过程中常需要对A链接使用JS制作一个点击弹窗,那么在点击该A链接就不能发生跳转行为,于是我们取消A链接的跳转</dd>
+        <dt>1、经常需要动态给Div添加或者删除样式，利用jquery的addClass(id)与delete</dt>
+        <dd>在开发网页过程中常需要对A链接使用JS制作一个点击弹窗,那么在点击该A链接就不能发生跳转行为,于是我们取消A链接的跳转</dd>
+    </dl>
+</div>
+<!--常见问题 end-->
+<div class="footer">Copyright © 2002-2015 ，上海商e易久公司版权所有</div>
+<script src="js/pay.js"></script> 
+</body>
+</html>

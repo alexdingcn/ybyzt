@@ -1,0 +1,119 @@
+﻿
+=========================[2016-12-14 10:28:42] 记录开始==============================
+描述： '=' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 G:\项目\陌远接口2.2\DBUtility\SqlHelper.cs:行号 500
+   在 Hi.SQLServerDAL.BD_DisAccount.GetDataSet(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 275
+   在 Hi.SQLServerDAL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 283
+   在 Hi.BLL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\BLL\Code\BD_DisAccount.cs:行号 112
+   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 164
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1137","UserID":"1195"}
+时间： 2016/12/14 10:28:42
+
+=================================记录结束======================================
+
+=========================[2016-12-14 10:28:58] 记录开始==============================
+描述： '=' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 G:\项目\陌远接口2.2\DBUtility\SqlHelper.cs:行号 500
+   在 Hi.SQLServerDAL.BD_DisAccount.GetDataSet(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 275
+   在 Hi.SQLServerDAL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 283
+   在 Hi.BLL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\BLL\Code\BD_DisAccount.cs:行号 112
+   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 164
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1137","UserID":"1195"}
+时间： 2016/12/14 10:28:58
+
+=================================记录结束======================================
+
+=========================[2016-12-14 10:29:55] 记录开始==============================
+描述： '=' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 G:\项目\陌远接口2.2\DBUtility\SqlHelper.cs:行号 500
+   在 Hi.SQLServerDAL.BD_DisAccount.GetDataSet(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 275
+   在 Hi.SQLServerDAL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 283
+   在 Hi.BLL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\BLL\Code\BD_DisAccount.cs:行号 112
+   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 164
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1137","UserID":"1195"}
+时间： 2016/12/14 10:29:55
+
+=================================记录结束======================================
+
+=========================[2016-12-14 10:30:46] 记录开始==============================
+描述： 列名 'CreatDate' 无效。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 G:\项目\陌远接口2.2\DBUtility\SqlHelper.cs:行号 500
+   在 Hi.SQLServerDAL.BD_DisAccount.GetDataSet(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 275
+   在 Hi.SQLServerDAL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 283
+   在 Hi.BLL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\BLL\Code\BD_DisAccount.cs:行号 112
+   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 164
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1137","UserID":"1195"}
+时间： 2016/12/14 10:30:46
+
+=================================记录结束======================================
+
+=========================[2016-12-14 10:31:24] 记录开始==============================
+描述： 列名 'CreatDate' 无效。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 G:\项目\陌远接口2.2\DBUtility\SqlHelper.cs:行号 500
+   在 Hi.SQLServerDAL.BD_DisAccount.GetDataSet(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 275
+   在 Hi.SQLServerDAL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\SqlServerDAL\Code\BD_DisAccount.cs:行号 283
+   在 Hi.BLL.BD_DisAccount.GetList(String strWhat, String strWhere, String strOrderby) 位置 G:\项目\陌远接口2.2\BLL\Code\BD_DisAccount.cs:行号 112
+   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 164
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1137","UserID":"1195"}
+时间： 2016/12/14 10:31:24
+
+=================================记录结束======================================
+
+=========================[2016-12-14 14:06:55] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 151
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1138","UserID":"1195"}
+时间： 2016/12/14 14:06:55
+
+=================================记录结束======================================
+
+=========================[2016-12-14 14:07:16] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 151
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1138","UserID":"1195"}
+时间： 2016/12/14 14:07:16
+
+=================================记录结束======================================
+
+=========================[2016-12-14 14:08:25] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 151
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1138","UserID":"1195"}
+时间： 2016/12/14 14:08:25
+
+=================================记录结束======================================
+
+=========================[2016-12-14 14:28:19] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 152
+接口： GetResellerDetail:{"CompID":"1046","ResellerID":"1138","UserID":"1195"}
+时间： 2016/12/14 14:28:19
+
+=================================记录结束======================================
+
+=========================[2016-12-14 16:18:58] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2568
+接口： GetResellerList:{"CompID":"1046","ResellerID":"1138","UserID":"1195"}
+时间： 2016/12/14 16:18:58
+
+=================================记录结束======================================
+
+=========================[2016-12-14 16:19:24] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2568
+接口： GetResellerList:{"CompID":"1046","ResellerID":"1138","UserID":"1195"}
+时间： 2016/12/14 16:19:24
+
+=================================记录结束======================================
+
+=========================[2016-12-14 16:19:48] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 107
+接口： GetResellerDetail:{"Result":"F","Description":"获取失败","ResellerList":null}
+时间： 2016/12/14 16:19:48
+
+=================================记录结束======================================
+
+=========================[2016-12-14 16:20:04] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LitJson.JsonData.get_Item(String prop_name)
+   在 Reseller.GetResellerDetail(String JSon) 位置 g:\项目\陌远接口2.2\HiEAPP\App_Code\App_Android_Update\Reseller.cs:行号 107
+接口： GetResellerDetail:{"Result":"F","Description":"获取失败","ResellerList":null}
+时间： 2016/12/14 16:20:04
+
+=================================记录结束======================================

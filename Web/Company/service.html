@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>代理商	</title>
+<link href="../Distributor/newOrder/css/global2.5.css" rel="stylesheet" type="text/css" />
+<link href="../js/layer/skin/layer.css" rel="stylesheet" type="text/css" />
+
+</head>
+<!--头部 start-->
+<div class="topBar">
+<div class="nr">
+	<div class="logo">
+        <span><img src="../images/al-logo.png" width="94"></span>
+        <i id="disName"><a target="_blank" href="/EShop/index.aspx?Comid=1112">张小泉</a></i>
+    </div>
+    <ul class="right topNav">
+        <li class="name"><a href="/Distributor/UserIndex.aspx"><i class="me-icon"></i>贺国虎<i class="triangle"></i></a>
+            <span class="tgn">
+                <a href="/Distributor/UserEdit.aspx">基本信息</a>
+                <a href="/Distributor/UserPWDEdit.aspx">修改密码</a>
+                <a href="/Distributor/MessAgeList.aspx">我要咨询</a>
+                <a href="javascript:__doPostBack('Head1$ctl00','')">退出</a>
+            </span>
+        </li>
+        <li style=""><a href="/Distributor/CompNewList.aspx"><i class="xx-icon"></i>消息</a></li>
+        <li id="eDis" style=""><a target="_blank" href="/EShop/index.aspx?Comid=1112"><i class="dp-icon"></i>店铺</a></li>
+        <li style=""><a target="_blank" href="/index.aspx"><i class="home-icon"></i>医站通首页</a></li>
+    </ul>
+</div>
+</div>
+<!--头部 end-->
+<!--左侧 start-->
+<div class="leftsideBar">
+  <ul class="nav" id="moveNav">
+    <li class="nav-1"> <a href="/Distributor/OrderList.aspx" id="Left1_Dis20" class="a1"> <span class="dd-icon"></span><i class="bt">订货</i> </a>
+      <div class="submenu" style="visibility: hidden;"></div>
+    </li>
+    <li class="nav-2"> <a href="/Distributor/CompGoodsList.aspx" id="Left1_Dis21" class="a1"> <span class="sp-icon"></span><i class="bt">商品</i> </a>
+      <div class="submenu" style="width: 98px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2110"><a href="/Distributor/CompGoodsList.aspx">商品列表</a></dd>
+          <dd id="Left1_Dis2111"><a href="/Distributor/FavoriteList.aspx">收藏商品</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-3"> <a href="/Distributor/pay/orderPayList.aspx" id="Left1_Dis22" class="a1"> <span class="zf-icon"></span><i class="bt">支付</i> </a>
+      <div class="submenu wd" style="width: 324px;">
+        <dl>
+          <dt>订单支付</dt>
+          <dd id="Left1_Dis2210"><a href="/Distributor/pay/orderPayList.aspx">待支付订单</a></dd>
+          <dd id="Left1_Dis2211"><a href="/Distributor/Rep/RepDetailsList.aspx">订单支付明细</a></dd>
+        </dl>
+        <dl>
+          <dt>账单支付</dt>
+          <dd id="Left1_Dis2212"><a href="/Distributor/pay/orderZDList.aspx">我的账单</a></dd>
+          <dd id="Left1_Dis2213"><a href="/Distributor/Rep/RepZdzfDetailsList.aspx">账单支付明细</a></dd>
+        </dl>
+        <dl>
+          <dt>企业钱包</dt>
+          <dd id="Left1_Dis2214"><a href="/Distributor/pay/PrePayList.aspx">我的钱包</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-4"> <a href="/Distributor/ReceivingList.aspx" id="Left1_Dis23" class="a1"> <span class="st-icon"></span><i class="bt">收退货</i> </a>
+      <div class="submenu wid" style="width: 98px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2310"><a href="/Distributor/ReceivingList.aspx">我要收货</a></dd>
+          <dd id="Left1_Dis2311"><a href="/Distributor/ReturnOrderList1.aspx">申请退货</a></dd>
+          <dd id="Left1_Dis2312"><a href="/Distributor/ReturnOrderList.aspx">退货查询</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-5"> <a href="/Distributor/Rep/RepOrderList.aspx" id="Left1_Dis24" class="a1"> <span class="bb-icon"></span><i class="bt">报表</i> </a>
+      <div class="submenu" style="width: 146px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2410"><a href="/Distributor/Rep/RepOrderList.aspx">进货订单明细</a></dd>
+          <dd id="Left1_Dis2411"><a href="/Distributor/Rep/RepGoodsList.aspx">商品进货数据</a></dd>
+          <dd id="Left1_Dis2412"><a href="/Distributor/Rep/RepMonthList.aspx">进货数据月份变动</a></dd>
+        </dl>
+      </div>
+    </li>
+    <li class="nav-6"> <a href="/Distributor/DeliveryList.aspx" id="Left1_Dis25" class="a1"> <span class="sz-icon"></span><i class="bt">设置</i> </a>
+      <div class="submenu" style="width: 134px;">
+        <dl>
+          <dt></dt>
+          <dd id="Left1_Dis2511"><a href="/Distributor/DeliveryList.aspx">收货地址维护</a></dd>
+          <dd id="Left1_Dis2512"><a href="/Distributor/pay/PayQuickly.aspx">修改快捷银行卡</a></dd>
+          <dd id="Left1_Dis2513"><a href="/Distributor/PhoneEdit.aspx">修改绑定手机</a></dd>
+          <dd id="Left1_Dis2514"><a href="/Distributor/RoleList.aspx">设置岗位权限</a></dd>
+          <dd id="Left1_Dis2515"><a href="/Distributor/PayPWDEdit.aspx">修改支付密码</a></dd>
+        </dl>
+      </div>
+    </li>
+  </ul>
+</div>
+<!--左侧 end-->
+
+<div class="rightCon">
+<!--当前位置 start-->
+<div class="info"><a id="navigation1" href="../jsc.aspx">我的桌面</a>&gt; <a href="../Order/OrderCreateList.aspx" id="navigation2">订单列表</a>&gt; <a id="navigation3" href="javascript:;">订单详情</a></div>
+<!--当前位置 end-->
+<!--购买服务 start-->
+<ul class="goods-title">
+	<li class="hover" tip="1"><a href="javascript:;">购买服务</a></li>
+	<li tip="2"><a href="javascript:;">付款记录</a></li>
+</ul>
+
+<div class="purchase-service ">
+	<div class="box left"><i class="size">免费版：5用户</i><b>永久免费</b></div>
+    <ul class="ri left"><li>到期时间：永久有效</li><li>用户数：5用户</li><li><a href="" class="bule-btn">购买标准版</a><i class="contrast">版本对比</i></li></ul>
+</div>
+
+
+<div class="goods-zs record none">
+<div class=" tabLine">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th class="">单号</th>
+        <th class="">订单内容</th>
+        <th class="t3">下单时间</th>
+        <th class="t3">订单金额</th>
+        <th class="t3">发票快递费</th>
+        <th class="t3">支付金额</th>
+        <th class="t3">状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr trd="3985">
+        <td><div class="tc">MD-20170613-000001</div></td>
+        <td><div class="tc"> 颜色：白；尺寸：S&nbsp;</div></td>
+        <td><div class="tc">2017-06-13</div></td>
+        <td><div class="tc"> ￥66.00&nbsp;</div></td>
+        <td><div class="tc"> 1&nbsp; </div></td>
+        <td><div class="tc"> ￥66.00&nbsp;</div></td>
+        <td><div class="tc bule">已结算</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!--购买服务 end-->
+<div class="layui-layer layui-anim layui-layer-iframe " style="z-index: 19891018; width: 985px; height: 630px; top: 50px; left: 459px;">
+  <div class="layui-layer-title">版本对比功能区分</div>
+  
+  <div class="goods-zs record ">
+    <div class="tabLine over">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead><tr><th class="t3">功能</th><th class="t3">订单内容</th><th class="t3">免费版</th><th class="t3">标准版</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td><div class="tc red">0</div></td><td><div class="tc red">4999/年</div></td></tr>
+          <tr><td></td><td></td><td><div class="tc">5用户数</div></td><td><div class="tc">不限用户数</div></td></tr>
+          <tr><td rowspan="6"><div class="tc">功能模板</div></td><td><div class="tle">订单管理</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">收款管理</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">商品信息</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">库存管理</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">代理商管理</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">报表</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td rowspan="4"><div class="tc">订单扩展功能</div></td><td><div class="tle">代客下单</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">订单核准</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">订单发货</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">在线支付</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tc">供应商扩展功能</div></td><td><div class="tle">Excel</div></td><td><div class="tc f14 red">×</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td rowspan="3"><div class="tc">收款扩展功能</div></td><td><div class="tle">在线支付</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">企业钱包</div></td><td><div class="tc f14 red">×</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">账单收款</div></td><td><div class="tc f14 red">×</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          
+          <tr><td rowspan="3"><div class="tc">商品扩展功能</div></td><td><div class="tle">Excel导入</div></td><td><div class="tc f14 red">×</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">价格及促销</div></td><td><div class="tc f14 red">×</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">账单收款</div></td><td><div class="tc f14 red">×</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          
+          <tr><td rowspan="2"><div class="tc">报表扩展功能</div></td><td><div class="tle">统计报表</div></td><td><div class="tc f14 bule">√</div></td><td><div class="tc f14 bule">√</div></td></tr>
+          <tr><td><div class="tle">数据分析</div></td><td><div class="tc f14 red">×</div></td><td><div class="tc f14 bule">√</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+ </div>
+
+
+</div>
+</body>
+</html>

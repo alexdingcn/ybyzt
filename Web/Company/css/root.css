@@ -1,0 +1,55 @@
+@media screen and (device-width:1024px){
+	.root .topBar .nr,.root .header .nr,.root .nav .nr,.root .mianDiv,.root .footer .nr,.root .access .nr,.root .appBanner .nr,.root .appNr,.root .help,.root .login .nr{ width:1000px;}
+	.root .nav .nr li{ width:166px;}
+	.root .nav .hover a,.root .nav li a:hover{ background:url(../images/iconBg.png) no-repeat 5px 0;}
+	.root .banner{ width:670px; overflow:hidden;}
+	.root .ad1200 img,.root2 .ad1200 img{ width:1000px;}
+	.root .logoPic{ width:635px; padding:10px 0px 0 0px;}
+	.root .subTxt dl{margin-left:55px;}
+	.root .listNr{ width:815px;}
+	.root .logoList{ width:100%;}
+	.root .platform .nr{ width:450px;padding:90px 0 0 530px;}
+	.root .accessImg{ width:800px;}
+	.root .accessImg img{ width:810px}
+	.root .access .img2,.root .access .img1,.root .access{ height:521px;}
+	.root .appBaTxt{padding: 100px 0 0 470px;}
+	.root .appNr .li{width: 410px;padding: 90px 0 0 60px;}
+	.root .appNr .pic{right:20px}
+	.root .appNr .txt{ padding-left:0;}
+	.root .helpCon{ width:458px;}
+	.root .login .ad{top:190px;}
+	.root .login .ad img{ width:450px;}
+	.root .register .con{ width:920px;}
+	
+	.root2 .topBar .nr,.root2 .mianDiv,.root2 .zBox{ width:1000px;}
+	.root2 .header .nav li{ margin:0px 2px;}
+	.root2 .ad1196{ width:996px;}
+	.root2 .ProdView .btn a{ width:140px;}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
