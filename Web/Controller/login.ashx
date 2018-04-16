@@ -100,11 +100,12 @@ public class login : IHttpHandler, IRequiresSessionState
                         return;
                     }
                     //用户名查询
+                    // TODO: 选择list出来判断
                     ListUsers = new Hi.BLL.SYS_Users().GetListUser("top 1 *", "Username", Username, "");
                     //手机查询
                     if (ListUsers.Count <= 0)
                         ListUsers = new Hi.BLL.SYS_Users().GetListUser("top 1 *", "Phone", Username, "");
-                    
+
                     if (ListUsers.Count > 0)
                     {
                         if (ListUsers.Where(T => T.IsEnabled == 1).ToList().Count == 0)
@@ -193,7 +194,7 @@ public class login : IHttpHandler, IRequiresSessionState
                     }
                     string Userid = string.Join(",", ListUsers.Select(T => T.ID));
                     ListCompUser = new Hi.BLL.SYS_CompUser().GetList("*", " dr=0 and  Userid in(" + Userid + ")", " createdate ");
-                    
+
                     Msg.Result = true;
                     IsphoneLogin = true;
                     PhoneModel = ListCode[0];
@@ -213,7 +214,7 @@ public class login : IHttpHandler, IRequiresSessionState
                         Msg.Msg = "请求参数错误。";
                         return;
                     }
-                    ListCompUser = new Hi.BLL.SYS_CompUser().GetList("*", " dr=0 and  Userid in(" + Acheck.UsersID + ")", " createdate ");
+                    ListCompUser = new Hi.BLL.SYS_CompUser().GetList("*", " dr=0 and Userid in(" + Acheck.UsersID + ")", " createdate ");
                     if (ListCompUser.Count == 0)
                     {
                         Msg.Msg = "选择该角色失败，用户异常。";
@@ -294,10 +295,10 @@ public class login : IHttpHandler, IRequiresSessionState
         int Ctype = 0;
         int CompID = 0;
         int DisID = 0;
-        
-        bool IsExistRole = false; 
+
+        bool IsExistRole = false;
         try
-        {   
+        {
             Msg.Result = false;
             LoginModel Umodel = new LoginModel();
             string ParentGet = request("ParentGet", context);
@@ -305,7 +306,7 @@ public class login : IHttpHandler, IRequiresSessionState
             {
                 Msg.Href = ParentGet;
             }
-            
+
             if (ListCompUser.Count > 0)
             {
                 IsExistRole = true;
@@ -314,7 +315,7 @@ public class login : IHttpHandler, IRequiresSessionState
                 Ctype = ListCompUser[0].CType;
                 CompID = ListCompUser[0].CompID;
                 DisID = ListCompUser[0].DisID;
-                    
+
                 if (ListCompUser[0].CType == 1 && (ListCompUser[0].UType == 3 || ListCompUser[0].UType == 4 || ListCompUser[0].UType == 6))
                 {
                     List<Hi.Model.BD_Company> ListComp = new Hi.BLL.BD_Company().GetList("id,IsEnabled,AuditState,CompName,Erptype", " isnull(dr,0)=0 and id=" + ListCompUser[0].CompID + " ", "");
@@ -351,25 +352,34 @@ public class login : IHttpHandler, IRequiresSessionState
                 else if (ListCompUser[0].CType == 2 && (ListCompUser[0].UType == 1 || ListCompUser[0].UType == 5))
                 {
                     List<Hi.Model.BD_Distributor> ListDis = new Hi.BLL.BD_Distributor().GetList("id,IsEnabled,AuditState,DisName,Compid", " isnull(dr,0)=0 and id=" + ListCompUser[0].DisID + " ", "");
-                    if (ListDis.Count > 0)
+                    if (ListDis == null || ListDis.Count > 1)
                     {
-                        List<Hi.Model.BD_Company> ListComp = new Hi.BLL.BD_Company().GetList("IsEnabled", " isnull(dr,0)=0 and id=" + ListCompUser[0].CompID + " ", "");
-                        if (ListComp.Count == 0)
+                        Utils.EditLog("安全日志", User.UserName, "用户" + User.UserName + "登录" + (ListCompUser[0].CType == 1 ? "厂商" : "代理商") + "管理系统异常，关联多个代理商。CompUserId：" + ListCompUser[0].ID + "。", "系统安全模块", loginUrl, 0, 0, ListCompUser[0].UType);
+                        Msg.Msg = "登录失败，该帐号数据异常，请联系客服。";
+                        return;
+                    }
+                    if (ListDis.Count == 1)
+                    {
+                        if (ListCompUser[0].CompID > 0)
                         {
-                            Utils.EditLog("安全日志", User.UserName, "用户" + User.UserName + "登录代理商管理系统失败，企业已被删除CompUserId：" + ListCompUser[0].ID + "。", "系统安全模块", loginUrl, 0, 0, ListCompUser[0].UType);
-                            Msg.Msg = "" + TipName + "失败，代理商所属企业不存在。";
-                            return;
-                        }
-                        else
-                        {
-                            if (ListComp[0].IsEnabled == 0)
+                            List<Hi.Model.BD_Company> ListComp = new Hi.BLL.BD_Company().GetList("IsEnabled", " isnull(dr,0)=0 and id=" + ListCompUser[0].CompID + " ", "");
+                            if (ListComp.Count == 0)
                             {
                                 Utils.EditLog("安全日志", User.UserName, "用户" + User.UserName + "登录代理商管理系统失败，企业已被删除CompUserId：" + ListCompUser[0].ID + "。", "系统安全模块", loginUrl, 0, 0, ListCompUser[0].UType);
-                                Msg.Msg = "" + TipName + "失败，代理商所属企业已被禁用。";
+                                Msg.Msg = "" + TipName + "失败，代理商所属企业不存在。";
                                 return;
                             }
+                            else
+                            {
+                                if (ListComp[0].IsEnabled == 0)
+                                {
+                                    Utils.EditLog("安全日志", User.UserName, "用户" + User.UserName + "登录代理商管理系统失败，企业已被删除CompUserId：" + ListCompUser[0].ID + "。", "系统安全模块", loginUrl, 0, 0, ListCompUser[0].UType);
+                                    Msg.Msg = "" + TipName + "失败，代理商所属企业已被禁用。";
+                                    return;
+                                }
+                            }
+                            Umodel.DisName = ListDis[0].DisName;
                         }
-                        Umodel.DisName = ListDis[0].DisName;
                     }
                     else
                     {
@@ -383,7 +393,7 @@ public class login : IHttpHandler, IRequiresSessionState
                     Utils.EditLog("安全日志", User.UserName, "用户" + User.UserName + "登录" + (ListCompUser[0].CType == 1 ? "厂商" : "代理商") + "管理系统异常，用户明细表数据异常Utype或Ctype类型异常CompUserId：" + ListCompUser[0].ID + "。", "系统安全模块", loginUrl, 0, 0, ListCompUser[0].UType);
                     Msg.Msg = "登录失败，用户异常。";
                     return;
-                } 
+                }
             }
             else if (ListCompUser.Count <= 0)
             {
@@ -397,7 +407,7 @@ public class login : IHttpHandler, IRequiresSessionState
                 TypeID = 5;
                 DisID = User.DisID;
             }
-            
+
             Umodel.Url = loginUrl;
             Umodel.UserName = User.UserName;
             Umodel.TrueName = User.TrueName;

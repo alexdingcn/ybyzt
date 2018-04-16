@@ -572,24 +572,6 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                                 user.AuditState = falg == false ? 0 : 2;
                                 int userid = 0;
                                 userid = new Hi.BLL.SYS_Users().Add(user, Tran);
-
-                                ///用户明细表
-                                Hi.Model.SYS_CompUser CompUser = new Hi.Model.SYS_CompUser();
-                                CompUser.CompID = Compid.ToInt(0);
-                                CompUser.DisID = DistributorID;
-                                CompUser.CreateDate = DateTime.Now;
-                                CompUser.CreateUserID = UserID;
-                                CompUser.modifyuser = UserID;
-                                CompUser.CType = 2;
-                                CompUser.UType = 5;
-                                CompUser.IsAudit = 2;
-                                CompUser.RoleID = 0;
-                                CompUser.ts = DateTime.Now;
-                                CompUser.dr = 0;
-                                CompUser.UserID = userid;
-                                CompUser.IsEnabled = 1;
-                                CompUser.CreditType = 0;
-                                new Hi.BLL.SYS_CompUser().Add(CompUser, Tran);
                             }
                             Tran.Commit();
 

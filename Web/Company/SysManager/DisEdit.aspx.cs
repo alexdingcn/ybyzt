@@ -853,11 +853,11 @@ public partial class Company_SysManager_DisEdit : CompPageBase
 
                 int AddUserid = 0;
 
-                List<Hi.Model.SYS_CompUser> comUser = new Hi.BLL.SYS_CompUser().GetList("", "DisID=" + Disid + " and isnull(dr,0)=0 ", "");
-
+                // TODO： 如何选到管理员帐号
+                List<Hi.Model.SYS_Users> comUser = new Hi.BLL.SYS_Users().GetList("", "DisID=" + Disid + " and isnull(dr,0)=0 ", "createdate");
                 if (comUser != null && comUser.Count > 0)
                 {
-                    AddUserid = comUser[0].UserID;
+                    AddUserid = comUser[0].ID;
                 }
 
                 if (AddUserid != 0)
