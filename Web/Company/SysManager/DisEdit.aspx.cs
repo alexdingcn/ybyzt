@@ -21,7 +21,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
         ClientScript.RegisterStartupScript(this.GetType(), "msg", "<script>$(\".txt_txtTypename,.txt_txtAreaname\").css(\"width\", \"170px\");</script>");
         if (!IsPostBack)
         {
-            
+
             if (Request["type"] == "0")
             {
                 atitle.InnerText = "代理商审核";
@@ -173,7 +173,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
         if (Common.GetUserExists("Phone", Phone))
         {
             List<Hi.Model.SYS_Users> user = null; user = new Hi.BLL.SYS_Users().GetList("id,UserName,ID", " Phone='" + Phone + "' and isnull(dr,0)=0", "");
-            return "{ \"result\":true,\"userNO\":\""+ user[0].UserName + "\",\"userid\":\""+ user[0].ID + "\"}";
+            return "{ \"result\":true,\"userNO\":\"" + user[0].UserName + "\",\"userid\":\"" + user[0].ID + "\"}";
         }
         else
         {
@@ -183,7 +183,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
     public string ExistsDisLevel(string DisLevel)
     {
         List<Hi.Model.BD_DefDoc_B> lll = new Hi.BLL.BD_DefDoc_B().GetList("", "isnull(dr,0)=0 and compid=" + this.CompID + " and atname='代理商等级' and atval='" + DisLevel + "'", "");
-        if (lll.Count>0)
+        if (lll.Count > 0)
         {
             return "{ \"result\":true}";
         }
@@ -196,7 +196,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
     {
         if (KeyID > 0)
         {
-           
+
             Hi.Model.BD_Distributor Dis = new Hi.BLL.BD_Distributor().GetModel(KeyID);
             if (Dis != null)
             {
@@ -255,7 +255,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                     //txtpassword.Attributes.Add("value", Dis.Paypwd); //edit by hgh
                     //txtDisTypeBox.Id = Dis.DisTypeID.ToString();
                     // txtDisAreaBox.Id = Dis.AreaID.ToString();
-                    
+
                     hidProvince.Value = Dis.Province;
                     hidCity.Value = Dis.City;
                     hidArea.Value = Dis.Area;
@@ -300,7 +300,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                         //代理商订单是否审核
                         if (ListComp[0].IsCheck != 0)
                         {
-                            rdAuditNo.Checked =  false;
+                            rdAuditNo.Checked = false;
                             rdAuditYes.Checked = true;
                         }
                         //代理商启用授信
@@ -483,7 +483,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
 
                                         ///修改用户
                                         users[0].IsEnabled = rdEnabledYes.Checked ? 1 : 0;
-                                        users[0].TrueName =Common.NoHTML( txtUserTrueName.Value.Trim());
+                                        users[0].TrueName = Common.NoHTML(txtUserTrueName.Value.Trim());
                                         users[0].ts = DateTime.Now;
                                         users[0].modifyuser = UserID;
                                         users[0].AuditState = 2;
@@ -512,9 +512,9 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                                     addr.City = Dis.City;
                                     addr.Area = Dis.Area;
                                     addr.DisID = KeyID;
-                                    addr.Principal =Common.NoHTML( txtUserTrueName.Value.Trim());
+                                    addr.Principal = Common.NoHTML(txtUserTrueName.Value.Trim());
                                     addr.Phone = users[0].Phone;
-                                    addr.Address = Dis.Province + Dis.City + Dis.Area +Common.NoHTML( txtAddress.Value.Trim());
+                                    addr.Address = Dis.Province + Dis.City + Dis.Area + Common.NoHTML(txtAddress.Value.Trim());
                                     addr.IsDefault = 1;
                                     addr.ts = DateTime.Now;
                                     addr.CreateDate = DateTime.Now;
@@ -543,7 +543,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
 
                                     return;
                                 }
-                                users[0].TrueName =Common.NoHTML( txtUserTrueName.Value.Trim());
+                                users[0].TrueName = Common.NoHTML(txtUserTrueName.Value.Trim());
                                 users[0].ts = DateTime.Now;
                                 users[0].modifyuser = UserID;
                                 new Hi.BLL.SYS_Users().Update(users[0], Tran);
@@ -566,7 +566,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                                     LDaddr[0].Province = Dis.Province;
                                     LDaddr[0].City = Dis.City;
                                     LDaddr[0].Area = Dis.Area;
-                                    LDaddr[0].Address = Dis.Province + Dis.City + Dis.Area +Common.NoHTML( txtAddress.Value.Trim());
+                                    LDaddr[0].Address = Dis.Province + Dis.City + Dis.Area + Common.NoHTML(txtAddress.Value.Trim());
                                     LDaddr[0].modifyuser = UserID;
                                     LDaddr[0].ts = DateTime.Now;
                                     new Hi.BLL.BD_DisAddr().Update(LDaddr[0], Tran);
@@ -597,7 +597,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 if (Tran != null)
                 {
@@ -616,15 +616,15 @@ public partial class Company_SysManager_DisEdit : CompPageBase
             Regex Phonereg = new Regex("^0?1[0-9]{10}$");
             Dis = new Hi.Model.BD_Distributor();
             Dis.CompID = CompID;
-            Dis.DisName =txtDisName.Value.Trim();
+            Dis.DisName = txtDisName.Value.Trim();
             if (Common.DisExistsAttribute("DisName", Dis.DisName, CompID.ToString()))
             {
-                JScript.AlertMsgOne(this, "该代理商名称已存在！", JScript.IconOption.错误);
+                JScript.AlertMsgOne(this, "该代理商名称已存在", JScript.IconOption.错误);
                 return;
             }
             if (Common.GetUserExists(txtUsername.Value.Trim()))
             {
-                JScript.AlertMsgOne(this, "该登录帐号已存在！", JScript.IconOption.错误);
+                JScript.AlertMsgOne(this, "该登录帐号已存在, 请更换！", JScript.IconOption.错误);
                 return;
             }
             if (!Phonereg.IsMatch(txtUserPhone.Value.Trim()))
@@ -632,38 +632,56 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                 JScript.AlertMsgOne(this, "手机号码格式错误！", JScript.IconOption.错误);
                 return;
             }
-            if (Common.GetUserExists("Phone",txtUserPhone.Value.Trim())&& this.userid.Value=="0")
+            if (Common.GetUserExists("Phone", txtUserPhone.Value.Trim()) && this.userid.Value == "0")
             {
-                JScript.AlertMsgOne(this, "已被注册的手机号码，只能在首页进行加盟操作！", JScript.IconOption.错误);
+                JScript.AlertMsgOne(this, "已被注册的手机号码，请通知代理商参与招商和加盟！", JScript.IconOption.错误);
                 return;
             }
-            if (this.userid.Value != "0") {
-            List<Hi.Model.SYS_CompUser> compuser= new Hi.BLL.SYS_CompUser().GetList("id", " UserID='" + this.userid.Value + "' and CompID='"+CompID+"' and isnull(dr,0)=0", "");
-                if (compuser.Count>0)
+            if (this.userid.Value != "0")
+            {
+                List<Hi.Model.SYS_CompUser> compuser = new Hi.BLL.SYS_CompUser().GetList("id", " UserID='" + this.userid.Value + "' and CompID='" + CompID + "' and isnull(dr,0)=0", "");
+                if (compuser.Count > 0)
                 {
                     this.userid.Value = "0";
-                    JScript.AlertMsgOne(this, "手机号已经存在你的代理商 无法重复注册", JScript.IconOption.错误);
+                    JScript.AlertMsgOne(this, "该手机号已经是您的代理商，无法重复注册两个帐号", JScript.IconOption.错误);
                     return;
                 }
             }
-            
+
             //Dis.DisTypeID = txtDisTypeBox.Id.ToInt(0);
             //Dis.AreaID = txtDisAreaBox.Id.ToInt(0);
-            Dis.Province =Common.NoHTML( hidProvince.Value.Trim());
+            Dis.Province = Common.NoHTML(hidProvince.Value.Trim());
             Dis.City = Common.NoHTML(hidCity.Value.Trim());
-            Dis.Area =Common.NoHTML(  hidArea.Value.Trim());
+            Dis.Area = Common.NoHTML(hidArea.Value.Trim());
             //Dis.DisLevel = Common.NoHTML(txtunit.Value.Trim());
             //Dis.FinancingRatio = txtFinancingRatio.Value.Trim().ToInt(0);
             Dis.Address = Common.NoHTML(txtAddress.Value.Trim());
-            Dis.DisCode = Common.NoHTML(DisCode.Value.Trim());
-            if (txtPhone.Value.Trim() != "")
+            if (string.IsNullOrWhiteSpace(DisCode.Value))
+            {
+                Dis.DisCode = new DateTime().ToString("yyyyMMddHHmm");
+            }
+            else
+            {
+                Dis.DisCode = Common.NoHTML(DisCode.Value.Trim());
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtPhone.Value))
+            {
                 Dis.Phone = Common.NoHTML(txtPhone.Value.Trim());
+            }
             else
+            {
                 Dis.Phone = Common.NoHTML(txtUserPhone.Value.Trim());
-            if (txtPerson.Value.Trim() != "")
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtPerson.Value))
+            {
                 Dis.Principal = Common.NoHTML(txtPerson.Value.Trim());
+            }
             else
+            {
                 Dis.Principal = Common.NoHTML(txtUserTrueName.Value.Trim());
+            }
             //Dis.Leading = Common.NoHTML(txtLeading.Value.Trim());
             //Dis.LeadingPhone = Common.NoHTML(txtLeadingPhone.Value.Trim());
             Dis.Zip = Common.NoHTML(txtZip.Value.Trim());
@@ -690,150 +708,148 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                 Dis.CreditAmount = this.txtCreditAmount.Value.Trim().ToString().ToDecimal(0);
             }
 
-            int Disid = 0;
+            int disId = 0;
             SqlTransaction Tran = null;
             Tran = DBUtility.SqlHelper.CreateStoreTranSaction();
-            if ((Disid = new Hi.BLL.BD_Distributor().Add(Dis, Tran)) > 0)
+
+            try
             {
-                try
+                disId = new Hi.BLL.BD_Distributor().Add(Dis, Tran);
+                if (disId > 0)
                 {
-                    List<Hi.Model.SYS_Role> l = new Hi.BLL.SYS_Role().GetList("", "isnull(dr,0)=0 and isenabled=1 and DisID=" + Disid + " and RoleName='企业管理员'", "");
-                    if (l.Count == 0)
+                    //新增角色（企业管理员）
+                    Hi.Model.SYS_Role role = new Hi.Model.SYS_Role();
+                    role.CompID = CompID;
+                    role.DisID = disId;
+                    role.RoleName = "企业管理员";
+                    role.IsEnabled = 1;
+                    role.SortIndex = "1";
+                    role.CreateDate = DateTime.Now;
+                    role.CreateUserID = UserID;
+                    role.ts = DateTime.Now;
+                    role.modifyuser = UserID;
+                    role.dr = 0;
+                    int Roid = new Hi.BLL.SYS_Role().Add(role, Tran);
+                    //新增管理员用户和角色
+                    int AddUserid = 0;
+                    if (this.userid.Value == "0")
                     {
-                        //新增角色（企业管理员）
-                        Hi.Model.SYS_Role role = new Hi.Model.SYS_Role();
-                        role.CompID = CompID;
-                        role.DisID = Disid;
-                        role.RoleName = "企业管理员";
-                        role.IsEnabled = 1;
-                        role.SortIndex = "1";
-                        role.CreateDate = DateTime.Now;
-                        role.CreateUserID = UserID;
-                        role.ts = DateTime.Now;
-                        role.modifyuser = UserID;
-                        role.dr = 0;
-                        int Roid = new Hi.BLL.SYS_Role().Add(role, Tran);
-                        //新增管理员用户和角色
-                        int AddUserid = 0;
-                        if (this.userid.Value == "0")
+                        Hi.Model.SYS_Users user = new Hi.Model.SYS_Users();
+                        user.UserName = Common.NoHTML(txtUsername.Value.Trim());
+                        // user.CompID = CompID;
+                        // user.Type = 5;
+                        // user.RoleID = Roid;
+                        user.TrueName = Common.NoHTML(txtUserTrueName.Value.Trim());
+                        user.UserPwd = Util.md5(txtUpwd.Text.Trim());
+                        user.Phone = Common.NoHTML(txtUserPhone.Value.Trim());
+                        user.AuditState = 2;
+                        user.IsEnabled = rdEnabledYes.Checked ? 1 : 0;
+                        user.CreateUserID = UserID;
+                        user.CreateDate = DateTime.Now;
+                        user.ts = DateTime.Now;
+                        user.modifyuser = UserID;
+                        AddUserid = new Hi.BLL.SYS_Users().Add(user, Tran);
+                        //新增角色用户
+                        Hi.Model.SYS_RoleUser RoleUser = new Hi.Model.SYS_RoleUser();
+                        RoleUser.FunType = 1;
+                        RoleUser.UserID = AddUserid;
+                        RoleUser.RoleID = Roid;
+                        RoleUser.IsEnabled = true;
+                        RoleUser.CreateUser = this.UserID.ToString();
+                        RoleUser.CreateDate = DateTime.Now;
+                        RoleUser.ts = DateTime.Now;
+                        RoleUser.dr = 0;
+                        new Hi.BLL.SYS_RoleUser().Add(RoleUser, Tran);
+                        //新增角色权限表
+                        Hi.Model.SYS_RoleSysFun rolesys = null;
+                        List<Hi.Model.SYS_SysFun> funList = new Hi.BLL.SYS_SysFun().GetList("", " Type=2", "");
+                        foreach (Hi.Model.SYS_SysFun sys in funList)
                         {
-                            Hi.Model.SYS_Users user = new Hi.Model.SYS_Users();
-                            user.UserName = Common.NoHTML(txtUsername.Value.Trim());
-                            // user.CompID = CompID;
-                            // user.Type = 5;
-                            // user.RoleID = Roid;
-                            user.TrueName = Common.NoHTML(txtUserTrueName.Value.Trim());
-                            user.UserPwd = Util.md5(txtUpwd.Text.Trim());
-                            user.Phone = Common.NoHTML(txtUserPhone.Value.Trim());
-                            user.AuditState = 2;
-                            user.IsEnabled = rdEnabledYes.Checked ? 1 : 0;
-                            user.CreateUserID = UserID;
-                            user.CreateDate = DateTime.Now;
-                            user.ts = DateTime.Now;
-                            user.modifyuser = UserID;
-                            AddUserid = new Hi.BLL.SYS_Users().Add(user, Tran);
-                            //新增角色用户
-                            Hi.Model.SYS_RoleUser RoleUser = new Hi.Model.SYS_RoleUser();
-                            RoleUser.FunType = 1;
-                            RoleUser.UserID = AddUserid;
-                            RoleUser.RoleID = Roid;
-                            RoleUser.IsEnabled = true;
-                            RoleUser.CreateUser = this.UserID.ToString();
-                            RoleUser.CreateDate = DateTime.Now;
-                            RoleUser.ts = DateTime.Now;
-                            RoleUser.dr = 0;
-                            new Hi.BLL.SYS_RoleUser().Add(RoleUser, Tran);
-                            //新增角色权限表
-                            Hi.Model.SYS_RoleSysFun rolesys = null;
-                            List<Hi.Model.SYS_SysFun> funList = new Hi.BLL.SYS_SysFun().GetList("", " Type=2", "");
-                            foreach (Hi.Model.SYS_SysFun sys in funList)
-                            {
-                                rolesys = new Hi.Model.SYS_RoleSysFun();
-                                rolesys.CompID = CompID;
-                                rolesys.DisID = Disid;
-                                rolesys.RoleID = Roid;
-                                rolesys.FunCode = sys.FunCode;
-                                rolesys.FunName = sys.FunName;
-                                rolesys.IsEnabled = 1;
-                                rolesys.CreateUserID = UserID;
-                                rolesys.CreateDate = DateTime.Now;
-                                rolesys.ts = DateTime.Now;
-                                rolesys.modifyuser = UserID;
-                                new Hi.BLL.SYS_RoleSysFun().Add(rolesys, Tran);
-                            }
-                            
-                        }
-                        else
-                        {
-                            AddUserid = Convert.ToInt32(this.userid.Value);
-                        }
-                        
-                        ///用户明细表
-                        Hi.Model.SYS_CompUser CompUser = new Hi.Model.SYS_CompUser();
-                        CompUser.CompID = CompID;
-                        CompUser.DisID = Disid;
-                        CompUser.CreateDate = DateTime.Now;
-                        CompUser.CreateUserID = UserID;
-                        CompUser.modifyuser = UserID;
-                        CompUser.CType = 2;
-                        CompUser.UType = 5;
-                        //CompUser.IsEnabled = 1;
-                        CompUser.IsAudit = 2;
-                        CompUser.RoleID = 0;
-                        CompUser.ts = DateTime.Now;
-                        CompUser.dr = 0;
-                        CompUser.UserID = AddUserid;
-
-                        //by szj 代理商信息
-                        CompUser.IsEnabled = rdEnabledYes.Checked ? 1 : 0;
-                        CompUser.DisTypeID = hid_txtDisType.Value.ToInt(0);
-                        CompUser.AreaID = hid_txtDisArea.Value.ToInt(0);
-                        CompUser.IsCheck = rdAuditYes.Checked ? 1 : 0;
-                        CompUser.CreditType = rdCreditYes.Checked ? 1 : 0;
-                        if (CompUser.CreditType == 1)
-                        {
-                            CompUser.CreditAmount = this.txtCreditAmount.Value.Trim().ToString().ToDecimal(0);
+                            rolesys = new Hi.Model.SYS_RoleSysFun();
+                            rolesys.CompID = CompID;
+                            rolesys.DisID = disId;
+                            rolesys.RoleID = Roid;
+                            rolesys.FunCode = sys.FunCode;
+                            rolesys.FunName = sys.FunName;
+                            rolesys.IsEnabled = 1;
+                            rolesys.CreateUserID = UserID;
+                            rolesys.CreateDate = DateTime.Now;
+                            rolesys.ts = DateTime.Now;
+                            rolesys.modifyuser = UserID;
+                            new Hi.BLL.SYS_RoleSysFun().Add(rolesys, Tran);
                         }
 
-                        new Hi.BLL.SYS_CompUser().Add(CompUser, Tran);
-
-                        Hi.Model.BD_DisAddr addr = new Hi.Model.BD_DisAddr();
-                        addr.Province = hidProvince.Value;
-                        addr.City = hidCity.Value;
-                        addr.Area = hidArea.Value;
-                        addr.DisID = Disid;
-                        addr.Principal = Common.NoHTML(txtUserTrueName.Value.Trim());
-                        addr.Phone = Common.NoHTML(txtUserPhone.Value.Trim());
-                        addr.Address = Dis.Province + Dis.City + Dis.Area + Common.NoHTML(txtAddress.Value.Trim());
-                        addr.IsDefault = 1;
-                        addr.ts = DateTime.Now;
-                        addr.CreateDate = DateTime.Now;
-                        addr.CreateUserID = UserID;
-                        addr.modifyuser = UserID;
-                        new Hi.BLL.BD_DisAddr().Add(addr, Tran);
-                        Tran.Commit();
-                        string nextstep = Request["nextstep"];
-                        string type = Request["type"];
-                        Response.Redirect("DisInfo.aspx?nextstep=" + nextstep + "&KeyID=" + Common.DesEncrypt(Disid.ToString(), Common.EncryptKey)   + "&type=" + type,true);
                     }
-                }
-                catch
-                {
-                    if (Tran != null)
+                    else
                     {
-                        if (Tran.Connection != null)
-                            Tran.Rollback();
+                        AddUserid = Convert.ToInt32(this.userid.Value);
                     }
-                    JScript.AlertMethod(this, "新增失败", JScript.IconOption.错误, "function(){ window.location.href=window.location.href; }");
+
+                    ///用户明细表
+                    Hi.Model.SYS_CompUser CompUser = new Hi.Model.SYS_CompUser();
+                    CompUser.CompID = CompID;
+                    CompUser.DisID = disId;
+                    CompUser.CreateDate = DateTime.Now;
+                    CompUser.CreateUserID = UserID;
+                    CompUser.modifyuser = UserID;
+                    CompUser.CType = 2;
+                    CompUser.UType = 5;
+                    //CompUser.IsEnabled = 1;
+                    CompUser.IsAudit = 2;
+                    CompUser.RoleID = 0;
+                    CompUser.ts = DateTime.Now;
+                    CompUser.dr = 0;
+                    CompUser.UserID = AddUserid;
+
+                    //by szj 代理商信息
+                    CompUser.IsEnabled = rdEnabledYes.Checked ? 1 : 0;
+                    CompUser.DisTypeID = hid_txtDisType.Value.ToInt(0);
+                    CompUser.AreaID = hid_txtDisArea.Value.ToInt(0);
+                    CompUser.IsCheck = rdAuditYes.Checked ? 1 : 0;
+                    CompUser.CreditType = rdCreditYes.Checked ? 1 : 0;
+                    if (CompUser.CreditType == 1)
+                    {
+                        CompUser.CreditAmount = this.txtCreditAmount.Value.Trim().ToString().ToDecimal(0);
+                    }
+
+                    new Hi.BLL.SYS_CompUser().Add(CompUser, Tran);
+
+                    Hi.Model.BD_DisAddr addr = new Hi.Model.BD_DisAddr();
+                    addr.Province = hidProvince.Value;
+                    addr.City = hidCity.Value;
+                    addr.Area = hidArea.Value;
+                    addr.DisID = disId;
+                    addr.Principal = Common.NoHTML(txtUserTrueName.Value.Trim());
+                    addr.Phone = Common.NoHTML(txtUserPhone.Value.Trim());
+                    addr.Address = Dis.Province + Dis.City + Dis.Area + Common.NoHTML(txtAddress.Value.Trim());
+                    addr.IsDefault = 1;
+                    addr.ts = DateTime.Now;
+                    addr.CreateDate = DateTime.Now;
+                    addr.CreateUserID = UserID;
+                    addr.modifyuser = UserID;
+                    new Hi.BLL.BD_DisAddr().Add(addr, Tran);
+                    Tran.Commit();
+                    string nextstep = Request["nextstep"];
+                    string type = Request["type"];
+                    Response.Redirect("DisInfo.aspx?nextstep=" + nextstep + "&KeyID=" + Common.DesEncrypt(disId.ToString(), Common.EncryptKey) + "&type=" + type, true);
                 }
-                finally
+                else
                 {
-                    DBUtility.SqlHelper.ConnectionClose();
+                    JScript.AlertMethod(this, "操作失败", JScript.IconOption.错误, "function (){ window.location.href=window.location.href; }");
                 }
             }
-            else
+            catch
             {
-                JScript.AlertMethod(this, "操作失败", JScript.IconOption.错误, "function (){ window.location.href=window.location.href; }");
+                if (Tran != null)
+                {
+                    if (Tran.Connection != null)
+                        Tran.Rollback();
+                }
+                JScript.AlertMethod(this, "新增失败", JScript.IconOption.错误, "function(){ window.location.href=window.location.href; }");
+            }
+            finally
+            {
+                DBUtility.SqlHelper.ConnectionClose();
             }
         }
     }
@@ -842,34 +858,50 @@ public partial class Company_SysManager_DisEdit : CompPageBase
     {
         SqlTransaction Tran = null;
         Tran = DBUtility.SqlHelper.CreateStoreTranSaction();
+        string disName = this.txtDisName.Value.Trim();
         try
         {
-            int Disid = 0;
-            List<Hi.Model.BD_Distributor> Dis = new Hi.BLL.BD_Distributor().GetList("id", " DisName='" + this.txtDisName.Value + "' and isnull(dr,0)=0 ", "");
+            int disId = 0;
+            // Find same name and not deleted
+            List<Hi.Model.BD_Distributor> disList = new Hi.BLL.BD_Distributor().GetList("id", " DisName='" + disName + "' and isnull(dr,0)=0 ", "");
 
-            if (Dis != null && Dis.Count > 0)
+            // TODO: only one is acceptable
+            if (disList != null)
             {
-                Disid = Dis[0].ID;
+                if (disList.Count <= 0)
+                {
+                    JScript.AlertMethod(this, "代理商" + disName + "不存在", JScript.IconOption.错误, "function(){ window.location.href=window.location.href; }");
+                    return;
+                }
+                else if (disList.Count > 1)
+                {
+                    JScript.AlertMethod(this, "代理商" + disName + "存在同名，请联系客服", JScript.IconOption.错误, "function(){ window.location.href=window.location.href; }");
+                    return;
+                }
+
+                disId = disList[0].ID;
 
                 int AddUserid = 0;
 
-                List<Hi.Model.SYS_CompUser> comUser = new Hi.BLL.SYS_CompUser().GetList("", "DisID=" + Disid + " and isnull(dr,0)=0 ", "");
+                // Get Distributor's system manager
+                List<Hi.Model.SYS_CompUser> comUser = new Hi.BLL.SYS_CompUser().GetList("", "DisID=" + disId + " and isnull(dr,0)=0 ", "");
 
                 if (comUser != null && comUser.Count > 0)
                 {
+                    // TODO: get first one?
                     AddUserid = comUser[0].UserID;
                 }
 
                 if (AddUserid != 0)
                 {
-                    List<Hi.Model.SYS_Role> l = new Hi.BLL.SYS_Role().GetList("", "isnull(dr,0)=0 and CompID=" + this.CompID + " and isenabled=1 and DisID=" + Disid + " and RoleName='企业管理员'", "");
+                    List<Hi.Model.SYS_Role> l = new Hi.BLL.SYS_Role().GetList("", "isnull(dr,0)=0 and CompID=" + this.CompID + " and isenabled=1 and DisID=" + disId + " and RoleName='企业管理员'", "");
 
                     if (l.Count == 0)
                     {
                         //新增角色（企业管理员）
                         Hi.Model.SYS_Role role = new Hi.Model.SYS_Role();
                         role.CompID = CompID;
-                        role.DisID = Disid;
+                        role.DisID = disId;
                         role.RoleName = "企业管理员";
                         role.IsEnabled = 1;
                         role.SortIndex = "1";
@@ -898,7 +930,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                         {
                             rolesys = new Hi.Model.SYS_RoleSysFun();
                             rolesys.CompID = CompID;
-                            rolesys.DisID = Disid;
+                            rolesys.DisID = disId;
                             rolesys.RoleID = Roid;
                             rolesys.FunCode = sys.FunCode;
                             rolesys.FunName = sys.FunName;
@@ -913,7 +945,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                         ///用户明细表
                         Hi.Model.SYS_CompUser CompUser = new Hi.Model.SYS_CompUser();
                         CompUser.CompID = CompID;
-                        CompUser.DisID = Disid;
+                        CompUser.DisID = disId;
                         CompUser.CreateDate = DateTime.Now;
                         CompUser.CreateUserID = UserID;
                         CompUser.modifyuser = UserID;
@@ -942,11 +974,12 @@ public partial class Company_SysManager_DisEdit : CompPageBase
                         Tran.Commit();
                         string nextstep = Request["nextstep"];
                         string type = Request["type"];
-                        Response.Redirect("DisInfo.aspx?nextstep=" + nextstep + "&KeyID=" + Common.DesEncrypt(Disid.ToString(), Common.EncryptKey) + "&type=" + type, true);
+                        Response.Redirect("DisInfo.aspx?nextstep=" + nextstep + "&KeyID=" + Common.DesEncrypt(disId.ToString(), Common.EncryptKey) + "&type=" + type, true);
 
                     }
                 }
-                else {
+                else
+                {
                     JScript.AlertMethod(this, "代理商用户有误,新增失败", JScript.IconOption.错误, "function(){ window.location.href=window.location.href; }");
                 }
             }
@@ -1166,60 +1199,60 @@ public partial class Company_SysManager_DisEdit : CompPageBase
             DisType = sbdis.ToString();
         }
 
-            //绑定区域
-            StringBuilder sbare = new StringBuilder();
-            List<Hi.Model.BD_DisArea> are = new Hi.BLL.BD_DisArea().GetList("top 12 * ", "isnull(dr,0)=0 and  ParentId=0  and CompanyID=" + this.CompID, " SortIndex");
-            if (are.Count > 0)
+        //绑定区域
+        StringBuilder sbare = new StringBuilder();
+        List<Hi.Model.BD_DisArea> are = new Hi.BLL.BD_DisArea().GetList("top 12 * ", "isnull(dr,0)=0 and  ParentId=0  and CompanyID=" + this.CompID, " SortIndex");
+        if (are.Count > 0)
+        {
+            sbare.Append("[");
+            int num = 0;
+            foreach (var model in are)
             {
-                sbare.Append("[");
-                int num = 0;
-                foreach (var model in are)
+                num++;
+                sbare.Append("{code:'" + model.ID + "',value: '" + model.ID + "',label: '" + model.AreaName + "'");
+                List<Hi.Model.BD_DisArea> aret1 = new Hi.BLL.BD_DisArea().GetList("Areacode,ID,AreaName", "isnull(dr,0)=0  and ParentId=" + model.ID, "");
+                if (aret1.Count > 0)
                 {
-                    num++;
-                    sbare.Append("{code:'" + model.ID + "',value: '" + model.ID + "',label: '" + model.AreaName + "'");
-                    List<Hi.Model.BD_DisArea> aret1 = new Hi.BLL.BD_DisArea().GetList("Areacode,ID,AreaName", "isnull(dr,0)=0  and ParentId=" + model.ID, "");
-                    if (aret1.Count > 0)
+                    sbare.Append(",children: [");
+                    int num2 = 0;
+                    foreach (var model2 in aret1)
                     {
-                        sbare.Append(",children: [");
-                        int num2 = 0;
-                        foreach (var model2 in aret1)
+                        num2++;
+                        sbare.Append("{code:'" + model2.ID + "',value: '" + model2.ID + "',label: '" + model2.AreaName + "'");
+                        List<Hi.Model.BD_DisArea> are3 = new Hi.BLL.BD_DisArea().GetList("Areacode,ID,AreaName", "isnull(dr,0)=0  and ParentId=" + model2.ID, "");
+                        if (are3.Count > 0)
                         {
-                            num2++;
-                            sbare.Append("{code:'" + model2.ID + "',value: '" + model2.ID + "',label: '" + model2.AreaName + "'");
-                            List<Hi.Model.BD_DisArea> are3 = new Hi.BLL.BD_DisArea().GetList("Areacode,ID,AreaName", "isnull(dr,0)=0  and ParentId=" + model2.ID, "");
-                            if (are3.Count > 0)
-                            {
                             sbare.Append(",children: [");
-                                int num3 = 0;
-                                foreach (var item3 in are3)
-                                {
-                                    num3++;
-                                    if (num3 == are3.Count)
-                                        sbare.Append("{code:'" + item3.ID + "',value: '" + item3.ID + "',label: '" + item3.AreaName + "'}");
-                                    else
-                                        sbare.Append("{code:'" + item3.ID + "',value: '" + item3.ID + "',label: '" + item3.AreaName + "'},");
-
-                                }
-                            sbare.Append("]");
+                            int num3 = 0;
+                            foreach (var item3 in are3)
+                            {
+                                num3++;
+                                if (num3 == are3.Count)
+                                    sbare.Append("{code:'" + item3.ID + "',value: '" + item3.ID + "',label: '" + item3.AreaName + "'}");
+                                else
+                                    sbare.Append("{code:'" + item3.ID + "',value: '" + item3.ID + "',label: '" + item3.AreaName + "'},");
 
                             }
+                            sbare.Append("]");
 
-                            if (num2 == aret1.Count)
-                            sbare.Append("}");
-                            else
-                            sbare.Append("},");
                         }
+
+                        if (num2 == aret1.Count)
+                            sbare.Append("}");
+                        else
+                            sbare.Append("},");
+                    }
                     sbare.Append("]");
 
-                    }
-                    if (num == are.Count)
-                    sbare.Append("}");
-                    else
-                    sbare.Append("},");
                 }
+                if (num == are.Count)
+                    sbare.Append("}");
+                else
+                    sbare.Append("},");
+            }
             sbare.Append("]");
             DisArea = sbare.ToString();
-            }
+        }
 
 
         //代理商等级
@@ -1242,6 +1275,6 @@ public partial class Company_SysManager_DisEdit : CompPageBase
             disdj.Append("]");
             DisDj = disdj.ToString();
         }
-              
+
     }
 }

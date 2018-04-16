@@ -55,7 +55,7 @@
 
 .registInfo .box{  border:none;*border:0; height:43px; line-height:43px;*+height:40px;*+line-height:40px;overflow:hidden; margin:0; padding:0; font-size:14px; color:#494949; font-family:"微软雅黑";outline:none; width:270px;}
 .registInfo .text{color:#777;width:280px;height:43px; padding-left:8px;display:inline-block;background:#f7f7f7;border:1px solid #dddddd;vertical-align:middle; display:table-cell;}
-*+.registInfo .text{height:38px; padding:5px 0 0 8px;display:inline-block;background:#f7f7f7;border:1px solid #dddddd;vertical-align:middle;}
+*+.registInfo .text{line-height:43px; height:43px; padding-left:8px;display:inline-block;background:#f7f7f7;border:1px solid #dddddd;vertical-align:middle;}
 /*注册-鼠标移上去*/
 .registInfo .none{ display:none;}
 .registInfo .tRed{ border:1px solid #ffbdbe; color:red; background:#fff5f5;}/*红色提醒文字*/

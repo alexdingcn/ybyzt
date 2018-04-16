@@ -125,7 +125,7 @@ public partial class ExportExcel : System.Web.UI.Page
                 //导出订单
                 strwhat = @"o.ReceiptNo 订单编号,disName 代理商名称, CONVERT(varchar(100),o.CreateDate, 23) 下单时间,
 case o.OState when 1 then '待审核' when 2 then '待发货' when 3 then '退货处理' when 4 then '待收货' when 5 then '已到货' when 6 then '已作废' else '已退货' end 订单状态,case o.PayState when 0 then '未支付' when 1 then '部分支付' when 2 then '已支付' when 5 then '已退款' end 支付状态,
-case o.AddType when 1 then '正常下单' when 2 then '企业补单' when 3 then 'App下单' else 'App企业补单' end 订单来源,
+case o.AddType when 1 then '网页下单' when 2 then '企业补单' when 3 then 'App下单' else 'App企业补单' end 订单来源,
 o.Principal 联系人,o.Phone 联系电话,o.[Address] 收货地址,CONVERT(varchar(100), o.ArriveDate, 23) 发货时间,o.GiveMode 配送方式,
 Convert(decimal(18,2),o.TotalAmount) 商品总价,
 o.bateAmount 使用返利,oe.ProAmount 促销金额,o.PostFee 运费,

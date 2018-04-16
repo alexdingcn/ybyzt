@@ -110,7 +110,7 @@ public partial class Company_Order_OrderZdtsAdd : CompPageBase
                 }
                 else
                 {
-                    //App下单 正常下单
+                    //App下单 网页下单
                     if (OrderInfoModel.OState >= (int)Enums.OrderState.待审核)
                     {
                         HttpContext.Current.Response.Write(string.Format(js));
@@ -243,7 +243,7 @@ public partial class Company_Order_OrderZdtsAdd : CompPageBase
             OrderInfoModel.DisUserID = DisUserId.ToInt(0);
 
             OrderInfoModel.Otype = (int)Enums.OType.推送账单;
-            OrderInfoModel.AddType = (int)Enums.AddType.正常下单;
+            OrderInfoModel.AddType = (int)Enums.AddType.网页下单;
 
             OrderInfoModel.ts = DateTime.Now;
             //OrderInfoModel.vdef9 = "0";

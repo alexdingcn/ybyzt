@@ -495,7 +495,8 @@ input.dataBox,.dataBox{ text-align:center; line-height:32px; height:32px; width:
 /*商品详细编辑页面改版 2017-04-20 by Joken*/
 .rightinfo{margin-left: 130px;margin-top:60px; width:1060px;padding: 8px;}
 /*公共-标题*/
-.c-n-title{ line-height:36px; height:36px; /*background:#f2f4f6;*/ font-size:13px; padding-left:13px; border-radius:5px; margin:10px 0 5px 0; font-weight: bold;}
+.c-n-title{ line-height:36px; background:#005687; color:#fff; font-size:14px; padding-left:13px; border-radius:5px; margin:10px 0 5px 0;}
+.c-n-subtitle { padding-left: 13px; color: #666;}
 .c-n-title .set{ font-size:12px; margin-left:15px; padding-top:1px;}
 .c-n-title .set .r-check+label{top:5px; margin-right:5px}
 .c-n-title .toolbar3,.c-n-title .toolbar{font-weight:400;}

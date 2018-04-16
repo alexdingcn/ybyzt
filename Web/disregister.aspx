@@ -7,8 +7,7 @@
 <head runat="server">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>入驻、加盟 医站通-B2B电子商务平台,手机订货平台,网上订货系统,订货app,加盟商订货软件,订单管理,代理商管理,在线订单,在线支付,分销、批发就上医站通
-    </title>
+    <title>医站通-代理商注册</title>
     <meta name="keywords" content="B2B电子商务,在线订货,手机订货,订货app,电商平台,分销系统,代理商管理,订货系统,管理系统,在线订单管理,网上订货系统,在线订货平台,订货软件,代理商系统" />
     <meta name="description" content="医站通-B2B电子商务平台是为贸易或生产企业开发的网上订单管理系统,实现厂商与代理商之间实时订货,付款,发货,收货,库存管理,收付款对帐管理,物流信息查询,安全的在线支付,在线客服等全面高效的订货流程管理,提升企业管理竞争力,分销、批发就上医站通.咨询热线:40077-40088" />
     <link href="css/global.css?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" rel="stylesheet" type="text/css" />
@@ -17,15 +16,6 @@
     <link href="Company/css/Enterprice.css" rel="stylesheet" type="text/css" />
     <link href="css/global-2.0.css?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    <%--<script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?779e9b3d086d94ec0ead28ec3dd99190";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>--%>
 </head>
 <body style="background: #f6f6f6;">
     <form id="form1" runat="server">
@@ -54,14 +44,13 @@
                         </div>
                         <span class="captcha">
                             <img onclick="this.src=this.src+'?'" id="GetCode" onclick="this.src='/UserControl/CheckCode.aspx?t='+new Date().getTime()"
-                                style="width: 100%; height: 100%;" src="UserControl/CheckCode.aspx" alt="验证码" /></span><label
-                                    class="text" data-default="验证码为4位随机数字">验证码为4位随机数字</label></li>
+                                style="width: 100%; height: 100%;" src="UserControl/CheckCode.aspx" alt="验证码" /></span></li>
                     <li class="wid"><i class="label">手机验证码：</i><div class="regBox ">
                         <input id="txt_PhoneCode" autocomplete="off" maxlength="6" runat="server" type="text"
                             class="box" />
                         </div>
                         <a class="regbtn" style="float: left;" id="SendPhoneCode">获取验证码</a><label class="text"
-                            data-default="请在30分钟内完成输入验证,每条验证码只可办理一笔业务">请在30分钟内完成输入验证,每条验证码只可办理一笔业务</label></li>
+                            data-default="30分钟内完成输入验证">30分钟内完成输入验证</label></li>
                     <li style="width: 600px;">
                         <div class="txt" style="position: relative; height: 36px;">
                             <input id="CK_MYAgment" checked="checked" type="checkbox" class="fx">
@@ -84,8 +73,8 @@
                         <input id="txt_CompName" autocomplete="off" runat="server" type="text" maxlength="30"
                             class="box" />
                         </div>
-                        <label class="text" data-default="企业法律名称，2-20个汉字或字母">
-                            企业法律名称，2-20个汉字或字母</label></li>
+                        <label class="text" data-default="营业执照上的名称，2-20个汉字或字母">
+                            营业执照上的名称，2-20个汉字或字母</label></li>
                     <li><i class="label" runat="server" id="Leading">法人姓名：</i><div class="regBox">
                         <input id="txt_Leading" autocomplete="off" runat="server" type="text" maxlength="30"
                             class="box" />
@@ -113,8 +102,8 @@
                     <li><i class="label">登录帐号：</i><div class="regBox">
                         <input id="txt_Account" autocomplete="off" type="text" class="box" />
                         </div>
-                        <label class="text" data-default="（包括文字，字符，英文，数字，下划线）注册后不能更改，但您可以用绑定的手机号码进行登录">
-                            （包括文字，字符，英文，数字，下划线）注册后不能更改，但您可以用绑定的手机号码进行登录</label></li>
+                        <label class="text" data-default="包括英文，数字，下划线">
+                            包括英文，数字，下划线</label></li>
                     <li><i class="label">登录密码：</i><div class="regBox">
                         <input id="txt_PassWord" autocomplete="off" maxlength="20" type="password" class="box" />
                         </div>
@@ -123,8 +112,8 @@
                     <li><i class="label">确认密码：</i><div class="regBox">
                         <input id="txt_CheckPassWord" autocomplete="off" maxlength="20" type="password" class="box" />
                         </div>
-                        <label class="text" data-default="请再输入确认密码">
-                            请再输入确认密码</label></li>
+                        <label class="text" data-default="再输入一次密码">
+                            再输入一次密码</label></li>
                     <li style="width: 600px;"><a id="btnRegister" href="javascript:;" class="regbtn2">确认并注册</a><label
                         class="text none" id="lblRegister" data-default="" style="float: right;"></label></li>
                 </ul>
@@ -162,14 +151,15 @@
                 $("#OpenAgment").on("click", function () {
                     layerCommon.openWindow("协议查看", 'agreement1.aspx', '850px', '500px');
                 });
+
                 $("#uploadFile", "div.teamR").AjaxUploadFile({ Src: "UploadFile/", ShowDiv: "UpFileText", ResultId: "HidFfileName", AjaxSrc: "Controller/Fileup.ashx", maxlength: 5 });
+
                 $("body").delegate("#RegisLogin", "click", function (e,data) {
                     layerCommon.openWindow("用户登录", "/WindowLogin.aspx?Comid=" + <%=Compid %>, "400px", "345px",function(){
-                   $("#GetCode").trigger("click");
-               }, false);
-           })
-
-       });
+                        $("#GetCode").trigger("click");
+                    }, false);
+                })
+            });
         </script>
 
     </form>

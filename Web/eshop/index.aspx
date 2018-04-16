@@ -28,10 +28,10 @@
 //            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
 //            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
 //                //app
-//                window.location.href = 'http://www.医站通.com:86/eshop/index.aspx?Compid=<%=Request["Comid"] %>';
+//                window.location.href = 'http://www.yibanmed.com:86/eshop/index.aspx?Compid=<%=Request["Comid"] %>';
 //            } else {
 //                //pc
-//                //window.location.href="http://www.医站通.com";
+//                //window.location.href="http://www.yibanmed.com";
 //            }
 //        }
 //        if ('<%=Request["index"] %>' != '1') {

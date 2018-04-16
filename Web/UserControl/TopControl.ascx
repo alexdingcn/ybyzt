@@ -213,7 +213,7 @@
                     <div class="title">更多热点</div>
                     <ul class="name">
                     	<li><a href="http://www.moreyou.cn/" target="_blank">医伴金服</a></li>
-                        <li><a href="http://www.医站通.com/" target="_blank">医站通</a></li>
+                        <li><a href="http://www.yibanmed.com/" target="_blank">医站通</a></li>
                         <li><a href="http://www.b2b1818.com/" target="_blank">陌远易家</a></li>
                         <li><a href="http://www.fi1818.com/" target="_blank">陌远易融</a></li>
                     </ul>

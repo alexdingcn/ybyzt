@@ -1,9 +1,0 @@
-D:\EBank\开发\基础版本\SqlServerDAL\bin\Debug\SQLServerDAL.dll
-D:\EBank\开发\基础版本\SqlServerDAL\bin\Debug\SQLServerDAL.pdb
-D:\EBank\开发\基础版本\SqlServerDAL\bin\Debug\DBUtility.dll
-D:\EBank\开发\基础版本\SqlServerDAL\bin\Debug\Model.dll
-D:\EBank\开发\基础版本\SqlServerDAL\bin\Debug\DBUtility.pdb
-D:\EBank\开发\基础版本\SqlServerDAL\bin\Debug\Model.pdb
-D:\EBank\开发\基础版本\SqlServerDAL\obj\Debug\ResolveAssemblyReference.cache
-D:\EBank\开发\基础版本\SqlServerDAL\obj\Debug\SQLServerDAL.dll
-D:\EBank\开发\基础版本\SqlServerDAL\obj\Debug\SQLServerDAL.pdb
