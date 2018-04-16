@@ -2,3 +2,15 @@
 .DS_Store
 .vs/
 Log/
+BLL/bin/
+BLL/obj/
+DBUtility/bin/
+DBUtility/obj/
+Model/bin/
+Model/obj/
+SqlServerDAL/bin/
+SqlServerDAL/obj/
+Web/Bin/BLL.*
+Web/Bin/DBUtility.*
+Web/Bin/Model.*
+Web/Bin/SQLServerDAL.*

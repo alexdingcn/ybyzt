@@ -349,7 +349,7 @@
                     url: Url,
                     data: Data,
                     dataType: "json",
-                    timeout: 5000,
+                    timeout: 30000,
                     cache: false,
                     success: function (ReturnData) {
                         if (!ReturnData.Error) {

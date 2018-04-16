@@ -395,7 +395,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                         comp.Legal = txt_Leading;
                         comp.Identitys = txt_Licence;
                         comp.creditCode = txt_creditCode;
-                        
+
                         int compid = 0;
                         if ((compid = new Hi.BLL.BD_Company().Add(comp, Tran)) > 0)
                         {
@@ -488,7 +488,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                     case "disRegi":
                         try
                         {
-                            bool falg =  true;                          
+                            bool falg =  true;
                             //工商四元素
                             GetBusines bu = new GetBusines();
                             string ss = bu.GetBus(CompDisName, txt_Licence, txt_creditCode, txt_Leading);
@@ -501,7 +501,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                                 Msg.Code = ss;
                                 throw new ApplicationException("该企业不合法，无法注册完成");
                             }
-                            
+
                             Hi.Model.BD_Distributor Distributor = new Hi.Model.BD_Distributor();
                             Distributor.CompID = Compid.ToInt(0);
                             Distributor.DisName = CompDisName;
@@ -572,6 +572,24 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                                 user.AuditState = falg == false ? 0 : 2;
                                 int userid = 0;
                                 userid = new Hi.BLL.SYS_Users().Add(user, Tran);
+
+                                ///用户明细表
+                                Hi.Model.SYS_CompUser CompUser = new Hi.Model.SYS_CompUser();
+                                CompUser.CompID = Compid.ToInt(0);
+                                CompUser.DisID = DistributorID;
+                                CompUser.CreateDate = DateTime.Now;
+                                CompUser.CreateUserID = UserID;
+                                CompUser.modifyuser = UserID;
+                                CompUser.CType = 2;
+                                CompUser.UType = 5;
+                                CompUser.IsAudit = 2;
+                                CompUser.RoleID = 0;
+                                CompUser.ts = DateTime.Now;
+                                CompUser.dr = 0;
+                                CompUser.UserID = userid;
+                                CompUser.IsEnabled = 1;
+                                CompUser.CreditType = 0;
+                                new Hi.BLL.SYS_CompUser().Add(CompUser, Tran);
                             }
                             Tran.Commit();
 
@@ -1067,7 +1085,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                     if (UserId != UserID)
                     {
                         Msg.Result = false;
-                       Msg.Msg = "手机号码已注册，请先<a id='RegisLogin' href='javascript:;' style='color:rgb(66,166,193)'> 登录</a>。";
+                        Msg.Msg = "手机号码已注册，请先<a id='RegisLogin' href='javascript:;' style='color:rgb(66,166,193)'> 登录</a>。";
                         Msg.Error = true;
                     }
                     else
@@ -1088,7 +1106,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                 else
                 {
                     Msg.Result = false;
-                   Msg.Msg = "手机号码已注册，请先<a id='RegisLogin' href='javascript:;' style='color:rgb(66,166,193)'> 登录</a>。";
+                    Msg.Msg = "手机号码已注册，请先<a id='RegisLogin' href='javascript:;' style='color:rgb(66,166,193)'> 登录</a>。";
                     Msg.Error = true;
                 }
             }
