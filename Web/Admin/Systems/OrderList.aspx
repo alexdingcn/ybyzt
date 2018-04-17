@@ -103,7 +103,7 @@
                 <li>订单来源:
                     <select id="ddrAddType" runat="server" class="downBox" name="AddType">
                         <option value="-1">全部</option>
-                        <option value="1">正常下单</option>
+                        <option value="1">网页下单</option>
                         <option value="2">企业补单</option>
                         <option value="3">APP下单</option>
                         <%--<option value="3">APP下单</option>--%>

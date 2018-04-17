@@ -2045,7 +2045,7 @@ public class orderHandle : IRequiresSessionState, IHttpHandler
                 {
                     disId = Convert.ToInt32(item["disid"].ToString().Trim());//代理商id;
 
-                    int IsAudit2 = OrderType.OrderEnAudit((int)Enums.AddType.正常下单, disId, 0);
+                    int IsAudit2 = OrderType.OrderEnAudit((int)Enums.AddType.网页下单, disId, 0);
                     if (KeyID != 0)
                     {
                         string GinfoId = goodsinfolistId.Trim();//删除的goodsInfoId
@@ -3147,7 +3147,7 @@ public class orderHandle : IRequiresSessionState, IHttpHandler
                         omodel.Otype = item["Otype"].ToString().ToInt(0);
 
                         //订单状态
-                        int Audit = OrderInfoType.OrderEnAudit((int)Enums.AddType.正常下单, omodel.DisID, omodel.Otype);
+                        int Audit = OrderInfoType.OrderEnAudit((int)Enums.AddType.网页下单, omodel.DisID, omodel.Otype);
                         omodel.IsAudit = Audit;
 
                         int OState = 1;

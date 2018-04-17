@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* 整站全局公共样式的设定 */
 * html,* html body{background-image:url(about:blank);background-attachment:fixed}
 * html .ie6fixedTL{position:absolute;left:expression(eval(document.documentElement.scrollLeft));top:expression(eval(document.documentElement.scrollTop))}
@@ -12,6 +12,7 @@ a:visited {color: #494949; text-decoration:none;outline:none;blr:expression(this
 a:hover {color: #016bb5;text-decoration:underline; outline:none;blr:expression(this.onFocus=this.blur());}
 a:active {color: #494949; text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
 /* 其它常用样式的定义 */
+.hide {display:none;}
 .left{ float: left;}
 .right{ float: right;}
 .clear{ clear: both;}

@@ -107,10 +107,10 @@
                     <table border="0" cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
-                                <th class="">
+                                <th class="t1">
                                     商品名称
                                 </th>
-                                <th class="t1">
+                                <th class="t5">
                                     规格属性
                                 </th>
                                 <th class="t5">
@@ -124,6 +124,12 @@
                                 </th>
                                 <th class="t3">
                                     本次发货
+                                </th>
+                                <th class="t3">
+                                    批次号
+                                </th>
+                                <th class="t3">
+                                    有效期
                                 </th>
                             </tr>
                         </thead>
@@ -159,6 +165,12 @@
                                             <div class="tc">
                                                 <%# SelectGoodsInfo.GetNum(Eval("oNum").ToString(), Digits)%>
                                                 </div>
+                                        </td>
+                                        <td>
+                                            <div class="tc"><%# Eval("BatchNO") %></div>
+                                        </td>
+                                         <td>
+                                            <div class="tc"><%# Eval("validDate", "{0:yyyy-MM-dd}")%></div>
                                         </td>
                                     </tr>
                                 </ItemTemplate>

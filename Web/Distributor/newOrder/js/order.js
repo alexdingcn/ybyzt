@@ -467,9 +467,10 @@ $(function () {
     $(document).on("click", ".print", function () {
         var oID = $.trim($(this).attr("tip"));
         var DisID = $.trim($("#hidDisID").val());
+        var CompID = $.trim($("#hidCompID").val());
 
         //转向网页的地址; 
-        var url = '../../Distributor/newOrder/printout.aspx?KeyID=' + oID + '&DisID=' + DisID;
+        var url = '../../Distributor/newOrder/printout.aspx?KeyID=' + oID + '&DisID=' + DisID + '&CompID=' + CompID;
         //var index = layerCommon.openWindow("打印订单", url, '1000px', '600px'); //记录弹出对象
         //$("#hid_Alert").val(index); //记录弹出对象
 

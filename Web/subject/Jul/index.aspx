@@ -38,10 +38,10 @@
 <!--四大店铺 start-->
 <div class="store">
  <ul class="storenr">
-  <li><a href="http://www.医站通.com/1151.html" target="_blank"><img src="images/dp1.jpg" alt="暂无图片"/></a></li>
-  <li><a href="http://www.医站通.com/1123.html" target="_blank"><img src="images/dp2.jpg" alt="暂无图片"/ ></a></li>
-  <li><a href="http://www.医站通.com/1154.html" target="_blank"><img src="images/dp3.jpg" alt="暂无图片"/></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/1153.html" target="_blank"><img src="images/dp4.jpg" alt="暂无图片"/></a></li>
+  <li><a href="http://www.yibanmed.com/1151.html" target="_blank"><img src="images/dp1.jpg" alt="暂无图片"/></a></li>
+  <li><a href="http://www.yibanmed.com/1123.html" target="_blank"><img src="images/dp2.jpg" alt="暂无图片"/ ></a></li>
+  <li><a href="http://www.yibanmed.com/1154.html" target="_blank"><img src="images/dp3.jpg" alt="暂无图片"/></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/1153.html" target="_blank"><img src="images/dp4.jpg" alt="暂无图片"/></a></li>
  </ul>
 </div>
 <!--四大店铺 end-->
@@ -51,16 +51,16 @@
 <div class="title"><img src="images/title1.jpg" alt="暂无图片" /></div>
 <div class="store1nr">
  <ul>
-  <li><a href="http://www.医站通.com/e97923_1151.html" target="_blank"><img src="images/lym01.jpg" width="270" height="304" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e98027_1151.html" target="_blank"><img src="images/lym02.jpg" width="270" height="304" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97927_1151.html" target="_blank"><img src="images/lym03.jpg" width="270" height="304" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e97934_1151.html" target="_blank"><img src="images/lym04.jpg" width="270" height="304" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97923_1151.html" target="_blank"><img src="images/lym01.jpg" width="270" height="304" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98027_1151.html" target="_blank"><img src="images/lym02.jpg" width="270" height="304" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97927_1151.html" target="_blank"><img src="images/lym03.jpg" width="270" height="304" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e97934_1151.html" target="_blank"><img src="images/lym04.jpg" width="270" height="304" alt="暂无图片" /></a></li>
  </ul>
  <ul>
-  <li><a href="http://www.医站通.com/e97926_1151.html" target="_blank"><img src="images/lym05.jpg" width="270" height="304" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97922_1151.html" target="_blank"><img src="images/lym06.jpg" width="270" height="304" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97933_1151.html" target="_blank"><img src="images/lym07.jpg" width="270" height="304" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e97921_1151.html" target="_blank"><img src="images/lym08.jpg" width="270" alt="暂无图片" height="304" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97926_1151.html" target="_blank"><img src="images/lym05.jpg" width="270" height="304" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97922_1151.html" target="_blank"><img src="images/lym06.jpg" width="270" height="304" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97933_1151.html" target="_blank"><img src="images/lym07.jpg" width="270" height="304" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e97921_1151.html" target="_blank"><img src="images/lym08.jpg" width="270" alt="暂无图片" height="304" /></a></li>
  </ul>
 </div>
 </div>
@@ -71,16 +71,16 @@
 <div class="title"><img src="images/title2.jpg" alt="暂无图片" /></div>
 <div class="store2nr">
  <ul>
-  <li><a href="http://www.医站通.com/e98178_1123.html" target="_blank"><img src="images/mto01.jpg" width="122" height="380" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97849_1123.html" target="_blank"><img src="images/mto02.jpg" width="244" height="380" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97719_1123.html" target="_blank"><img src="images/mto03.jpg" width="122" height="380" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e98168_1123.html" target="_blank"><img src="images/mto04.jpg" width="244" alt="暂无图片" height="380" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98178_1123.html" target="_blank"><img src="images/mto01.jpg" width="122" height="380" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97849_1123.html" target="_blank"><img src="images/mto02.jpg" width="244" height="380" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97719_1123.html" target="_blank"><img src="images/mto03.jpg" width="122" height="380" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e98168_1123.html" target="_blank"><img src="images/mto04.jpg" width="244" alt="暂无图片" height="380" /></a></li>
  </ul>
  <ul>
-  <li><a href="http://www.医站通.com/e97699_1123.html" target="_blank"><img src="images/mto05.jpg" width="244" height="380" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97803_1123.html" target="_blank"><img src="images/mto06.jpg" width="120" height="380" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97880_1123.html" target="_blank"><img src="images/mto07.jpg" width="244" height="380" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e98179_1123.html" target="_blank"><img src="images/mto08.jpg" width="120" alt="暂无图片" height="380" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97699_1123.html" target="_blank"><img src="images/mto05.jpg" width="244" height="380" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97803_1123.html" target="_blank"><img src="images/mto06.jpg" width="120" height="380" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97880_1123.html" target="_blank"><img src="images/mto07.jpg" width="244" height="380" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e98179_1123.html" target="_blank"><img src="images/mto08.jpg" width="120" alt="暂无图片" height="380" /></a></li>
  </ul>
 </div>
 </div>
@@ -91,16 +91,16 @@
 <div class="title"><img src="images/title3.jpg" alt="暂无图片" /></div>
 <div class="store1nr">
  <ul>
-  <li><a href="http://www.医站通.com/e97981_1154.html" target="_blank"><img src="images/jh01.jpg" width="270" height="273" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97965_1154.html" target="_blank"><img src="images/jh02.jpg" width="270" height="273" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97966_1154.html" target="_blank"><img src="images/jh03.jpg" width="270" height="273" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e97964_1154.html" target="_blank"><img src="images/jh04.jpg" width="270" alt="暂无图片" height="273" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97981_1154.html" target="_blank"><img src="images/jh01.jpg" width="270" height="273" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97965_1154.html" target="_blank"><img src="images/jh02.jpg" width="270" height="273" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97966_1154.html" target="_blank"><img src="images/jh03.jpg" width="270" height="273" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e97964_1154.html" target="_blank"><img src="images/jh04.jpg" width="270" alt="暂无图片" height="273" /></a></li>
  </ul>
  <ul>
-  <li><a href="http://www.医站通.com/e97974_1154.html" target="_blank"><img src="images/jh05.jpg" width="270" height="273" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97981_1154.html" target="_blank"><img src="images/jh06.jpg" width="270" height="273" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e97978_1154.html" target="_blank"><img src="images/jh07.jpg" width="270" height="273" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e97976_1154.html" target="_blank"><img src="images/jh08.jpg" width="270" alt="暂无图片" height="273" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97974_1154.html" target="_blank"><img src="images/jh05.jpg" width="270" height="273" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97981_1154.html" target="_blank"><img src="images/jh06.jpg" width="270" height="273" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e97978_1154.html" target="_blank"><img src="images/jh07.jpg" width="270" height="273" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e97976_1154.html" target="_blank"><img src="images/jh08.jpg" width="270" alt="暂无图片" height="273" /></a></li>
  </ul>
 </div>
 </div>
@@ -111,16 +111,16 @@
 <div class="title"><img src="images/title4.jpg" alt="暂无图片" /></div>
 <div class="store1nr">
  <ul>
-  <li><a href="http://www.医站通.com/e98209_1153.html" target="_blank"><img src="images/jfw01.jpg" width="270" height="275" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e98204_1153.html" target="_blank"><img src="images/jfw02.jpg" width="270" height="275" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e98201_1153.html" target="_blank"><img src="images/jfw03.jpg" width="270" height="275" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e97945_1153.html" target="_blank"><img src="images/jfw04.jpg" width="270" alt="暂无图片" height="275" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98209_1153.html" target="_blank"><img src="images/jfw01.jpg" width="270" height="275" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98204_1153.html" target="_blank"><img src="images/jfw02.jpg" width="270" height="275" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98201_1153.html" target="_blank"><img src="images/jfw03.jpg" width="270" height="275" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e97945_1153.html" target="_blank"><img src="images/jfw04.jpg" width="270" alt="暂无图片" height="275" /></a></li>
  </ul>
  <ul>
-  <li><a href="http://www.医站通.com/e98208_1153.html" target="_blank"><img src="images/jfw05.jpg" width="270" height="270" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e98203_1153.html" target="_blank"><img src="images/jfw06.jpg" width="270" height="270" alt="暂无图片" /></a></li>
-  <li><a href="http://www.医站通.com/e98200_1153.html" target="_blank"><img src="images/jfw07.jpg" width="270" height="270" alt="暂无图片" /></a></li>
-  <li id="storezh"><a href="http://www.医站通.com/e97943_1153.html" target="_blank"><img src="images/jfw08.jpg" width="270" alt="暂无图片" height="270" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98208_1153.html" target="_blank"><img src="images/jfw05.jpg" width="270" height="270" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98203_1153.html" target="_blank"><img src="images/jfw06.jpg" width="270" height="270" alt="暂无图片" /></a></li>
+  <li><a href="http://www.yibanmed.com/e98200_1153.html" target="_blank"><img src="images/jfw07.jpg" width="270" height="270" alt="暂无图片" /></a></li>
+  <li id="storezh"><a href="http://www.yibanmed.com/e97943_1153.html" target="_blank"><img src="images/jfw08.jpg" width="270" alt="暂无图片" height="270" /></a></li>
  </ul>
 </div>
 </div>

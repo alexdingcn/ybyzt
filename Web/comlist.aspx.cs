@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
 using System.Text;
+using System.Net;
 
 public partial class ComList : LoginPageBase
 {
@@ -272,21 +273,45 @@ public partial class ComList : LoginPageBase
     protected string ShowComImg(string ShopLogo, string CompLogo, string CompName, string ShortName)
     {
         string retunconct = "";
-        int compnamelenght = CompName.Length;
-        string shortname = compnamelenght >10 ? CompName.ToString().Substring(0, 10) : CompName.ToString();
-        if (!string.IsNullOrEmpty(ShopLogo))//新增logo
-        {
-            return "<img src='" + ConfigurationManager.AppSettings["ImgViewPath"] + "CompImage/" + ShopLogo + "' width=\"140\" height=\"75\"  title='" + CompName + "' alt='" + CompName + "' />";
-        }
-        else if (!string.IsNullOrEmpty(CompLogo))
-        {
-            return "<img src='" + ConfigurationManager.AppSettings["ImgViewPath"] + "CompImage/" + CompLogo + "' width=\"140\" height=\"75\"  title='" + CompName + "' alt='" + CompName + "' />";
-        }
-        else //空值，默认logo
+        //空值，默认logo
+        if (string.IsNullOrEmpty(ShopLogo) && string.IsNullOrEmpty(CompLogo))
         {
             retunconct = @"<div  style='margin:5px 0 0 5px; color:#047dc6;text-align:center; font-size:22px;padding:0px 5px ; vertical-align: middle;  display: table-cell;  width: 175px;'>" + (!string.IsNullOrWhiteSpace(ShortName) ? ShortName : CompName) + "</div>";
-            return retunconct;
         }
+        else
+        {
+            int compnamelenght = CompName.Length;
+            string shortname = compnamelenght > 10 ? CompName.ToString().Substring(0, 10) : CompName.ToString();
+            string imageUrl = ConfigurationManager.AppSettings["ImgViewPath"] + "CompImage/";
+            if (!string.IsNullOrEmpty(ShopLogo))
+            {
+                imageUrl += ShopLogo;
+            }
+            else if (!string.IsNullOrEmpty(CompLogo))
+            {
+                imageUrl += CompLogo;
+            }
+
+            WebRequest request = WebRequest.Create(imageUrl);
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                System.Drawing.Image image = System.Drawing.Image.FromStream(response.GetResponseStream());
+                string scaleStr = "";
+                if (image.Height > 0 && image.Width/image.Height > 1.5)
+                {
+                    scaleStr = "width=\"140\"";
+                }
+                else
+                {
+                    scaleStr = " height=\"75\"";
+                }
+
+                return "<img src='" + imageUrl + "' " + scaleStr + " title='" + CompName + "' alt='" + CompName + "' />";
+            }
+        }
+
+        return retunconct;
     }
 
 

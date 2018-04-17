@@ -492,14 +492,14 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                             //工商四元素
                             GetBusines bu = new GetBusines();
                             string ss = bu.GetBus(CompDisName, txt_Licence, txt_creditCode, txt_Leading);
-                            if (ss != "SUCCESS")
+                            if (ss == null || ss != "SUCCESS")
                             {
                                 falg = false;
                                 Msg.Result = false;
-                                Msg.Msg = "该企业不合法，无法注册完成";
+                                Msg.Msg = "工商信息有误，无法完成注册，请填写正确的信息";
                                 Msg.Error = true;
                                 Msg.Code = ss;
-                                throw new ApplicationException("该企业不合法，无法注册完成");
+                                throw new ApplicationException("工商信息有误，无法完成注册，请填写正确的信息");
                             }
 
                             Hi.Model.BD_Distributor Distributor = new Hi.Model.BD_Distributor();
@@ -572,6 +572,24 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                                 user.AuditState = falg == false ? 0 : 2;
                                 int userid = 0;
                                 userid = new Hi.BLL.SYS_Users().Add(user, Tran);
+
+                                ///用户明细表
+                                Hi.Model.SYS_CompUser CompUser = new Hi.Model.SYS_CompUser();
+                                CompUser.CompID = Compid.ToInt(0);
+                                CompUser.DisID = DistributorID;
+                                CompUser.CreateDate = DateTime.Now;
+                                CompUser.CreateUserID = UserID;
+                                CompUser.modifyuser = UserID;
+                                CompUser.CType = 2;
+                                CompUser.UType = 5;
+                                //CompUser.IsEnabled = 1;
+                                CompUser.IsAudit = 2;
+                                CompUser.RoleID = Roid;
+                                CompUser.ts = DateTime.Now;
+                                CompUser.dr = 0;
+                                CompUser.UserID = userid;
+                                CompUser.IsEnabled = 1;
+                                new Hi.BLL.SYS_CompUser().Add(CompUser, Tran);
                             }
                             Tran.Commit();
 

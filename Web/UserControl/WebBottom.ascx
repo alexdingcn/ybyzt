@@ -10,7 +10,7 @@
 
     </div>
     <div class="pic">
-    <a href="http://www.moreyou.cn/"  target="_blank"title="医伴金服"></a>
+    <a href="https://www.yibanmed.com/"  target="_blank"title="医伴金服"></a>
     <a href="http://icp.alexa.cn/index.php?q=yibanmed.com&code=&icp_host=lncainfo" target="_blank"></a>
     <a href="http://www.police.sh.cn/shga/index.html" target="_blank"></a>
     <a href="http://www.12377.cn/" target="_blank"></a>

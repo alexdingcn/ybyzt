@@ -14,7 +14,7 @@ public class Enums
     /// </summary>
     public enum AddType
     {
-        正常下单 = 1,
+        网页下单 = 1,
         企业补单 = 2,
         App下单 = 3,
         App企业补单 = 4

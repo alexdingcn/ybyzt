@@ -143,7 +143,7 @@ public partial class goodslist : LoginPageBase
         if (CategoryIDUrl!="0" && CategoryID3List!="")//行业种类搜索条件
         {
             DataBindClass();
-            where += string.Format(" and gc.GoodsTypeID in({0})", CategoryID3List);
+            where += string.Format(" and gc.ID in({0})", CategoryID3List);
 
         }
         if (!string.IsNullOrEmpty(Request.QueryString["Type"]))
@@ -444,7 +444,7 @@ public partial class goodslist : LoginPageBase
         switch (CategoryIDs)
         {
             case 0:
-                return "my1818My1818-B2B电子商务平台，分销、批发就上医站通";
+                return "医站通-B2B电子商务平台，分销、批发就上医站通";
             case 10:
                 return "食品酒水-名酒茗茶、粮油调味、休闲食品、饮料冲印、生鲜-医站通";
             case 12:

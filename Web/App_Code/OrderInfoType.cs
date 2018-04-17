@@ -28,15 +28,15 @@ public class OrderInfoType
     /// <summary>
     /// 订单来源
     /// </summary>
-    /// <param name="type">0、正常下单 1、企业补单 2、APP下单</param>
+    /// <param name="type">0、网页下单 1、企业补单 2、APP下单</param>
     /// <returns></returns>
     public static string AddType(int type)
     {
         string AddType = string.Empty;
 
-        if (type == (int)Enums.AddType.正常下单)
+        if (type == (int)Enums.AddType.网页下单)
         {
-            AddType = "正常下单";
+            AddType = "网页下单";
         }
         else if (type == (int)Enums.AddType.企业补单)
         {

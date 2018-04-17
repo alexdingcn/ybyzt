@@ -16,6 +16,12 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#AddOrderfile").AjaxUploadFile({ Src: "TempFile/", ShowDiv: "payulfile", ResultId: "HDFileNames", AjaxSrc: "/Controller/Fileup.ashx", maxlength: 20, DownSrc: "../" });
+
+            $(".alert-danger").each(function (i, e) {
+                if ($(e).text().trim() === "") {
+                    $(e).hide();
+                }
+            });
         })
 
         //支付流水，跳转到详情页面
@@ -28,6 +34,13 @@
     <%--附件上传   end--%>
 
     <style>
+        .alert-danger {
+            margin: 10px;
+            padding: 5px 15px;
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #CCC;
+        }
         .tc .box {
             height: 26px;
             font-family: "微软雅黑";
@@ -88,8 +101,12 @@
                         <i>订单日期：<label id="lblCreateDate" runat="server"></label></i> 
                         <i>状态：<label id="lblOstate" runat="server">待订单审核</label></i>
                         <i>代理商：<label id="lblDisName" runat="server"></label></i>
-                        <i id="lblPrompt" runat="server" style=" color:Red;"></i>
-                        <i id="lblmsg" runat="server" style=" color:Red;"></i>
+                    </div>
+                    <div class="alert-danger">
+                        <i id="lblPrompt" runat="server"></i>
+                    </div>
+                    <div class="alert-danger">
+                        <i id="lblmsg" runat="server" ></i>
                     </div>
                     <div class="alink">
                         <label id="orderaudit" runat="server">
@@ -195,7 +212,7 @@
                                                         height="60"></a></span> <a target="_blank" href="../GoodsNew/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                             <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit"))) %>
                                                         </a><a target="_blank" href="../GoodsNew/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>" class="name">
-                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),20,"...")%><i><%# Eval("GoodsName")%></i></a>
+                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),30,"...")%><i><%# Eval("GoodsName")%></i></a>
                                                   <% }
                                                   else { %>
                                               <span>
@@ -204,7 +221,7 @@
                                                         height="60"></a></span> <a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                             <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit"))) %>
                                                         </a><a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="name">
-                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),20,"...")%><i><%# Eval("GoodsName")%></i></a>
+                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),30,"...")%><i><%# Eval("GoodsName")%></i></a>
                                                   <% } %>
                                             </div>
                                         </td>
@@ -351,7 +368,7 @@
                                                         height="60"></a></span> <a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# CompID %>_.html" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                             <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit"))) %>
                                                         </a><a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# CompID %>_.html" class="name">
-                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),20,"...")%><i><%# Eval("GoodsName")%></i></a>
+                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),30,"...")%><i><%# Eval("GoodsName")%></i></a>
                                             </div>
                                         </td>
                                         <td>

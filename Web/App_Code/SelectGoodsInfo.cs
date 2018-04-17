@@ -911,7 +911,7 @@ order by CreateDate1 desc,GoodsID desc,CreateDate2 desc", Compid, DisId, where, 
             str.Append("</div>");
 
             str.AppendFormat("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" tip=\"tab_{0}\">", Common.DesEncrypt(item["ID"].ToString(), Common.EncryptKey));
-            str.Append("<thead><tr><th class=\"\">商品名称</th><th class=\"t1\">规格属性</th><th class=\"t5\">单位</th><th class=\"t3\">订购数量</th><th class=\"t3\">已发货数量</th><th class=\"t3\">本次发货</th><th class=\"t3\">批次号</th><th class=\"t3\">有效期</th></tr></thead><tbody>");
+            str.Append("<thead><tr><th class=\"t1\">商品名称</th><th class=\"t3\">规格属性</th><th class=\"t5\">单位</th><th class=\"t3\">订购数量</th><th class=\"t3\">已发货数量</th><th class=\"t3\">本次发货</th><th class=\"t3\">批次号</th><th class=\"t3\">有效期</th></tr></thead><tbody>");
 
 
             //发货明细表
@@ -927,7 +927,7 @@ order by CreateDate1 desc,GoodsID desc,CreateDate2 desc", Compid, DisId, where, 
                     {
                         str.AppendFormat("<tr ttrd=\"{0}\">", oouitem.ID);
 
-                        str.AppendFormat("<td><div class=\"sPic\"><span><a target=\"_blank\" href=\"../../e" + od[0]["GoodsInfoID"] + "_" + item["CompID"] + "_.html\"><img src=\"{0}\" width=\"60\" height=\"60\"></a></span> <a target=\"_blank\" href=\"../../e" + od[0]["GoodsInfoID"] + "_" + item["CompID"] + "_.html\" class=\"code\">商品编码：{1}</a> <a  target=\"_blank\" href=\"../../e" + od[0]["GoodsInfoID"] + "_" + item["CompID"] + "_.html\" class=\"name\">{2}<i>{3}</i></a></div></td>", SelectGoodsInfo.GetGoodsPic(Convert.ToString(od[0]["Pic"])), od[0]["GoodsCode"], Common.MySubstring(od[0]["GoodsName"].ToString(), 20, "..."), od[0]["GoodsName"]);
+                        str.AppendFormat("<td><div class=\"sPic\"><span><a target=\"_blank\" href=\"../../e" + od[0]["GoodsInfoID"] + "_" + item["CompID"] + "_.html\"><img src=\"{0}\" width=\"60\" height=\"60\"></a></span> <a target=\"_blank\" href=\"../../e" + od[0]["GoodsInfoID"] + "_" + item["CompID"] + "_.html\" class=\"code\">商品编码：{1}</a> <a  target=\"_blank\" href=\"../../e" + od[0]["GoodsInfoID"] + "_" + item["CompID"] + "_.html\" class=\"name\">{2}<i>{3}</i></a></div></td>", SelectGoodsInfo.GetGoodsPic(Convert.ToString(od[0]["Pic"])), od[0]["GoodsCode"], Common.MySubstring(od[0]["GoodsName"].ToString(), 30, "..."), od[0]["GoodsName"]);
 
                         str.AppendFormat("<td><div class=\"tc\">{0}</div></td>", SelectGoodsInfo.GetGoodsInfos(Convert.ToString(od[0]["GoodsInfos"])));
                         str.AppendFormat("<td><div class=\"tc\">{0}</div></td>", od[0]["Unit"]);

@@ -1,4 +1,5 @@
 .cache
+.Thumbs.db
 .DS_Store
 .vs/
 Log/

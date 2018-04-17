@@ -14,7 +14,6 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/slide-simulate.js"></script>
 	<script src="js/menu.js"></script>
-
 </head>
 
 <body>
@@ -183,7 +182,7 @@
         <!--foot end-->
     </form>
 
-     <script src="/js/layer/layer.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>"
+    <script src="/js/layer/layer.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>"
         type="text/javascript"></script>
     <script src="/js/layerCommon.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>"
         type="text/javascript"></script>

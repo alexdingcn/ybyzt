@@ -138,8 +138,8 @@ i{ font-style:normal;}
 .tablelist .t2{ width:120px;}
 .tablelist .t3{ width:160px;}
 .tablelist .t6{ min-width:220px;}
-.tablelist .tc{ line-height:22px;position:relative;  padding:8px 10px; color:#666; text-align:center;}
-.tablelist .tcle{ line-height:22px;position:relative;  padding:8px 10px; color:#666; text-align:left;}
+.tablelist .tc{ line-height:22px;text-align:center;}
+.tablelist .tcle{ line-height:22px;text-align:left; padding-left: 10px;}
 .tablelist .tc .lblPrice{ display:block;}
 .tablelist .number{ color:#666;}
 .editmoney{ padding:10px 15px; line-height:22px; text-align:right; font-family:verdana; background:#f6f8fa;}
@@ -945,3 +945,18 @@ padding:0px 0px !important;
 .e-banner{ position:relative; overflow:hidden;}
 .e-banner li{ position:relative; float:left;}
 .delImg2{color: rgb(170, 170, 170); cursor: pointer; display: block; position:absolute; top:10px; right:10px; color:red;}
+
+.order-state, .pay-state { padding: 0 4px; line-height: 18px; border-width: 2px; font-size: 12px; border-radius:2px; margin:5px 22px; }
+.order-state-1 { color: #fff; background-color: #3A87AD; }
+.order-state-2 { color: #fff; background-color: #DA5430; }
+.order-state-4 { color: #fff; background-color: #F89406; }
+.order-state-5 { color: #fff; background-color: #82AF6F; }
+.order-state-6 { color: #fff; background-color: #ABBAC3;  text-decoration: line-through; }
+.order-state-7 { color: #fff; background-color: #ABBAC3; }
+
+.pay-state-0 { color: #fff; background-color: #ABBAC3; }
+.pay-state-1 { color: #fff; background-color: #F89406; }
+.pay-state-2 { color: #fff; background-color: #82AF6F; }
+.pay-state-4, .pay-state-5 { color: #fff; background-color: #3A87AD; }
+.pay-state-6 { color: #fff; background-color: #545454; }
+.pay-state-7 { color: #fff; background-color: #428BCA; }

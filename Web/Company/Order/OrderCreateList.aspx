@@ -367,11 +367,11 @@
                             <%# Eval("CreateDate", "{0:yyyy-MM-dd HH:mm}")%></div>
                     </td>
                     <td>
-                        <div class="tc">
+                        <div class="tc order-state order-state-<%# Eval("OState").ToString() %>">
                             <%# OrderType.GetOState(Eval("OState").ToString(), Eval("IsOutState").ToString())%></div>
                     </td>
                     <td>
-                        <div class="tc">
+                        <div class="tc pay-state pay-state-<%# Eval("PayState").ToString() %>">
                             <%# OrderInfoType.PayState(int.Parse(Eval("PayState").ToString()))%></div>
                     </td>
                     <td>

@@ -31,12 +31,21 @@ public partial class Distributor_newOrder_printout : System.Web.UI.Page
 
     public void databind()
     {
-
         if (!string.IsNullOrEmpty(Request["KeyID"]))
+        {
             KeyID = Common.DesDecrypt((Request["KeyID"] + ""), Common.EncryptKey).ToInt(0);
+        }
+            
         if (!string.IsNullOrEmpty(Request["DisID"]))
+        {
             DisID = (Request["DisID"] + "").ToInt(0);
-        
+        }
+
+        if (!string.IsNullOrEmpty(Request["CompID"]))
+        {
+            CompID = (Request["CompID"] + "").ToInt(0);
+        }
+
         //发货单
         DataTable lo = new Hi.BLL.DIS_OrderOut().GetList("", " isnull(o.dr,0)=0 and o.IsAudit<>3 and o.ID=" + KeyID);
 
@@ -81,7 +90,6 @@ public partial class Distributor_newOrder_printout : System.Web.UI.Page
                 rptOrderD.DataBind();
             }
         }
-
     }
-   
+
 }

@@ -676,7 +676,7 @@ public partial class Distributor_OrderZDInfo : DisPageBase
                 OrderInfoModel.GUID = guid;
                 OrderInfoModel.ReceiptNo = SysCode.GetNewCode("销售单");
 
-                Audit = OrderInfoType.OrderEnAudit((int)Enums.AddType.正常下单, OrderInfoModel.DisID, OrderInfoModel.Otype);
+                Audit = OrderInfoType.OrderEnAudit((int)Enums.AddType.网页下单, OrderInfoModel.DisID, OrderInfoModel.Otype);
                 OrderInfoModel.IsAudit = Audit;
 
                 //收货地址
