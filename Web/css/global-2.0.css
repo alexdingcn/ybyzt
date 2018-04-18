@@ -459,7 +459,8 @@ a:link {color: #666; text-decoration:none;}a:visited {color: #666;text-decoratio
 
 
 /*版权-文字*/
-.f-copy{ text-align:center; color:#797979; line-height:45px;}
+.f-copy{ text-align:center; color:#bbb; line-height:45px;}
+.f-copy a, .f-copy a:visited { color: #bbb; text-decoration:none;}
 .authentication{ margin:0px auto; width:450px; height:32px; background:url(../images/footer-p.gif) no-repeat 0 0; padding-bottom:15px;}
 .authentication a{ display:inline-block; width:100px; height:32px; margin-right:4px; background:#000;opacity:0;filter: Alpha(Opacity=0) !important;}
 

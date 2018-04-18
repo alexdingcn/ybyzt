@@ -138,8 +138,8 @@ i{ font-style:normal;}
 .tablelist .t2{ width:120px;}
 .tablelist .t3{ width:160px;}
 .tablelist .t6{ min-width:220px;}
-.tablelist .tc{ line-height:22px;text-align:center;}
-.tablelist .tcle{ line-height:22px;text-align:left; padding-left: 10px;}
+.tablelist .tc{ line-height:22px;text-align:center;padding: 5px;}
+.tablelist .tcle{ line-height:22px;text-align:left; padding-left: 10px; padding: 5px;}
 .tablelist .tc .lblPrice{ display:block;}
 .tablelist .number{ color:#666;}
 .editmoney{ padding:10px 15px; line-height:22px; text-align:right; font-family:verdana; background:#f6f8fa;}

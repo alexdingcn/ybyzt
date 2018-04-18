@@ -1,0 +1,190 @@
+/*登录*/
+.login{ width:100%; background:url(../images/loginBg.jpg) no-repeat top center; height:420px; position:relative; overflow:hidden; min-width:1200px;}
+.login .nr{ width:1200px; margin:0px auto; height:560px; position:relative;}
+.login .ad{ position:absolute; top:150px; left:-60px; z-index:99;}
+.logonBox{ width:335px; height:334px; overflow:hidden;box-shadow:0 0 5px #ddd; background:#fff; position:absolute; top:100px; right:40px; z-index:999;}
+.logonBox .wx{ width:255px; height:100%; overflow:hidden; background:url(../images/loginNr.jpg) no-repeat top left; float:left;}
+.logonBox .wx .pic{ display:inline-block; margin:67px 0 0 46px;}
+.logonBox .wx i{ display:inline-block; font-size:14px; font-style:normal; padding:18px 0 0 60px; color:#aaa;}
+.logonBox .wx .zc{ display:inline-block; text-align:center; width:100%; padding-top:10px;}
+.logonBox .wx .zc .btn{ display:inline-block; background:#ff8b00; color:#fff; border-radius:5px; padding:2px 14px;}
+.logonBox .wx .zc .btn:hover{ background:#5ec116;}
+.logonBox .wx .zc:hover{ color:#5ec116;}
+
+.logonBox .con{ width:315px; float:left; padding:0px 20px 0 10px;}
+.logonBox .con h2{ font-size:18px; font-weight:normal; padding:20px 0 0px 0;}
+.logonBox .con .li{ overflow:hidden; width:100%; padding-top:15px;}  
+.logonBox .con .box{ border:1px solid #ddd; height:35px; line-height:35px; width:300px; color:#aaa; font-size:14px; padding-left:10px; font-size:14px;}
+.logonBox .con .redbox{ border:1px solid red; height:35px; line-height:35px; width:300px; color:#aaa; font-size:14px; padding-left:10px; font-size:14px;}
+.logonBox .con .wj{ display:block; text-align:right; margin:5px 5px 0 0; font-style:normal;}
+.logonBox .con .wj a{ color:#797979;}
+.logonBox .con .btn{ width:100%; height:40px; background:#ff8b00; display:block; text-align:center; font-size:16px; color:#fff; line-height:40px; cursor:pointer;}
+.logonBox .con .btn:hover{ text-decoration:none; background:#f60;}
+.logonBox .con .li2{ padding-top:12px; overflow:hidden;}
+.logonBox .con .coo1{ background:url(../images/loginDl.jpg) no-repeat top left; width:251px; height:19px; display:inline-block;}
+.logonBox .con .fx{ width:14px; height:14px; overflow:hidden; float:left;}
+.logonBox .con .fxw { display:inline-block; line-height:20px;overflow:hidden; font-style:normal; float:left;}
+
+
+
+/*注册详细页*/
+.red{ color:red;}
+.reg{ width:980px;padding-top:40px; overflow:hidden;}
+.reg .logo{ padding:10px 0 15px 0;}
+.reg .lo{ float:left; margin-right:20px;}
+.reg .title{ padding-left:20px; height:48px; line-height:48px;  border-left:1px solid #ddd; font-size:20px; color:#999; display:inline-block;}
+
+
+
+/*
+.regTitle{ padding-left:20px;}
+.regTitle a{ display:inline-block;  z-index:998;position:relative;  padding:0px 20px; border:1px solid #d1d1d1; border-bottom:none; background:#f7f7f7; height:34px;  font-size:14px;line-height:34px;  margin-right:10px; overflow:hidden;}
+.regTitle .hover,.regTitle .hover:hover{ background:#fff;text-decoration:none; height:35px; color:#ff8b00; font-weight:bold; top:1px;}
+.regTitle a:hover{ position:relative; text-decoration:none; color:#333; height:35px; background:#f9f9f9; }
+*.itemInfo{ background:#fff; border:1px solid #d1d1d1; padding:20px 0 30px 0; position:relative; z-index:9; min-height:450px;}*/
+/*注册-步骤标题*/
+.regTitle{ background:url(../images/regTitle.png) no-repeat 0 -65px; width:705px; height:105px; margin-left:135px; position:relative;}
+.regTitle .p2{ background:url(../images/regTitle.png) no-repeat -332px -0px; width:41px; height:41px; position:absolute; left:332px; top:7px; display:block;}
+.regTitle .p3{ background:url(../images/regTitle.png) no-repeat -607px -0px; width:41px; height:41px; position:absolute; left:602px; top:7px; display:block;}
+/*注册-内容*/
+.regInfo{ padding:60px 0 0 0px; overflow:hidden; background:url(../images/registBg.png) no-repeat 0 0 #fff; width:980px;min-height:450px; margin:10px 0 0 0;}
+.registInfo{ padding:0px 0 40px 80px; overflow:hidden; }
+.registInfo li{ position:relative; margin-top:20px; padding-left:150px; overflow:hidden; min-height:38px;}
+.registInfo .label{ position:absolute; width:140px; top:0; left:0; text-align:right;overflow:hidden; height:38px; line-height:38px; font-size:14px; color:#999;}
+.registInfo .regBox{ border:1px solid #ccc; height:43px; width:290px; padding-left:10px; position:relative; float:left; margin-right:10px;}
+
+.registInfo .box{  border:none;*border:0; height:43px; line-height:43px;*+height:40px;*+line-height:40px;overflow:hidden; margin:0; padding:0; font-size:14px; color:#494949; font-family:"微软雅黑";outline:none; width:270px;}
+.registInfo .text{color:#777;width:280px;height:43px; padding-left:8px;display:inline-block;background:#f7f7f7;border:1px solid #dddddd;vertical-align:middle; display:table-cell;}
+*+.registInfo .text{height:38px; padding:5px 0 0 8px;display:inline-block;background:#f7f7f7;border:1px solid #dddddd;vertical-align:middle;}
+/*注册-鼠标移上去*/
+.registInfo .none{ display:none;}
+.registInfo .tRed{ border:1px solid #ffbdbe; color:red; background:#fff5f5;}/*红色提醒文字*/
+.registInfo .bRed{ border:1px solid #ff0000;}/*红色提醒边框*/
+.registInfo .bgreen{border:1px solid #7abd54;}/*绿色提醒边框*/
+.registInfo .txt a{ color:#016bb5;}
+/*注册-按钮*/
+.registInfo .fx{ position:relative; top:3px;}
+.regbtn{ display:inline-block; cursor:pointer;height:43px;line-height:43px; width:96px; margin-right:10px;border:1px solid #c2cde0;color: #333; background:#eef3fa;text-align: center; font-size:14px; text-decoration: none; color:#4274bc;}
+.regbtn:hover{background:#e5ebf3; text-decoration:none;}
+.regInfo .regbtn2{ display:inline-block; font-size:16px; padding:0px 20px; height:40px; line-height:40px;border-radius:5px; color:#fff; background:#5387d1;}
+.regInfo .regbtn2:hover{background:#356bb8; color:#fff; text-decoration:none;}
+
+/*注册-按钮*/
+.registInfo .wid .regBox{width:182px;}
+.registInfo .wid .box{width:162px;}
+.registInfo .captcha{ border:1px solid #ccc; width:96px;  height:43px; float:left; margin-right:10px;}
+.registInfo .regBox.wid{ width:190px;}
+.registInfo .regBox.wid .box{ width:170px;}
+/*注册-注册完成*/
+.regOk{ padding:0px 0 40px 340px; margin-top:90px; position:relative; min-height:100px;}
+.regOk .pic{ position:absolute; top:0px; left:240px; width:74px; height:83px; background:url(../images/regOk.png) no-repeat 0 0;}
+.regOk .w1{ font-size:26px;}
+.regOk .w2{ font-size:14px; color:#797979; padding-top:10px;}
+.regOk .w2 a{ color:#2f5fa3; margin-left:20px;}
+
+.okIcon{ width:25px; height:36px; background:url(../images/sucess.png) no-repeat 4px 10px #fff; position:absolute;  top:3px; right:0px; overflow:hidden;}
+/*注册-底部*/
+.footeReg{ text-align:center; color:#777; line-height:24px; padding:20px 0;}
+.footeReg a{ margin:0px 10px;}
+
+/*.regOk{ position:relative; margin:170px 0 0 350px;}
+.regOk .ok{ position:absolute; top:8px; left:-100px; background:url(../images/ok2.png) no-repeat top left; width:79px; height:79px;}
+.regOk .w{ font-size:24px; line-height:30px; font-weight:normal;}
+.regOk .txt{ color:#777; padding:10px 0; font-size:14px;}
+.regOk .btn{ background:#ff8b00; display:inline-block; color:#fff; display:inline-block; line-height:24px; padding:0px 20px; border-radius:4px;}
+.regOk .btn:hover{ background:#ffac5b; text-decoration:none;}
+*/.regbtn .btn:hover,.regInfo .btn1:hover{border:1px solid #ff8b00;border-radius:5px;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffba00', endColorstr='#ff8b00'); background: -webkit-linear-gradient(top, #ffba00, #ff8b00);background: -moz-linear-gradient(top, #ffba00, #ff8b00);background: -ms-linear-gradient(top, #ffba00, #ff8b00);background: linear-gradient(top, #ffba00, #ff8b00); color:#fff; text-decoration:none;}
+
+
+/*注册首页*/
+.register{ background:url(../images/registerBg.jpg) no-repeat top center; height:560px;}
+.register .line{ background:#fff; width:1px; height:230px; overflow:hidden; left:50%; margin-left:2px; top:160px; position:absolute;}
+.register .con{ width:1120px; overflow:hidden; padding:0px 40px; margin:0px auto; position:relative;}
+.register .a1{ width:50%; margin-top:160px; height:230px; position:relative;}
+.register .bg{background:#fff; width:100%; height:100%;opacity:0.5;filter: Alpha(Opacity=50) !important;}
+.register .nr{ position:absolute; top:50%; left:50%; margin-top:-65px; margin-left:-190px; padding-left:150px; z-index:99;}
+.register .nr .pic1{ width:131px; height:131px; background:url(../images/registerIcon.png) no-repeat 0 -139px; position:absolute; top:0; left:0;}
+.register .nr .bt{ font-size:28px; color:#2192e0; margin-top:15px;}
+.register .nr .txt{ color:#cfcfcf; font-size:16px;text-transform:uppercase; padding:5px 0 10px 0;}
+.register .nr .btn{ background:#2192e0;border-radius:5px; height:30px; line-height:30px; display:inline-block; color:#fff; font-size:14px;}
+.register .nr .btn a{color:#fff; display:block;border-radius:5px; padding:0px 15px;}
+.register .nr .btn a:hover{ background:#ff8400; text-decoration:none;}
+
+.register .nr2 .bt{ color:#ff8400;}
+.register .nr2 .btn{ background:#ff8400;}
+.register .nr2 .btn a:hover{background:#2192e0;}
+.register .nr .pic2{ width:133px; height:131px; background:url(../images/registerIcon.png) no-repeat 0 15px; position:absolute; top:0; left:0;}
+
+
+/*找回密码-进度条*/
+.password{ background:#fefefe;box-shadow: 0px 0 5px 1px #aaa; width:750px; position:absolute; top:45px; left:50%; margin-left:-375px; padding-bottom:20px;  min-height:310px; z-index:1;}
+.password .title{ background:#d2e5f3; height:40px; line-height:40px; padding-left:15px; font-size:16px; color:#5f88a2;}
+.password .step{ position:relative; text-align:center; padding:30px 0 20px 0; z-index:2;}
+.password .step li{ display:inline-block; color:#999; margin:0px 60px;}
+.password .step .txt{ display:block; padding-top:5px;}
+.password .step span{ border-radius:15px; background:#dcdcdc;width:30px; height:30px; display:inline-block; overflow:hidden;}
+.password .step li span i{ color:#999; background:#f2f2f2; border-radius:10px; display:inline-block;width:18px; height:20px; line-height:20px; padding-right:2px; margin:5px auto 0px auto;}
+.password .step .cur{ color:#333;}
+.password .step .cur span{ background:#7abd54; color:#fff; }
+.password .step .cur span i{line-height:15px;}
+.password .bg{ height:5px; background:#dcdcdc; position:absolute; top:82px; left:0; z-index:1; width:520px; margin-left:120px;}
+
+/*找回密码-文本*/
+.password .lb{  padding-left:100px;}
+.password .lb li{ padding-top:15px;}
+.password .box,.password .box2{ width:270px; height:30px; line-height:30px; padding:0px 10px; border:1px solid #d1d1d1;}
+.password .box2{ width:100px;}
+
+.password .redbox,.password .redbox2{ width:270px; height:30px; line-height:30px; padding:0px 10px; border:1px solid red;}
+.password .redbox2{ width:100px;}
+
+
+.password .capt{ position:relative; top:8px;} 
+.password .link{ color:#4ea0d9;}
+.password .btn{ background:#ff7d00; margin-left:55px; font-size:14px; border:1px solid #ff6600; height:30px; line-height:30px; padding:0px 20px; display:inline-block; color:#fff; border-radius:5px;}
+.password .btn:hover{ background:#2192e1; text-decoration:none; border:1px solid #268ad0;}
+.password .bt{ font-size:14px;}
+.password .lb .btn2{ border:1px solid #d1d1d1; background:#fdfdfd; line-height:26px; height:26px; padding:0px 10px; display:inline-block;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e7e7e7'); background: -webkit-linear-gradient(top, #ffffff, #e7e7e7);background: -moz-linear-gradient(top, #ffffff, #e7e7e7);background: -ms-linear-gradient(top, #ffffff, #e7e7e7);background: linear-gradient(top, #ffffff, #e7e7e7); border-radius:5px; margin-left:8px; margin-right:10px;}
+
+.pawoOne .txt2{ font-size:14px;}
+.patwo .btn,.paThree .btn{ margin-left:85px;}
+.patwoOk{ position:relative; padding-left:60px; display:inline-block; left:50%; margin-left:-140px; top:50px;}
+.patwoOk span{ position:absolute; top:8px; left:0;}
+.patwoOk b{ display:block; color:#6dae48; font-size:18px; font-weight:normal; padding-bottom:5px;}
+
+.pawoOne{ display:none;}
+.show{ display:block;}
+
+/*2015-07-08 Joken*/
+.logonBox .con .boxw{ width:80px; float:left; height:30px; line-height:30px; }
+.logonBox .con .captcha{ display:inline-block; margin-left:10px; height:34px;}
+.logonBox .con .captcha img{height:34px; width:87px;}
+.logonBox .btn2{ line-height:32px; margin-left:10px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f1f1f1'); background: -webkit-linear-gradient(top, #ffffff, #f1f1f1);background: -moz-linear-gradient(top, #ffffff, #f1f1f1);background: -ms-linear-gradient(top, #ffffff, #f1f1f1);background: linear-gradient(top, #ffffff, #f1f1f1); display:inline-block; border:1px solid #ddd;}
+.logonBox .btn2:hover{ background:#e2eff8; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2eff8', endColorstr='#e2eff8');border:1px solid #bed6e7; text-decoration:none; color:#2e88c6; cursor:pointer;}
+.logonBox .con .box3{ border:1px solid #e90000;}
+
+/*2015-07-14注册页面添加附件 Joken*/
+.teamList{line-height:28px; padding:5px 0 0 0;}
+.teamList dd{ background:#f9f9f9; margin-top:2px; width:305px; padding-left:10px; position:relative;}
+.teamList .red{ color:red; margin-left:10px; position:absolute; top:1px; right:7px; display:inline-block; height:26px; line-height:26px; cursor:pointer;}
+.teamList .speed{ position:absolute; top:0; right:45px; color:#999; min-width:50px !important;}
+.teamList .green{ color:#14ab00;}
+
+
+.btns{background:#CCC !important ;color:#939393 !important; cursor:default !important;}
+.ErIcon{width: 25px;height: 36px;background: url(../images/icoerror.gif) no-repeat 4px 10px #fff;position: absolute;top: 3px;right: 0px;overflow: hidden;}
+.ebled{background:rgb(129,129,129) !important;filter:'' !important;}
+
+
+/*  add 2016/5/18   */
+.logonBox .con .boxw{ width:80px; float:left; height:35px; line-height:30px; }
+
+
+
+
+
+
+
+
+
+

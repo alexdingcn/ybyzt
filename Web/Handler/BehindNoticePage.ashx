@@ -165,11 +165,11 @@ public class BehindNoticePage : IHttpHandler
                             pay = new Hi.BLL.PAY_Payment().updatePayState(con, payM.ID, sqlTrans);
 
                             //修改免支付次数
-                            try
-                            {
-                                Common.UpmzfcsByCompid(orderModel.CompID);
-                            }
-                            catch { }
+                           // try
+                            //{
+                              //  Common.UpmzfcsByCompid(orderModel.CompID);
+                            //}
+                           // catch { }
 
                             if (prepayPrice > 0)
                                 prepay = new Hi.BLL.PAY_PrePayment().updatePrepayState(con, prepayM.ID, sqlTrans);
@@ -200,27 +200,27 @@ public class BehindNoticePage : IHttpHandler
 
                         }
 
-                        try
-                        {
+                       // try
+                       // {
+                       //     if (orderModel.Otype != 9)
+                       //     {
+                       //         OrderInfoType.AddIntegral(orderModel.CompID, orderModel.DisID, "1", 1, orderModel.ID, (prepayPrice + (price / 100)), "订单支付", "", orderModel.CreateUserID);
+                       //     }
+                       // }
+                       // catch { }
 
-                            if (orderModel.Otype != 9)
-                            {
-                                OrderInfoType.AddIntegral(orderModel.CompID, orderModel.DisID, "1", 1, orderModel.ID, (prepayPrice + (price / 100)), "订单支付", "", orderModel.CreateUserID);
-                            }
-                        }
-                        catch { }
+                       // if (orderModel.Otype == (int)Enums.OType.推送账单)
+                       //     Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "账单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
+                       // else
 
-                        if (orderModel.Otype == (int)Enums.OType.推送账单)
-                            Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "账单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
-                        else
-                            Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "订单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
+                          Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "订单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
 
                         //微信和安卓消息推送
-                        try
-                        {
-                            new Common().GetWxService("2", orderModel.ID.ToString(), "1");
-                        }
-                        catch { }
+                       // try
+                       // {
+                       //     new Common().GetWxService("2", orderModel.ID.ToString(), "1");
+                      //  }
+                      //  catch { }
 
                         LogManager.WriteLog(LogFile.Trace.ToString(), "订单结束" + order + "--" + prepay + "--" + pay + "\r\n");
 
@@ -260,54 +260,6 @@ public class BehindNoticePage : IHttpHandler
                         Console.WriteLine("未找到该支付记录！");
                     }
                 }
-            }
-            //广州农商行流水处理
-            //else if (guid.Contains("GN"))
-            //{
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "进入广州农商行回调程序\r\n");
-
-            //    //调用后台通知接口
-            //    BehindService behindservice = new BehindService();
-
-            //    string str = behindservice.BehindUpdate(guid, status, price);
-
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "执行结果：" + str + "\r\n");
-            //}
-            //重庆机电流水处理
-            //else if (guid.Contains("CQ"))
-            //{
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "进入重庆机电回调程序\r\n");
-
-            //    //调用后台通知接口                
-            //    BehindServiceSoapClient behindservice= new BehindServiceSoapClient();
-            //    string str= behindservice.BehindUpdate(guid, status, price);
-
-            //    LogManager.WriteLog(LogFile.Trace.ToString(),"执行结果："+str+"\r\n");
-            //}
-            //Fi1818后台通知
-            else if (guid.Contains("FI"))
-            {
-                LogManager.WriteLog(LogFile.Trace.ToString(), "进入Fi1818回调程序\r\n");
-
-                string query = guid + ";" + price;
-                var client =Common.CallService();
-                var relusts = client.Tx1318(new Tx1318RequestType
-                {
-                    SerachCondition = new Tx1318Condition
-                    {
-                        Json = query
-                    },
-                    RequestStatus = new CommonRequestType()
-                    {
-                        RequstToken =Common.RequestTokenCode
-                    }
-                });
-                //付款记录
-                string json = relusts.ReslutJson;
-
-                // string str = string.Empty;
-
-                LogManager.WriteLog(LogFile.Trace.ToString(), "Fi1818执行结果：" + json + "\r\n");
             }
         }
         else if ("1348".Equals(noticeRequest.getTxCode()))
@@ -352,50 +304,6 @@ public class BehindNoticePage : IHttpHandler
 
                 LogManager.WriteLog(LogFile.Trace.ToString(), "清算结束\r\n");
 
-            }
-            //农商行程序
-            //else if (SerialNumber.Contains("GN"))
-            //{
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "进入农商行结算程序\r\n");
-            //    BehindService behindservice = new BehindService();
-            //    string str = behindservice.BehindUpJs(ordercode, start);
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "执行结果：" + str + "\r\n");
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "进入农商行结算清算结束\r\n");
-            //}
-            //重庆机电流水处理
-            //else if (SerialNumber.Contains("CQ"))
-            //{
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "进入重庆机电结算程序\r\n");
-            //    //调用后台通知接口                
-            //    BehindServiceSoapClient behindservice= new BehindServiceSoapClient();
-            //    string str= behindservice.BehindUpJs(ordercode, start);
-
-            //    LogManager.WriteLog(LogFile.Trace.ToString(),"执行结果："+str+"\r\n");
-            //    LogManager.WriteLog(LogFile.Trace.ToString(), "进入重庆结算清算结束\r\n");
-            //}
-            //Fi1818后台通知
-            else if (SerialNumber.Contains("FI"))
-            {
-                LogManager.WriteLog(LogFile.Trace.ToString(), "进入Fi1818回调程序\r\n");
-
-                //收集参数
-                string query = SerialNumber + ";" + start;
-                var client =Common.CallService();
-                var relusts = client.Tx1348(new Tx1348RequestType
-                {
-                    SerachCondition = new Tx1348Condition
-                    {
-                        Json = query
-                    },
-                    RequestStatus = new CommonRequestType()
-                    {
-                        RequstToken = Common.RequestTokenCode
-                    }
-                });
-                //付款记录
-                string str = relusts.ReslutJson;
-
-                LogManager.WriteLog(LogFile.Trace.ToString(), "Fi1818清算执行结果：" + str + "\r\n");
             }
         }
 

@@ -1,23 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BotControl.ascx.cs" Inherits="UserControl_BotControl" %>
-<!--版权start-->
-<%--<div class="f-copy">
-	<div class="myLink" ><a>友情链接 :</a><a href="http://www.moreyou.cn" target="_blank">陌远科技</a><%= ConfigCommon.GetIndexConfig("IndexConfig.xml", "F100Link")%></div>
-    <div class="myCopy">粤ICP备17130448号 Copyright © 2017 深圳前海医伴金服信息技术有限公司版权所有 <a href="http://tongji.baidu.com/web/welcome/login" target="_blank"><img src="/images/ipic.gif" width="50" height="12" alt="暂无图片" /></a></div>
-</div>--%>
 
 <div class="f-copy">
-    <a href="http://www.miitbeian.gov.cn" target="_blank" rel="noopener noreferrer">粤ICP备17130448号-2</a> Copyright © 2017 深圳前海医伴金服信息技术有限公司版权所有
-    <%--<a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener noreferrer"><img src="/images/ipic.gif" width="50" height="12" alt="暂无图片"></a>--%>
+    Copyright © 2017 深圳前海医伴金服信息技术有限公司版权所有<br />
+    <a href="http://www.miitbeian.gov.cn" target="_blank" rel="noopener noreferrer">粤ICP备17130448号-2</a> 
 </div>
-<div class="authentication"> 
-    <a href="http://www.moreyou.cn" title="医站通" target="_blank" rel="noopener noreferrer" ></a>
-    <a href="http://icp.alexa.cn/index.php?q=www.yibanmed.com&amp;code=&amp;icp_host=lncainfo" target="_blank" rel="noopener noreferrer"></a>
-    <a key ="599e7bff2548be755dd5f6b1"  logo_size="83x30"  logo_type="business"  href="https://v.pinpaibao.com.cn/cert/site/?site=www.my1818.com&at=business"  target="_blank"></a>
-    <a id="_pingansec_bottomimagelarge_shiming" href="http://si.trustutn.org/info?sn=889170828030165944372&certType=1" target="_blank" rel="noopener noreferrer"></a>
-    <a href="http://www.12377.cn/node_548446.htm" target="_blank" rel="noopener noreferrer"></a>
-</div>
-<!--版权end-->
- 
+
 
 <!-- QQ客服 region -->
     <div id="float_service">

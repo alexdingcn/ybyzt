@@ -1,0 +1,187 @@
+﻿
+.textarea
+{
+   /* background: rgba(0, 0, 0, 0) url("../images/inputbg.gif") repeat-x scroll 0 0;*/
+    line-height: 25px;
+    margin-left: 5px;
+    text-indent: 5px;
+    margin:5px;
+    width: 585px;
+    height: 50px;
+	border:1px solid #d1d1d1;
+}
+.lbtb
+{
+    margin: 0 5px;     
+}
+.dh
+{
+    width:100%;
+    height:auto;
+    border-bottom: medium none;
+}
+.dh table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.dh span
+{
+    background: none repeat scroll 0 0 #f6f6f6;
+    display: block;
+    padding-right: 10px;
+    text-align: right;
+}
+.dh label
+{
+    padding-left: 10px;      
+}
+.dh td
+{
+    border: 1px solid #dedede;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: left;    
+}
+
+.edittable2 .list-title th
+{
+   
+	background:#f6f6f6;
+    height:34px; 
+    line-height:34px; 
+    border:solid 1px #ddd; 
+    text-align:center;
+
+}
+.edittable2 .list
+{
+    border: 1px solid #ddd;
+    border-right: none;
+    border-top: none;
+    width:100%;
+}
+.edittable2 td
+{
+    border: 1px solid #ddd;
+
+
+    /*text-align:center;*/
+}
+/*.Pright
+{
+    padding-right:10px;
+}*/
+.txtPrice
+{   
+    width:40px;
+    height:23px; 
+    line-height:23px;
+    line-height:17px\9;
+    *line-height:16px; 
+    background:#fff;
+    border: 1px solid #ddd;
+    display:inline; 
+    text-indent: 5px;
+    padding:0; 
+    margin:0;
+}
+.footerBtn
+{
+    text-align: center;
+    margin-top: 15px;
+    padding-bottom: 20px;
+}
+.opacity
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width:100%;
+    height:100%;
+    background-color: #949595;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    z-index:1001;
+    filter: alpha(opacity=40);
+}
+.tip2
+{
+    width:800px;
+    height:450px; 
+    position:absolute;
+    top:10%; 
+    left:20%;
+    background:#fcfdfd;
+    box-shadow:1px 8px 10px 1px #9b9b9b;
+    border:8px solid rgba(0, 0, 0, .5); 
+    border-radius:5px;
+    behavior:url(js/pie.htc); 
+    display:none; 
+    z-index:111111;
+}
+ .tipinfo
+{
+    padding-top:10px;
+    margin-left:0; 
+    height:400px;
+}
+
+/**选择商品**/
+.lb1
+{
+    height:auto; 
+    line-height:30px;
+    padding-bottom:10px; 
+    overflow:hidden;
+}
+.lbleft
+{
+    height:350px;
+    width:20%;
+    float:left;
+    overflow-y:scroll;
+    /*scrollBar-face-color:green; 
+    scrollBar-hightLight-color:red; 
+    scrollBar-3dLight-color:orange; 
+    scrollBar-darkshadow-color:blue; 
+    scrollBar-shadow-color:yellow; 
+    scrollBar-arrow-color:purple; 
+    scrollBar-track-color:black; 
+    scrollBar-base-color:pink;
+    padding-left:10px;*/
+}
+.lbleft p
+{
+    text-align:center;    
+}
+.GoodsType
+{
+    padding-left:10px;
+}
+.lbright
+{
+    overflow-y: scroll;
+    height:350px;
+    width:80%;
+    float:right;
+    /* padding-left:10px;*/
+}
+.tipbtn1
+{
+    margin-bottom:10px;
+    margin-left:320px;
+}
+/**选择商品**/
+ .mo-t div
+{
+    width:150px;
+    display:inline-block;
+}
+/*7-6 Joken*/
+.logistics{ overflow:hidden;}
+.logistics span{ text-align:right; display:block; color:#666;}
+.logistics td{ padding:7px 0;}
+.logistics td input{ height:30px; line-height:30px; border:1px solid #ddd; width:200px;}
+
+

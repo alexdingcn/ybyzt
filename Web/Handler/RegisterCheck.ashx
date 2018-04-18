@@ -461,6 +461,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                             string SendRegiPhone = System.Configuration.ConfigurationManager.AppSettings["SendTels"].ToString();
                             string[] Phones = SendRegiPhone.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                             string Result = "";
+                            // 通知公司
                             GetPhoneCode getphonecode = new GetPhoneCode();
                             getphonecode.GetUser(PhoneCodeAccount, PhoneCodePwd);
                             Result = getphonecode.SendComp(Phone);
@@ -468,12 +469,13 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                             {
 
                             }
+                            // 通知运营
                             foreach (string tel in Phones)
                             {
                                 Result = getphonecode.ReturnComp(tel, comp.CompName);
                                 if (Result != "Success")
                                 {
-
+                                    
                                 }
                             }
                         }

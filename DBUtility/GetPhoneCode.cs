@@ -175,9 +175,6 @@ namespace DBUtility
         {
             try
             {
-                //content = string.Format(VerifyTemplate4, content);
-                //return send(phone, content);
-
                 TParam = string.Format(VerifyTemplate3, content);
                 //SName = "yzt_enroll";
                 TCode = "SMS_123667321";
@@ -193,11 +190,7 @@ namespace DBUtility
         {
             try
             {
-                //content = string.Format(VerifyTemplate6, content, "入驻", "平台");
-                //return send(phone, content);
-
                 TParam = string.Format(VerifyTemplate6, "入驻", "平台", content + PhoneSendTel);
-                //SName = "yzt_applywait";
                 TCode = "SMS_123672344";
                 return send(phone, TCode, TParam);
             }
@@ -211,11 +204,7 @@ namespace DBUtility
         {
             try
             {
-                //content = string.Format(VerifyTemplate6, content, "加盟", "企业");
-                //return send(phone, content);
-                //TParam = "{\"apply\":\"{0}\",\"person\":\"{1}\",\"action\":\"{2}\"}";
                 TParam = string.Format(VerifyTemplate6, "加盟", "企业", content);
-                //SName = "yzt_applywait";
                 TCode = "SMS_123672344";
                 return send(phone, TCode, TParam);
             }
@@ -349,7 +338,7 @@ namespace DBUtility
                 //必填:待发送手机号。支持以逗号分隔的形式进行批量调用，批量上限为1000个手机号码,批量调用相对于单条调用及时性稍有延迟,验证码类型的短信推荐使用单条调用的方式
                 request.PhoneNumbers = phone;
                 //必填:短信签名-可在短信控制台中找到
-                request.SignName = "医伴金服";  //SignName; //"xxxxxxxx";
+                request.SignName = "医站通";  //SignName; //"xxxxxxxx";
                 //必填:短信模板-可在短信控制台中找到
                 request.TemplateCode = TemplateCode;  //"SMS_00000001";
                 //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
