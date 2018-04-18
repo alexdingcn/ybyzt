@@ -1801,10 +1801,10 @@
             <div class=" clear"></div>
             <!--商品规格 start-->
             <div class="c-n-title">
-                <i class="fl">商品规格</i><div class="set fl">
+                <span class="fl">商品规格</span>
+                <div class="set fl">
                     <input type="checkbox" class="r-check" name="isProductMultispecOn" value="1" id="chkProduct" runat="server" />
-                    <label for="chkProduct"></label>
-                    设置多规格商品
+                    <label for="chkProduct"></label>设置多规格商品
                 </div>
             </div>
             <div style="margin-top: 5px;" id="divSku" runat="server">
@@ -1862,6 +1862,9 @@
                         <input name="txtKC" type="text" id="txtKC" runat="server" class="box1" onkeyup="KeyInt2(this);" maxlength="10" />
                     </li>
                 </ul>
+                <p class="gclor9">
+                    * 该价格是建议零售价，代理商的价格请在<a href="/Company/Contract/ContractList.aspx"><b>合同</b></a>中维护
+                </p>
                 <div class="productListBox table-wrap-lite" style="float: left; margin-bottom: 5px;">
                     <table border="0" cellspacing="0" cellpadding="0" style="width: 1050px; margin: 0 auto;">
                         <thead>

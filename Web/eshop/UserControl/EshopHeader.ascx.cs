@@ -49,8 +49,8 @@ public partial class EShop_UserControl_EshopHeader : System.Web.UI.UserControl
     public void IsLogin()
     {
         LoginModel loginuser = HttpContext.Current.Session["UserModel"] as LoginModel;
-        ImgBigCompQRCode.Src = ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/qr_" + Request["Comid"].Trim() + ".png";
-        ImgSmCompQRCode.Src = ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/qr_" + Request["Comid"].Trim() + ".png";
+        ImgBigCompQRCode.Src = ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/qr_" + Request["Comid"].Trim() + ".jpg";
+        ImgSmCompQRCode.Src = ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/qr_" + Request["Comid"].Trim() + ".jpg";
         if (loginuser != null)
         {
             switch (loginuser.TypeID)
