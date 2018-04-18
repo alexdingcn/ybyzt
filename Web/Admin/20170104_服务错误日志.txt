@@ -1,3 +1,0 @@
-'=' ¸½½üÓĞÓï·¨´íÎó¡£
-DBUtility::::System.Data.DataSet Query(System.String, System.String)
-**************************************

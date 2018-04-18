@@ -6,7 +6,7 @@
 </script>
 <!--左侧菜单 start-->
 <div class="leftNav">
-	<div class="mlogo"><span title="广州农商行-赢家生意圈"><img src="../../Distributor/images/al-logo.png" width="110"title="广州农商行-赢家生意圈"> </span></div>
+	<div class="mlogo"><span title="医站通"><img src="../../Distributor/images/al-logo.png" width="110"title="医站通"> </span></div>
 	<div class="li ">
     	<div class="name">系统管理</div>
     	<ul id="xtgl"  runat="server" visible="false" class="submenu">

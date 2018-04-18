@@ -467,7 +467,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                             Result = getphonecode.SendComp(Phone);
                             if (Result != "Success")
                             {
-
+                                Tiannuo.LogHelper.LogHelper.Error("通知公司Error" + Result);
                             }
                             // 通知运营
                             foreach (string tel in Phones)
@@ -475,7 +475,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                                 Result = getphonecode.ReturnComp(tel, comp.CompName);
                                 if (Result != "Success")
                                 {
-                                    
+                                    Tiannuo.LogHelper.LogHelper.Error("通知运营Error" + Result);
                                 }
                             }
                         }

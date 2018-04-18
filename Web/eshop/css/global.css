@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* 整站全局公共样式的设定 */
 * html,* html body{background-image:url(about:blank);background-attachment:fixed}
 * html .ie6fixedTL{position:absolute;left:expression(eval(document.documentElement.scrollLeft));top:expression(eval(document.documentElement.scrollTop))}
@@ -79,8 +79,8 @@ a:active {color: #494949; text-decoration:none;outline:none;blr:expression(this.
 
 /*header*/
 .header{ background:#fff; margin-top:36px;}
-.header .logo{ padding-top:12px; font-size:21px; line-height:45px;}
-.header .logo img{ height:55px;}
+.header .logo{width: 120px;height: 80px;text-align: center;display: -webkit-box;-webkit-box-align: center;-webkit-box-pack: center;display: -moz-box;-moz-box-align: center;-moz-box-pack: center;display: -o-box;-o-box-align: center;-o-box-pack: center;display: -ms-box;-ms-box-align: center;-ms-box-pack: center;display: box;box-align: center;box-pack: center;}
+.header .logo img{ max-height:65px; max-width:120px; }
 .header .logoTxt{ padding:12px 0 0 10px;  font-size:18px; line-height:55px; font-weight: bold;}
 .header .nr{ height:80px;width:1200px; margin:0px auto; background:#fff;}
 /*header-search*/

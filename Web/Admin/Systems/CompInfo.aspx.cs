@@ -10,6 +10,9 @@ using System.Data.SqlClient;
 using System.Web.UI.HtmlControls;
 using System.Configuration;
 using System.Data;
+using ZXing;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 public partial class Admin_Systems_CompInfo : AdminPageBase
 {
@@ -31,6 +34,11 @@ public partial class Admin_Systems_CompInfo : AdminPageBase
             if (Actiom == "GetPhone")
             {
                 Response.Write(ExistsUserPhone(value));
+                Response.End();
+            }
+            if (Action == "GetQrcode")
+            {
+                Response.Write(GenerateQrcode(KeyID));
                 Response.End();
             }
             if (Request.QueryString["page"] != null)
@@ -636,4 +644,25 @@ public partial class Admin_Systems_CompInfo : AdminPageBase
         }
     }
 
+    public string GenerateQrcode(int KeyID)
+    {
+        if (KeyID > 0)
+        {
+            try
+            {
+                // 创建二维码, 放入商店网址
+                IBarcodeWriter writer = new BarcodeWriter { Format = BarcodeFormat.QR_CODE };
+                var result = writer.Write(Common.GetWebConfigKey("WebDomainName") + "/" + KeyID + ".html");
+                var barcodeBitmap = new Bitmap(result);
+                barcodeBitmap.Save(Common.GetWebConfigKey("ImgPath") + "CompImg/qr_" + KeyID + ".jpg", ImageFormat.Jpeg);
+                return "{ \"result\":true}";
+            }
+            catch (Exception ex)
+            {
+                Tiannuo.LogHelper.LogHelper.Error("创建二维码错误" + ex.Message);
+            }
+        }
+
+        return "{ \"result\":false}"; ;
+    }
 }

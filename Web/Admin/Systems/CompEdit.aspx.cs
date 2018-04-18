@@ -26,6 +26,7 @@ public partial class Admin_Systems_CompEdit : AdminPageBase
                 Response.Write(ExistsUserPhone(Name));
                 Response.End();
             }
+
             Common.BindIndDDL(txtIndusName);
             DataBinds();
         }
@@ -657,6 +658,8 @@ public partial class Admin_Systems_CompEdit : AdminPageBase
                                         user = new Hi.BLL.SYS_Users().GetModel(User2[0].UserID);
                                     }
                                     Tran.Commit();
+
+                                    // 发短信通知
                                     DBUtility.GetPhoneCode getphonecode = new DBUtility.GetPhoneCode();
                                     getphonecode.GetUser(ConfigurationManager.AppSettings["PhoneCodeAccount"].ToString(), ConfigurationManager.AppSettings["PhoneCodePwd"].ToString());
                                     str = getphonecode.ReturnSTRS(user.Phone, comp.CompName, user.UserName);
@@ -670,7 +673,6 @@ public partial class Admin_Systems_CompEdit : AdminPageBase
                                     }
                                 }
                             }
-
                         }
                     }
                     else

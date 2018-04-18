@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>厂商信息</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link href="../../css/layer.css" rel="stylesheet" type="text/css" />
     <script src="../../Company/js/jquery-1.11.1.min.js" type="text/javascript"></script>
@@ -100,6 +100,15 @@
             $("li#li1").on("click", function () {
                 window.location.href = 'PayAccountList.aspx?KeyID=<%=KeyID %>&type=<%=Request["type"] %>';
             });
+            // 二维码
+            $("li#liQrcode").on("click", function () {
+                var str = generateQrcode(<%=KeyID %>);
+                if (str != "") {
+                    errMsg("提示", str, "", "");
+                    return false;
+                }
+            });
+            
             //支付设置
             $("li#payset").on("click", function () {
                 window.location.href = 'PayMentSettings.aspx?KeyID=<%=KeyID %>';
@@ -188,6 +197,25 @@
             return true;
         }
 
+        function generateQrcode(keyId) {
+            var str = "";
+            $.ajax({
+                type: "post",
+                data: { Action: "GetQrcode", KeyID: keyId },
+                dataType: 'json',
+                async: false,
+                timeout: 4000,
+                success: function (data) {
+                    if (data.result) {
+                        str = "生成二维码成功！";
+                    }
+                }, error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    str = "生成二维码错误";
+                }
+            })
+            return str;
+        }
+
         function ExisPhone(name) {
             var str = "";
             $.ajax({
@@ -229,7 +257,7 @@ font-family: '微软雅黑';
     <div class="m-place">
 	        <i>位置：</i>
             <a href="../index.aspx" target="_top">我的桌面</a><i>></i>
-            <a href="#" runat="server" id="Btitle">厂商管理</a><i>></i>
+            <a href="CompList.aspx" runat="server" id="Btitle">厂商管理</a><i>></i>
             <a href="#" runat="server" id="Atitle">厂商查看</a>
         </div>
         <%#Eval("IsEnabled")%>
@@ -246,7 +274,8 @@ font-family: '微软雅黑';
                         <li id="li1" runat="server"><span><img src="../../Company/images/t17.png" /></span>收款帐号管理</li>
                         <li id="liOrgBind" runat="server"><span><img src="../../Company/images/t17.png" /></span>业务员绑定</li>
                         <li id="liUpPhone" runat="server"><span><img src="../../Company/images/t02.png" /></span>修改企业手机号</li>
-                          <li id="liUpCompService" runat="server"><span><img src="../../Company/images/t02.png" /></span>修改企业服务期限</li>
+                        <li id="liUpCompService" runat="server"><span><img src="../../Company/images/t02.png" /></span>修改企业服务期限</li>
+                        <li id="liQrcode"><span><img src="../../Company/images/leftico11.png" /></span>生成二维码</li>
                       <%--  <li id="payset" runat="server"><span><img src="../../Company/images/t17.png" runat="server" id="img1s" /></span>支付手续费设置</li>
                         <li id="LiWx" runat="server"><span><img src="../../Company/images/t17.png" runat="server" id="img1" /></span>微信收款设置</li>
                         <li id="Lialipay" runat="server"><span><img src="../../Company/images/t17.png" runat="server" id="img3" /></span>支付宝收款设置</li> --%>
