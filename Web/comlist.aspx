@@ -173,7 +173,7 @@
         <div class="goods fr">
         	<div class="qrCode"><div class="pic">
                 <a href="/<%#Eval("ID")%>.html"target="_blank">
-        <img width="140" height="140" alt="店铺二维码" src="<%# ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/c" + Eval("ID") + ".png" %>" onerror="this.src='/images/Goods400x400.jpg'"/>
+        <img width="140" height="140" alt="店铺二维码" src="<%# ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/qr_" + Eval("ID") + ".jpg" %>" onerror="this.src='/images/Goods400x400.jpg'"/>
                 </a>扫描转发，分享店铺<i class="fh"></i></div></div>
             <div class="line"></div>
         	<ul class="list">         

@@ -17,7 +17,7 @@ public partial class EShop_UserControl_EshopBttom : System.Web.UI.UserControl
         if (Request["Comid"].Trim() != "")
         {
             Compid = Convert.ToInt32(Request["Comid"].Trim());
-            storeCode.Src = ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/c" + Request["Comid"].Trim() + ".png";
+            storeCode.Src = ConfigurationManager.AppSettings["ImgViewPath"] + "CompImg/qr_" + Request["Comid"].Trim() + ".jpg";
             Hi.Model.BD_Company compl = new Hi.BLL.BD_Company().GetModel(Convert.ToInt32(Request["Comid"].Trim()));
             if (compl != null)
             {
