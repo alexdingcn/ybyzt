@@ -128,7 +128,7 @@
                             <asp:Repeater ID="rptImg" runat="server">
                                 <ItemTemplate>
                                     <li>
-                                        <img bimg="<%# Common.GetPicURL(Eval("pic").ToString()) %>" src="<%# Common.GetPicURL(Eval("pic", "resize400").ToString()) %>"
+                                        <img bimg="<%# Common.GetPicURL(Eval("pic").ToString()) %>" src="<%# Common.GetPicURL(Eval("pic").ToString(), "resize400", compId.ToString()) %>"
                                             onmousemove="preview(this);"></li>
                                 </ItemTemplate>
                             </asp:Repeater>

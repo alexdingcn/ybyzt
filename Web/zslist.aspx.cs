@@ -165,8 +165,8 @@ public partial class zslist : System.Web.UI.Page
         {
             foreach (DataRow item in goods.Rows)
             {
-                item["Pic"] = SelectGoodsInfo.GetGoodsPic(item["Pic"].ToString());
-
+                item["Pic"] = Common.GetPicURL(item["Pic"].ToString(), "resize400", item["CompID"].ToString());
+                
                 DateTime dt = Convert.ToDateTime(item["CreateDate"]);
                 TimeSpan dtnum = DateTime.Now.Subtract(dt);
                 item["ShowName"] = dtnum.Days.ToString();

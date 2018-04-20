@@ -166,9 +166,11 @@
        <a href="/<%#Eval("ID")%>.html"target="_blank" class="t"><%#Eval("CompName")%></a></div>
         <ul class="text fl">
         	<li><i class="bt">主营范围：</i><%# ManageInfoSubstring(Eval("ManageInfo").ToString()) %></li>
-        	<li><i class="bt">地　　址：</i><%# islogUser == true ? Eval("Address") : "&nbsp;"%></li>
-            <li><i class="bt">联 系 人：</i><%# islogUser == true ? Eval("Principal") : "&nbsp;"%></li>
-            <li><i class="bt">联系电话：</i><%# islogUser == true ? Eval("Phone") : "&nbsp;"%></li>
+            <% if (islogUser == true) { %>
+                <li><i class="bt">地　　址：</i><%# Eval("Address") %></li>
+                <li><i class="bt">联 系 人：</i><%# Eval("Principal") %></li>
+                <li><i class="bt">联系电话：</i><%# Eval("Phone") %></li>
+            <% } %>
         </ul>
         <div class="goods fr">
         	<div class="qrCode"><div class="pic">
@@ -180,7 +182,7 @@
                <asp:Repeater ID="GoodsList" runat="server">
                <ItemTemplate>
                <li><a target="_blank" href="/e<%#Eval("ID")%>_<%#Eval("CompID")%>.html">
-               <img alt="暂无图片" width="110px" height="110px" src="<%# ResolveUrl(Common.GetPicURL(Eval("Pic2").ToString(),"3")) %>"  onerror="this.src='/images/Goods400x400.jpg'"/></a></span>
+               <img alt="暂无图片" width="110px" height="110px" src="<%# Common.GetPicURL(Eval("Pic").ToString(),"resize200",Eval("CompID").ToString() ) %>"  onerror="this.src='/images/Goods400x400.jpg'"/></a></span>
                <a href="/e<%#Eval("ID")%>_<%#Eval("CompID")%>.html" target="_blank"><%# GoodsNameSubstring(Eval("GoodsName").ToString()) %></a></li>
                </ItemTemplate>              
                </asp:Repeater>

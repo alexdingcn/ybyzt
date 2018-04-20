@@ -129,7 +129,7 @@
                                 <asp:Repeater ID="rptImg" runat="server">
                                     <ItemTemplate>
                                         <li>
-                                            <img bimg="<%# Common.GetPicURL(Eval("pic").ToString()) %>" src="<%# Common.GetPicURL(Eval("pic").ToString(), "resize400") %>"
+                                            <img bimg="<%# Common.GetPicURL(Eval("pic").ToString(), "", compId.ToString()) %>" src="<%# Common.GetPicURL(Eval("pic").ToString(), "resize400", compId.ToString()) %>"
                                                 onmousemove="preview(this);" alt="暂无图片"></li>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -578,7 +578,7 @@ function Pagination() {
                     if (!obj.pic){
                         src="../images/Goods200x200.jpg";
                     } else {
-                        src="<%=Common.GetPicBaseUrl() %>" + obj.pic + "?x-oss-process=style/resize400";
+                        src="<%=Common.GetPicBaseUrl(compId.ToString()) %>" + obj.pic + "?x-oss-process=style/resize400";
                     }
                     $.ajax({
                         type: "post",

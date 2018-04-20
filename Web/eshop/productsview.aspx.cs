@@ -140,8 +140,8 @@ public partial class productsview : LoginPageBase
                 Hi.Model.BD_Goods model = new Hi.BLL.BD_Goods().GetModel(goodsId);
                 if (model != null && !string.IsNullOrEmpty(model.Pic))
                 {
-                    this.img1.Src = Common.GetPicURL(model.Pic, "resize400");
-                    this.img1.Attributes.Add("bimg", Common.GetPicURL(model.Pic));
+                    this.img1.Src = Common.GetPicURL(model.Pic, "resize400", compId.ToString());
+                    this.img1.Attributes.Add("bimg", Common.GetPicURL(model.Pic, "", compId.ToString()));
                 }
             }
             List<Hi.Model.BD_GoodsInfo> l = new Hi.BLL.BD_GoodsInfo().GetList("", "isnull(dr,0)=0 and isenabled=1 and compid=" + compId + " and goodsid=" + goodsId, ""); //Common.GetGoodsPrice(comPid, goodsId);//商品价格列表
@@ -221,14 +221,14 @@ public partial class productsview : LoginPageBase
             }
             if (!Util.IsEmpty(model.registeredCertificate.Trim()))
             {
-                string url = Common.GetWebConfigKey("OssImgPath") + "/UploadFile/" + model.registeredCertificate;
+                string url = Common.GetWebConfigKey("OssImgPath") + "UploadFile/" + model.registeredCertificate;
                 this.lblGoodsDetali1.InnerHtml = "<img width=\"600\" src=\"" + url + "\"/>";
             }
             //this.lblPrice.InnerText = "¥" + decimal.Parse(string.Format("{0:N2}", Convert.ToDecimal(model.SalePrice.ToString()).ToString())).ToString("#,##0.00"); ;//商品价格
             if (model != null && !string.IsNullOrEmpty(model.Pic))
             {
-                this.imgPic.Src = Common.GetPicURL(model.Pic, "resize400");
-                this.imgPic.Attributes.Add("jqimg", Common.GetPicURL(model.Pic));
+                this.imgPic.Src = Common.GetPicURL(model.Pic, "resize400", compId.ToString());
+                this.imgPic.Attributes.Add("jqimg", Common.GetPicURL(model.Pic, "", compId.ToString()));
             }
             else
             {

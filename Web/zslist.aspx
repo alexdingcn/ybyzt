@@ -141,7 +141,7 @@
 			<div class="pic fl"><a target="_blank" href="/e{{= item.ID}}_{{= item.CompID}}_{{=item.ycId }}.html"><img src="{{= item.Pic }}" width="178" height="128" alt=""/></a></div>
 			<div class="tex fl"><p class="t1"><a target="_blank" href="/e{{= item.ID}}_{{= item.CompID}}_{{=item.ycId }}.html">{{= item.GoodsName}}</a></p><p class="t2">{{= item.ShowName }}天前发布（{{= item.CreateDate2 }}）</p>
 				<p>{{= item.Title}}</p>
-				<p>{{= item.Remark  }}</p>
+				<p class="tex_remark">{{= item.Remark  }}</p>
 			</div>
 	        <div class="btn fr"><a target="_blank" class="btn-red" href="../eshop/about_{{= item.CompID}}.html">厂家介绍</a><a class="btn-blue btn-apply" tip="{{item.CompID}}" yc-tip="{{item.ycCompID}}" yc-id="{{=item.ycId}}" href="javascript:void(0)">申请合作</a>
 	        </div>

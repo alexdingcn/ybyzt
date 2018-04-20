@@ -131,11 +131,11 @@ public partial class ComList : LoginPageBase
         string SqlQueryCount = string.Empty;
         SqlQuery = @"(  select FirstShow,b.coun,SortIndex,CreateDate,BD_Company.ID,CompName,ManageInfo,CompAddr,Principal,Phone,Address,ShopLogo,CompLogo,ShortName
                         from BD_Company   join ( select CompID,COUNT(CompID) coun from BD_Goods where
-                        Pic2<>'X' and isnull(Pic2,'')<>'' and BD_Goods.dr=0 and IsOffline=1   group by CompID having COUNT(CompID)>0 )b on b.CompID=BD_Company.ID 
+                        isnull(Pic,'')<>'' and BD_Goods.dr=0 and IsOffline=1   group by CompID having COUNT(CompID)>0 )b on b.CompID=BD_Company.ID 
                         where 1=1 " + SearchWhere() + " )";
         SqlQueryCount = @"(  select 1
                         from BD_Company   join ( select CompID,COUNT(CompID) coun from BD_Goods where
-                        Pic2<>'X' and isnull(Pic2,'')<>'' and BD_Goods.dr=0 and IsOffline=1   group by CompID having COUNT(CompID)>0 )b on b.CompID=BD_Company.ID 
+                        isnull(Pic,'')<>'' and BD_Goods.dr=0 and IsOffline=1   group by CompID having COUNT(CompID)>0 )b on b.CompID=BD_Company.ID 
                         where 1=1 " + SearchWhere() + " )";
         DataTable ListGoods = null;
         string sql = Sql(Pager_List.CurrentPageIndex, Pager_List.PageSize, SortName, SqlQuery + " s ");
@@ -458,7 +458,7 @@ public partial class ComList : LoginPageBase
         {
             Repeater GoodsList = e.Item.FindControl("GoodsList") as Repeater;
             DataRowView model = (DataRowView)e.Item.DataItem;
-            string where = string.Format(@" Pic2<>'X' and isnull(Pic2,'')<>'' and BD_Goods.dr=0 and IsOffline=1 and CompID={0}", model["ID"].ToString());
+            string where = string.Format(@" isnull(Pic,'')<>'' and BD_Goods.dr=0 and IsOffline=1 and CompID={0}", model["ID"].ToString());
             List<Hi.Model.BD_Goods> list = new Hi.BLL.BD_Goods().GetList(" top 4 * ", where, " BD_Goods.isindex desc ,BD_Goods.CreateDate ");   // BD_Goods.isindex desc ,BD_Goods.CreateDate
             //if (list.Count==0)
             //{

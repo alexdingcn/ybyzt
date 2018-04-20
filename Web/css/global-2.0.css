@@ -484,8 +484,8 @@ a:link {color: #666; text-decoration:none;}a:visited {color: #666;text-decoratio
 .pro li{ padding: 30px 0; border-bottom:1px solid #eaeaea; overflow: hidden;}
 .pro li:last-child{border-bottom:none;}
 .pro .pic{ width:178px; height:128px; border:1px solid #eaeaea;}
-.pro .tex{ padding-left: 32px;  font-size: 14px; line-height: 24px; color: #666;}
-.pro .tex .t1{ font-size:16px; line-height: 36px;color: #333;}
+.pro .tex{ padding-left: 32px;  font-size: 14px; line-height: 24px; color: #666; width: 65%}
+.pro .tex .t1{ font-size:16px; line-height: 36px;color: #333; font-weight:bold;}
 .pro .tex .t2{ font-size:12px; color:#aaa; padding-bottom: 10px;}
 .pro .btn{ padding-top: 26px;}
 .pro .btn .btn-red,.pro .btn .btn-blue{ width: 104px; height: 30px; border:1px solid #e33d3f;background:#e33d3f; display: block; margin-bottom:12px; border-radius: 4px;line-height:30px; text-align: center; color: #fff;}

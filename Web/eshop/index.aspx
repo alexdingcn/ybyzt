@@ -175,7 +175,7 @@
                                 <div class="wrapper">
                                     <div class="pic">
                                         <a target="_blank" href="/e<%#Eval("ID")%>_<%# ViewState["Compid"]%>.html">
-                                            <img width="205" height="205" alt="暂无图片" src="<%# Common.GetPicURL(Eval("Pic").ToString(),"resize400") %>"
+                                            <img width="205" height="205" alt="暂无图片" src="<%# Common.GetPicURL(Eval("Pic").ToString(),"resize400",Convert.ToString(ViewState["Compid"])) %>"
                                                 onerror="this.src='<%=ResolveUrl("../images/Goods400x400.jpg") %>'" />
                                         </a>
                                     </div>
