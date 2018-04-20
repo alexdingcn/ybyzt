@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HI.DBUtility", "DBUtility\H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hi.Model", "Model\Hi.Model.csproj", "{80106719-8219-4348-91FD-493DAA19B5A3}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{43C17101-5CED-45F0-AF25-9605268F492E}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web(1)", "Web\", "{43C17101-5CED-45F0-AF25-9605268F492E}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "Svn"
 		SccAuxPath = "Svn"
@@ -44,6 +44,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HiEAPP", "HiEAPP\", "{1D61000A-2464-4118-98D8-71615C9B7052}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{95739ff5-08ba-4639-90aa-dfbcc2e3921f}|BLL.dll;{BADDC2BE-DD90-49F7-88CD-A21E93663172}|DBUtility.dll;{80106719-8219-4348-91FD-493DAA19B5A3}|Model.dll;{17691D95-B5E5-421A-A9E1-2658774C6789}|SQLServerDAL.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/HiEAPP"
 		Debug.AspNetCompiler.PhysicalPath = "HiEAPP\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\HiEAPP\"
@@ -59,14 +60,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HiEAPP", "HiEAPP\", "{1D610
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "44132"
+		SlnRelativePath = "HiEAPP\"
 	EndProjectSection
 EndProject
-
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -96,12 +93,12 @@ Global
 		{1D61000A-2464-4118-98D8-71615C9B7052}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D61000A-2464-4118-98D8-71615C9B7052}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D61000A-2464-4118-98D8-71615C9B7052}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{3E48A959-ABAC-4378-8D7F-4A7831D5662B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E48A959-ABAC-4378-8D7F-4A7831D5662B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E48A959-ABAC-4378-8D7F-4A7831D5662B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E48A959-ABAC-4378-8D7F-4A7831D5662B}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal

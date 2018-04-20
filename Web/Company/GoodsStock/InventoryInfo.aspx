@@ -200,8 +200,8 @@
                                <td>
                                    <div class="sPic">
                                <span style="width:60px;height:60px;"><a onclick="return fafalse;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html">
-                            <img src="<%#Eval("pic").ToString()!= "" ?Common.GetWebConfigKey("ImgViewPath")+"GoodsImg" +Eval("pic").ToString():"../../images/pic.jpg"%>" width="60" height="60"></a>
-                            </span><a onclick="return fafalse;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="code">商品编码：<%#Eval("BarCode") %> </a><a onclick="return fafalse;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="name"> <%#Eval("GoodsName")%>  <i><%#Eval("GoodsName")%></i></a>
+                            <img src="<%# Common.GetPicURL(Eval("pic").ToString(), "resize200") %>" width="60" height="60"></a>
+                            </span><a onclick="return false;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="code">商品编码：<%#Eval("BarCode") %> </a><a onclick="return fafalse;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="name"> <%#Eval("GoodsName")%>  <i><%#Eval("GoodsName")%></i></a>
                                    </div>
                                </td>
                                <td class="tc"><%#Eval("ValueInfo") %></td>

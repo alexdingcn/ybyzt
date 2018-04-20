@@ -71,7 +71,7 @@ public partial class Admin_Systems_GoodsInfoList : AdminPageBase
             }
         }
         string JoinTableStr = " BD_Goods inner join BD_GoodsInfo bginfo on BD_Goods.ID= bginfo.GoodsID and BD_Goods.dr=0 and  bginfo.dr=0  left join bd_company bcp on bginfo.compid=bcp.id and bcp.dr=0  left join BD_GoodsCategory bgcate on BD_goods.CategoryID=bgcate.id ";
-        DataTable DtGoodsInfo = new Hi.BLL.BD_Goods().GetList(Pager.PageSize, Pager.CurrentPageIndex, "BD_Goods.IsFirstShow desc,BD_Goods.Sortindex desc,bginfo.ID", true, " IsFirstShow,BD_Goods.Sortindex, BD_Goods.GoodsName,bginfo.GoodsID,bginfo.Compid,bginfo.ID,bcp.CompName,BD_goods.Unit,BD_goods.Pic2,CategoryName,ValueInfo,bginfo.isOffline ", JoinTableStr, strWhere, out pageCount, out Counts, "", false);
+        DataTable DtGoodsInfo = new Hi.BLL.BD_Goods().GetList(Pager.PageSize, Pager.CurrentPageIndex, "BD_Goods.IsFirstShow desc,BD_Goods.Sortindex desc,bginfo.ID", true, " IsFirstShow,BD_Goods.Sortindex, BD_Goods.GoodsName,bginfo.GoodsID,bginfo.Compid,bginfo.ID,bcp.CompName,BD_goods.Unit,BD_goods.Pic,CategoryName,ValueInfo,bginfo.isOffline ", JoinTableStr, strWhere, out pageCount, out Counts, "", false);
         this.rptGoods.DataSource = DtGoodsInfo;
         this.rptGoods.DataBind();
         Pager.RecordCount = Counts;
@@ -141,37 +141,22 @@ public partial class Admin_Systems_GoodsInfoList : AdminPageBase
         string str2 = string.Empty;
         if (!Util.IsEmpty(str))
         {
-            string[] lsit = { };
-            string[] lsit2 = { };
-            lsit = str.Replace(';', '；').Split('；');
-            for (int i = 0; i < lsit.Length; i++)
+            string[] list = { };
+            string[] list2 = { };
+            list = str.Replace(';', '；').Split('；');
+            for (int i = 0; i < list.Length; i++)
             {
-                if (lsit[i] != "")
+                if (list[i] != "")
                 {
-                    lsit2 = lsit[i].Split(':');
-                    str2 += lsit2[0] + "：" + "<label style='color:#0080b8'>" + lsit2[1] + "</label>" + "；";
+                    list2 = list[i].Split(':');
+                    str2 += list2[0] + "：";
+                    if (list2.Length > 1) {
+                        str2 += "<label style='color:#0080b8'>" + list2[1] + "</label>" + "；";
+                    }
                 }
             }
         }
         return str2;
     }
 
-   
-
-    public string GetPicURL(string Pic)
-    {
-        if (!Util.IsEmpty(Pic))
-        {
-            if (Pic != "X")
-            {
-                return Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + Pic;
-            }
-            else
-            {
-                return "../../images/havenopicsmallest.gif";
-            }
-        }
-        return "../../images/havenopicsmallest.gif";
-
-    }
 }

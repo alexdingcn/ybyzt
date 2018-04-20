@@ -69,7 +69,7 @@
                     <asp:Repeater ID="rptImg" runat="server">
                         <ItemTemplate>
                             <div class="slide">
-                                <img src="<%# Eval("pic2").ToString()=="X" || Eval("pic2").ToString()==""?"../images/Goods400x400.jpg": Common.GetWebConfigKey("ImgViewPath") + "/GoodsImg/"+ Eval("pic2") %>" alt="">
+                                <img src="<%# Common.GetPicURL(Eval("pic").ToString(), "", compId.ToString()) %>" alt="">
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>

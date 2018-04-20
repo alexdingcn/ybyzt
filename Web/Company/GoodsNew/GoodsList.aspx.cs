@@ -164,30 +164,7 @@ public partial class Company_GoodsNew_GoodsList : CompPageBase
         }
         return "";
     }
-    /// <summary>
-    /// 获取图片路径
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    public string GetPicURL(object Pic)
-    {
-        if (Pic != null)
-        {
-            if (!string.IsNullOrEmpty(Pic.ToString()))
-            {
-                if (Pic.ToString().Trim() != "X")
-                {
-                    return Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + Pic;
-                }
-                else
-                {
-                    return "../../images/havenopicsmallest.gif";
-                }
-            }
-        }
-        return "../../images/havenopicsmallest.gif";
 
-    }
     /// <summary>
     /// 分页控件
     /// </summary>

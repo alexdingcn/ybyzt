@@ -137,15 +137,15 @@
                             </td>
                             <td>
                                 <div class="tcle">
-                                    <a href="GoodsInfo.aspx?nextstep=<%=Request["nextstep"] %>&goodsId=<%# Common.DesEncrypt(Eval("ID").ToString(), Common.EncryptKey)%>" class="link"  tip='<%# Eval("ID") %>'
+                                    <a href="GoodsInfo.aspx?nextstep=<%=Request["nextstep"] %>&goodsId=<%# Common.DesEncrypt(Eval("ID").ToString(), Common.EncryptKey)%>" class="link" tip='<%# Eval("ID") %>'
                                         title='<%# Eval("Goodsname").ToString()%>' >
-                                        <%# Eval("Goodsname").ToString()%></a></div>
+                                        <%# Eval("Goodsname").ToString()%></a>
+                                </div>
                             </td>
                             <td>
                                 <div class="tc">
-                                    <a class="tooltip" href="javascript:;" id='<%# GetPicURL(Eval("Pic2")) %>'
-                                        style="display: inline-block;">
-                                        <img id='GoodsImg' class='pic' alt="暂无" runat="server" width="42" height="42" src='<%# GetPicURL(Eval("Pic2")) %>' />
+                                    <a class="tooltip" href="javascript:;" id='<%# Common.GetPicURL(Convert.ToString(Eval("Pic"))) %>' style="display: inline-block;">
+                                        <img id='GoodsImg' class='pic' alt="暂无" runat="server" width="42" height="42" src='<%# Common.GetPicURL(Convert.ToString(Eval("Pic")), "resize200") %>' />
                                     </a>
                                 </div>
                             </td>

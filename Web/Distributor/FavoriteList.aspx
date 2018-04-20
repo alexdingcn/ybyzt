@@ -156,7 +156,7 @@
                                 <asp:HiddenField ID="Hd_Id" runat="server" Value='<%# Eval("ViewInfoID") %>' />
                                 <div class="pxxc left">
                                 <a target="_blank" href="/e<%# Eval("id") %>_<%=this.CompID %>.html" class="pic">
-                                    <img width="80px" height="75px" src="<%# GetGoodsPic(Eval("pic").ToString()) %>" />
+                                    <img width="80px" height="75px" src="<%# Common.GetPicURL(Eval("pic").ToString(), "resize200") %>" />
                                 </a>
                                 </div>
                                 <div class="tc tcle " style="margin:10px 0 0 10px; text-align:left; line-height:22px;"><a target="_blank" class="view" href="/e<%# Eval("id") %>_<%= this.CompID %>.html">

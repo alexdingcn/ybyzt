@@ -229,11 +229,17 @@
                             <ItemTemplate>
                            <tr trindex="<%#Eval("ID")%>" trindex2="<%#Eval("ID")%>" id="<%#Eval("GoodsID") %>" tip="<%#Eval("GoodsinfoID") %>">
                             
-                               <td><div class="sPic"><a class="opt-i2"></a>
-                               <span><a onclick="return fafalse;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html">
-                            <img src="<%#Eval("pic").ToString()!= "" ?Common.GetWebConfigKey("ImgViewPath")+"GoodsImg/" +Eval("pic").ToString():"../../images/pic.jpg"%>" width="60" height="60"></a>
-                            </span><a  onclick="return fafalse;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="code">商品编码：<%#Eval("BarCode") %> </a>
-                                   <a onclick="return fafalse;" style=" width:250px;" target="_blank"  href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="name"> <%#Eval("GoodsName")%>  <i><%#Eval("GoodsName")%></i></a></div></td>
+                               <td>
+                                   <div class="sPic"><a class="opt-i2"></a>
+                                   <span>
+                                       <a onclick="return false;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html">
+                                            <img src="<%#Common.GetPicURL(Eval("pic").ToString(), "resize200") %>" width="60" height="60">
+                                       </a>
+                                    </span>
+                                       <a  onclick="return false;" target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="code">商品编码：<%#Eval("BarCode") %> </a>
+                                       <a onclick="return false;" style=" width:250px;" target="_blank"  href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" class="name"> <%#Eval("GoodsName")%>  <i><%#Eval("GoodsName")%></i></a>
+                                    </div>
+                               </td>
                              <td class="tc"><%#Eval("ValueInfo") %></td>
                             <td><div class="tc"><%#Eval("Unit") %>
                           </div></td>

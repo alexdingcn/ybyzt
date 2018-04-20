@@ -47,25 +47,6 @@ public partial class Distributor_Shop : DisPageBase
     }
 
     /// <summary>
-    /// 获取图片
-    /// </summary>
-    /// <param name="pic"></param>
-    /// <returns></returns>
-    public string GetGoodsPic(string pic)
-    {
-        string str = string.Empty;
-        if (Util.IsEmpty(pic))
-        {
-            str = "  ../../images/Goods400x400.jpg";
-        }
-        else
-        {
-            str = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + pic;
-        }
-        return str;
-    }
-
-    /// <summary>
     /// 清除DataTable数据
     /// </summary>
     public void Clear()

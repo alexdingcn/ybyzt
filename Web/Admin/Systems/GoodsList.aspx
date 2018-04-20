@@ -171,8 +171,8 @@
                             </td>
                             <td><a style=" text-decoration:underline; " href='CompInfo.aspx?KeyID=<%#Eval("CompID") %>&type=4&atitle=商品查询&btitle=商品查询' ><%# Common.GetCompValue(Convert.ToInt32(Eval("CompID").ToString()), "CompName")%> </a></td>
                             <td style="height: 42px; width: 42px;">
-                                <a class="tooltip" href='#' id='<%# GetPicURL(Eval("ID").ToString()) %>' style="display: inline-block;">
-                                    <img id='GoodsImg' class='pic' alt="暂无" runat="server" src='<%# GetPicURL(Eval("ID").ToString()) %>' />
+                                <a class="tooltip" href='#' id='<%# Common.GetPicURL(Eval("Pic").ToString(), "", Eval("CompID").ToString()) %>' style="display: inline-block;">
+                                    <img id='GoodsImg' class='pic' alt="暂无" runat="server" src='<%# Common.GetPicURL(Eval("Pic").ToString(), "resize200", Eval("CompID").ToString()) %>' />
                                 </a>
                             </td>
                             <td>
@@ -182,7 +182,7 @@
                                 <%# GoodsAttr2(Eval("ID").ToString(), Eval("CompID").ToString())%>
                             </td>
                             <td style="line-height: 20px; width: 160px">
-                              <label title="<%# Eval("memo") %>"> <%# Eval("memo").ToString().Length > 12 ? Eval("memo").ToString().Substring(0, 10)+"..." : Eval("memo").ToString()%> </label>   
+                                <!-- description -->
                             </td>
                             <td>
                                 <%# Eval("Unit").ToString()%>

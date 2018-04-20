@@ -168,7 +168,7 @@ public partial class EShop_index : LoginPageBase
         int pageCount = 0;
         int Counts = 0;
         string JoinTableStr = "  BD_Goods left join (select  ROW_NUMBER() over(PARTITION BY GoodsID order by bp.createdate desc) rowid,  GoodsID id,bp.id  Proid,bp.Type,bp.ProType,bp.Discount,bpd.GoodsPrice from BD_PromotionDetail bpd  join BD_Promotion Bp on  bp.ID=bpd.ProID and bp.IsEnabled=1 and bp.dr=0 and Bp.CompID=" + ViewState["Compid"] + " and '" + DateTime.Now + "' between ProStartTime and  dateadd(D,1,ProEndTime))b   on BD_Goods.id=b.id and b.rowid=1  left join BD_DisCollect Bdc on BD_Goods.id=Bdc.GoodsID and Bdc.DisID=" + ViewState["DisID"] + "  and Bdc.dr=0 ";
-        DataTable ListGoods = new Hi.BLL.BD_Goods().GetList(Pager_List.PageSize, Pager_List.CurrentPageIndex, " b.Type desc,Bdc.id desc ,Ispic desc, BD_Goods.isindex desc ,BD_Goods.CreateDate ", true, " (case when isnull(BD_Goods.pic2,'')='' then 0 else 1 end) Ispic,BD_Goods.CreateDate, BD_Goods.id,BD_Goods.GoodsName,b.Type ,BD_Goods.isindex,b.Proid,BD_Goods.Pic2,Bdc.id  BdcID,dbo.GetPMInfoMation(b.type,b.ProType,b.Discount,b.GoodsPrice) ProInfoMation,IsLS,LSPrice,SalePrice", JoinTableStr, Sqlwhere, out pageCount, out Counts, " ,(case when isnull(BD_Goods.pic2,'')='' then 0 else 1 end) Ispic ,b.Type ,Bdc.id , BD_Goods.CreateDate,BD_Goods.isindex ");
+        DataTable ListGoods = new Hi.BLL.BD_Goods().GetList(Pager_List.PageSize, Pager_List.CurrentPageIndex, " b.Type desc,Bdc.id desc ,Ispic desc, BD_Goods.isindex desc ,BD_Goods.CreateDate ", true, " (case when isnull(BD_Goods.pic,'')='' then 0 else 1 end) Ispic,BD_Goods.CreateDate, BD_Goods.id,BD_Goods.GoodsName,b.Type ,BD_Goods.isindex,b.Proid,BD_Goods.Pic,Bdc.id  BdcID,dbo.GetPMInfoMation(b.type,b.ProType,b.Discount,b.GoodsPrice) ProInfoMation,IsLS,LSPrice,SalePrice", JoinTableStr, Sqlwhere, out pageCount, out Counts, " ,(case when isnull(BD_Goods.pic2,'')='' then 0 else 1 end) Ispic ,b.Type ,Bdc.id , BD_Goods.CreateDate,BD_Goods.isindex ");
 
         Rpt_GoodsBig.DataSource = ListGoods;
         Rpt_GoodsBig.DataBind();
@@ -416,12 +416,5 @@ public partial class EShop_index : LoginPageBase
 
         this.lblHtml.Text = html.ToString();
     }
-
-
-    public  string GetPicURL()
-    {
-        return Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/";
-    }
-
 
 }

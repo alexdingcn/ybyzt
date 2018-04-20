@@ -775,18 +775,14 @@ order by CreateDate1 desc,GoodsID desc,CreateDate2 desc", Compid, DisId, where, 
     /// <returns></returns>
     public static string GetGoodsPic(string GoodsPic)
     {
-        string ViewPath = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/";
-        string pic = "";
-
-        if (!string.IsNullOrEmpty(GoodsPic))
-            pic += GoodsPic;
-
-        if (pic != "")
+        LoginModel logUser = HttpContext.Current.Session["UserModel"] as LoginModel;
+        if (logUser != null && logUser.CompID >= 0 && !string.IsNullOrEmpty(GoodsPic))
         {
-            ViewPath = ViewPath + pic;
-            return ViewPath;
+            string basePath = Common.GetWebConfigKey("OssImgPath") + "company/" + logUser.CompID + "/";
+            return basePath + GoodsPic + "?x-oss-process=style/resize200";
         }
-        return ViewPath;
+
+        return Common.GetWebConfigKey("OssImgPath") + "havenopicmax.gif";
     }
 
     /// <summary>

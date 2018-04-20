@@ -197,8 +197,8 @@
                               <%# Eval("Sortindex")%>
                             </td>
                             <td style="height: 42px; width: 10%;">
-                                <a class="tooltip" href='#' id='<%# GetPicURL(Eval("Pic2").ToString()) %>'  style="display: inline-block;">
-                                    <img id='GoodsImg' class='pic' alt="暂无" runat="server" src='<%# GetPicURL(Eval("Pic2").ToString()) %>' />
+                                <a class="tooltip" href='#' id='<%# Common.GetPicURL(Eval("Pic").ToString(), "", Eval("CompID").ToString()) %>'  style="display: inline-block;">
+                                    <img id='GoodsImg' class='pic' alt="暂无" runat="server" src='<%# Common.GetPicURL(Eval("Pic").ToString(), "resize200", Eval("CompID").ToString()) %>' />
                                 </a>
                             </td>
                             <td>

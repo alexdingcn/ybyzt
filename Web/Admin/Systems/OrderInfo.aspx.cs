@@ -47,7 +47,7 @@ public partial class Admin_Systems_OrderInfo : AdminPageBase
 
             hidCompID.Value = CompID.ToString();
             hidUserType.Value = 4.ToString();
-            hidPicpath.Value = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/";
+            hidPicpath.Value = Common.GetPicBaseUrl(CompID.ToString());
 
             if (!string.IsNullOrEmpty(Request["top"]))
                 top = Request["top"].ToInt(0);

@@ -233,27 +233,7 @@ where a.ID=gs.GoodsInfo and a.GoodsID=b.ID and b.IsEnabled=1 and ISNULL(a.dr,0)=
             return "";
         }
     }
-    /// <summary>
-    /// 获取图片路径
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns></returns>
-    public string GetPicURL(string id)
-    {
-        if (!Util.IsEmpty(Common.GetGoods(id, "Pic2").Trim()))
-        {
-            if (Common.GetGoods(id, "Pic2").Trim() != "X")
-            {
-                return Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + Common.GetGoods(id, "Pic2");
-            }
-            else
-            {
-                return "../../images/havenopicsmallest.gif";
-            }
-        }
-        return "../../images/havenopicsmallest.gif";
 
-    }
     /// <summary>
     /// 分页控件
     /// </summary>

@@ -208,8 +208,10 @@
                                                   {%>
                                                 <span>
                                                   <a target="_blank" href="../GoodsNew/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>">
-                                                    <img src="<%# SelectGoodsInfo.GetGoodsPic(Convert.ToString(Eval("Pic"))) %>" width="60"
-                                                        height="60"></a></span> <a target="_blank" href="../GoodsNew/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>" class="code">商品编码：<%# Eval("GoodsCode")%>
+                                                    <img src="<%# SelectGoodsInfo.GetGoodsPic(Convert.ToString(Eval("Pic"))) %>" width="60" height="60"></a>
+
+                                                </span> 
+                                                <a target="_blank" href="../GoodsNew/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                             <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit"))) %>
                                                         </a><a target="_blank" href="../GoodsNew/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>" class="name">
                                                             <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),30,"...")%><i><%# Eval("GoodsName")%></i></a>

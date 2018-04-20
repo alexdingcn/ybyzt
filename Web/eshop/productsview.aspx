@@ -19,12 +19,11 @@
     <script src="/Company/js/jquery-1.11.1.min.js" type="text/javascript"></script>
     <script src="/js/layer/layer.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" type="text/javascript"></script>
     <script src="/js/layerCommon.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" type="text/javascript"></script>
-    <script type="text/javascript" src="/js/superslide.2.1.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>"></script>
+    <script src="/js/superslide.2.1.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" type="text/javascript"></script>
     <script src="/js/InputSearchData.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" type="text/javascript"></script>
     <link href="/css/lanrenzhijia.css?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(function(){
-        
             $("img").each(function (index, obj) {
                 var width = $(window).width() * 0.7;
                 var attewidth = $(obj).width() * 1;
@@ -38,14 +37,11 @@
                         $(obj).width("100%");
                     }
                 }
-
             })
-        
         })
-
     </script>
 </head>
-<style>
+<style type="text/css">
     @media(max-width:960px)
     {
         
@@ -133,8 +129,7 @@
                                 <asp:Repeater ID="rptImg" runat="server">
                                     <ItemTemplate>
                                         <li>
-                                            <img bimg="<%# Eval("pic3").ToString()=="D" || Eval("pic3").ToString()==""?"../images/Goods400x400.jpg": Common.GetWebConfigKey("ImgViewPath") + "/GoodsImg/"+ Eval("pic3") %>"
-                                                src="<%# Eval("pic2").ToString()=="X" || Eval("pic2").ToString()==""?"../images/Goods400x400.jpg": Common.GetWebConfigKey("ImgViewPath") + "/GoodsImg/"+ Eval("pic2") %>"
+                                            <img bimg="<%# Common.GetPicURL(Eval("pic").ToString()) %>" src="<%# Common.GetPicURL(Eval("pic").ToString(), "resize400") %>"
                                                 onmousemove="preview(this);" alt="暂无图片"></li>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -151,8 +146,8 @@
                             <i class="sale">促销</i>
                         </div>
                     </h2>
-                    <label id="lblGoodsTitle" class="txt" runat="server">
-                    </label>
+                    <label id="lblGoodsTitle" class="txt" runat="server"></label>
+                    <div class="goodsSubtitle"></div>
                     <div style="height: 50px; line-height: 50px; padding-left: 5px;">
                         <i>商品编码：</i><i id="lblCode" runat="server"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>单位：</i><i id="lblunit" runat="server"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='<%= OrderInfoType.rdoOrderAudit("商品是否启用库存",compId)=="0"?"": "display:none" %>'><i>库存：</i><i id="lblinventory" runat="server"></i></span>
                     </div>
@@ -215,12 +210,12 @@
                     <b tip="lblGoodsDetali1">注册证</b>
                 </div>
                 <div class="nr">
-                    <div id="lblGoodsDetali" runat="server" style="display: block;">
+                    <div id="lblGoodsDetali" runat="server" style="display: block;min-height:300px">
                         <p style="padding-top: 20px; line-height: 40px; padding-left: 20px">
                             暂无数据
                         </p>
                     </div>
-                    <div id="lblGoodsDetali1" runat="server" style="display: none;">
+                    <div id="lblGoodsDetali1" runat="server" style="display:none;min-height:300px">
                     </div>
                 </div>
             </div>
@@ -486,69 +481,69 @@
             $.ajax({
                 type: "post",
                 dataType: "text",
-                data: { ck: Math.random(), action: "price", value: valuelist ,compId:<%=compId %>,goodsId:<%=goodsId %>},
-            success: function (data) {
-                var reg = /^[\u4e00-\u9fa5]{0,}$/; //中文正则表达式
-                var goodsParent = $("#lblGoodsTitle").parent();
-                $("#divHideInfo1,br",goodsParent).remove();
-                if(data.indexOf(",")==-1){
-                    if (reg.exec(data)) {
-                        if($.trim(data)!="代理商可见"){
+                data: { ck: Math.random(), action: "price", value: valuelist ,compId:<%=compId %>, goodsId:<%=goodsId %>},
+                success: function (data) {
+                    var reg = /^[\u4e00-\u9fa5]{0,}$/; //中文正则表达式
+                    var goodsParent = $("#lblGoodsTitle").parent();
+                    $("#divHideInfo1,br",goodsParent).remove();
+                    if(data.indexOf(",")==-1) {
+                        if (reg.exec(data)) {
+                            if($.trim(data)!="代理商可见") {
+                                if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && ('<%= hideInfo2 %>'==undefined || '<%= hideInfo2 %>'=="")){
+                                    $(".goodsSubtitle").html("<br /><label id=\"divHideInfo1\" class=\"txt\"><%= hideInfo1 %></label>");
+                                }
+                                if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && '<%= hideInfo2 %>'!=undefined && '<%= hideInfo2 %>'!="" ){
+                                    $(".goodsSubtitle").html("<br /><label id=\"divHideInfo1\" class=\"txt\" ><%= hideInfo1 %></label><br /><label id=\"divHideInfo2\" class=\"txt\" ><%= hideInfo2 %></label>");
+                                }
+                            }
+                            $(".price #lblPrice").text(data);
+                            $(".price #lblPrice").css("font-size","13px");
+                        } else {
                             if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && ('<%= hideInfo2 %>'==undefined || '<%= hideInfo2 %>'=="")){
-                        $("#lblGoodsTitle").after("<br /><label id=\"divHideInfo1\" class=\"txt\"><%= hideInfo1 %></label>");
-             }
-             if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && '<%= hideInfo2 %>'!=undefined && '<%= hideInfo2 %>'!="" ){
-                        $("#lblGoodsTitle").after("<br /><label id=\"divHideInfo1\" class=\"txt\" ><%= hideInfo1 %></label><br /><label id=\"divHideInfo2\" class=\"txt\" ><%= hideInfo2 %></label>");
-         }
-
-     }
-     $(".price #lblPrice").text(data);
-     $(".price #lblPrice").css("font-size","13px");
- } else {
-     if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && ('<%= hideInfo2 %>'==undefined || '<%= hideInfo2 %>'=="")){
-                        $("#lblGoodsTitle").after("<br /><label id=\"divHideInfo1\" class=\"txt\"><%= hideInfo1 %></label>");
-               }
-               if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && '<%= hideInfo2 %>'!=undefined && '<%= hideInfo2 %>'!="" ){
-                        $("#lblGoodsTitle").after("<br /><label id=\"divHideInfo1\" class=\"txt\" ><%= hideInfo1 %></label><br /><label id=\"divHideInfo2\" class=\"txt\" ><%= hideInfo2 %></label>");
-         }
-         var price = formatMoney(data, 2);
-         $(".price #lblPrice").text("￥" + price);
-         $(".price #lblPrice").css("font-size","20px");
-     }
-     $("#hidGoodsInfoId").val("");
- }else
- {
-     if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && ('<%= hideInfo2 %>'==undefined || '<%= hideInfo2 %>'=="")){
-                    $("#lblGoodsTitle").after("<br /><label id=\"divHideInfo1\" class=\"txt\"><%= hideInfo1 %></label>");
-                   }
-                   if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && '<%= hideInfo2 %>'!=undefined && '<%= hideInfo2 %>'!="" ){
-                    $("#lblGoodsTitle").after("<br /><label id=\"divHideInfo1\" class=\"txt\" ><%= hideInfo1 %></label><br /><label id=\"divHideInfo2\" class=\"txt\" ><%= hideInfo2 %></label>");
-         }
-         if (reg.exec(data.split(',')[0])) {
-             $(".price #lblPrice").text(data.split(',')[0]);
-             $(".price #lblPrice").css("font-size","13px");
-         } else {
-             var price = formatMoney(data.split(',')[0], 2);
-             $(".price #lblPrice").text("￥" + price);
-             $(".price #lblPrice").css("font-size","20px");
-         }
-         $("#hidGoodsInfoId").val(data.split(',')[1]);
-     }
-                $.ajax({
-                    type: "post",
-                    data: { ck: Math.random(), action: "code", value: valuelist },
-                    dataType: "text",
-                    success: function (data) {
-                        if(data!=""){
-                            $("#lblCode").text(data.split(',')[0]);
-                            $("#lblinventory").text(data.split(',')[1]);
+                                $(".goodsSubtitle").html("<br /><label id=\"divHideInfo1\" class=\"txt\"><%= hideInfo1 %></label>");
+                            }
+                            if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && '<%= hideInfo2 %>'!=undefined && '<%= hideInfo2 %>'!="" ){
+                                $(".goodsSubtitle").html("<br /><label id=\"divHideInfo1\" class=\"txt\" ><%= hideInfo1 %></label><br /><label id=\"divHideInfo2\" class=\"txt\" ><%= hideInfo2 %></label>");
+                            }
+                            var price = formatMoney(data, 2);
+                            $(".price #lblPrice").text("￥" + price);
+                            $(".price #lblPrice").css("font-size","20px");
                         }
-                    }, error: function () { }
-                })
+                        $("#hidGoodsInfoId").val("");
+                    } 
+                    else
+                    {
+                        if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && ('<%= hideInfo2 %>'==undefined || '<%= hideInfo2 %>'=="")){
+                            $(".goodsSubtitle").html("<br /><label id=\"divHideInfo1\" class=\"txt\"><%= hideInfo1 %></label>");
+                        }
+                        if('<%= hideInfo1 %>'!=undefined && '<%= hideInfo1 %>'!="" && '<%= hideInfo2 %>'!=undefined && '<%= hideInfo2 %>'!="" ){
+                            $(".goodsSubtitle").html("<br /><label id=\"divHideInfo1\" class=\"txt\" ><%= hideInfo1 %></label><br /><label id=\"divHideInfo2\" class=\"txt\" ><%= hideInfo2 %></label>");
+                        }
+                        if (reg.exec(data.split(',')[0])) {
+                            $(".price #lblPrice").text(data.split(',')[0]);
+                            $(".price #lblPrice").css("font-size","13px");
+                        } else {
+                            var price = formatMoney(data.split(',')[0], 2);
+                            $(".price #lblPrice").text("￥" + price);
+                            $(".price #lblPrice").css("font-size","20px");
+                        }
+                        $("#hidGoodsInfoId").val(data.split(',')[1]);
+                    }
 
+                    $.ajax({
+                        type: "post",
+                        data: { ck: Math.random(), action: "code", value: valuelist },
+                        dataType: "text",
+                        success: function (data) {
+                            if(data!=""){
+                                $("#lblCode").text(data.split(',')[0]);
+                                $("#lblinventory").text(data.split(',')[1]);
+                            }
+                        }, error: function () { }
+                    })
             }, error: function () { }
         })
-}
+    }
 function Pagination() {
     var paras = { action: 'getData',compId:<%=compId %> };
         $(".paging").myPagination({
@@ -579,12 +574,12 @@ function Pagination() {
         var html = "";
         if (json.length != 0) {
             $(json).each(function (index, obj) {
-                var src="";
-                if(obj.pic2=="X" || obj.pic2==""){
-                    src="../images/Goods200x200.jpg";
-                }else{
-                    src="<%=Common.GetWebConfigKey("ImgViewPath") %>" + "/GoodsImg/"+ obj.pic2;
-                }
+                    var src="";
+                    if (!obj.pic){
+                        src="../images/Goods200x200.jpg";
+                    } else {
+                        src="<%=Common.GetPicBaseUrl() %>" + obj.pic + "?x-oss-process=style/resize400";
+                    }
                     $.ajax({
                         type: "post",
                         dataType: "text",
@@ -603,7 +598,7 @@ function Pagination() {
                         html += "<li><div class=\"pic\"><a href=\"/e"+obj.id+"_"+obj.compId+".html"+"\" title=\""+obj.goodsname+"\"><img src=\""+src+"\" width=\"85\" alt=\"暂无图片\"></a></div><div class=\"txt2\"><a  href=\"/e"+obj.id+"_"+obj.compId+".html"+"\" title=\""+obj.goodsname+"\">" + obj.goodsname + "</a></div><div class=\"price\">"+str+"</div></li>"
                     }
                 })
-                })
+            })
         }else
         {
             html+="<li>暂无数据</li>";

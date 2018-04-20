@@ -48,7 +48,7 @@ public partial class Company_newOrder_orderdetail : CompPageBase
 
             hidCompID.Value = CompID.ToString();
             hidUserType.Value = this.TypeID.ToString();
-            hidPicpath.Value = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/";
+            hidPicpath.Value = Common.GetWebConfigKey("OssImgPath") + "company/" + CompID + "/";
 
             if (!string.IsNullOrEmpty(Request["top"]))
                 top = Request["top"].ToInt(0);

@@ -143,14 +143,10 @@ public partial class productsview : LoginPageBase
             {
                 DefaultProductImg.Visible = true;
                 Hi.Model.BD_Goods model = new Hi.BLL.BD_Goods().GetModel(goodsId);
-                if (model != null)
+                if (model != null && !string.IsNullOrEmpty(model.Pic))
                 {
-                    if (model.Pic2 != "X" && model.Pic2 != "" && model.Pic3 != "D" && model.Pic3 != "")
-                    {
-                        this.defaultImg.Src = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2;
-                        string img = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic3;
-                        this.defaultImg.Attributes.Add("bimg", img);
-                    }
+                    this.defaultImg.Src = Common.GetPicURL(model.Pic, "resize400", logUser.CompID.ToString());
+                    this.defaultImg.Attributes.Add("bimg", Common.GetPicURL(model.Pic, "", logUser.CompID.ToString()));
                 }
             }
             List<Hi.Model.BD_GoodsInfo> l = new Hi.BLL.BD_GoodsInfo().GetList("", "isnull(dr,0)=0 and isenabled=1 and compid=" + compId + " and goodsid=" + goodsId, ""); //Common.GetGoodsPrice(comPid, goodsId);//商品价格列表
@@ -234,25 +230,7 @@ public partial class productsview : LoginPageBase
                 this.productCert.InnerHtml = "<img width=\"600\" src=\"" + url + "\"/>";
             }
             this.lblPrice.InnerText = "¥" + decimal.Parse(string.Format("{0:N2}", Convert.ToDecimal(model.SalePrice.ToString()).ToString())).ToString("#,##0.00"); ;//商品价格
-            /*
-            if (model.Pic2.ToString().Trim() != "X" && model.Pic2.ToString().Trim() != "")//有图片
-            {
-                imgPic.Src = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2;
-                if (model.Pic3.ToString().Trim() == "" || model.Pic3.ToString().Trim() == "D")
-                {
-                    imgPic.Attributes.Add("jqimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2);
-                }
-                else
-                {
-                    imgPic.Attributes.Add("jqimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic3);
-                }
-            }
-            else
-            {
-                imgPic.Src = "../images/Goods400x400.jpg";//无图片
-                imgPic.Attributes.Add("jqimg", "../images/Goods400x400.jpg");
-            }
-            */
+
             string html = string.Empty;
             List<Hi.Model.BD_GoodsAttrs> ll = new Hi.BLL.BD_GoodsAttrs().GetList("", "isnull(dr,0)=0 and compId=" + compId + " and goodsId=" + goodsId.ToString(), "");
             if (ll.Count > 0)

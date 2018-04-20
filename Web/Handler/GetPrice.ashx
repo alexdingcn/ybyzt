@@ -696,8 +696,8 @@ public class GetPrice : loginInfoMation, IHttpHandler
     /// </summary>
     public string BindData(string compId)
     {
-        string sql = "select   a.id,goodsname,pic2,a.compId from bd_goods as a, bd_goodsInfo as b where a.id=b.goodsId and isnull(a.dr,0)=0 and isnull(b.dr,0)=0  and a.isoffline=1 and b.isoffline=1 and isrecommended=2 and a.compid=" + compId + " and b.compId=" + compId + " group by a.id,goodsname,pic2,a.compId order by a.id";
-        string sql2 = "select distinct  a.id,goodsname,pic2,a.compId from bd_goods as a, bd_goodsInfo as b where a.id=b.goodsId and isnull(a.dr,0)=0 and isnull(b.dr,0)=0  and a.isoffline=1 and b.isoffline=1  and isrecommended=2 and a.compid=" + compId + " and b.compId=" + compId + " order by a.id";
+        string sql = "select a.id,goodsname,pic,a.compId from bd_goods as a, bd_goodsInfo as b where a.id=b.goodsId and isnull(a.dr,0)=0 and isnull(b.dr,0)=0  and a.isoffline=1 and b.isoffline=1 and isrecommended=2 and a.compid=" + compId + " and b.compId=" + compId + " group by a.id,goodsname,pic,a.compId order by a.id";
+        string sql2 = "select distinct  a.id,goodsname,pic,a.compId from bd_goods as a, bd_goodsInfo as b where a.id=b.goodsId and isnull(a.dr,0)=0 and isnull(b.dr,0)=0  and a.isoffline=1 and b.isoffline=1  and isrecommended=2 and a.compid=" + compId + " and b.compId=" + compId + " order by a.id";
         MyPagination mypag = new MyPagination();
         string data = mypag.GetJson2(page, 4, sql, sql2);
         return data;

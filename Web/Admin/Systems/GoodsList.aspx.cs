@@ -145,20 +145,14 @@ public partial class Admin_Systems_GoodsList : AdminPageBase
         return "";
     }
 
-    public string GetPicURL(string id)
+    public string GetPicURL(string goodsId, string compId, string format = null)
     {
-        if (!Util.IsEmpty(Common.GetGoods(id, "Pic2").Trim()))
+        Hi.Model.BD_Goods goods = new Hi.BLL.BD_Goods().GetModel(Convert.ToInt32(goodsId));
+        if (goods != null)
         {
-            if (Common.GetGoods(id, "Pic2").Trim() != "X")
-            {
-                return Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + Common.GetGoods(Eval("ID").ToString(), "Pic2");
-            }
-            else
-            {
-                return "../../images/havenopicsmallest.gif";
-            }
+            return Common.GetPicURL(goods.Pic, format, compId);
         }
-        return "../../images/havenopicsmallest.gif";
 
+        return "../../images/havenopicsmallest.gif";
     }
 }

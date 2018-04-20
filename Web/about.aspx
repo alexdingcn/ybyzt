@@ -121,7 +121,7 @@
                     关于我们</h2>
             </div>
             <ul class="menu new-menu">
-                <div class="flbt"><a href="http://www.moreyou.cn/" target="_blank" class="t"><i class="arrw-i"></i>医伴金服</a></div>
+                <div class="flbt"><a href="http://www.yibanjf.cn/" target="_blank" class="t"><i class="arrw-i"></i>医伴金服</a></div>
                 <li id="licom" class="flbt hover"><a href="about_1.html" class="t"><i class="arrw-i"></i>公司简介</a></li>
                 <li id="licul" class="flbt"><a href="about_2.html" class="t"><i class="arrw-i"></i>企业文化</a></li>
                 <li id="liwe" class="flbt"><a href="about_3.html" class="t"><i class="arrw-i"></i>联系我们</a></li>

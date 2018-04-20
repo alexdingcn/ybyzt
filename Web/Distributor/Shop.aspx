@@ -76,7 +76,7 @@
                                         <td>
                                             <div class="sPic">
                                                 <span><a target="_blank" href="GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>">
-                                                    <img src="<%# GetGoodsPic(Eval("pic").ToString()) %>" width="70" height="70">
+                                                    <img src="<%# Common.GetPicURL(Eval("pic").ToString(), "resize200") %>" width="70" height="70">
                                                 </a></span><a target="_blank" href="GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>">
                                                     <%# Common.MySubstring(Eval("GoodsName").ToString(),30,"...") %></a>
                                                 <%# SelectGoods.ProType(Eval("ProID"))%>

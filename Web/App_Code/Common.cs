@@ -820,36 +820,6 @@ public class Common
         }
     }
 
-    public static string GetGoods(string id, string type)
-    {
-        if (!Util.IsEmpty(id))
-        {
-            Hi.Model.BD_Goods mode = new Hi.BLL.BD_Goods().GetModel(Convert.ToInt32(id));
-            if (mode != null)
-            {
-                string re = string.Empty;
-                switch (type)
-                {
-                    case "Pic":
-                        re = mode.Pic;
-                        break;
-                    case "Pic2":
-                        re = mode.Pic2;
-                        break;
-                }
-                return re;
-            }
-            else
-            {
-                return "";
-            }
-        }
-        else
-        {
-            return "";
-        }
-    }
-
     /// <summary>
     /// 获取商品详细属性
     /// </summary>
@@ -1349,15 +1319,16 @@ cu.DisID=dis.ID where cu.CompID=" + compId + " and cu.CType=2 and UType=5 and cu
         return user.Count > 0;
     }
 
+
     /// <summary>
     /// 根据商品信息表Id查询图片
     /// </summary>
-    /// <param name="GoodsifID"></param>
+    /// <param name="goodInfoID"></param>
     /// <returns></returns>
-    public static string picUrl(string GoodsifID)
+    public static string picUrl(string goodInfoID)
     {
         string pic = "../../images/Goods400x400.jpg";
-        Hi.Model.BD_GoodsInfo GoodsInfoModel = new Hi.BLL.BD_GoodsInfo().GetModel(GoodsifID.ToInt(0));
+        Hi.Model.BD_GoodsInfo GoodsInfoModel = new Hi.BLL.BD_GoodsInfo().GetModel(goodInfoID.ToInt(0));
 
         if (GoodsInfoModel != null)
         {
@@ -1366,12 +1337,15 @@ cu.DisID=dis.ID where cu.CompID=" + compId + " and cu.CType=2 and UType=5 and cu
             if (goodsModel != null)
             {
                 if (!string.IsNullOrEmpty(goodsModel.Pic))
-                    pic = ConfigurationManager.AppSettings["ImgViewPath"] + "GoodsImg/" + goodsModel.Pic;
+                {
+                    pic = GetPicURL(goodsModel.Pic);
+                }
             }
         }
 
         return pic;
     }
+    
 
     /// <summary>  
     /// 截取字符串长度  
@@ -3256,51 +3230,6 @@ and ISNULL(pro.IsEnabled,0)=1 and isnull(pro.dr,0)=0 and  (pro.ProStartTime<=GET
         return default(List<T>);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="img"></param>
-    /// <param name="PicType">默认图标大小（1：60*60，2：200*200，3:400*400）</param>
-    /// <returns></returns>
-    public static string GetPicURL(string img, string PicType)
-    {
-        if (!string.IsNullOrEmpty(img))
-        {
-            return Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + img;
-            //try
-            //{
-
-            //    HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create(ImgUrl);
-            //    myReq.Timeout = 1;
-            //    HttpWebResponse myRes = (HttpWebResponse)myReq.GetResponse();
-            //    if (myRes.ContentLength > 0)
-            //    {
-
-            //    }
-            //}
-            //catch (WebException exception)
-            //{
-            //    switch (PicType)
-            //    {
-            //        case "1": return "/images/Goods60x60.jpg";
-            //        case "2": return "/images/Goods200x200.jpg";
-            //        case "3": return "/images/Goods400x400.jpg";
-            //    }
-            //}
-        }
-        else
-        {
-            switch (PicType)
-            {
-                case "1": return "/images/Goods60x60.jpg";
-                case "2": return "/images/Goods200x200.jpg";
-                case "3": return "/images/Goods400x400.jpg";
-            }
-        }
-        return "../images/havenopicsmallest.gif";
-
-    }
-
 
     #region   修改免手续费次数
     /// <summary>
@@ -3940,5 +3869,42 @@ left join BD_Company com on fc.CompID=com.ID where DisID=" + disID + " and fc.dr
             }
         }
         return falg;
+    }
+
+    /// <summary>
+    /// 获取图片路径
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <param name="resizeFormat"></param>
+    /// <param name="compId"></param>
+    /// <returns></returns>
+    public static string GetPicURL(string fileName, string resizeFormat = null, string compId = null)
+    {
+        string companyId = compId;
+        if (string.IsNullOrEmpty(compId))
+        {
+            LoginModel logUser = HttpContext.Current.Session["UserModel"] as LoginModel;
+            companyId = (logUser != null) ? logUser.CompID.ToString() : "";
+        }
+
+        string basePath = Common.GetWebConfigKey("OssImgPath") + "company/" + companyId + "/";
+
+        if (!string.IsNullOrEmpty(fileName) && fileName.Trim() != "X")
+        {
+            return basePath + fileName + (!string.IsNullOrEmpty(resizeFormat) ? "?x-oss-process=style/" + resizeFormat : "");
+        }
+        return Common.GetWebConfigKey("OssImgPath") + "havenopicmax.gif";
+    }
+
+    public static string GetPicBaseUrl(string compId = null)
+    {
+        string companyId = compId;
+        if (string.IsNullOrEmpty(compId))
+        {
+            LoginModel logUser = HttpContext.Current.Session["UserModel"] as LoginModel;
+            companyId = (logUser != null) ? logUser.CompID.ToString() : "";
+        }
+
+        return Common.GetWebConfigKey("OssImgPath") + "company/" + companyId + "/";
     }
 }

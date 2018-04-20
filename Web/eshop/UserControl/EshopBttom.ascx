@@ -5,14 +5,9 @@
         <a href="/platform.html">平台介绍</a>|<a href="/about.html">关于我们</a>|<a href="/help.html">帮助中心</a>|<a
             href="/about.html#contact">联系我们</a>|<a href="/law.html">网站声明</a></div>
     <div class="txt">
-       粤ICP备17130448号-2 Copyright © 2016 深圳前海医伴金服信息技术有限公司版权所有 <a href="http://tongji.baidu.com/web/welcome/login?qq-pf-to=pcqq.c2c"
-            target="_blank" style="display:none;">
-            <img src="/images/ipic.gif" width="50" height="12" alt="暂无图片" /></a></div>
-    <div class="pic">
-        <a href="http://www.moreyou.cn/" title="深圳前海医伴金服信息技术有限公司"></a><a href="http://icp.alexa.cn/index.php?q=yibanmed.com/&code=&icp_host=lncainfo"
-            target="_blank"></a><a href="http://www.police.sh.cn/shga/index.html" target="_blank">
-            </a><a href="http://www.12377.cn/" target="_blank"></a><a href="http://www.12377.cn/node_548446.htm"
-                target="_blank"></a>
+        © 2017-2018 深圳前海医伴金服信息技术有限公司版权所有 
+        <br />
+        <a href="http://www.miitbeian.gov.cn" target="_blank" rel="noopener noreferrer">粤ICP备17130448号-2</a>
     </div>
 </div>
 <!--右侧漂浮 start-->

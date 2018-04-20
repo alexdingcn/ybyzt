@@ -122,7 +122,7 @@ public partial class Company_Goods_GoodsInfo : CompPageBase
                     //UpFileText2.Controls.Add(div);
 
 
-                    string url = "../../UploadFile/" + model.registeredCertificate;
+                    string url = Common.GetWebConfigKey("OssImgPath") + "UploadFile/" + model.registeredCertificate;
                     this.DivShow1.InnerHtml = "<img width=\"600\" src=\"" + url + "\"/>";
                 }
             }
@@ -217,20 +217,15 @@ public partial class Company_Goods_GoodsInfo : CompPageBase
             {
                 this.DivShow.InnerHtml = model.Details;
             }
-            if (model.Pic2.ToString().Trim() != "X" && model.Pic2.ToString().Trim() != "")//有图片
+            if (!string.IsNullOrEmpty(model.Pic))//有图片
             {
-                this.imgPic.Src = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2;
-                this.imgPic2.Src = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2;
-                if (model.Pic3.ToString().Trim() == "" || model.Pic3.ToString().Trim() == "X")
-                {
-                    this.imgPic.Attributes.Add("jqimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2);
-                    this.imgPic2.Attributes.Add("bimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2);
-                }
-                else
-                {
-                    this.imgPic.Attributes.Add("jqimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic3);
-                    this.imgPic2.Attributes.Add("bimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic3);
-                }
+                LoginModel logUser = HttpContext.Current.Session["UserModel"] as LoginModel;
+                string basePath = Common.GetWebConfigKey("OssImgPath") + "company/" + ((logUser != null) ? logUser.CompID.ToString() : "") + "/";
+                string surfix = "?x-oss-process=style/resize400";
+                this.imgPic.Src = basePath + model.Pic + surfix;
+                this.imgPic2.Src = basePath + model.Pic + surfix;
+                this.imgPic.Attributes.Add("jqimg", basePath + model.Pic);
+                this.imgPic2.Attributes.Add("bimg", basePath + model.Pic);
             }
             else
             {

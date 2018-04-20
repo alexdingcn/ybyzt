@@ -238,7 +238,7 @@ i{ font-style:normal;}
 .tiptop
 {
     position: absolute;
-    background: #ebebeb url("default/xubox_title0.png") repeat-x scroll 0 0;
+    background-color: #ebebeb;
     border-bottom: 1px solid #d5d5d5;
     color: #333;
     cursor: move;

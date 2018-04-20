@@ -6,11 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>
-        <%if (KeyID == 0)
-            { %>商品新增<%}
-                      else
-                      {%>商品编辑<%}%></title>
+    <title><%= KeyID == 0 ? "商品新增" : "商品编辑" %></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;charset=utf-8;" />
     <link href="../css/global-2.0.css?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" rel="stylesheet" type="text/css" />
 
@@ -22,33 +18,33 @@
     <script src="../../kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
     <script src="../js/js.js" type="text/javascript"></script>
     <script src="../js/OpenJs.js" type="text/javascript"></script>
-    <script src="../../js/xss.js"></script>
+    <script src="../../js/xss.js" type="text/javascript"></script>
     <script src="../../js/layer/layer.js" type="text/javascript"></script>
     <script src="../../js/layerCommon.js" type="text/javascript"></script>
     <script src="../js/classifyview.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>" type="text/javascript"></script>
-        <script src="../../js/UploadJs.js" type="text/javascript"></script>
+    <script src="../../js/UploadJs.js" type="text/javascript"></script>
     <script src="../../js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-     <script>
+    <script type="text/javascript">
         $(function () {
             if ('<%=Request["nextstep"] %>' == "1") {
                 document.getElementById("imgmenu").style.display = "block";
             }
-            $("#uploadFile2").AjaxUploadFile({ Src: "UploadFile/", ShowDiv: "UpFileText2", ResultId: "HidFfileName2", AjaxSrc: "../../Controller/Fileup.ashx", maxlength: 5, DownSrc: "../../" });
+            $("#uploadFile2").AjaxUploadFile({ Src: "UploadFile/", ShowDiv: "UpFileText2", ResultId: "HidFfileName2", AjaxSrc: "../../Controller/Fileup.ashx", maxlength: 5, DownSrc: "<%= Common.GetWebConfigKey("OssImgPath") %>" });
 
 
             removeClass(); //去掉SKU td的odd样式
             //商品分类宽度设置
-//            $(".showDiv .ifrClass").css("width", "175px");
-//            $(".showDiv").css("width", "170px");
-//            $('iframe').load(function () {
-//                $('iframe').contents().find('.pullDown').css("width", "170px");
+            //            $(".showDiv .ifrClass").css("width", "175px");
+            //            $(".showDiv").css("width", "170px");
+            //            $('iframe').load(function () {
+            //                $('iframe').contents().find('.pullDown').css("width", "170px");
             //            })
 
             //删除单行规格属性
             $(document).on("click", ".del-i-a", function () {
                 $(this).parents(".mulSpecItem").find(".delMulSpec").click();
             })
-             //提交按钮单机事件
+            //提交按钮单机事件
             $("#btnAdds").click(function () {
                 $("#<%=btnAdd.ClientID%>").click();
             });
@@ -72,7 +68,7 @@
 
             //新增计量单位
             $(document).on("click",".addBtn",function(){
-               $(".tip").fadeIn(200);
+                $(".tip").fadeIn(200);
                 $(".txtunits").focus();
                 $(".txtunits").val("");
                 $(".Layer").fadeIn(200); 
@@ -142,7 +138,7 @@
             $(".btnAddUnit").click(function () {
                 var unit = $(".txtunits").val();
                 if (unit == "") {
-                                    layerCommon.msg("计量单位不能为空", IconOption.错误);
+                    layerCommon.msg("计量单位不能为空", IconOption.错误);
                     return false;
                 }
                 $.ajax({
@@ -154,11 +150,11 @@
                         var html = "";
                         $(data).each(function (index, obj) {
                             if (obj.AtVal == "sb") {
-                                                   layerCommon.msg("计量单位添加失败", IconOption.错误);
+                                layerCommon.msg("计量单位添加失败", IconOption.错误);
                             } else if (obj.AtVal == "ycz") {
-                                                   layerCommon.msg("计量单位已存在", IconOption.错误);
+                                layerCommon.msg("计量单位已存在", IconOption.错误);
                             } else if (obj.AtVal == "cc") {
-                                                   layerCommon.msg("计量单位下拉加载失败", IconOption.错误);
+                                layerCommon.msg("计量单位下拉加载失败", IconOption.错误);
                             } else {
                                 html += "<p class=\"\"> "+obj.AtVal+"</p>";
                                 if (index == 0) {
@@ -179,7 +175,7 @@
                 return false;
             })
            
-           // $(".ui-chk").nextAll().hide(); //默认多规格隐藏
+            // $(".ui-chk").nextAll().hide(); //默认多规格隐藏
             //控制输入规格值的文本框样式
             $(document).on("click", ".selectize-input", function () {
                 $(this).addClass("focus");
@@ -207,22 +203,22 @@
                     $(".mulSpecList .mulSpecItem:eq(" + index + ")").find(".selectize-input>input").trigger("blur"); //清楚层
                     $(".mulSpecList .mulSpecItem:eq(" + index + ")").find(".selectize-input").trigger("click"); //文本框选中
                 }
-//                if(e.keyCode==8){
-//                    $(this).prev().remove();
-//                    var str=$(this).parent().parent().prev(".selectized").val();
-//                   if($.trim(str)!=""){
-//                        str=str.substring(0,str.lastIndexOf("@@"));
-//                   }
-//                    $(this).parent().parent().prev(".selectized").val(str);
-//                  TableSku(); //sku信息
-//                }
+                //                if(e.keyCode==8){
+                //                    $(this).prev().remove();
+                //                    var str=$(this).parent().parent().prev(".selectized").val();
+                //                   if($.trim(str)!=""){
+                //                        str=str.substring(0,str.lastIndexOf("@@"));
+                //                   }
+                //                    $(this).parent().parent().prev(".selectized").val(str);
+                //                  TableSku(); //sku信息
+                //                }
                 var str = $.trim($(this).val());
                 if (str != "") {
                     var count = $.trim($(this).val().length);
                     $(this).css("width", parseInt(count) * 20 + "px");
                     $(".mulSpecList .mulSpecItem:eq(" + index + ")").find(".selectize-dropdown").css("display", "block");
                     $(".selectize-dropdown").css("width", "415px");
-                   // $(".selectize-dropdown").css("top", "42px");
+                    // $(".selectize-dropdown").css("top", "42px");
                     $(".selectize-dropdown").css("left", "0px");
                     $(".selectize-dropdown").css("visibility", "visible");
                     var html = "<div class=\"create\" >新增规格值： <strong>" + str + "</strong>…使用键盘“回车键”确认并添加多个规格值</div>";
@@ -272,51 +268,51 @@
             var bols=false;
             //判断是否可以添加规格
             $.ajax({
-            type:"post",
-            url:"/Handler/GoodsEdit.ashx",
-            data:{ck:Math.random(),action:"isAddattr",goodsid:<%=KeyID %>},
-            dataType:"text",
-            success:function(data){
-            if(data=="ycz"){
-            $(".addSpec").attr("title", "已有订单存在该商品，不能添加规格"); //禁用
-            $(".addSpec").css("cursor", "not-allowed"); //禁用鼠标样式
-            bols=true;
-            }else if(data=="bcz"){      
+                type:"post",
+                url:"/Handler/GoodsEdit.ashx",
+                data:{ck:Math.random(),action:"isAddattr",goodsid:<%=KeyID %>},
+                dataType:"text",
+                success:function(data){
+                    if(data=="ycz"){
+                        $(".addSpec").attr("title", "已有订单存在该商品，不能添加规格"); //禁用
+                        $(".addSpec").css("cursor", "not-allowed"); //禁用鼠标样式
+                        bols=true;
+                    }else if(data=="bcz"){      
           
-            }else{
-                layerCommon.alert(data, IconOption.哭脸);
-                                return false;
-            }
-            },error:function(){
+                    }else{
+                        layerCommon.alert(data, IconOption.哭脸);
+                        return false;
+                    }
+                },error:function(){
             
-            }
+                }
 
             })
             //删除该属性值
             $(document).on("click", ".remove", function () {
-            var $this=this;
+                var $this=this;
                 var str = "";
                 var strvalue = $.trim($(this).parent().attr("data-value"));//属性值
                 if(<%=KeyID %>==0){//新增
-                 var strlist = $(this).parent().parent().parent().prev(".selectized").val();
-                        if (strlist != "") {
-                            for (var i = 0; i < strlist.split('@@').length; i++) {
-                                if (strlist.split('@@')[i] != strvalue)
-                                    str += strlist.split('@@')[i] + "@@";
-                            }
+                    var strlist = $(this).parent().parent().parent().prev(".selectized").val();
+                    if (strlist != "") {
+                        for (var i = 0; i < strlist.split('@@').length; i++) {
+                            if (strlist.split('@@')[i] != strvalue)
+                                str += strlist.split('@@')[i] + "@@";
                         }
-                        $(this).parent().parent().parent().prev(".selectized").val(str);
-                        $(this).parent().remove();
-                        TableSku(); //sku信息
+                    }
+                    $(this).parent().parent().parent().prev(".selectized").val(str);
+                    $(this).parent().remove();
+                    TableSku(); //sku信息
                 }else{
-                        $.ajax({
+                    $.ajax({
                         type:"post",
                         url:"/Handler/GoodsEdit.ashx",
                         data:{ck:Math.random(),action:"isDelAttrInfo",attrinfo:strvalue,goodsid:<%=KeyID %>},
                         dataType:"text",
                         success:function(data){
                             if(data==""){
-                                 var strlist = $($this).parent().parent().parent().prev(".selectized").val();
+                                var strlist = $($this).parent().parent().parent().prev(".selectized").val();
                                 if (strlist != "") {
                                     for (var i = 0; i < strlist.split('@@').length; i++) {
                                         if (strlist.split('@@')[i] != strvalue)
@@ -333,75 +329,75 @@
                             }
                         },
                         error:function(){
-                         layerCommon.alert("出错了", IconOption.哭脸);
-                                return false;
+                            layerCommon.alert("出错了", IconOption.哭脸);
+                            return false;
                         }
-                      })
-               }
+                    })
+                }
             })
             //删除属性
             $(document).on("click", ".delMulSpec", function () {
-          var   $this=this;
-            if(<%=KeyID %>==0){
-                var count = $(this).parent().parent().find(".mulSpecItem").length;
-                if (count == 1) {
-                    // layerCommon.msg("规格启用时,最少保留一个", IconOption.错误);
-                   // return false;
-                   $(this).parent().remove();
-                   $("#chkProduct").removeAttr("checked");
-                   $("#divProduct").hide();
-                   $("#divSku").hide();
-                }
-                $(".addSpec").show(); //添加规格按钮显示
-                $(".addSpecLi").attr("style","display:block;")
-                $(this).parent().remove();
-                // DelGuige(count); //删除规格的同时 动态删除sku信息
-                TableSku(); //sku信息
+                var   $this=this;
+                if(<%=KeyID %>==0){
+                    var count = $(this).parent().parent().find(".mulSpecItem").length;
+                    if (count == 1) {
+                        // layerCommon.msg("规格启用时,最少保留一个", IconOption.错误);
+                        // return false;
+                        $(this).parent().remove();
+                        $("#chkProduct").removeAttr("checked");
+                        $("#divProduct").hide();
+                        $("#divSku").hide();
+                    }
+                    $(".addSpec").show(); //添加规格按钮显示
+                    $(".addSpecLi").attr("style","display:block;")
+                    $(this).parent().remove();
+                    // DelGuige(count); //删除规格的同时 动态删除sku信息
+                    TableSku(); //sku信息
                 }else{
-                var strvalue=$(this).prev().find(".mulSpecName").val();//当前行的规格
-                 $.ajax({
+                    var strvalue=$(this).prev().find(".mulSpecName").val();//当前行的规格
+                    $.ajax({
                         type:"post",
                         url:"/Handler/GoodsEdit.ashx",
                         data:{ck:Math.random(),action:"isDelAttr",attr:strvalue,goodsid:<%=KeyID %>},
-                        dataType:"text",
-                        success:function(data){
-                            if(data==""){
-                             var count = $($this).parent().parent().find(".mulSpecItem").length;
-                if (count == 1) {
-                    // layerCommon.msg("规格启用时,最少保留一个", IconOption.错误);
-                   // return false;
-                   $($this).parent().remove();
-                   $("#chkProduct").removeAttr("disabled");
-                   $("#chkProduct").removeAttr("checked");
-                   $("#ddlTemplate").removeAttr("Enabled");
-                   $("#divProduct").hide();
-                   $("#divSku").hide();
-                     }
-                $(".addSpec").show(); //添加规格按钮显示
-                $(".addSpecLi").attr("style","display:block;")
-                                 $($this).parent().remove();
-                                    // DelGuige(count); //删除规格的同时 动态删除sku信息
-                                    TableSku(); //sku信息
-                            }else
-                            {
-                                layerCommon.alert(data, IconOption.哭脸);
-                                return false;
-                            }
-                        },
-                        error:function(){
-                         layerCommon.alert("出错了", IconOption.哭脸);
-                                return false;
-                        }
-                      })
-                }
+                  dataType:"text",
+                  success:function(data){
+                      if(data==""){
+                          var count = $($this).parent().parent().find(".mulSpecItem").length;
+                          if (count == 1) {
+                              // layerCommon.msg("规格启用时,最少保留一个", IconOption.错误);
+                              // return false;
+                              $($this).parent().remove();
+                              $("#chkProduct").removeAttr("disabled");
+                              $("#chkProduct").removeAttr("checked");
+                              $("#ddlTemplate").removeAttr("Enabled");
+                              $("#divProduct").hide();
+                              $("#divSku").hide();
+                          }
+                          $(".addSpec").show(); //添加规格按钮显示
+                          $(".addSpecLi").attr("style","display:block;")
+                          $($this).parent().remove();
+                          // DelGuige(count); //删除规格的同时 动态删除sku信息
+                          TableSku(); //sku信息
+                      }else
+                      {
+                          layerCommon.alert(data, IconOption.哭脸);
+                          return false;
+                      }
+                  },
+                  error:function(){
+                      layerCommon.alert("出错了", IconOption.哭脸);
+                      return false;
+                  }
+              })
+          }
 
             })
         
             //添加规格
             $(".addSpec").click(function (e) {
                 if(bols){
-              return false;
-            }
+                    return false;
+                }
               
                 var count = $(".mulSpecList .mulSpecItem").length;
                 if (count >= 3) {
@@ -411,14 +407,14 @@
                 {
                     //var html = "<div class=\"mulSpecItem\"><div class=\"mulSpecProperty\"><input type=\"text\" class=\"ui-input-dashed mulSpecName\" style=\"width: 96px;\" maxlength=\"4\"  value=\"\" name=\"mulSpecName\"></div><a class=\"delMulSpec\"></a><div class=\"mulSpecValues\"><input type=\"text\" value=\"\" tabindex=\"-1\" class=\"mulSpecInp selectized\" name=\"selectized\" style=\"display: none;\"><div class=\"selectize-control mulSpecInp multi plugin-remove_button\"><div class=\"selectize-input items not-full\"><input type=\"text\" style=\"width: 4px;\" tabindex=\"\" autocomplete=\"off\"></div><div style=\"display: none;\" class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\"><div class=\"selectize-dropdown-content\"></div></div></div></div><div class=\"cb\"></div></div>";
                     var html = "<div class=\"mulSpecItem\"><div class=\"mulSpecProperty\" style=\"width:150px;height: auto;min-height:35px\">"+
-     "<input type=\"text\" value=\"\" maxlength=\"4\"  placeholder=\"规格名称(4字内) \" class=\"ui-input-dashed mulSpecName box2\" name=\"mulSpecName\" style=\"height: auto;min-height:35px\"/>"+
-     "</div><a class=\"delMulSpec\" style=\"display:none\"></a> <div class=\"mulSpecValues\" style=\"width:680px;\" >"+
-     "<input type=\"text\" style=\"display: none;\" class=\"mulSpecInp selectized\" name=\"selectized\" tabindex=\"-1\" value=\"\" maxlength=\"15\"/>"+
-     " <div class=\"selectize-control mulSpecInp multi plugin-remove_button\" >"+
-     " <div class=\"selectize-input items not-full box1 fl\" style=\"width:720px;height: auto;min-height:30px\" placeholder=\"使用键盘“回车键”确认并添加多个规格值\"> "+ 
-     "<input type=\"text\" autocomplete=\"off\" tabindex=\"\" style=\"width: 4px;\" maxlength=\"15\"/><i class=\"del-i del-i-a\"></i>"+
-    " </div><div class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\" style=\"display: none;\">"+
-     "<div class=\"selectize-dropdown-content\">\</div> </div> </div></div> <div class=\"cb\"></div> </div>"
+                             "<input type=\"text\" value=\"\" maxlength=\"4\"  placeholder=\"规格名称(4字内) \" class=\"ui-input-dashed mulSpecName box2\" name=\"mulSpecName\" style=\"height: auto;min-height:35px\"/>"+
+                             "</div><a class=\"delMulSpec\" style=\"display:none\"></a> <div class=\"mulSpecValues\" style=\"width:680px;\" >"+
+                             "<input type=\"text\" style=\"display: none;\" class=\"mulSpecInp selectized\" name=\"selectized\" tabindex=\"-1\" value=\"\" maxlength=\"30\"/>"+
+                             " <div class=\"selectize-control mulSpecInp multi plugin-remove_button\" >"+
+                             " <div class=\"selectize-input items not-full box1 fl\" style=\"width:720px;height: auto;min-height:30px\" placeholder=\"使用键盘“回车键”确认并添加多个规格值\"> "+ 
+                             "<input type=\"text\" autocomplete=\"off\" tabindex=\"\" style=\"width: 4px;\" maxlength=\"30\"/><i class=\"del-i del-i-a\"></i>"+
+                            " </div><div class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\" style=\"display: none;\">"+
+                             "<div class=\"selectize-dropdown-content\">\</div> </div> </div></div> <div class=\"cb\"></div> </div>"
                     $(".mulSpecList").append(html);
                 }
                 count = $(".mulSpecList .mulSpecItem").length;
@@ -431,63 +427,63 @@
             })
             //复选框事件
             $("#chkProduct").click(function () {
-          var  $this=this;
+                var  $this=this;
                 $.ajax({
-                type:"post",
-                url:"/Handler/GoodsEdit.ashx",
-                data:{ck:Math.random(),action:"isChk",goodsid:<%=KeyID %>},
-                dataType:"text",
-                success:function(data){
-                    if(data==""){
-                        if ($($this).attr("checked") == undefined) {
-                            $("#divSku").removeClass("none")
-                            $($this).attr("checked", true);
-                            //var html = "<div class=\"mulSpecItem\"><div class=\"mulSpecProperty\"><input type=\"text\" class=\"ui-input-dashed mulSpecName\" style=\"width: 96px;\" maxlength=\"4\"  value=\"\" name=\"mulSpecName\"></div><a class=\"delMulSpec\"></a><div class=\"mulSpecValues\"><input type=\"text\" value=\"\" tabindex=\"-1\" class=\"mulSpecInp selectized\" name=\"selectized\" style=\"display: none;\"><div class=\"selectize-control mulSpecInp multi plugin-remove_button\"><div class=\"selectize-input items not-full\"><input type=\"text\" style=\"width: 4px;\" tabindex=\"\" autocomplete=\"off\"></div><div style=\"display: none;\" class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\"><div class=\"selectize-dropdown-content\"></div></div></div></div><div class=\"cb\"></div></div>";
-                            var html = "<div class=\"mulSpecItem\"><div class=\"mulSpecProperty\" style=\"width:150px;height: auto;min-height:35px\">"+
-             "<input type=\"text\" value=\"\" maxlength=\"4\"  placeholder=\"规格名称(4字内) \" class=\"ui-input-dashed mulSpecName box2\" name=\"mulSpecName\" style=\"height: auto;min-height:35px\"/>"+
-             "</div><a class=\"delMulSpec\" style=\"display:none\"></a> <div class=\"mulSpecValues\" style=\"width:680px;\" >"+
-             "<input type=\"text\" style=\"display: none;\" class=\"mulSpecInp selectized\" name=\"selectized\" tabindex=\"-1\" value=\"\" maxlength=\"15\"/>"+
-             " <div class=\"selectize-control mulSpecInp multi plugin-remove_button\" >"+
-             " <div class=\"selectize-input items not-full box1 fl\" style=\"width:720px;height: auto;min-height:30px\" placeholder=\"使用键盘“回车键”确认并添加多个规格值\"> "+ 
-             "<input type=\"text\" autocomplete=\"off\" tabindex=\"\" style=\"width: 4px;\" maxlength=\"15\"/><i class=\"del-i del-i-a\"></i>"+
-            " </div><div class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\" style=\"display: none;\">"+
-             "<div class=\"selectize-dropdown-content\">\</div> </div> </div></div> <div class=\"cb\"></div> </div>"
-                            $(".mulSpecList").append(html);
-                    } else {
-                            $($this).attr("checked", false);
-                            $("#divSku").addClass("none")
-                    }
-                    if ($($this).attr("checked")) {
-                        $("#ddlTemplate").val("");
-                        //$(".ui-chk").nextAll().show(); //显示多规格
-                        $("#divProduct").css("display","inline");
-                        $("#divSku").show();
-                      // $("#addSpec").click();
-                        $(".mulSpecList .mulSpecItem:gt(0)").remove(); //除了第一个规格都删除
-                        $(".addSpec").show(); //添加规格按钮显示
-                        $(".addSpecLi").attr("style","display:block;")
-                        $(".ui-input-dashed").val(""); //清空规格
-                        $(".selectize-input .item").remove(); //清空所有属性值
-                        $(".selectize-input").removeClass("has-items"); //div高度
-                        $(".trCode").hide(); //商品编码隐藏
-                    } else {
-                        $(".trCode").show(); //商品编码显示
-                        $(".ui-chk").nextAll().hide(); //多规格隐藏
-                        $(".selectized").val("");
+                    type:"post",
+                    url:"/Handler/GoodsEdit.ashx",
+                    data:{ck:Math.random(),action:"isChk",goodsid:<%=KeyID %>},
+                    dataType:"text",
+                    success:function(data){
+                        if(data==""){
+                            if ($($this).attr("checked") == undefined) {
+                                $("#divSku").removeClass("none")
+                                $($this).attr("checked", true);
+                                //var html = "<div class=\"mulSpecItem\"><div class=\"mulSpecProperty\"><input type=\"text\" class=\"ui-input-dashed mulSpecName\" style=\"width: 96px;\" maxlength=\"4\"  value=\"\" name=\"mulSpecName\"></div><a class=\"delMulSpec\"></a><div class=\"mulSpecValues\"><input type=\"text\" value=\"\" tabindex=\"-1\" class=\"mulSpecInp selectized\" name=\"selectized\" style=\"display: none;\"><div class=\"selectize-control mulSpecInp multi plugin-remove_button\"><div class=\"selectize-input items not-full\"><input type=\"text\" style=\"width: 4px;\" tabindex=\"\" autocomplete=\"off\"></div><div style=\"display: none;\" class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\"><div class=\"selectize-dropdown-content\"></div></div></div></div><div class=\"cb\"></div></div>";
+                                var html = "<div class=\"mulSpecItem\"><div class=\"mulSpecProperty\" style=\"width:150px;height: auto;min-height:35px\">"+
+                 "<input type=\"text\" value=\"\" maxlength=\"4\"  placeholder=\"规格名称(4字内) \" class=\"ui-input-dashed mulSpecName box2\" name=\"mulSpecName\" style=\"height: auto;min-height:35px\"/>"+
+                 "</div><a class=\"delMulSpec\" style=\"display:none\"></a> <div class=\"mulSpecValues\" style=\"width:680px;\" >"+
+                 "<input type=\"text\" style=\"display: none;\" class=\"mulSpecInp selectized\" name=\"selectized\" tabindex=\"-1\" value=\"\" maxlength=\"15\"/>"+
+                 " <div class=\"selectize-control mulSpecInp multi plugin-remove_button\" >"+
+                 " <div class=\"selectize-input items not-full box1 fl\" style=\"width:720px;height: auto;min-height:30px\" placeholder=\"使用键盘“回车键”确认并添加多个规格值\"> "+ 
+                 "<input type=\"text\" autocomplete=\"off\" tabindex=\"\" style=\"width: 4px;\" maxlength=\"15\"/><i class=\"del-i del-i-a\"></i>"+
+                " </div><div class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\" style=\"display: none;\">"+
+                 "<div class=\"selectize-dropdown-content\">\</div> </div> </div></div> <div class=\"cb\"></div> </div>"
+                                $(".mulSpecList").append(html);
+                            } else {
+                                $($this).attr("checked", false);
+                                $("#divSku").addClass("none")
+                            }
+                            if ($($this).attr("checked")) {
+                                $("#ddlTemplate").val("");
+                                //$(".ui-chk").nextAll().show(); //显示多规格
+                                $("#divProduct").css("display","inline");
+                                $("#divSku").show();
+                                // $("#addSpec").click();
+                                $(".mulSpecList .mulSpecItem:gt(0)").remove(); //除了第一个规格都删除
+                                $(".addSpec").show(); //添加规格按钮显示
+                                $(".addSpecLi").attr("style","display:block;")
+                                $(".ui-input-dashed").val(""); //清空规格
+                                $(".selectize-input .item").remove(); //清空所有属性值
+                                $(".selectize-input").removeClass("has-items"); //div高度
+                                $(".trCode").hide(); //商品编码隐藏
+                            } else {
+                                $(".trCode").show(); //商品编码显示
+                                $(".ui-chk").nextAll().hide(); //多规格隐藏
+                                $(".selectized").val("");
                 
-                     var style="";
-                        if(true){
-                        style="style='display:none'";
-                        }
-                        $('.productListBox').html("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:1050px;margin:0 auto;\"><thead><tr><th class=\"key\"></th><th>商品编码</th><th>销售价格(元)</th><th "+style+" class=\"kc\"><i class=\"red\">*</i>库存</th><th "+style+" class=\"t5\">批次号</th><th "+style+" class=\"t5\">有效期</th><th>是否上架</th><th>操作</th></tr></thead><tbody><tr><td class=\"key\">1</td><td class=\"trOp\"><input name=\"txtCode\" style=\"width:120px;\" type=\"text\" id=\"Text2\" class=\"textBox txtCode\" value='<%=GoodsCode() %>' maxlength=\"15\"/></td><td class=\"trOp\"><input name=\"txtPrices\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"textBox txtPrices\" onkeyup=\"KeyInt2(this);\" maxlength=\"10\"/></td><td class=\"trOp\" "+style+"><input name=\"txtInventory\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"textBox txtInventory\" onkeyup=\"KeyInt2(this);\" maxlength=\"11\"/></td><td "+style+" class=\"trOp\"><input name=\"txtBatchNO\" type=\"text\"  style=\"width: 100px;\" class=\"dataBox txtBatchNO\" maxlength=\"11\" /></td><td class=\"trOp\" "+style+"><input name=\"txtvalidDate\" onclick=\"WdatePicker()\" readonly=\"readonly\" type=\"text\" style=\"width: 100px;\" class=\"dataBox txtvalidDate\" maxlength=\"11\" /></td><td class=\"trOp\"><div class=\"tc\"><input type=\"checkbox\"  name=\"isOffline\" value=\"1\" checked=\"checked\" id=\"check-2-1\" class=\"r-check\" /><label for=\"check-2-1\"></label></div> <input type=\"hidden\" value=\"1\" name=\"hidIsOffline\" /> <input value=\"0\" name=\"hidId\" class=\"deleteIDlist\" type=\"hidden\"/></td><td class=\"trOp\"><a class=\"theme-color delete\" href=\"javascript:;\"><i class=\"del-i\"></i></a><a href=\"javascript:;\" class=\"theme-color restore none\"><i class=\"pre-i\"></i></a></td></tr></tbody></table>");}
-                    $(".txtPrices").val($.trim($(".txtPrice").val()));//销售价格
+                                var style="";
+                                if(true){
+                                    style="style='display:none'";
+                                }
+                                $('.productListBox').html("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:1050px;margin:0 auto;\"><thead><tr><th class=\"key\"></th><th>商品编码</th><th>销售价格(元)</th><th "+style+" class=\"kc\"><i class=\"red\">*</i>库存</th><th "+style+" class=\"t5\">批次号</th><th "+style+" class=\"t5\">有效期</th><th>是否上架</th><th>操作</th></tr></thead><tbody><tr><td class=\"key\">1</td><td class=\"trOp\"><input name=\"txtCode\" style=\"width:120px;\" type=\"text\" id=\"Text2\" class=\"textBox txtCode\" value='<%=GoodsCode() %>' maxlength=\"15\"/></td><td class=\"trOp\"><input name=\"txtPrices\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"textBox txtPrices\" onkeyup=\"KeyInt2(this);\" maxlength=\"10\"/></td><td class=\"trOp\" "+style+"><input name=\"txtInventory\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"textBox txtInventory\" onkeyup=\"KeyInt2(this);\" maxlength=\"11\"/></td><td "+style+" class=\"trOp\"><input name=\"txtBatchNO\" type=\"text\"  style=\"width: 100px;\" class=\"dataBox txtBatchNO\" maxlength=\"11\" /></td><td class=\"trOp\" "+style+"><input name=\"txtvalidDate\" onclick=\"WdatePicker()\" readonly=\"readonly\" type=\"text\" style=\"width: 100px;\" class=\"dataBox txtvalidDate\" maxlength=\"11\" /></td><td class=\"trOp\"><div class=\"tc\"><input type=\"checkbox\"  name=\"isOffline\" value=\"1\" checked=\"checked\" id=\"check-2-1\" class=\"r-check\" /><label for=\"check-2-1\"></label></div> <input type=\"hidden\" value=\"1\" name=\"hidIsOffline\" /> <input value=\"0\" name=\"hidId\" class=\"deleteIDlist\" type=\"hidden\"/></td><td class=\"trOp\"><a class=\"theme-color delete\" href=\"javascript:;\"><i class=\"del-i\"></i></a><a href=\"javascript:;\" class=\"theme-color restore none\"><i class=\"pre-i\"></i></a></td></tr></tbody></table>");}
+                        $(".txtPrices").val($.trim($(".txtPrice").val()));//销售价格
                     
                     }else
-                        {
+                    {
                         layerCommon.msg(data, IconOption.错误);
-                      $($this).attr("checked", false);
-                        }
-                    },error:function(){}
+                        $($this).attr("checked", false);
+                    }
+                },error:function(){}
                 })
             })
             //上下架
@@ -561,8 +557,8 @@
             })
             //图片删除
             $(document).on("click", ".delImg", function () {
-              //  $(this).prev().remove();
-              // $(this).next().remove();
+                //  $(this).prev().remove();
+                // $(this).next().remove();
                 $(this).parent().remove();
                 var url = $(this).attr("tip"); //图片名称
                 var type=$(this).attr("newPic")=="1"?"0":"1";
@@ -597,7 +593,7 @@
             $(document).on("click", ".delete", function () {
                 var count = $(".productListBox tbody tr:not('.disabled')").length;
                 if (count == 1) {
-                      layerCommon.msg("最少保留一条商品数据", IconOption.错误);
+                    layerCommon.msg("最少保留一条商品数据", IconOption.错误);
                     return false;
                 }
                 $(this).parent().parent().addClass("disabled")//禁用
@@ -618,23 +614,23 @@
                 $(this).prev(".delete").removeClass("none");
             })
             //维护分类
-              $(document).on("click", ".showCate", function () {
+            $(document).on("click", ".showCate", function () {
                 var height = document.documentElement.clientHeight; //计算高度
                 var layerOffsetY = (height - 340) / 2; //计算宽度
                 //var index = showDialog('商品分类维护', 'GoodsCategory.aspx?type=1', '818px', '433px', layerOffsetY); //记录弹出对象
-                 var index = layerCommon.openWindow('商品分类维护', 'GoodsCategory.aspx?type=1', '828px', '433px'); 
+                var index = layerCommon.openWindow('商品分类维护', 'GoodsCategory.aspx?type=1', '828px', '433px'); 
            
                 $("#hid_Alert").val(index); //记录弹出对象
             })
             //是否我的桌面 显示
             $("#chkshow").click(function(){
-            if ($(this).attr("checked") == undefined) {
-                $(this).attr("checked", true);
-                $("#isrecommend").removeClass("none");
-                $("#isrecommend").removeAttr("style")
+                if ($(this).attr("checked") == undefined) {
+                    $(this).attr("checked", true);
+                    $("#isrecommend").removeClass("none");
+                    $("#isrecommend").removeAttr("style")
                 } else {
-                $(this).attr("checked", false);
-                $("#isrecommend").addClass("none");
+                    $(this).attr("checked", false);
+                    $("#isrecommend").addClass("none");
                 
                 }
             })
@@ -647,35 +643,35 @@
             }
             //是否显示零售价
             $("#chkisprice").click(function(){
-            if ($(this).attr("checked") == undefined) {
-                $(this).attr("checked", true);
-                $("#txtlsprice").removeClass("none")
+                if ($(this).attr("checked") == undefined) {
+                    $(this).attr("checked", true);
+                    $("#txtlsprice").removeClass("none")
                 
                 } else {
-                $(this).attr("checked", false);
-                $("#txtlsprice").addClass("none")
+                    $(this).attr("checked", false);
+                    $("#txtlsprice").addClass("none")
                 
                 }
             })
       
         });
-        //图片上传uploadAvatar
-        function uploadAvatar(ele) {
-           var ua = navigator.userAgent.toLowerCase(); //浏览器信息
-    var info = {
-        ie: /msie/.test(ua) && !/opera/.test(ua),        //匹配IE浏览器    
-        op: /opera/.test(ua),     //匹配Opera浏览器    
-        sa: /version.*safari/.test(ua),     //匹配Safari浏览器    
-        ch: /chrome/.test(ua),     //匹配Chrome浏览器    
-        ff: /gecko/.test(ua) && !/webkit/.test(ua)     //匹配Firefox浏览器
-    };
-    if (!info.ie) {
-      if (ele.files[0].size > 2 * 1024 * 1024) {
+    //图片上传uploadAvatar
+    function uploadAvatar(ele) {
+        var ua = navigator.userAgent.toLowerCase(); //浏览器信息
+        var info = {
+            ie: /msie/.test(ua) && !/opera/.test(ua),        //匹配IE浏览器    
+            op: /opera/.test(ua),     //匹配Opera浏览器    
+            sa: /version.*safari/.test(ua),     //匹配Safari浏览器    
+            ch: /chrome/.test(ua),     //匹配Chrome浏览器    
+            ff: /gecko/.test(ua) && !/webkit/.test(ua)     //匹配Firefox浏览器
+        };
+        if (!info.ie) {
+            if (ele.files[0].size > 2 * 1024 * 1024) {
                 layerCommon.msg("只能上传2M以下的图片", IconOption.错误);
                 return false;
             }
-    }
-            $.ajaxFileUpload(
+        }
+        $.ajaxFileUpload(
         {
             type: "post",
             url: "../../Handler/HandleImg2.ashx",            //需要链接到服务器地址
@@ -686,10 +682,10 @@
             success: function (msg, status)            //相当于java中try语句块的用法
             {
                 if (msg == "0") {
-                         layerCommon.msg("图片上传失败", IconOption.错误);
+                    layerCommon.msg("图片上传失败", IconOption.错误);
                     return false;
                 } else if (msg == "1") {
-                         layerCommon.msg("只能上传2M以下的图片", IconOption.错误);
+                    layerCommon.msg("只能上传2M以下的图片", IconOption.错误);
                     return false;
                 } else {
                     var temp = '';
@@ -699,109 +695,109 @@
                     var src = msg + "?temp=" + temp;
                     var count = $(".ImgList p").length;
                     count++;
-                    // $("#imgAvatar").attr("src", '<%= Common.GetWebConfigKey("ImgViewPath") %>' + "GoodsImg/" + src);
-                    $(".ImgList").append("<div><p  draggable=\"true\" style=\"margin:0 5px 5px 0; float: left; cursor: move;\" class=\"p" + count + "\"><img  src=\"" + '<%= Common.GetWebConfigKey("ImgViewPath") %>' + "GoodsImg/" + src + "\"  id=\"img" + count + "\" width=\"100\" height=\"100\" class=\"imgWrap\"  alt=\"图片\" /></p><a href=\"JavaScript:;\" class=\"delImg\" newPic='1' tip=\"" + msg + "\" style=\"color:red; cursor: pointer; float: left; margin: 105px 0 0 -70px;display:none;\">删除</a><input type=\"hidden\" name=\"hidImg\" value=\"" + msg + "\" id=\"hidImg" + count + "\" /></div>");
-                    if (count == 1) {
-                        $("#hrImgPath").val(msg);
-                    } else if (count >= 10) {
-                        $(".AddImg").hide();
-                    } else {
-                        $(".AddImg").show();
-                    }
-                 
-                    return true;
+
+                    $(".ImgList").append("<div><p draggable=\"true\" style=\"margin:0 5px 5px 0; float: left; cursor: move;\" class=\"p" + count + "\"><img  src=\"" + '<%= Common.GetWebConfigKey("OssImgPath") %>' + "company/" + <%= (Session["UserModel"] as LoginModel).CompID %> + "/" + src + "\"  id=\"img" + count + "\" width=\"120\" height=\"120\" class=\"imgWrap\"  alt=\"图片\" /></p><a href=\"JavaScript:;\" class=\"delImg\" newPic='1' tip=\"" + msg + "\" style=\"color:#D53F40; cursor: pointer; float: left; margin: 100px 0 0 -75px;display:none;\">删除</a><input type=\"hidden\" name=\"hidImg\" value=\"" + msg + "\" id=\"hidImg" + count + "\" /></div>");
+                if (count == 1) {
+                    $("#hrImgPath").val(msg);
+                } else if (count >= 10) {
+                    $(".AddImg").hide();
+                } else {
+                    $(".AddImg").show();
                 }
-            },
+                 
+                return true;
+            }
+        },
           
-            error: function (msg, status, e)            //相当于java中catch语句块的用法
-            {
-                 layerCommon.msg(msg + "," + status, IconOption.错误);
-                return false;
+        error: function (msg, status, e)            //相当于java中catch语句块的用法
+        {
+            layerCommon.msg(msg + "," + status, IconOption.错误);
+            return false;
+        }
+    })
+}
+//去掉odd样式
+function removeClass() {
+    $(".productListBox tr").each(function (index, obj) {
+        $(this).find("td:gt(0)").removeClass("odd");
+    })
+}
+//禁用Enter键表单自动提交  
+document.onkeydown = function (event) {
+    var target, code, tag;
+    if (!event) {
+        event = window.event; //针对ie浏览器  
+        target = event.srcElement;
+        code = event.keyCode;
+        if (code == 13) {
+            tag = target.tagName;
+            if (tag == "TEXTAREA") { return true; }
+            else { return false; }
+        }
+    }
+    else {
+        target = event.target; //针对遵循w3c标准的浏览器，如Firefox  
+        code = event.keyCode;
+        if (code == 13) {
+            tag = target.tagName;
+            if (tag == "INPUT") { return false; }
+            else { return true; }
+        }
+    }
+}
+
+//根据规格值生成sku信息
+function TableSku() {
+    var count = $(".mulSpecList .mulSpecItem").length; //规格的个数
+    var attr = new Array();
+    var attr1 = new Array();
+    var attr2 = new Array();
+    var guigeName = "";
+    for (var i = 0; i < count; i++) {
+        $(".mulSpecList .mulSpecItem:eq(" + i + ")").find(".selectize-input .item").each(function (index, obj) {
+            if (i == 2) {
+                attr2[index] = $(this).attr("data-value");
+            }
+            if (i == 1) {
+                attr1[index] = $(this).attr("data-value");
+            }
+            if (i == 0) {
+                attr[index] = $(this).attr("data-value");
             }
         })
+        if($(".mulSpecList .mulSpecItem:eq(" + i + ")").find(".selectize-input .item").length!=0){
+            guigeName += $(".mulSpecList .mulSpecItem:eq(" + i + ")").find(".mulSpecName").val() + ",";
         }
-        //去掉odd样式
-        function removeClass() {
-            $(".productListBox tr").each(function (index, obj) {
-                $(this).find("td:gt(0)").removeClass("odd");
-            })
-        }
-         //禁用Enter键表单自动提交  
-        document.onkeydown = function (event) {
-            var target, code, tag;
-            if (!event) {
-                event = window.event; //针对ie浏览器  
-                target = event.srcElement;
-                code = event.keyCode;
-                if (code == 13) {
-                    tag = target.tagName;
-                    if (tag == "TEXTAREA") { return true; }
-                    else { return false; }
-                }
-            }
-            else {
-                target = event.target; //针对遵循w3c标准的浏览器，如Firefox  
-                code = event.keyCode;
-                if (code == 13) {
-                    tag = target.tagName;
-                    if (tag == "INPUT") { return false; }
-                    else { return true; }
-                }
-            }
-        }
-
-        //根据规格值生成sku信息
-        function TableSku() {
-            var count = $(".mulSpecList .mulSpecItem").length; //规格的个数
-            var attr = new Array();
-            var attr1 = new Array();
-            var attr2 = new Array();
-            var guigeName = "";
-            for (var i = 0; i < count; i++) {
-                $(".mulSpecList .mulSpecItem:eq(" + i + ")").find(".selectize-input .item").each(function (index, obj) {
-                    if (i == 2) {
-                        attr2[index] = $(this).attr("data-value");
+    }
+    if (guigeName != "") {
+        guigeName = guigeName.substring(0, guigeName.length - 1);
+    }
+    $.ajax({
+        type: "post",
+        url: "GoodsEdit.aspx",
+        data: { ck: Math.random(), action: "Sku", list: attr, list1: attr1, list2: attr2, guigeName: guigeName ,goodsid:<%=KeyID %>},
+        dataType: "text",
+        success: function (data) {
+            if (data != "") {
+                $(".productListBox").html(data);
+                for (var i = 0; i < $(".txtPrices").length; i++) {
+                    if ($.trim($(".txtPrices").eq(i).val()) == "") {
+                        // layerCommon.msg("销售价格不能为空", IconOption.错误);
+                        $(".txtPrices").eq(i).val($.trim($(".txtPrice").val()));//销售价格
                     }
-                    if (i == 1) {
-                        attr1[index] = $(this).attr("data-value");
-                    }
-                    if (i == 0) {
-                        attr[index] = $(this).attr("data-value");
-                    }
-                })
-               if($(".mulSpecList .mulSpecItem:eq(" + i + ")").find(".selectize-input .item").length!=0){
-                guigeName += $(".mulSpecList .mulSpecItem:eq(" + i + ")").find(".mulSpecName").val() + ",";
                 }
-            }
-            if (guigeName != "") {
-                guigeName = guigeName.substring(0, guigeName.length - 1);
-            }
-            $.ajax({
-                type: "post",
-                url: "GoodsEdit.aspx",
-                data: { ck: Math.random(), action: "Sku", list: attr, list1: attr1, list2: attr2, guigeName: guigeName ,goodsid:<%=KeyID %>},
-                dataType: "text",
-                success: function (data) {
-                    if (data != "") {
-                        $(".productListBox").html(data);
-                           for (var i = 0; i < $(".txtPrices").length; i++) {
-                            if ($.trim($(".txtPrices").eq(i).val()) == "") {
-                                 // layerCommon.msg("销售价格不能为空", IconOption.错误);
-                               $(".txtPrices").eq(i).val($.trim($(".txtPrice").val()));//销售价格
-                            }
-                          }
-                    }else
-                    {
-                        var style="";
-                        if('1'=='1'){
-                            style="style='display:none'";
-                        }
-                        $('.productListBox').html("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:1050px;margin:0 auto;\"><thead><tr><th class=\"key\"></th><th>商品编码</th><th>销售价格(元)</th><th "+style+" class=\"kc\"><i class=\"red\">*</i>库存</th><th "+style+" class=\"t5\">批次号</th><th "+style+" class=\"t5\">有效期</th><th>是否上架</th><th>操作</th></tr></thead><tbody><tr><td class=\"key\">1</td><td class=\"trOp\"><input name=\"txtCode\" style=\"width:120px;\" type=\"text\" id=\"Text2\" class=\"dataBox txtCode\" value='<%=GoodsCode() %>' maxlength=\"15\"/></td><td class=\"trOp\"><input name=\"txtPrices\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"dataBox txtPrices\" onkeyup=\"KeyInt2(this);\" maxlength=\"10\"/></td><td class=\"trOp\" "+style+"><input name=\"txtInventory\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"dataBox txtInventory\" onkeyup=\"KeyInt2(this);\" maxlength=\"11\"/></td><td class=\"trOp\" "+style+"><input name=\"txtBatchNO\" type=\"text\"  style=\"width: 100px;\" class=\"dataBox txtBatchNO\" maxlength=\"11\" /></td><td class=\"trOp\" "+style+"><input name=\"txtvalidDate\" onclick=\"WdatePicker()\" readonly=\"readonly\" type=\"text\" style=\"width: 100px;\" class=\"dataBox txtvalidDate\" maxlength=\"11\" /></td><td class=\"trOp\"><div class=\"tc\"><input type=\"checkbox\"  name=\"isOffline\" value=\"1\" checked=\"checked\" id=\"check-2-1\" class=\"r-check\" /><label for=\"check-2-1\"></label></div> <input type=\"hidden\" value=\"1\" name=\"hidIsOffline\" /> <input value=\"0\" name=\"hidId\" class=\"deleteIDlist\" type=\"hidden\"/></td><td class=\"trOp\"><a class=\"theme-color delete\" href=\"javascript:;\"><i class=\"del-i\"></i></a><a href=\"javascript:;\" class=\"theme-color restore none\"><i class=\"pre-i\"></i></a></td></tr></tbody></table>");
+            }else
+            {
+                var style="";
+                if('1'=='1'){
+                    style="style='display:none'";
+                }
+                $('.productListBox').html("<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:1050px;margin:0 auto;\"><thead><tr><th class=\"key\"></th><th>商品编码</th><th>销售价格(元)</th><th "+style+" class=\"kc\"><i class=\"red\">*</i>库存</th><th "+style+" class=\"t5\">批次号</th><th "+style+" class=\"t5\">有效期</th><th>是否上架</th><th>操作</th></tr></thead><tbody><tr><td class=\"key\">1</td><td class=\"trOp\"><input name=\"txtCode\" style=\"width:120px;\" type=\"text\" id=\"Text2\" class=\"dataBox txtCode\" value='<%=GoodsCode() %>' maxlength=\"15\"/></td><td class=\"trOp\"><input name=\"txtPrices\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"dataBox txtPrices\" onkeyup=\"KeyInt2(this);\" maxlength=\"10\"/></td><td class=\"trOp\" "+style+"><input name=\"txtInventory\" style=\"width:100px;\" type=\"text\" id=\"Text1\" class=\"dataBox txtInventory\" onkeyup=\"KeyInt2(this);\" maxlength=\"11\"/></td><td class=\"trOp\" "+style+"><input name=\"txtBatchNO\" type=\"text\"  style=\"width: 100px;\" class=\"dataBox txtBatchNO\" maxlength=\"11\" /></td><td class=\"trOp\" "+style+"><input name=\"txtvalidDate\" onclick=\"WdatePicker()\" readonly=\"readonly\" type=\"text\" style=\"width: 100px;\" class=\"dataBox txtvalidDate\" maxlength=\"11\" /></td><td class=\"trOp\"><div class=\"tc\"><input type=\"checkbox\"  name=\"isOffline\" value=\"1\" checked=\"checked\" id=\"check-2-1\" class=\"r-check\" /><label for=\"check-2-1\"></label></div> <input type=\"hidden\" value=\"1\" name=\"hidIsOffline\" /> <input value=\"0\" name=\"hidId\" class=\"deleteIDlist\" type=\"hidden\"/></td><td class=\"trOp\"><a class=\"theme-color delete\" href=\"javascript:;\"><i class=\"del-i\"></i></a><a href=\"javascript:;\" class=\"theme-color restore none\"><i class=\"pre-i\"></i></a></td></tr></tbody></table>");
                        
                            
                     }
                 }
-            })
+    })
         }
         //验证
         function formCheck() {
@@ -812,7 +808,7 @@
             var inventory=$.trim($(".txtInventory").val());//库存
             var yanstr = "";
             if (goodsName == "") {
-                  layerCommon.msg("请填写商品名称", IconOption.错误);
+                layerCommon.msg("请填写商品名称", IconOption.错误);
                 return false;
             }
             if ($.trim($("#editor1").val()) != "") {
@@ -820,71 +816,71 @@
                 $("#editor1").val(html);
             }
 
-//            if ($("#HidFfileName2").val() == "" && $("#HidFfileName2").val() == undefined) {
-//                layerCommon.msg("请上传商品注册证！", IconOption.哭脸);
-//                return false;
-//            }
-//            if ($("#validDate2").val() == "" || $("#validDate2").val() == undefined) {
-//                layerCommon.msg("请选择商品注册证有效期！", IconOption.哭脸);
-//                return false;
-//            }
+            //            if ($("#HidFfileName2").val() == "" && $("#HidFfileName2").val() == undefined) {
+            //                layerCommon.msg("请上传商品注册证！", IconOption.哭脸);
+            //                return false;
+            //            }
+            //            if ($("#validDate2").val() == "" || $("#validDate2").val() == undefined) {
+            //                layerCommon.msg("请选择商品注册证有效期！", IconOption.哭脸);
+            //                return false;
+            //            }
 
-//            } else {
-//                $.ajax({
-//                    type: "post",
-//                    url: "/Handler/GoodsEdit.ashx",
-//                    data: { ck: Math.random(), action: "yanz", goodsname: goodsName,goodsId:<%=KeyID %> },
-//                    dataType: "text",
-//                    async: false,
-//                    success: function (data) {
-//                        if (data == "1") {
-//                            yanstr = "ycz";
-//                            return false;
-//                        }else if(data=="2"){
-//                          yanstr = "wdl";
-//                            return false;
-//                        }
-//                    }
-//                })
-//            }
-//            if (yanstr == "ycz") {
-//                         layerCommon.msg("商品名称已存在", IconOption.错误);
-//                return false;
-//            }
-//             if (yanstr == "wdl") {
-//                         layerCommon.msg("请先登录", IconOption.错误);
-//                return false;
-//            }
+            //            } else {
+            //                $.ajax({
+            //                    type: "post",
+            //                    url: "/Handler/GoodsEdit.ashx",
+            //                    data: { ck: Math.random(), action: "yanz", goodsname: goodsName,goodsId:<%=KeyID %> },
+            //                    dataType: "text",
+            //                    async: false,
+            //                    success: function (data) {
+            //                        if (data == "1") {
+            //                            yanstr = "ycz";
+            //                            return false;
+            //                        }else if(data=="2"){
+            //                          yanstr = "wdl";
+            //                            return false;
+            //                        }
+            //                    }
+            //                })
+            //            }
+            //            if (yanstr == "ycz") {
+            //                         layerCommon.msg("商品名称已存在", IconOption.错误);
+            //                return false;
+            //            }
+            //             if (yanstr == "wdl") {
+            //                         layerCommon.msg("请先登录", IconOption.错误);
+            //                return false;
+            //            }
             if (goodsCate == "") {
-                         layerCommon.msg("请选择商品分类", IconOption.错误);
+                layerCommon.msg("请选择商品分类", IconOption.错误);
                 return false;
             }
             if (unit == "") {
-                         layerCommon.msg("请选择计量单位", IconOption.错误);
+                layerCommon.msg("请选择计量单位", IconOption.错误);
                 return false;
             }
-//            if (price == "") {
-//                         layerCommon.msg("请填写商品价格", IconOption.错误);
-//                return false;
-//            }else
-//            {
+            //            if (price == "") {
+            //                         layerCommon.msg("请填写商品价格", IconOption.错误);
+            //                return false;
+            //            }else
+            //            {
             if (isNaN(price)) {
-                         layerCommon.msg("请填写正确的商品价格", IconOption.错误);
+                layerCommon.msg("请填写正确的商品价格", IconOption.错误);
                 return false;
             }
-//            }
-//            if($("#chkisprice").attr("checked")=="checked"){
-//                if($.trim($(".txtisPrice").val())==""){
-//                   layerCommon.msg("请填写零售价格", IconOption.错误);
-//                    return false;
-//                }else
-//                {
-//                 if (isNaN($.trim($(".txtisPrice").val()))) {
-//                         layerCommon.msg("请填写正确的零售价格", IconOption.错误);
-//                return false;
-//            }
-//                }
-//            }
+            //            }
+            //            if($("#chkisprice").attr("checked")=="checked"){
+            //                if($.trim($(".txtisPrice").val())==""){
+            //                   layerCommon.msg("请填写零售价格", IconOption.错误);
+            //                    return false;
+            //                }else
+            //                {
+            //                 if (isNaN($.trim($(".txtisPrice").val()))) {
+            //                         layerCommon.msg("请填写正确的零售价格", IconOption.错误);
+            //                return false;
+            //            }
+            //                }
+            //            }
 
             //验证规格名称是否重复
             var chkProduct = $("#chkProduct").attr("checked");
@@ -897,32 +893,32 @@
                 var str = false;
                 for (var i = 0; i < ary.length; i++) {
                     if ($.trim(ary[i]) == "") {
-                            layerCommon.msg("规格名称不能为空", IconOption.错误);
+                        layerCommon.msg("规格名称不能为空", IconOption.错误);
                         str = true;
                         break;
                     }
-//                    if (s.replace(ary[i] + ",", "").indexOf(ary[i] + ",") > -1) {
-//                            layerCommon.msg("规格名称不能重复", IconOption.错误);
-//                        str = true;
-//                        break;
-//                    }
+                    //                    if (s.replace(ary[i] + ",", "").indexOf(ary[i] + ",") > -1) {
+                    //                            layerCommon.msg("规格名称不能重复", IconOption.错误);
+                    //                        str = true;
+                    //                        break;
+                    //                    }
                 }
               
                 if (str) {
                     return false;
                 }else
                 {
-                  if(ary.length==2){
-                if($.trim(ary[0])==$.trim(ary[1])){
-                 layerCommon.msg("规格名称不能重复", IconOption.错误);
-                      return false;
-                }
-                }else if(ary.length==3){
-                 if($.trim(ary[0])==$.trim(ary[1]) || $.trim(ary[0])==$.trim(ary[2]) || $.trim(ary[2])==$.trim(ary[1])){
-                 layerCommon.msg("规格名称不能重复", IconOption.错误);
-                     return false;
-                }
-                }
+                    if(ary.length==2){
+                        if($.trim(ary[0])==$.trim(ary[1])){
+                            layerCommon.msg("规格名称不能重复", IconOption.错误);
+                            return false;
+                        }
+                    }else if(ary.length==3){
+                        if($.trim(ary[0])==$.trim(ary[1]) || $.trim(ary[0])==$.trim(ary[2]) || $.trim(ary[2])==$.trim(ary[1])){
+                            layerCommon.msg("规格名称不能重复", IconOption.错误);
+                            return false;
+                        }
+                    }
                 }
             }
             var speccount = $(".mulSpecList .mulSpecItem").length; //规格个数
@@ -932,7 +928,7 @@
                 if (itemcount != 0) {
                     var specname = $(".mulSpecList .mulSpecItem:eq(" + i + ")").find(".mulSpecProperty>.mulSpecName").val();
                     if ($.trim(specname) == "") {
-                           layerCommon.msg("已输入规格值的,规格名称不能为空", IconOption.错误);
+                        layerCommon.msg("已输入规格值的,规格名称不能为空", IconOption.错误);
                         specbool = true;
                         break;
                     }
@@ -941,92 +937,91 @@
             if (specbool) {
                 return false;
             }
-             //商品编码
-//        var str="";
-//        var strcode="";
-//        var codelength=$(".txtCode").length;
-//        for (var i = 0; i < codelength; i++) {
-//            strcode=$(".txtCode").eq(i).val()+",";
-//            for (var z = 0; z < codelength; z++) {
-//             if(i!=z){
-//                 if($(".txtCode").eq(i).val()==$(".txtCode").eq(z).val()){
-//                            str=$(".txtCode").eq(i).val();
-//                         break;
-//                    }
-//               }
-//            }
-//        }
-//        if(str!=""){
-//         layerCommon.msg("商品编号"+str+"重复", IconOption.错误);
-//          return false;
-//        }else
-//        {
-//            $.ajax({
-//            type:"post",
-//            url:"/Handler/GoodsEdit.ashx",
-//            data:{ck:Math.random(),action:"isChkCode",strcode:strcode,keyId:<%=KeyID %>},
-//            dataType:"text",
-//            async: false,
-//            success:function(data){
-//                if(data!=""){
-//                    str=data;
-//                       return false;
-//                }
-//            }
-//            })
-//        }
-//        if(str!=""){
-//          layerCommon.msg("商品编号"+str+"已存在", IconOption.错误);
-//          return false;
-//        }
+            //商品编码
+            //        var str="";
+            //        var strcode="";
+            //        var codelength=$(".txtCode").length;
+            //        for (var i = 0; i < codelength; i++) {
+            //            strcode=$(".txtCode").eq(i).val()+",";
+            //            for (var z = 0; z < codelength; z++) {
+            //             if(i!=z){
+            //                 if($(".txtCode").eq(i).val()==$(".txtCode").eq(z).val()){
+            //                            str=$(".txtCode").eq(i).val();
+            //                         break;
+            //                    }
+            //               }
+            //            }
+            //        }
+            //        if(str!=""){
+            //         layerCommon.msg("商品编号"+str+"重复", IconOption.错误);
+            //          return false;
+            //        }else
+            //        {
+            //            $.ajax({
+            //            type:"post",
+            //            url:"/Handler/GoodsEdit.ashx",
+            //            data:{ck:Math.random(),action:"isChkCode",strcode:strcode,keyId:<%=KeyID %>},
+            //            dataType:"text",
+            //            async: false,
+            //            success:function(data){
+            //                if(data!=""){
+            //                    str=data;
+            //                       return false;
+            //                }
+            //            }
+            //            })
+            //        }
+            //        if(str!=""){
+            //          layerCommon.msg("商品编号"+str+"已存在", IconOption.错误);
+            //          return false;
+            //        }
 
-           // var prices = $.trim($(".txtPrices").val()); //销售价格
-//           for (var i = 0; i < $(".txtPrices").length; i++) {
-//            if ($.trim($(".txtPrices").eq(i).val()) == ""  && $(".txtPrices").eq(i).attr("disabled")!="disabled") {
-//                  layerCommon.msg("销售价格不能为空", IconOption.错误);
-//                return false;
-//            }
-//            else
-//            {
-//                if(isNaN($.trim($(".txtPrices").eq(i).val()))){
-//                      layerCommon.msg("请填写正确的销售价格", IconOption.错误);
-//                    return false;
-//                }
-//            }
-//          }
-           if($(".kc").attr("style")!="display:none"){
-               
+            // var prices = $.trim($(".txtPrices").val()); //销售价格
+            //           for (var i = 0; i < $(".txtPrices").length; i++) {
+            //            if ($.trim($(".txtPrices").eq(i).val()) == ""  && $(".txtPrices").eq(i).attr("disabled")!="disabled") {
+            //                  layerCommon.msg("销售价格不能为空", IconOption.错误);
+            //                return false;
+            //            }
+            //            else
+            //            {
+            //                if(isNaN($.trim($(".txtPrices").eq(i).val()))){
+            //                      layerCommon.msg("请填写正确的销售价格", IconOption.错误);
+            //                    return false;
+            //                }
+            //            }
+            //          }
+            if($(".kc").css("display") != 'none'){
                 for (var i = 0; i < $(".txtInventory").length; i++) {
-                     if ($.trim($(".txtInventory").eq(i).val()) == ""  && $(".txtInventory").eq(i).attr("disabled")!="disabled") {
-                       layerCommon.msg("商品库存不能为空", IconOption.错误);
+                    if ($.trim($(".txtInventory").eq(i).val()) == ""  && $(".txtInventory").eq(i).attr("disabled")!="disabled") {
+                        layerCommon.msg("商品库存不能为空", IconOption.错误);
                         return false;
                     }
                 }
-           }
+            }
 
 
-           var des = [];
-           $("#deleteIDlist").val("");
-           $(".disabled").each(function (i, obj) {
+            var des = [];
+            $("#deleteIDlist").val("");
+            $(".disabled").each(function (i, obj) {
    
-               var id = $(obj).find(".deleteIDlist").val();
-               des.push(id);
-           });
-           var checkid = des.join(",");
-           $("#deleteIDlist").val(checkid)
+                var id = $(obj).find(".deleteIDlist").val();
+                des.push(id);
+            });
+            var checkid = des.join(",");
+            $("#deleteIDlist").val(checkid)
 
-           var des2=[];
-           $("#GoodsUL tbody tr[class!='disabled']").each(function (i, obj) {
-               var id = $(obj).find(".deleteIDlist").val();
-               des2.push(id);
-           });
-           var checkid2 = des2.join(",");
-           $("#OdlIDList").val(checkid2)
+            var des2=[];
+            $("#GoodsUL tbody tr[class!='disabled']").each(function (i, obj) {
+                var id = $(obj).find(".deleteIDlist").val();
+                des2.push(id);
+            });
+            var checkid2 = des2.join(",");
+            $("#OdlIDList").val(checkid2)
 
 
             return true;
         }
-              //显示效果图
+        //显示效果图
         function showPic(pic) {
             var height = document.documentElement.clientHeight; //计算高度
             var layerOffsetY = (height - 340) / 2; //计算宽度
@@ -1109,7 +1104,53 @@
 
     </script>
 
-    <style>
+    <style type="text/css">
+        .product_upload {
+            padding: 2px;
+            position: relative;
+            cursor: pointer;
+            color: #888;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            overflow: hidden;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+
+            .product_upload input {
+                position: absolute;
+                right: 2px;
+                top: 2px;
+                opacity: 0;
+                filter: alpha(opacity=0);
+                cursor: pointer;
+            }
+
+            .product_upload:hover {
+                color: #444;
+                background: #eee;
+                border-color: #ccc;
+                text-decoration: none;
+                box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.85);
+            }
+
+        .AddImg {
+            display: inline-block;
+        }
+
+            .AddImg .product_upload {
+                height: 100px;
+                line-height: 100px;
+            }
+
+                .AddImg .product_upload input {
+                    width: 100px;
+                    height: 100px;
+                    font-size: 100px;
+                }
+        input.AddBanner { width: 100%; height: 100%; right: 0;}
         a.theme-color {
             color: #2e70d3;
         }
@@ -1472,10 +1513,6 @@
             cursor: pointer;
         }
 
-
-
-
-
         /*操作计量单位用到的样式*/
         .Layer {
             background-color: #000;
@@ -1620,6 +1657,7 @@
         .fl {
             margin: 0px;
         }
+
         .tabLine td {
             padding: 0 2px;
         }
@@ -1633,11 +1671,7 @@
             <!--当前位置 start-->
             <div class="info">
                 <a href="../jsc.aspx">我的桌面</a>><a href="../GoodsNew/GoodsList.aspx" runat="server" id="atitle">商品列表</a>>
-    <a href="javascript:;" runat="server" id="btitle">
-        <%if (KeyID == 0)
-            { %>商品新增<%}
-                                  else
-                                  {%>商品编辑<%}%></a>
+                <a href="javascript:;" runat="server" id="btitle"><%= KeyID == 0 ? "商品新增" : "商品编辑" %></a>
             </div>
             <!--当前位置 end-->
             <!--商品信息 start-->
@@ -1669,14 +1703,11 @@
                         </ul>
 
                     </div>
+                    
                     <div class="fl" style="width: 24px; height: 30px; line-height: 30px">
                         <%--<a href="javascript:;" class="addBtn" style="color:#2e70d3;"><i class="addIcon"></i>维护</a> --%>
                     </div>
                 </li>
-
-              
-
-
 
                 <li class="lb fl">
                     <i class="name"><i class="red">*</i>商品分类</i>
@@ -1687,7 +1718,6 @@
                     <div class="pop-menu" style="width: 605px; display: none;">
                     </div>
                 </li>
-
 
                 <li class="lb fl">
                     <i class="name">关键词/卖点</i>
@@ -1734,8 +1764,6 @@
                     </div>
                 </li>
 
-
-
                 <li class="lb fl none gd">
                     <i class="name">显示店铺零售价</i>
                     <div class="single">
@@ -1751,21 +1779,16 @@
                     </div>
                 </li>
 
-
-
-
-
-
                 <li class="lb fl"><i class="name"></i><i class="more" id="More">更多功能</i></li>
             </ul>
             <!--商品信息 end-->
 
             <div class=" clear"></div>
-           <div class="c-n-title">商品注册证</div>
+            <div class="c-n-title">商品注册证</div>
             <ul class="coreInfo">
 
-                
-                  <li class="lb fl">
+
+                <li class="lb fl">
                     <i class="name fl"><%--<i class="red">*</i>--%>商品注册证</i>
                     <div class="con upload">
                         <div style="float: left">
@@ -1786,17 +1809,11 @@
 
                 <li class="lb fl">
                     <i class="name"><%--<i class="red">*</i>--%>注册证有效期</i>
-                    <input name="validDate2" runat="server" onclick="WdatePicker()" style="margin-left:5px;"
+                    <input name="validDate2" runat="server" onclick="WdatePicker()" style="margin-left: 5px;"
                         id="validDate2" readonly="readonly" type="text" class="box1" value="" />
 
                 </li>
-
             </ul>
-
-
-
-
-
 
             <div class=" clear"></div>
             <!--商品规格 start-->
@@ -1804,17 +1821,19 @@
                 <span class="fl">商品规格</span>
                 <div class="set fl">
                     <input type="checkbox" class="r-check" name="isProductMultispecOn" value="1" id="chkProduct" runat="server" />
-                    <label for="chkProduct"></label>设置多规格商品
+                    <label for="chkProduct"></label>
+                    设置多规格商品
                 </div>
             </div>
             <div style="margin-top: 5px;" id="divSku" runat="server">
                 <ul class="coreInfo">
                     <li class="lb">
-                        <div style="display: inline; margin-left: 100px;" id="divProduct" runat="server">
+                        <div id="divProduct" runat="server">
                             <i class="name fl">规格模板</i>
                             <div class="pullDown fl w380">
                                 <asp:DropDownList ID="ddlTemplate" runat="server" CssClass="box1 p-box"></asp:DropDownList>
                             </div>
+                            <span class="gclor9" style="padding-left:20px;line-height:35px;"> * 输入规格后按回车添加</span>
                         </div>
                     </li>
                     <li class="lb g-spec">
@@ -1826,10 +1845,10 @@
                                 </div>
                                 <a class="delMulSpec" style="display: none"></a>
                                 <div class="mulSpecValues" style="width: 680px;">
-                                    <input type="text" style="display: none;" class="mulSpecInp selectized" name="selectized" tabindex="-1" value="" maxlength="15" />
+                                    <input type="text" style="display: none;" class="mulSpecInp selectized" name="selectized" tabindex="-1" value="" maxlength="30" />
                                     <div class="selectize-control mulSpecInp multi plugin-remove_button">
                                         <div class="selectize-input items not-full box1 fl" style="width: 720px; height: auto; min-height: 30px">
-                                            <input type="text" autocomplete="off" tabindex="" style="width: 4px;" maxlength="15" /><i class="del-i del-i-a"></i>
+                                            <input type="text" autocomplete="off" tabindex="" style="width: 4px;" maxlength="30" /><i class="del-i del-i-a"></i>
                                         </div>
                                         <div class="selectize-dropdown multi mulSpecInp plugin-remove_button" style="display: none;">
                                             <div class="selectize-dropdown-content">
@@ -1852,19 +1871,20 @@
             </div>
             <div class="blank10"></div>
             <div class="tabLine" id="GoodsUL">
+                <p class="gclor9">
+                    * 该价格是建议零售价，代理商的价格请在<a href="/Company/Contract/ContractList.aspx"><b>合同</b></a>中维护
+                </p>
                 <ul class="coreInfo">
                     <li class="lb fl">
                         <i class="name fl">商品统一价格</i>
                         <input name="txtPrice" type="text" id="txtPrice" runat="server" class="box1  txtPrice" onkeyup="KeyInt2(this);" maxlength="10" />
                     </li>
-                    <li class="lb fl" style="display:none">
+                    <li class="lb fl" style="display: none">
                         <i class="name fl">商品统一库存</i>
                         <input name="txtKC" type="text" id="txtKC" runat="server" class="box1" onkeyup="KeyInt2(this);" maxlength="10" />
                     </li>
                 </ul>
-                <p class="gclor9">
-                    * 该价格是建议零售价，代理商的价格请在<a href="/Company/Contract/ContractList.aspx"><b>合同</b></a>中维护
-                </p>
+               
                 <div class="productListBox table-wrap-lite" style="float: left; margin-bottom: 5px;">
                     <table border="0" cellspacing="0" cellpadding="0" style="width: 1050px; margin: 0 auto;">
                         <thead>
@@ -1874,7 +1894,7 @@
                                 </th>
                                 <th class="t3">销售价格(元)
                                 </th>
-                                <th class="t3 kc" style="display:none">
+                                <th class="t3 kc" style="display: none">
                                     <i class="red">*</i> 库存
                                 </th>
                                 <%--<th class="t5">
@@ -1900,20 +1920,21 @@
                                     <input name="txtPrices" type="text" id="Text1" style="width: 100px;" class="dataBox txtPrices"
                                         onkeyup="KeyInt2(this);" maxlength="10" />
                                 </td>
-                                <td class="trOp" style="display:none">
+                                <td class="trOp" style="display: none">
                                     <input name="txtInventory" type="text" id="Text2" style="width: 100px;" class="dataBox txtInventory"
                                         onkeyup="KeyInt3(this);" maxlength="11" />
                                 </td>
-                                <td class="trOp" style="display:none">
-                                    <input name="txtBatchNO" type="text"  style="width: 100px;" class="dataBox txtBatchNO"
+                                <td class="trOp" style="display: none">
+                                    <input name="txtBatchNO" type="text" style="width: 100px;" class="dataBox txtBatchNO"
                                         maxlength="11" />
                                 </td>
-                                <td class="trOp" style="display:none">
+                                <td class="trOp" style="display: none">
                                     <input name="txtvalidDate" onclick="WdatePicker()" readonly="readonly" type="text" style="width: 100px;" class="dataBox txtvalidDate" maxlength="11" />
                                 </td>
                                 <td class="trOp">
                                     <div class="tc">
-                                        <input type="checkbox" name="isOffline" value="1" checked="checked" id="check-2-1" class="r-check" /><label for="check-2-1"></label></div>
+                                        <input type="checkbox" name="isOffline" value="1" checked="checked" id="check-2-1" class="r-check" /><label for="check-2-1"></label>
+                                    </div>
                                     <input type="hidden" value="1" name="hidIsOffline" />
                                     <input value="0" name="hidId" class="deleteIDlist" type="hidden" />
                                 </td>
@@ -1933,20 +1954,20 @@
 
             <div class="blank10"></div>
             <!--商品图册 start-->
-            <div class="c-n-title"><i class="fl">商品图册</i><div class="set fl gclor9">（尺寸800*800最佳，最多添加10张）</div>
+            <div class="c-n-title">
+                <i class="fl">商品图册</i><div class="set fl gclor9">（尺寸800*800最佳，最多添加10张）</div>
             </div>
 
             <div style="margin: 6px 0px 0px 6px;">
                 <div class="uploadBtnBox" style="cursor: hand;">
                     <div class="ImgList" id="ImgList" runat="server" style="cursor: pointer;">
                     </div>
-                    <div class="AddImg" id="AddImg" runat="server" style="cursor: hand;">
-                        <p style="float: left; cursor: pointer;">
-                            <img src="../images/150x150.gif" id="imgAvatar" width="100" height="100" runat="server"
-                                class="imgWrap" alt="图片" style="cursor: hand;" />
-                        </p>
-                        <input type="file" id="upLoadImg" name="upLoadImg" style="width: 120px; height: 100px; font-size: 100px; cursor: hand; float: left; margin: 0px 5px 0px -150px; opacity: 0; filter: alpha(opacity=0);"
-                            onchange="uploadAvatar(this);" />
+                    <div class="AddImg" id="AddImg" runat="server">
+                        <!-- style="width: 120px; height: 100px; font-size: 100px; float: left; margin: 0px 5px 0px -150px; opacity: 0; filter: alpha(opacity=0);" -->
+                        <a href="javascript:;" class="product_upload">
+                            <input type="file" id="upLoadImg" name="upLoadImg" accept="image/*" onchange="uploadAvatar(this);" />
+                            <img src="../images/150x150.gif" id="imgAvatar" width="100" height="100" class="imgWrap" alt="图片" />
+                        </a>
                     </div>
                 </div>
                 <asp:HiddenField ID="hrImgPath" runat="server" />
@@ -1959,14 +1980,14 @@
             <asp:TextBox ID="editor1" runat="server" TextMode="MultiLine" Height="470px" Width="1050px"
                 class="textBox"></asp:TextBox>
             <script>
-                                KindEditor.ready(function (K) {
-                                    window.editor = K.create('#editor1', {
-                                        uploadJson: '../../Kindeditor/asp.net/upload_json.ashx',
-                                        fileManagerJson: '../../Kindeditor/asp.net/file_manager_json.ashx',
-                                        allowFileManager: true
+                KindEditor.ready(function (K) {
+                    window.editor = K.create('#editor1', {
+                        uploadJson: '../../Kindeditor/asp.net/upload_json.ashx',
+                        fileManagerJson: '../../Kindeditor/asp.net/file_manager_json.ashx',
+                        allowFileManager: true
                                        
-                                    });
-                                });
+                    });
+                });
             </script>
             <!--商品描述 end-->
 
@@ -1978,45 +1999,44 @@
 
         </div>
         <script type="text/javascript">
-function beginSelect(elem){
-	if(elem.className == "btn"){
-		elem.className = "btn btnhover"
-		elem.onmouseup = function(){
-			this.className = "btn"
-		}
-	}
-	var ul = elem.parentNode.parentNode;
-	var li = ul.getElementsByTagName("li");
-	var selectArea = li[li.length-1];
-	if(selectArea.style.display == "block"){
-		selectArea.style.display = "none";
-	}
-	else{
-		selectArea.style.display = "block";
-		mouseoverBg(selectArea);
-	}
-}
-function mouseoverBg(elem1){
-	var input = elem1.parentNode.getElementsByTagName("input")[0];
-	var p = elem1.getElementsByTagName("p");
-	var pLength = p.length;
-	for(var i = 0; i < pLength; i++){
-		p[i].onmouseover = showBg;
-		p[i].onmouseout = showBg;
-		p[i].onclick = postText;
-	}
-	function showBg(){
-		this.className == "hover"?this.className = " ":this.className = "hover";
-	}
-	function postText(){
-		var selected = this.innerHTML;
-		input.setAttribute("value",selected);
-		elem1.style.display = "none";
+            function beginSelect(elem){
+                if(elem.className == "btn"){
+                    elem.className = "btn btnhover"
+                    elem.onmouseup = function(){
+                        this.className = "btn"
+                    }
+                }
+                var ul = elem.parentNode.parentNode;
+                var li = ul.getElementsByTagName("li");
+                var selectArea = li[li.length-1];
+                if(selectArea.style.display == "block"){
+                    selectArea.style.display = "none";
+                }
+                else{
+                    selectArea.style.display = "block";
+                    mouseoverBg(selectArea);
+                }
+            }
+            function mouseoverBg(elem1){
+                var input = elem1.parentNode.getElementsByTagName("input")[0];
+                var p = elem1.getElementsByTagName("p");
+                var pLength = p.length;
+                for(var i = 0; i < pLength; i++){
+                    p[i].onmouseover = showBg;
+                    p[i].onmouseout = showBg;
+                    p[i].onclick = postText;
+                }
+                function showBg(){
+                    this.className == "hover"?this.className = " ":this.className = "hover";
+                }
+                function postText(){
+                    var selected = this.innerHTML;
+                    input.setAttribute("value",selected);
+                    elem1.style.display = "none";
 
-	}
-}</script>
-
-
+                }
+            }
+        </script>
 
         <div class='Layer'>
         </div>

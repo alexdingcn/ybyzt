@@ -250,7 +250,7 @@
                                             <div class="sPic" style="width:270px;">
                                                 <a class="opt-i2"></a>
                                                 <span><a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" onclick="return false;">
-                                                    <img src="<%#Eval("pic").ToString()!= "" ?Common.GetWebConfigKey("ImgViewPath")+"GoodsImg/" +Eval("pic").ToString():"../../images/havenopicsmallest.gif"%>" width="60" height="60"></a>
+                                                    <img src="<%# Common.GetPicURL(Convert.ToString(Eval("pic")), "resize200") %>" width="60" height="60"></a>
                                                 </span><a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" onclick="return false;" class="code">商品编码：<%#Eval("GoodsCode") %> </a>
                                                 <a target="_blank" style="width: 200px" href="../../e<%# Eval("GoodsInfoID") %>_<%=this.CompID %>_.html" onclick="return false;" class="name"><%#Eval("GoodsName")%>  <i><%#Eval("GoodsName")%></i></a>
                                             </div>

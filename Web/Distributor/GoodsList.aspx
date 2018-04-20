@@ -11,7 +11,7 @@
     <link href="../eshop/css/goods.css" rel="stylesheet" type="text/css" />
     <link href="../Company/css/orderGoods.css" rel="stylesheet" type="text/css" />
     <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
-                    <script>
+    <script type="text/javascript">
         $(function(){
          var type='<%=cxtype%>';
             if(type=="cx"){

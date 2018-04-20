@@ -18,7 +18,7 @@ public partial class Distributor_GoodsList : DisPageBase
             this.hidCompId.Value = this.ddrComp.Value;//厂商id
             this.hidDisId.Value = this.DisID.ToString();//代理商id
             this.hidsDigits.Value = OrderInfoType.rdoOrderAudit("订单下单数量是否取整", this.DisID); //是否取整
-            this.hidFlie.Value = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/";//图片路径
+            this.hidFlie.Value = Common.GetPicBaseUrl(this.ddrComp.Value);//图片路径
             this.hidIsInve.Value = OrderInfoType.rdoOrderAudit("商品是否启用库存", this.CompID);//是否启用库存
             object sc = Request["sc"];//收藏商品
             if (sc != null)

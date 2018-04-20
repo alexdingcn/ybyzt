@@ -29,9 +29,7 @@
                         $(obj).width("100%");
                     }
                 }
-
             })
-
         })
     </script>
     <style>
@@ -218,13 +216,13 @@
                                 <asp:Repeater ID="rptImg" runat="server">
                                     <ItemTemplate>
                                         <li>
-                                            <img bimg="<%# Eval("pic3").ToString()=="D" || Eval("pic3").ToString()==""?"../images/havenopicmax.gif": Common.GetWebConfigKey("ImgViewPath") + "/GoodsImg/"+ Eval("pic3") %>"
-                                                src="<%# Eval("pic2").ToString()=="X" || Eval("pic2").ToString()==""?"../images/havenopicmax.gif": Common.GetWebConfigKey("ImgViewPath") + "/GoodsImg/"+ Eval("pic2") %>"
-                                                onmousemove="preview(this);"></li>
+                                            <img bimg="<%# Eval("pic").ToString()=="" ? "../images/havenopicmax.gif" : Common.GetWebConfigKey("OssImgPath") + "company/"+  (Session["UserModel"] as LoginModel).CompID + "/" + Eval("pic") %>"
+                                                src="<%# Eval("pic").ToString()=="" ? "../images/havenopicmax.gif" : Common.GetWebConfigKey("OssImgPath") + "company/"+  (Session["UserModel"] as LoginModel).CompID + "/" + Eval("pic") + "?x-oss-process=style/resize400" %>"
+                                                onmousemove="preview(this);">
+                                        </li>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                <li id="ImgShow" runat="server">
-                                    <img bimg="" src="../../images/havenopicmax.gif" id="imgPic2" runat="server" onmousemove="preview(this);"></li>
+                                <li id="ImgShow" runat="server"><img bimg="" src="../../images/havenopicmax.gif" id="imgPic2" runat="server" onmousemove="preview(this);"></li>
                             </ul>
                         </div>
                     </div>
@@ -282,9 +280,9 @@
                 <div class="blank10">
                 </div>
                 <div class="btns">
-                    <a href="javascript:;" class="red aprice" style="text-decoration: none; display: none;">代理商价目</a> <a href="javascript:;" class="red aedit" style="text-decoration: none;">编
-                        辑</a><a href="javascript:;" id="bule" class="bule fanh" style="text-decoration: none;">返
-                            回</a>
+                    <a href="javascript:;" class="red aprice" style="text-decoration: none; display: none;">代理商价目</a> 
+                    <a href="javascript:;" class="red aedit" style="text-decoration: none;">编辑</a>
+                    <a href="javascript:;" id="bule" class="bule fanh" style="text-decoration: none;">返回</a>
                 </div>
             </div>
             <div class="blank10">

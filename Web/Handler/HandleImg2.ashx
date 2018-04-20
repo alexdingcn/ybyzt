@@ -6,104 +6,113 @@ using System.Linq;
 using System.Web;
 using System.IO;
 using System.Drawing;
+using Aliyun.OSS;
+
 public class HandleImg2 : System.Web.SessionState.IRequiresSessionState, IHttpHandler
 {
-
     public void ProcessRequest(HttpContext context)
     {
         context.Response.Clear();
         context.Response.ContentType = "text/html";
+
+        LoginModel logUser = context.Session["UserModel"] as LoginModel;
+        if (logUser == null)
+        {
+            context.Response.Write("0");
+            return;
+        }
+
         if (context.Request.HttpMethod == "POST")
         {
             if (context.Request.Files.Count > 0)
             {
-                    LoginModel logUser = context.Session["UserModel"] as LoginModel;
-                    if (logUser != null)
+                try
+                {
+                    System.IO.Stream stream = context.Request.Files["upLoadImg"].InputStream;
+                    byte[] b = new byte[context.Request.Files["upLoadImg"].ContentLength];
+                    if (context.Request.Files["upLoadImg"].ContentLength > 3 * 1024 * 1024)
                     {
-                        try
-                        {
-                            System.IO.Stream stream = context.Request.Files["upLoadImg"].InputStream;
-                            byte[] b = new byte[context.Request.Files["upLoadImg"].ContentLength];
-                            if (context.Request.Files["upLoadImg"].ContentLength > 3 * 1024 * 1024)
-                            {
-                                context.Response.Write("1");
-                                return;
-                            }
-                            stream.Read(b, 0, b.Length);
-                            string filename = context.Request.Files["upLoadImg"].FileName;
-                            string ext = filename.Substring(filename.LastIndexOf("."));
-
-
-                            if (!(ext.ToUpper() == ".JPG" || ext.ToUpper() == ".PNG" || ext.ToUpper() == ".JPEG"))
-                            {
-                                context.Response.Write(2);
-                                return;
-                            }
-                            var ImgFolder = "GoodsImg/";
-                            var name = Guid.NewGuid().ToString() + ext;
-                            var path = Common.GetWebConfigKey("ImgPath") + ImgFolder;
-                            var viewPath = Common.GetWebConfigKey("ImgViewPath") + ImgFolder;
-                            // string type = context.Request.QueryString["type"];
-                            // string path = "../UpFiles/" + type + "/";
-                            //if (!System.IO.Directory.Exists(context.Server.MapPath(path)))
-                            //{
-                            //    System.IO.Directory.CreateDirectory(context.Server.MapPath(path));
-                            //}
-                            DirectoryInfo di = new DirectoryInfo(path);
-                            if (!di.Exists)
-                            {
-                                di.Create();
-                            }
-                            DirectoryInfo di2 = new DirectoryInfo(Common.GetWebConfigKey("ImgPath") + "PicSpace/" + logUser.CompID);
-                            if (!di2.Exists)
-                            {
-                                di2.Create();
-                            }
-
-                            var toFileName = name;
-                            string saveFile = path + "D" + toFileName;
-                            var HttpFile = context.Request.Files["upLoadImg"];
-                            HttpFile.SaveAs(saveFile);
-                            ////单独保存图片
-                            string ThumbPath = Common.GetWebConfigKey("ImgPath") + "PicSpace/" + logUser.CompID + "/" + filename;
-                            //HttpFile.SaveAs(ThumbPath);
-                            //大缩略图
-                            string bigThumbPath = path + "X" + toFileName;
-                            MakeThumbnail(saveFile, bigThumbPath, 400, 400, "Cut");
-                            //小缩略图
-                            string smallThumbPath = path + toFileName;
-                            MakeThumbnail(saveFile, smallThumbPath, 200, 200, "Cut");
-
-                            if (!File.Exists(ThumbPath))
-                            {
-                                HttpFile.SaveAs(ThumbPath);
-                                //bu存在
-                                //System.Drawing.Image pic = System.Drawing.Image.FromFile(saveFile);//strFilePath是该图片的绝对路径
-                                //int intWidth = pic.Width;//长度像素值
-                                //int intHeight = pic.Height;//高度像素值 
-                                //pic.Dispose();
-                                //MakeThumbnail(saveFile, ThumbPath, intWidth, intHeight, "Cut");
-                                System.GC.Collect();
-                                // File.Delete(ThumbPath);
-                                // HttpFile.SaveAs(Common.GetWebConfigKey("ImgPath") + "test/1028/" + filename);
-                            }
-                            stream.Dispose();
-                            stream.Close();
-                            context.Response.Write(toFileName);
-
-
-                        }
-                        catch (Exception)
-                        {
-                            context.Response.Write("0");
-                            return;
-                        }
-                    }
-                    else {
-                        context.Response.Write("0");
+                        context.Response.Write("1");
                         return;
                     }
+                    stream.Read(b, 0, b.Length);
+                    string filename = context.Request.Files["upLoadImg"].FileName;
+                    string ext = filename.Substring(filename.LastIndexOf("."));
 
+                    if (!(ext.ToUpper() == ".JPG" || ext.ToUpper() == ".PNG" || ext.ToUpper() == ".JPEG"))
+                    {
+                        context.Response.Write(2);
+                        return;
+                    }
+                    var ImgFolder = "GoodsImg/";
+                    var name = Guid.NewGuid().ToString() + ext;
+                    var path = Common.GetWebConfigKey("ImgPath") + ImgFolder;
+                    var viewPath = Common.GetWebConfigKey("ImgViewPath") + ImgFolder;
+                    // string type = context.Request.QueryString["type"];
+                    // string path = "../UpFiles/" + type + "/";
+                    //if (!System.IO.Directory.Exists(context.Server.MapPath(path)))
+                    //{
+                    //    System.IO.Directory.CreateDirectory(context.Server.MapPath(path));
+                    //}
+                    DirectoryInfo di = new DirectoryInfo(path);
+                    if (!di.Exists)
+                    {
+                        di.Create();
+                    }
+                    DirectoryInfo di2 = new DirectoryInfo(Common.GetWebConfigKey("ImgPath") + "PicSpace/" + logUser.CompID);
+                    if (!di2.Exists)
+                    {
+                        di2.Create();
+                    }
+
+                    var toFileName = name;
+                    string saveFile = path + "D" + toFileName;
+                    var HttpFile = context.Request.Files["upLoadImg"];
+                    HttpFile.SaveAs(saveFile);
+                    ////单独保存图片
+                    string ThumbPath = Common.GetWebConfigKey("ImgPath") + "PicSpace/" + logUser.CompID + "/" + filename;
+                    //HttpFile.SaveAs(ThumbPath);
+                    //大缩略图
+                    string bigThumbPath = path + "X" + toFileName;
+                    MakeThumbnail(saveFile, bigThumbPath, 400, 400, "Cut");
+                    //小缩略图
+                    string smallThumbPath = path + toFileName;
+                    MakeThumbnail(saveFile, smallThumbPath, 200, 200, "Cut");
+
+                    if (!File.Exists(ThumbPath))
+                    {
+                        HttpFile.SaveAs(ThumbPath);
+                        //bu存在
+                        //System.Drawing.Image pic = System.Drawing.Image.FromFile(saveFile);//strFilePath是该图片的绝对路径
+                        //int intWidth = pic.Width;//长度像素值
+                        //int intHeight = pic.Height;//高度像素值 
+                        //pic.Dispose();
+                        //MakeThumbnail(saveFile, ThumbPath, intWidth, intHeight, "Cut");
+                        System.GC.Collect();
+                        // File.Delete(ThumbPath);
+                        // HttpFile.SaveAs(Common.GetWebConfigKey("ImgPath") + "test/1028/" + filename);
+                    }
+                    if (File.Exists(saveFile))
+                    {
+                        string accessKeyId = Common.GetWebConfigKey("OssAccessKeyId");
+                        string accessKeySecret = Common.GetWebConfigKey("OssAccessKeySecret");
+                        string bucketName = Common.GetWebConfigKey("OssBucketName");
+
+                        var client = new OssClient("oss-cn-shanghai.aliyuncs.com", accessKeyId, accessKeySecret);
+                        if (client != null)
+                        {
+                            client.PutObject(bucketName, "company/" + logUser.CompID + "/" + toFileName, saveFile);
+                        }
+                    }
+                    stream.Dispose();
+                    stream.Close();
+                    context.Response.Write(toFileName);
+                }
+                catch (Exception)
+                {
+                    context.Response.Write("0");
+                    return;
+                }
             }
             else
             {

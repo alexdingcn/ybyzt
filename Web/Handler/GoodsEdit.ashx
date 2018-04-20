@@ -1,4 +1,4 @@
-﻿否<%@ WebHandler Language="C#" Class="GoodsEdit" %>
+﻿<%@ WebHandler Language="C#" Class="GoodsEdit" %>
 
 using System;
 using System.Web;

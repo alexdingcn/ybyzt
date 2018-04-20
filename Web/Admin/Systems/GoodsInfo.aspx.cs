@@ -106,20 +106,13 @@ public partial class Admin_Systems_GoodsInfo : AdminPageBase
             {
                 this.DivShow.InnerHtml = model.Details;
             }
-            if (model.Pic2.ToString().Trim() != "X" && model.Pic2.ToString().Trim() != "")//有图片
+            if (!string.IsNullOrEmpty(model.Pic))//有图片
             {
-                this.imgPic.Src = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2;
-                this.imgPic2.Src = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2;
-                if (model.Pic3.ToString().Trim() == "" || model.Pic3.ToString().Trim()== "X")
-                {
-                    this.imgPic.Attributes.Add("jqimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2);
-                    this.imgPic2.Attributes.Add("bimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic2);
-                }
-                else
-                {
-                    this.imgPic.Attributes.Add("jqimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic3);
-                    this.imgPic2.Attributes.Add("bimg", Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + model.Pic3);
-                }
+                this.imgPic.Src = Common.GetPicURL(model.Pic, "resize400");
+                this.imgPic.Attributes.Add("jqimg", Common.GetPicURL(model.Pic));
+
+                this.imgPic2.Src = Common.GetPicURL(model.Pic, "resize400");
+                this.imgPic2.Attributes.Add("bimg", Common.GetPicURL(model.Pic));
             }
             else
             {

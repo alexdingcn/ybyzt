@@ -217,7 +217,7 @@
 //                    }
                   var count = window.parent.$(".ImgList p").length;
                count++;
-               window.parent.$(".ImgList").append("<div><p  draggable=\"true\" style=\"margin:0 5px 5px 0; float: left; cursor: move;\" class=\"p" + count + "\"><img  src=\"" + '<%= Common.GetWebConfigKey("ImgViewPath") %>' + "GoodsImg/" + src + "\" id=\"img" + count + "\" width=\"150\" height=\"150\" class=\"imgWrap\"  alt=\"图片\" /></p><a href=\"JavaScript:;\" class=\"delImg\" tip=\"" + msg + "\" style=\"color:red; cursor: pointer; float: left; margin: 120px 0 0 -90px;display:none;\">删除</a><input type=\"hidden\" name=\"hidImg\" value=\"" + msg + "\" id=\"hidImg" + count + "\" /></div>");
+               window.parent.$(".ImgList").append("<div><p  draggable=\"true\" style=\"margin:0 5px 5px 0; float: left; cursor: move;\" class=\"p" + count + "\"><img  src=\"" + '<%= Common.GetPicBaseUrl() %>' + src + "?x-oss-process=style/resize200\" id=\"img" + count + "\" width=\"150\" height=\"150\" class=\"imgWrap\"  alt=\"图片\" /></p><a href=\"JavaScript:;\" class=\"delImg\" tip=\"" + msg + "\" style=\"color:red; cursor: pointer; float: left; margin: 120px 0 0 -90px;display:none;\">删除</a><input type=\"hidden\" name=\"hidImg\" value=\"" + msg + "\" id=\"hidImg" + count + "\" /></div>");
                if(count>=5){
                     window.parent.$(".hint-tip").css("top","824px");
                }else

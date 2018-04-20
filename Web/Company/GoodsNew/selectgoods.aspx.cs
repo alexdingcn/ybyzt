@@ -38,7 +38,7 @@ public partial class Company_GoodsNew_selectgoods : System.Web.UI.Page
             //hidIsInve.Value = IsInve.ToString();
             hidCompId.Value = CompId.ToString();
             hidDisId.Value = DisID.ToString();
-            hidImgViewPath.Value = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/";
+            hidImgViewPath.Value = Common.GetPicBaseUrl();
             //databind();
 
             menu2.InnerHtml = GoodsCategory(CompId);

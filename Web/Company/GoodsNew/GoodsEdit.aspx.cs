@@ -156,10 +156,6 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
         }
     }
 
-
-
-
-
     //编辑赋值
     public void Bind()
     {
@@ -205,10 +201,10 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
                         {
                             stratts = stratts.Substring(0, stratts.Length - 2);
                         }
-                        html2.Append("<input type=\"text\" style=\"display: none;\" class=\"mulSpecInp selectized\" name=\"selectized\" tabindex=\"-1\" value=\"" + stratts + "\" maxlength=\"15\"/><div class=\"selectize-control mulSpecInp multi plugin-remove_button\" ><div class=\"selectize-input items not-full box1 fl\" style=\"width:720px;height: auto;min-height:30px\" placeholder=\"使用键盘“回车键”确认并添加多个规格值\">");
+                        html2.Append("<input type=\"text\" style=\"display: none;\" class=\"mulSpecInp selectized\" name=\"selectized\" tabindex=\"-1\" value=\"" + stratts + "\" maxlength=\"30\"/><div class=\"selectize-control mulSpecInp multi plugin-remove_button\" ><div class=\"selectize-input items not-full box1 fl\" style=\"width:720px;height: auto;min-height:30px\" placeholder=\"使用键盘“回车键”确认并添加多个规格值\">");
                         html2.Append(html3);
                         //规格结束
-                        html2.Append("<input type=\"text\" autocomplete=\"off\" tabindex=\"\" style=\"width: 4px; float:left;\" maxlength=\"15\"/><i class=\"del-i del-i-a\"></i></div><div class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\" style=\"display: none;\"><div class=\"selectize-dropdown-content\"></div> </div> </div></div> <div class=\"cb\"></div> </div>");
+                        html2.Append("<input type=\"text\" autocomplete=\"off\" tabindex=\"\" style=\"width: 4px; float:left;\" maxlength=\"30\"/><i class=\"del-i del-i-a\"></i></div><div class=\"selectize-dropdown multi mulSpecInp plugin-remove_button\" style=\"display: none;\"><div class=\"selectize-dropdown-content\"></div> </div> </div></div> <div class=\"cb\"></div> </div>");
                     }
                 }
                 else
@@ -377,7 +373,13 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
                             checkeds = "";
                         }
                         string Validdate = item.Validdate == DateTime.MinValue ? "" : item.Validdate.ToString("yyyy-MM-dd");
-                        html.Append("<td class=\"trOp\"><input " + inputType + "  type=\"text\" style=\"width:120px;\" class=\"dataBox txtCode\" id=\"Text2\" name=\"txtCode\" value=\"" + item.BarCode + "\"  maxlength=\"15\"></td><td class=\"trOp\"><input " + inputType + "  type=\"text\" onkeyup=\"KeyInt2(this);\" style=\"width:100px;\" class=\"dataBox txtPrices\" id=\"Text1\" maxlength=\"10\" name=\"txtPrices\" value=\"" + decimal.Parse(string.Format("{0:N2}", Convert.ToDecimal(item.TinkerPrice.ToString()).ToString())).ToString("0.00") + "\"></td><td class=\"trOp\" " + style + "><input " + inputType + "  type=\"text\" style=\"width:100px;\" class=\"dataBox txtInventory\" onkeyup=\"KeyInt2(this);\" id=\"Text2\" name=\"txtInventory\" value=\"" + item.Inventory + "\" maxlength=\"11\"></td><td class=\"trOp\" " + style + "><input name=\"txtBatchNO\" type=\"text\"  style=\"width: 100px;\" class=\"dataBox txtBatchNO\" maxlength=\"11\" value=\"" + item.Batchno + "\"/></td><td class=\"trOp\"><input name=\"txtvalidDate\" onclick=\"WdatePicker()\" readonly=\"readonly\" type=\"text\" style=\"width: 100px;\" class=\"dataBox txtvalidDate\" maxlength=\"11\" value=\"" + Validdate + "\"/></td><td class=\"trOp\" " + style + "><div class=\"tc\"><input " + inputType + "  type=\"checkbox\"  name=\"isOffline\" value=\"" + item.IsOffline + "\"  id=\"checks-" + z + "\" class=\"r-check\" " + checkeds + "/><label " + inputType + "  for=\"checks-" + z + "\"></label></div> <input type=\"hidden\" value=\"" + item.IsOffline + "\" name=\"hidIsOffline\" /><input type=\"hidden\" value=\"" + item.ID + "\" name=\"hidId\" class=\"deleteIDlist\"/></label></td><td class=\"trOp\"><a href=\"javascript:;\" class=\"theme-color delete " + delete + "\"><i class=\"del-i\"></i></a><a href=\"javascript:;\" class=\"theme-color restore " + hf + "\"><i class=\"pre-i\"></i></a></td></tr>");
+                        html.Append("<td class=\"trOp\"><input " + inputType + "  type=\"text\" style=\"width:120px;\" class=\"dataBox txtCode\" id=\"Text2\" name=\"txtCode\" value=\"" + item.BarCode + "\"  maxlength=\"15\"></td>");
+                        html.Append("<td class=\"trOp\"><input " + inputType + "  type=\"text\" onkeyup=\"KeyInt2(this);\" style=\"width:100px;\" class=\"dataBox txtPrices\" id=\"Text1\" maxlength=\"10\" name=\"txtPrices\" value=\"" + decimal.Parse(string.Format("{0:N2}", Convert.ToDecimal(item.TinkerPrice.ToString()).ToString())).ToString("0.00") + "\"></td>");
+                        html.Append("<td class=\"trOp\" " + style + "><input " + inputType + "  type=\"text\" style=\"width:100px;\" class=\"dataBox txtInventory\" onkeyup=\"KeyInt2(this);\" id=\"Text2\" name=\"txtInventory\" value=\"" + item.Inventory + "\" maxlength=\"11\"></td>");
+                        html.Append("<td class=\"trOp\" " + style + "><input name=\"txtBatchNO\" type=\"text\"  style=\"width: 100px;\" class=\"dataBox txtBatchNO\" maxlength=\"11\" value=\"" + item.Batchno + "\"/></td>");
+                        html.Append("<td class=\"trOp\" " + style + "><input name=\"txtvalidDate\" onclick=\"WdatePicker()\" readonly=\"readonly\" type=\"text\" style=\"width: 100px;\" class=\"dataBox txtvalidDate\" maxlength=\"11\" value=\"" + Validdate + "\"/></td>");
+                        html.Append("<td class=\"trOp\"><div class=\"tc\"><input " + inputType + "  type=\"checkbox\"  name=\"isOffline\" value=\"" + item.IsOffline + "\"  id=\"checks-" + z + "\" class=\"r-check\" " + checkeds + "/><label " + inputType + "  for=\"checks-" + z + "\"></label></div> <input type=\"hidden\" value=\"" + item.IsOffline + "\" name=\"hidIsOffline\" /><input type=\"hidden\" value=\"" + item.ID + "\" name=\"hidId\" class=\"deleteIDlist\"/></label></td>");
+                        html.Append("<td class=\"trOp\"><a href=\"javascript:;\" class=\"theme-color delete " + delete + "\"><i class=\"del-i\"></i></a><a href=\"javascript:;\" class=\"theme-color restore " + hf + "\"><i class=\"pre-i\"></i></a></td></tr>");
                     }
                 }
                 html.Append("</tbody></table>");
@@ -1218,7 +1220,6 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
                 }
             }
 
-
             ////////////////////////sys_syscode表插入//////////////////////
             //if (KeyID == 0)
             //{
@@ -1291,6 +1292,7 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
     public string GetImgList(string keyId)
     {
         int count = 0;
+        LoginModel logUser = HttpContext.Current.Session["UserModel"] as LoginModel;
         StringBuilder html = new StringBuilder();
         List<Hi.Model.BD_ImageList> ll = new Hi.BLL.BD_ImageList().GetList("", "isnull(dr,0)=0 and compid=" + this.CompID + " and goodsId=" + keyId, "");
         if (ll.Count > 0)
@@ -1298,7 +1300,10 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
             foreach (Hi.Model.BD_ImageList item in ll)
             {
                 count++;
-                html.Append("<div><p  draggable=\"true\"  style=\"margin:0 5px 5px 0; float: left;cursor: move;\" class=\"p" + count + "\"><img src=\"" + Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + item.Pic + "\" id=\"img" + count + "\" width=\"150\" height=\"150\" class=\"imgWrap\"  alt=\"图片\" /></p><a href=\"JavaScript:;\" class=\"delImg\" tip=\"" + item.Pic + "\" style=\"color:red; cursor: pointer; float: left; margin: 120px 0 0 -90px;display:none;\">删除</a><input type=\"hidden\" name=\"hidImg\" value=\"" + item.Pic + "\" id=\"hidImg" + count + "\" /></div>");
+                html.Append("<div><p  draggable=\"true\"  style=\"margin:0 5px 5px 0; float: left;cursor: move;\" class=\"p" + count + "\">");
+                html.Append("<img src=\"" + Common.GetWebConfigKey("OssImgPath") + "company/" + logUser.CompID + "/" + item.Pic + "\" id=\"img" + count + "\" width=\"120\" height=\"120\" class=\"imgWrap\"  alt=\"图片\" /></p>");
+                html.Append("<a href=\"JavaScript:;\" class=\"delImg\" tip=\"" + item.Pic + "\" style=\"color:#D53F40;font-weight:bold;cursor:pointer;float:left;margin: 100px 0 0 -75px;display:none;\">删除</a>");
+                html.Append("<input type=\"hidden\" name=\"hidImg\" value=\"" + item.Pic + "\" id=\"hidImg" + count + "\" /></div>");
             }
         }
         return html.ToString();

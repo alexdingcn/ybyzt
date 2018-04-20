@@ -95,7 +95,13 @@ var SaleFunction = {
             $.each(json, function (index, item) {
                 OutHTML += "<tr>";
                 OutHTML += '<td class="t5" align="center"><input type="checkbox" id="checkbox-3-' + index + '" class="regular-checkbox chkbox" value="' + item.ID + '" /><label for="checkbox-3-' + index + '"></label></td>';
-                OutHTML += '<td class=""><div class="sPic"><span><a href="javascript:;"><img src="' + $("#hidImgViewPath").val() + item.Pic + '" width="40" height="40"></a></span> <a href="javascript:;" class="code">商品编码：' + item.BarCode + sale(item.ProID, item.proGoodsPrice, item.proDiscount, item.proTypes, item.ProType, item.unit) + '</a><a href="javascript:;" class="name">' + sub(item.GoodsName, 25, "...") + '<i>' + item.GoodsName + '</i></a></div></td>';
+                OutHTML += '<td class=""><div class="sPic">';
+                if (item.Pic) {
+                    OutHTML += '<span><a href="javascript:;"><img src="' + $("#hidImgViewPath").val() + item.Pic + '?x-oss-process=style/resize200" width="40" height="40"></a></span>';
+                } else {
+                    OutHTML += '<span><a href="javascript:;"><img src="/images/Goods400x400.jpg" width="40" height="40"></a></span>';
+                }
+                OutHTML += '<a href="javascript:;" class="code">商品编码：' + item.BarCode + sale(item.ProID, item.proGoodsPrice, item.proDiscount, item.proTypes, item.ProType, item.unit) + '</a><a href="javascript:;" class="name">' + sub(item.GoodsName, 25, "...") + '<i>' + item.GoodsName + '</i></a></div></td>';
                 OutHTML += '<td class="t2"><div class="tl">' + item.ValueInfo.replace(/:/g, "：").replace(/；/g, "，").substr(0, item.ValueInfo.length - 1) + '&nbsp;</div></td>';
                 OutHTML += '<td class="t5"><div class="tc">' + item.Unit + '&nbsp;</div></td>';
                 OutHTML += '<td class="t3"><div class="tc">￥' + item.pr.toFixed(2) + '&nbsp;</div></td>';

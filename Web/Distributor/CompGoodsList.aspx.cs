@@ -122,25 +122,6 @@ where 1=1 {1} and CompID= {0} and isnull(IsEnabled,0)=1 and IsOffline=1 and isnu
         ViewState["strWhere"] = strWhere;
         Bind();
     }
-   
-    /// <summary>
-    /// 获取图片
-    /// </summary>
-    /// <param name="pic"></param>
-    /// <returns></returns>
-    public string GetGoodsPic(string pic)
-    {
-        string str = string.Empty;
-        if (Util.IsEmpty(pic))
-        {
-            str = "  ../../images/Goods400x400.jpg";
-        }
-        else
-        {
-            str = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + pic;
-        }
-        return str;
-    }
 
     protected void A_Collect(object sender, EventArgs e)
     {

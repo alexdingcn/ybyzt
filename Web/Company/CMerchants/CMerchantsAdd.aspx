@@ -113,7 +113,7 @@
 
             $(document).on("click", ".addgoods", function () {
                 var url = 'SelectGoods.aspx?type=1';
-                var index = layerCommon.openWindow("选择商品", url, '880px', '600px'); //记录弹出对象
+                var index = layerCommon.openWindow("选择商品", url, '880px', '500px'); //记录弹出对象
                 $("#hid_Alert").val(index); //记录弹出对象
             });
 

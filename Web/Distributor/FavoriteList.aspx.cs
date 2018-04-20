@@ -91,20 +91,6 @@ where 1=1 {1} and CompID= {0} and isnull(IsEnabled,0)=1 and IsOffline=1 and isnu
         }
     }
 
-    public string GetGoodsPic(string pic)
-    {
-        string str = string.Empty;
-        if (Util.IsEmpty(pic))
-        {
-            str = "  ../../images/Goods400x400.jpg";
-        }
-        else
-        {
-            str = Common.GetWebConfigKey("ImgViewPath") + "GoodsImg/" + pic;
-        }
-        return str;
-    }
-
     /// <summary>
     /// 首次加载商品价格 //by 2016-04-14
     /// </summary>

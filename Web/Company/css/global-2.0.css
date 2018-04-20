@@ -158,7 +158,7 @@ a,img,input{ outline:none;star:expression(this.onFocus=this.blur());}
 .nr-deta{ padding:10px;}
 .nr-deta .t-deta{ background:url(../../images/t-deta.png) repeat-x bottom left; height:37px;}
 .nr-deta .t-deta .cur{ font-weight:normal; font-size:14px; padding:0px 15px; height:35px; line-height:35px; border-top:3px solid #2d5a9e; border-left:1px solid #dedfde;border-right:1px solid #dedfde; background:#fff; display:inline-block;}
-.nr-deta .t-deta b{ padding:0 10px;}
+.nr-deta .t-deta b{ padding:0 10px; cursor:pointer;}
 .nr-deta .nr{ padding:20px;}
 
 /*厂商后台-首页 add 2016-05-24 by Joken*/
@@ -576,7 +576,11 @@ input.dataBox,.dataBox{ text-align:center; line-height:32px; height:32px; width:
 /*公共-新增附件*/
 .upload{ padding-left:65px;}
 .a-upload {position:absolute; left:0;cursor: pointer;overflow: hidden;display: inline-block;*display: inline;*zoom: 1;}
-.a-upload input{position: absolute;font-size: 100px;right: 0;top: 0;opacity: 0;filter: alpha(opacity=0);cursor: pointer}
+.a-upload input{position: absolute;font-size: 100px;right: 236px;
+top: 0;opacity: 0;filter: alpha(opacity=0);cursor: pointer;
+    height: 70px;
+    width: 1353px;
+}
 .l-upload{ padding-left:110px; line-height:30px;}
 .l-upload li{ position:relative; width:50%;}
 .l-upload .link{ position:absolute; right:0; top:0;cursor:pointer;}

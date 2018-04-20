@@ -3,7 +3,7 @@
 using System;
 using System.Web;
 using System.IO;
-
+using Aliyun.OSS;
 
 public class Fileup : IHttpHandler {
 
@@ -57,7 +57,17 @@ public class Fileup : IHttpHandler {
                     }
                     filepath = filename.Replace("." + type, "") + "_" + datetime1.ToString("yyyyMMddHHmmssffff") + "." + type;
 
-                    hPostedFile.SaveAs(System.Web.HttpContext.Current.Server.MapPath("../" + UpSrc + "" + filepath));
+                    //hPostedFile.SaveAs(System.Web.HttpContext.Current.Server.MapPath("../" + UpSrc + "" + filepath));
+                    string accessKeyId = Common.GetWebConfigKey("OssAccessKeyId");
+                    string accessKeySecret = Common.GetWebConfigKey("OssAccessKeySecret");
+                    string bucketName = Common.GetWebConfigKey("OssBucketName");
+
+                    var client = new OssClient("oss-cn-shanghai.aliyuncs.com", accessKeyId, accessKeySecret);
+                    if (client != null)
+                    {
+                        client.PutObject(bucketName, UpSrc + filepath, hPostedFile.InputStream);
+                    }
+
                     if (str1 == "")
                         str1 = filepath;
                     else

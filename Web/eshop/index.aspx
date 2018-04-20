@@ -8,7 +8,6 @@
 <head runat="server">
     <title><%=shopname%></title>
     <meta name="keywords" runat="server" id="mKeyword"   />
-    <%--<meta name="description" content="医站通-B2B电子商务平台是为贸易或生产企业开发的网上订单管理系统,实现厂商与代理商之间实时订货,付款,发货,收货,库存管理,收付款对帐管理,物流信息查询,安全的在线支付,在线客服等全面高效的订货流程管理,提升企业管理竞争力,分销、批发就上医站通.咨询热线:40077-40088" />--%>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="baidu-site-verification" content="IdU3LryeUL" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -78,8 +77,11 @@
                         <img alt="暂无图片" width="180" height="220" src="<%=GetBannerTopImg("Img",3) %>" /></a></li>
                     <li><a target="_blank" href="<%=GetBannerTopImg("GoodsUrl",4) %>">
                         <img alt="暂无图片" width="180" height="220" src="<%=GetBannerTopImg("Img",4) %>" /></a></li>
-                    <li><a target="_blank" href="<%=GetBannerTopImg("GoodsUrl",5) %>">
-                        <img alt="暂无图片" width="180" height="220" src="<%=GetBannerTopImg("Img",5) %>" /></a></li>
+                    <li>
+                        <a target="_blank" href="<%=GetBannerTopImg("GoodsUrl",5) %>">
+                            <img alt="暂无图片" width="180" height="220" src="<%=GetBannerTopImg("Img",5) %>" />
+                        </a>
+                    </li>
                 </ul>
                 <!--产品图片推荐 end-->
                 <!--信息联系方式 start-->
@@ -173,7 +175,7 @@
                                 <div class="wrapper">
                                     <div class="pic">
                                         <a target="_blank" href="/e<%#Eval("ID")%>_<%# ViewState["Compid"]%>.html">
-                                            <img width="205" height="205" alt="暂无图片" src="<%# ResolveUrl(Common.GetPicURL(Eval("Pic2").ToString(),"3")) %>"
+                                            <img width="205" height="205" alt="暂无图片" src="<%# Common.GetPicURL(Eval("Pic").ToString(),"resize400") %>"
                                                 onerror="this.src='<%=ResolveUrl("../images/Goods400x400.jpg") %>'" />
                                         </a>
                                     </div>
@@ -282,7 +284,7 @@
             })
 
             function BindHotGoods(){
-//                    GoodsCoomon.BindGoodsHot($("ul#Div_BigGoodsHot"),$("#HidHotPageIndex"),$("#HidHotPageCount"),<%=IsComp.ToString().ToLower() %>,"<%= GetPicURL() %>",<%=ViewState["Compid"] %>,function(){ GoodsCoomon.GetBigGoodsAttribute("ul#Div_BigGoodsHot"); <%=ShowJs %>; });
+//                    GoodsCoomon.BindGoodsHot($("ul#Div_BigGoodsHot"),$("#HidHotPageIndex"),$("#HidHotPageCount"),<%=IsComp.ToString().ToLower() %>,"<%= Common.GetPicURL("test") %>",<%=ViewState["Compid"] %>,function(){ GoodsCoomon.GetBigGoodsAttribute("ul#Div_BigGoodsHot"); <%=ShowJs %>; });
              <%=ShowJs %>;
             }
 

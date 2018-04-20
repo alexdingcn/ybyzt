@@ -297,8 +297,8 @@
                                 <asp:Repeater ID="rptImg" runat="server">
                                     <ItemTemplate>
                                         <li>
-                                            <img bimg="<%# Eval("pic3").ToString()=="D" || Eval("pic3").ToString()==""?"../images/Goods400x400.jpg": Common.GetWebConfigKey("ImgViewPath") + "/GoodsImg/"+ Eval("pic3") %>"
-                                                src="<%# Eval("pic2").ToString()=="X" || Eval("pic2").ToString()==""?"../images/Goods400x400.jpg": Common.GetWebConfigKey("ImgViewPath") + "/GoodsImg/"+ Eval("pic2") %>"
+                                            <img bimg="<%# Common.GetPicURL(Convert.ToString(Eval("pic"))) %>"
+                                                src="<%# Common.GetPicURL(Convert.ToString(Eval("pic")), "resize400") %>"
                                                 onmousemove="preview(this);"></li>
                                     </ItemTemplate>
                                 </asp:Repeater>
