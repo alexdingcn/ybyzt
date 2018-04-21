@@ -338,7 +338,7 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
                         {
                             if (listName.Count == 0)
                             {
-                                html.Append("<th></th>");
+                                //html.Append("<th></th>");
                             }
                             for (int x = 0; x < listName.Count; x++)
                             {
@@ -359,7 +359,7 @@ public partial class Company_Goods_GoodsEdit : CompPageBase
                         html.Append("<tr><td class=\"key odd trOp\">" + z + "</td>");
                         if (listValue.Count == 0)
                         {
-                            html.Append("<td class=\"tc mulspec1Value trOp\"><input "+ inputType + " type=\"text\" style=\"border: 0px;width: 100px; text-align: center;\" class=\"dataBox\" readonly=\"readonly\" name=\"value1\"></td>");
+                            //html.Append("<td class=\"tc mulspec1Value trOp\"><input "+ inputType + " type=\"text\" style=\"border: 0px;width: 100px; text-align: center;\" class=\"dataBox\" readonly=\"readonly\" name=\"value1\"></td>");
                         }
                         for (int y = 0; y < listValue.Count; y++)
                         {
