@@ -251,7 +251,7 @@
                                         <td>
                                             <div class="sPic">
                                                 <span><a target="_blank" href="../../e<%# Eval("GoodsID") %>_<%# CompID %>.html">
-                                                    <img src="<%# SelectGoodsInfo.GetGoodsPic(Convert.ToString(Eval("Pic"))) %>" width="60"
+                                                    <img src="<%# Common.GetPicURL(Convert.ToString(Eval("Pic")), "resize200", Convert.ToString(CompID)) %>" width="60"
                                                         height="60"></a></span> <a target="_blank" href="../../e<%# Eval("GoodsID") %>_<%# CompID %>.html" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                          <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit")),CompID) %>
                                                         </a><a target="_blank" href="../../e<%# Eval("GoodsID") %>_<%# CompID %>.html" class="name">
@@ -390,7 +390,7 @@
                                         <td>
                                             <div class="sPic">
                                                 <span><a target="_blank" href="../../e<%# Eval("GoodsID") %>_<%# CompID %>.html">
-                                                    <img src="<%# SelectGoodsInfo.GetGoodsPic(Convert.ToString(Eval("Pic"))) %>" width="60"
+                                                    <img src="<%# Common.GetPicURL(Convert.ToString(Eval("Pic")), "resize200", Convert.ToString(CompID)) %>" width="60"
                                                         height="60"></a></span> <a target="_blank" href="../../e<%# Eval("GoodsID") %>_<%# CompID %>.html" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                         <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit")),CompID) %>
                                                         </a><a target="_blank" href="../../e<%# Eval("GoodsID") %>_<%# CompID %>.html" class="name">
