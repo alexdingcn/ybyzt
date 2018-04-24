@@ -74,11 +74,11 @@
                     div.Controls.Add(linkFile);
                     if (item.type == 5)
                     {
-                        UpFileText.Controls.Add(div);
+
                     }
                     else
                     {
-                        UpFileText2.Controls.Add(div);
+
                     }
                 }
             
@@ -96,16 +96,7 @@
     public void bind()
     {
         List<Hi.Model.YZT_FCmaterials> fCmaterialsList = new Hi.BLL.YZT_FCmaterials().GetList("", " CompID ="+CompID+" and dr=0 ", "");
-        this.li1.Visible = false;
-        this.li2.Visible = false;
-        this.li3.Visible = false;
-        this.li4.Visible = false;
-        this.li5.Visible = false;
-        this.li6.Visible = false;
-        this.li7.Visible = false;
-        this.li8.Visible = false;
-        this.li9.Visible = false;
-        this.li10.Visible = false;
+
         if (fCmaterialsList.Count > 0)
         {
             //修改
@@ -123,10 +114,8 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li1.Visible = true;
-                   
                         //营业执照绑定
-                        this.HidFfileName.Value = item.fileName;
+                        this.HidFfileName.InnerHtml = item.fileName;
                         this.validDate.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -134,10 +123,8 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li2.Visible = true;
-                    
                         //生产许可证绑定
-                        this.HidFfileName2.Value = item.fileName;
+                        this.HidFfileName2.InnerHtml = item.fileName;
                         this.validDate2.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -145,9 +132,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li3.Visible = true;
-                    
-                        this.HidFfileName3.Value = item.fileName;
+                        this.HidFfileName3.InnerHtml = item.fileName;
                         this.validDate3.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -155,9 +140,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li4.Visible = true;
-                    
-                        this.HidFfileName4.Value = item.fileName;
+                        this.HidFfileName4.InnerHtml = item.fileName;
                         this.validDate4.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -165,9 +148,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li5.Visible = true;
-                   
-                        this.HidFfileName5.Value = item.fileName;
+                        this.HidFfileName5.InnerHtml = item.fileName;
                         this.validDate5.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -175,9 +156,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li6.Visible = true;
-                   
-                        this.HidFfileName6.Value = item.fileName;
+                        this.HidFfileName6.InnerHtml = item.fileName;
                         this.validDate6.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -185,9 +164,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li7.Visible = true;
-                    
-                        this.HidFfileName7.Value = item.fileName;
+                        this.HidFfileName7.InnerHtml = item.fileName;
                         this.validDate7.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -195,9 +172,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li8.Visible = true;
-                    
-                        this.HidFfileName8.Value = item.fileName;
+                        this.HidFfileName8.InnerHtml = item.fileName;
                         this.validDate8.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -205,9 +180,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li9.Visible = true;
-                   
-                        this.HidFfileName9.Value = item.fileName;
+                        this.HidFfileName9.InnerHtml = item.fileName;
                         this.validDate9.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -215,9 +188,7 @@
                 {
                     if (!string.IsNullOrWhiteSpace(item.fileName))
                     {
-                        this.li10.Visible = true;
-                   
-                        this.HidFfileName10.Value = item.fileName;
+                        this.HidFfileName10.InnerHtml = item.fileName;
                         this.validDate10.Value = item.validDate.ToString("yyyy/MM/dd");
                     }
                 }
@@ -226,7 +197,6 @@
         else
         {
             fid = 0;
-            this.btnUpdate.InnerHtml = "<span><img src='../images/t02.png'/></span><font> 添加 </font>";
         }
     }
 

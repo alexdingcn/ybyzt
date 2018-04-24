@@ -8,30 +8,11 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head lang="zh-cn">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>我的首营资料</title>
 
-    <link href="/assets/css/bootstrap.min.css" rel="Stylesheet" type="text/css" />
-    <link href="/assets/font-awesome/4.5.0/css/font-awesome.min.css" rel="Stylesheet" type="text/css" />
-    <link href="/assets/css/iconfont.css"  rel="stylesheet" />
-    <link href="/assets/css/ace.min.css" rel="Stylesheet" type="text/css" />
-    <link href="/assets/css/ace-skins.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/bootstrap-datepicker3.min.css" />
-
-    <script src="/assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
-    <script src="/assets/js/bootstrap.min.js" type="text/javascript" ></script>
-    <script src="/assets/js/bootbox.js" type="text/javascript"></script>
-    <script src="../../js/layer/layer.js" type="text/javascript"></script>
-    <script src="../../js/layerCommon.js" type="text/javascript"></script>
-    <script src="/assets/js/bootstrap-datepicker.min.js" type="text/javascript" ></script>
-    <script src="/assets/js/ace-elements.min.js" type="text/javascript" ></script>
-    <script src="/assets/js/ace.min.js" type="text/javascript" ></script>
-    <!--[if lte IE 8]>
-		<script src="/assets/js/html5shiv.min.js"></script>
-		<script src="/assets/js/respond.min.js"></script>
-	<![endif]-->
-
+    <!--#include file="common_js_css.inc"-->
 
     <script type="text/javascript"> 
 
@@ -77,6 +58,8 @@
                                 var obj = JSON.parse(value);
                                 if (obj.result) {
                                     $("#" + resultId).val(obj.name);
+                                } else {
+                                    alert(obj.Code);
                                 }
                             }
                         }).fail(function (result) {
