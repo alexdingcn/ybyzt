@@ -293,7 +293,19 @@ public class OrderInfoType
     /// <returns></returns>
     public static decimal GetSumAmount(string DisID,string compid,int orderID)
     {
-        string sql = @"select SUM(AuditAmount-PayedAmount) as Amount from DIS_Order where PayState in (0,1) and OState in (1,2,4,5) and DisID=" + DisID+ " and CompID="+ compid + " and dr<>1 and id<>"+ orderID + "";
+        string sql = @"select SUM(AuditAmount-PayedAmount) as Amount from DIS_Order where PayState in (0,1) and OState in (1,2,4,5)  and dr<>1 ";
+        if (!string.IsNullOrEmpty(DisID))
+        {
+            sql += "and DisID=" + DisID;
+        }
+        if (!string.IsNullOrEmpty(compid))
+        {
+            sql += " and CompID=" + compid;
+        }
+        if (orderID > 0)
+        {
+            sql += " and id=" + orderID;
+        }
 
         DataTable dt = SqlHelper.Query(SqlHelper.LocalSqlServer, sql).Tables[0];
 

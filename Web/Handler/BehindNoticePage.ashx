@@ -157,19 +157,23 @@ public class BehindNoticePage : IHttpHandler
                             Hi.Model.Pay_PaymentSettings  Sysl = new Hi.BLL.Pay_PaymentSettings().GetList("", " CompID=" + orderModel.CompID, "")[0];
                             //手续费收取(0,平台 1，经销商 2，核心企业)
                             string  sxfsq = Convert.ToString(Sysl.pay_sxfsq);
-                            if(sxfsq=="2")
+                            if (sxfsq=="2")
+                            {
                                 order = new Hi.BLL.DIS_Order().UpdateOrderPstate(con, orderModel.ID, payM.PayPrice + prepayPrice, sqlTrans);
+                            }
                             else
+                            {
                                 order = new Hi.BLL.DIS_Order().UpdateOrderPstate(con, orderModel.ID, payM.PayPrice + prepayPrice - Convert.ToDecimal(payM.vdef5), sqlTrans);
+                            }
 
                             pay = new Hi.BLL.PAY_Payment().updatePayState(con, payM.ID, sqlTrans);
 
                             //修改免支付次数
-                           // try
+                            // try
                             //{
-                              //  Common.UpmzfcsByCompid(orderModel.CompID);
+                            //  Common.UpmzfcsByCompid(orderModel.CompID);
                             //}
-                           // catch { }
+                            // catch { }
 
                             if (prepayPrice > 0)
                                 prepay = new Hi.BLL.PAY_PrePayment().updatePrepayState(con, prepayM.ID, sqlTrans);
@@ -200,27 +204,27 @@ public class BehindNoticePage : IHttpHandler
 
                         }
 
-                       // try
-                       // {
-                       //     if (orderModel.Otype != 9)
-                       //     {
-                       //         OrderInfoType.AddIntegral(orderModel.CompID, orderModel.DisID, "1", 1, orderModel.ID, (prepayPrice + (price / 100)), "订单支付", "", orderModel.CreateUserID);
-                       //     }
-                       // }
-                       // catch { }
+                        // try
+                        // {
+                        //     if (orderModel.Otype != 9)
+                        //     {
+                        //         OrderInfoType.AddIntegral(orderModel.CompID, orderModel.DisID, "1", 1, orderModel.ID, (prepayPrice + (price / 100)), "订单支付", "", orderModel.CreateUserID);
+                        //     }
+                        // }
+                        // catch { }
 
-                       // if (orderModel.Otype == (int)Enums.OType.推送账单)
-                       //     Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "账单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
-                       // else
+                        // if (orderModel.Otype == (int)Enums.OType.推送账单)
+                        //     Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "账单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
+                        // else
 
-                          Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "订单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
+                        Utils.AddSysBusinessLog(orderModel.CompID, "Order", orderModel.ID.ToString(), "订单支付", "支付：" + (prepayPrice + (price / 100)).ToString("0.00") + "元(网银支付" + (price / 100).ToString("0.00") + (prepayM.ID > 0 ? "+企业钱包支付" + prepayPrice.ToString("0.00") : "") + "【含手续费" + Convert.ToDecimal(payM.vdef5).ToString("0.00") + "元】)", payM.CreateUserID.ToString());
 
                         //微信和安卓消息推送
-                       // try
-                       // {
-                       //     new Common().GetWxService("2", orderModel.ID.ToString(), "1");
-                      //  }
-                      //  catch { }
+                        // try
+                        // {
+                        //     new Common().GetWxService("2", orderModel.ID.ToString(), "1");
+                        //  }
+                        //  catch { }
 
                         LogManager.WriteLog(LogFile.Trace.ToString(), "订单结束" + order + "--" + prepay + "--" + pay + "\r\n");
 

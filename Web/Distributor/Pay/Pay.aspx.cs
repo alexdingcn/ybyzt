@@ -69,6 +69,18 @@ public partial class Distributor_Pay_Pay : DisPageBase
     public void Bind()
     {
         orderModel = new Hi.BLL.DIS_Order().GetModel(KeyID);
+        // 订单检查
+        if (orderModel == null)
+        {
+            //if (orderModel.Otype == (int)Enums.OType.推送账单)
+            //    JScript.AlertMethod(this, "无效的账单！", JScript.IconOption.错误, "function (){ location.replace('" + ("orderDzfzdList.aspx") + "'); }");
+            //else
+            JScript.AlertMethod(this, "无效的订单！", JScript.IconOption.错误, "function (){ location.replace('" + ("orderPayList.aspx") + "'); }");
+            //this.lblPayError.InnerText = "无效的订单！";
+            return;
+        }
+
+        // 状态检查
         if (!(
            (
            (orderModel.Otype == (int)Enums.OType.销售订单 && (orderModel.OState == (int)Enums.OrderState.已审 || orderModel.OState == (int)Enums.OrderState.已发货 || orderModel.OState == (int)Enums.OrderState.已到货) && (orderModel.PayState == (int)Enums.PayState.未支付 || orderModel.PayState == (int)Enums.PayState.部分支付))
@@ -83,28 +95,24 @@ public partial class Distributor_Pay_Pay : DisPageBase
                 JScript.AlertMethod(this, "订单异常，不能支付！", JScript.IconOption.错误, "function (){ location.replace('" + ("orderPayList.aspx") + "'); }");
             return;
         }
-        if (orderModel == null)
-        {
-            if (orderModel.Otype == (int)Enums.OType.推送账单)
-                JScript.AlertMethod(this, "无效的账单！", JScript.IconOption.错误, "function (){ location.replace('" + ("orderDzfzdList.aspx") + "'); }");
-            else
-                JScript.AlertMethod(this, "无效的订单！", JScript.IconOption.错误, "function (){ location.replace('" + ("orderPayList.aspx") + "'); }");
-            //this.lblPayError.InnerText = "无效的订单！";
-            return;
-        }
 
+        // 审核状态
         if (orderModel.OState < 2)
         {
             JScript.AlertMethod(this, "该订单未审核,不能支付!", JScript.IconOption.错误, "function (){ location.replace('" + ("../neworder/orderdetail.aspx?KeyID=" + Common.DesEncrypt(KeyID.ToString(), Common.EncryptKey)) + "'); }");
             return;
         }
 
+        // 支付状态检查
         if (orderModel.PayState != (int)Enums.PayState.未支付 && orderModel.PayState != (int)Enums.PayState.部分支付)
         {
             Response.Redirect("Error.aspx?type=" + Common.DesEncrypt("1", Common.EncryptKey) + "&KeyID=" + Common.DesEncrypt(KeyID.ToString(), Common.EncryptKey));
             return;
         }
+
+        // 开销户
         List<Hi.Model.PAY_OpenAccount> LOpen = new Hi.BLL.PAY_OpenAccount().GetList("", "DisID=" + this.DisID + " and State=1 and isnull(dr,0)=0", "");
+        // 提现户
         List<Hi.Model.PAY_Withdrawals> Lwith = new Hi.BLL.PAY_Withdrawals().GetList("", "DisID=" + this.DisID + " and state=1 and isnull(dr,0)=0", "");
         if (LOpen.Count > 0 && Lwith.Count > 0)
         {
@@ -139,6 +147,7 @@ public partial class Distributor_Pay_Pay : DisPageBase
             catch { }
         }
 
+        // 在线融资记录
         PList = new Hi.BLL.PAY_Financing().GetList("", "DisID=" + this.DisID + " and OrderID=" + KeyID + " and State=3 and isnull(dr,0)=0", "");
         if (PList.Count > 0)
         {
@@ -148,18 +157,28 @@ public partial class Distributor_Pay_Pay : DisPageBase
         decimal payPrice = orderModel.AuditAmount + orderModel.OtherAmount - orderModel.PayedAmount;
         this.lblOrderNO.InnerText = orderModel.ReceiptNo.Trim().ToString();
         //账单支付链接
-        if (orderModel.Otype == 9)
+        if (orderModel.Otype == 9)  // 推送账单
+        {
             this.lblOrderNO.HRef = "../OrderZDInfo.aspx?KeyID=" + Common.DesEncrypt(KeyID.ToString(), Common.EncryptKey);
+        }
         else
+        {
             this.lblOrderNO.HRef = "../neworder/orderdetail.aspx?KeyID=" + Common.DesEncrypt(KeyID.ToString(), Common.EncryptKey);
+        }
+
         this.hidOrderid.Value = KeyID.ToString();
         this.lblPricePay.InnerText = payPrice.ToString("0.00");
         this.hidPricePay.Value = payPrice.ToString("0.00");
         this.lblPriceO.InnerText = (orderModel.AuditAmount + orderModel.OtherAmount).ToString("0.00");
         if (this.txtPayOrder.Value == "")
+        {
             this.txtPayOrder.Value = payPrice.ToString("0.00");
+        }
         else
+        {
             this.txtPayOrder.Value = Convert.ToDecimal(this.txtPayOrder.Value).ToString("0.00");
+        }
+           
         this.hidUserName.Value = this.UserName;
 
         decimal sumPrice = new Hi.BLL.PAY_PrePayment().sums(orderModel.DisID, orderModel.CompID);
@@ -228,11 +247,6 @@ public partial class Distributor_Pay_Pay : DisPageBase
                 div_wyzfsxf.Attributes.Add("style", "display:none;");
                 sum_payprice.Attributes.Add("style", "display:none;");
             }
-
-
-
-
-
         }
         else
         {

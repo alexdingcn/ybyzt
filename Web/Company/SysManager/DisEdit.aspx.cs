@@ -358,6 +358,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
         {
             txtUpwd.Attributes.Add("value", "123456");
             txtUpwds.Attributes.Add("value", "123456");
+            DisCode.Value = DateTime.Now.ToString("yyyyMMddHHmm");
         }
     }
 
@@ -658,7 +659,7 @@ public partial class Company_SysManager_DisEdit : CompPageBase
             Dis.Address = Common.NoHTML(txtAddress.Value.Trim());
             if (string.IsNullOrWhiteSpace(DisCode.Value))
             {
-                Dis.DisCode = new DateTime().ToString("yyyyMMddHHmm");
+                Dis.DisCode = DateTime.Now.ToString("yyyyMMddHHmm");
             }
             else
             {

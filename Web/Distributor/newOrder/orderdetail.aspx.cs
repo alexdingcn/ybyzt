@@ -185,13 +185,23 @@ public partial class Distributor_newOrder_orderdetail : DisPageBase
 
 
                 string msg = string.Empty;
-                bool falg = Common.FCan(dt.Rows[0]["DisID"].ToString(), "1", out msg);
-                if (falg)
+                bool flag = Common.FCan(dt.Rows[0]["DisID"].ToString(), "1", out msg);
+                if (flag)
+                {
                     this.lblmsg.InnerText = msg;
+                }
 
-                decimal nopayAmount = OrderInfoType.GetSumAmount(dt.Rows[0]["DisID"].ToString(), dt.Rows[0]["CompID"].ToString(), 0);
-                string promptmsg = nopayAmount > 0 ? "您订单未支付金额为" + nopayAmount.ToString("0.00") + "，请尽快支付" : "";
-                this.lblPrompt.InnerText = promptmsg;
+                decimal nopayAmount = OrderInfoType.GetSumAmount(dt.Rows[0]["DisID"].ToString(), dt.Rows[0]["CompID"].ToString(), KeyID);
+                if (nopayAmount > 0)
+                {
+                    string promptmsg = "订单待支付金额为￥" + nopayAmount.ToString("0.00") + "，请尽快支付";
+                    this.lblPrompt.InnerText = promptmsg;
+                }
+                else
+                {
+                    this.lblPrompt.Visible = false;
+                }
+
 
                 #region  订单支付信息
 

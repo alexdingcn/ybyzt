@@ -6,8 +6,6 @@
 <div class="footer">
 	<div class="link"><a href="/platform.html">平台介绍</a>|<a href="/about.html">关于我们</a>|<a href="/help.html">帮助中心</a>|<a href="/about.html#contact">联系我们</a>|<a href="/law.html">网站声明</a>|<a href="http://www.aikuaidi.cn/" target="_blank">快递单号查询</a></div>
     <div class="txt">粤ICP备17130448号-2　Copyright © 2016-2017 深圳前海医伴金服信息技术有限公司版权所有　
-    <script type="text/javascript">            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1258987782'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258987782%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-
     </div>
     <div class="pic">
     <a href="https://www.yibanmed.com/"  target="_blank"title="医伴金服"></a>

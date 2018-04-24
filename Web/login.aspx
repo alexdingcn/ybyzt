@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>登录页 医站通</title>
-    <meta name="keywords" content="我的1818_我的1818网_医站通_网上分销_电子商务_B2B_批发_采购" />
-    <meta name="description" content="我的1818网（医站通.com）,中小企业网上分销平台,为您寻找产品批发分销渠道,提供订单管理、代理商管理、资金对账、数据分析等功能,建立企业网上分销管理平台" />
+    <meta name="keywords" content="医站通_网上分销_电子商务_B2B_批发_采购" />
+    <meta name="description" content="医站通,中小企业网上分销平台,为您寻找产品批发分销渠道,提供订单管理、代理商管理、资金对账、数据分析等功能,建立企业网上分销管理平台" />
     <script src="Company/js/jquery-1.11.1.min.js" type="text/javascript"></script>
     <script src="js/GetPhoneCode.js?v=<%=ConfigCommon.GetNodeValue("Version.xml","Version")%>"
         type="text/javascript"></script>
@@ -275,14 +275,15 @@
         <!--footer start-->
         <div class="mianFooter">
             <div class="txt">
-                <%--<a href="/platform.html">平台介绍</a>|<a href="/about_1.html">关于我们</a>|<a href="/help/help.html">帮助中心</a>|<a
-                    href="/about_3.html">联系我们</a>|<a href="/statement_1.html">网站声明</a><br />--%>
-                <a href="https://www.yibanmed.com/" target="_blank">平台介绍</a>|<a href="https://www.yibanmed.com/" target="_blank">关于我们</a>|<a href="https://www.yibanmed.com/" target="_blank">帮助中心</a>|
-                <a href="https://www.yibanmed.com/" target="_blank">联系我们</a>|<a href="https://www.yibanmed.com/" target="_blank">网站声明</a><br />
-                粤ICP备17130448号-2 Copyright © 2017 深圳前海医伴金服信息技术有限公司版权所有
+                <a href="https://www.yibanmed.com/" target="_blank">平台介绍</a>|
+                <a href="https://www.yibanmed.com/" target="_blank">关于我们</a>|
+                <a href="https://www.yibanmed.com/" target="_blank">帮助中心</a>|
+                <a href="https://www.yibanmed.com/" target="_blank">联系我们</a>|
+                <a href="https://www.yibanmed.com/" target="_blank">网站声明</a>
+                <br />
+                © 2017 深圳前海医伴金服信息技术有限公司版权所有<br />粤ICP备17130448号-2
             </div>
-            <div class="bg">
-            </div>
+
         </div>
         <!--footer end-->
     </div>

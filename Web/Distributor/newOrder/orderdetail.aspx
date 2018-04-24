@@ -22,7 +22,11 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#AddOrderfile").AjaxUploadFile({ Src: "TempFile/", ShowDiv: "payulfile", ResultId: "HDFileNames", AjaxSrc: "/Controller/Fileup.ashx", maxlength: 20, DownSrc: "../" });
-
+            $(".alert-danger").each(function (i, e) {
+                if ($(e).text().trim() === "") {
+                    $(e).hide();
+                }
+            });
         })
 
         //支付流水，跳转到详情页面
@@ -48,6 +52,13 @@
     </script>
     <%--附件上传   end--%>
     <style>
+         .alert-danger {
+            margin: 10px;
+            padding: 5px 15px;
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #CCC;
+        }
         .tc .box {
             height: 26px;
             font-family: "微软雅黑";
@@ -105,8 +116,12 @@
                         <i>订单日期：<label id="lblCreateDate" runat="server"></label></i> 
                         <i>状态：<label id="lblOstate" runat="server">待订单审核</label></i>
                         <i>厂商：<label id="lblCompID" runat="server"></label></i>
-                        <i id="lblPrompt" runat="server" style=" color:Red;"></i>
-                        <i id="lblmsg" runat="server" style=" color:Red;"></i>
+                        <div class="alert-danger">
+                            <i id="lblPrompt" runat="server"></i>
+                        </div>
+                        <div class="alert-danger">
+                            <i id="lblmsg" runat="server" ></i>
+                        </div>
                     </div>
                     <div class="alink">
                         <label id="buyagain" runat="server">

@@ -95,7 +95,7 @@ public partial class Company_SysManager_DisList : CompPageBase
     /// <returns></returns>
     public string SearchWhere()
     {
-        string where = " and cu.compid=" + CompID + "and cu.IsAudit>0 and isnull(cu.dr,0)=0 and isnull(dis.dr,0)=0";
+        string where = " and cu.compid=" + CompID + " and cu.IsAudit>0 and isnull(cu.dr,0)=0 and isnull(dis.dr,0)=0";
         string IDlist = string.Empty;//销售经理下属 员工ID集合
         if (DisSalesManID != 0)
         {
@@ -126,7 +126,7 @@ public partial class Company_SysManager_DisList : CompPageBase
             where += " and dis.Principal like '%" + txtPrincipal.Value.Trim().Replace("'", "''") + "%'";
         }
         if (ddlAUState.SelectedValue != "-1") {
-            where += " and cu.AuditState='" + ddlAUState.SelectedValue + "'";
+            where += " and cu.IsAudit='" + ddlAUState.SelectedValue + "'";
         }
         if (ddlState.SelectedValue != "-1") {
             where += " and cu.IsEnabled='" + ddlState.SelectedValue + "'";
