@@ -15,6 +15,14 @@ public class Fileup : IHttpHandler {
         {
             HttpFileCollection fileList = context.Request.Files;
             string UpSrc = context.Request["UploadFiles"];
+            if (string.IsNullOrEmpty(UpSrc))
+            {
+                UpSrc = "";
+            }
+            else if (!UpSrc.EndsWith("/"))
+            {
+                UpSrc += "/";
+            }
             string MaxLenth = context.Request["maxLenth"];
             for (int i = 0; i < fileList.Count; i++)
             {

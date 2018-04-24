@@ -243,6 +243,10 @@ a,img,input{ outline:none;star:expression(this.onFocus=this.blur());}
 .a-upload {position: relative;cursor: pointer;overflow: hidden;display: inline-block;*display: inline;*zoom: 1}
 .a-upload  input {position: absolute;font-size: 100px;right: 0;top: 0;opacity: 0;filter: alpha(opacity=0);cursor: pointer}
 
+.fileContainer { overflow: hidden; position: relative; display: inline-block;}
+.fileContainer [type=file] { cursor: inherit; font-size: 200px!important; filter: alpha(opacity=0); opacity: 0;
+    position: absolute; right: 0; top: 0; margin: 0;}
+
 .banner-edit .link a,.adMenu-edit .link a,.adImg-edit .list .link a{ margin-right:10px; color:#608ed2; float:left;}
 .banner-edit .link a:hover,.adMenu-edit .link a:hover,.adImg-edit .list .link a:hover,.banner-edit .link .sc:hover{color:#4e7ac0; text-decoration:underline;}
 /*店铺装修-banner内容-添加*/

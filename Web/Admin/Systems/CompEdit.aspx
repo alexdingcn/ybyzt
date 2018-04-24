@@ -9,7 +9,7 @@
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <link href="../../css/layer.css" rel="stylesheet" type="text/css" />
     <script src="../../Company/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="../../Company/js/CitysLine/JQuery-Citys-online-min.js"></script>
+    <script src="../../Company/js/CitysLine/JQuery-Citys-online-min.js" type="text/javascript"></script>
     <script src="../../js/CommonJs.js" type="text/javascript"></script>
     <script src="../../js/layer.js" type="text/javascript"></script>
     <script src="../../js/UploadJs.js" type="text/javascript"></script>

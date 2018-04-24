@@ -14,7 +14,7 @@
     using System.Configuration;
     using System.Text;
 
-    public partial class Company_SysManager_DisEdit : CompPageBase
+    public partial class Company_SysManager_FCMaterialEdit : CompPageBase
     {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -72,70 +72,7 @@
                         linkFile.Attributes.Add("fileName", item.fileName);
                         HtmlGenericControl div = new HtmlGenericControl("div");
                         div.Controls.Add(linkFile);
-                        HtmlImage img = new HtmlImage();
-                        img.Src = "../../images/icon_del.png";
-                        img.Attributes.Add("title", "删除附件");
 
-                        if (item.type == 5)
-                        {
-                        img.Attributes.Add("onclick", "AnnexDelete()");
-                        div.Controls.Add(img);
-                        UpFileText.Controls.Add(div);
-                        }
-                        else if (item.type == 6)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete2()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 12)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete3()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 13)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete4()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 14)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete5()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 15)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete6()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 16)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete7()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 17)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete8()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 18)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete9()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
-                        else if (item.type == 19)
-                        {
-                            img.Attributes.Add("onclick", "AnnexDelete10()");
-                            div.Controls.Add(img);
-                            UpFileText2.Controls.Add(div);
-                        }
                     }
                 }
            
