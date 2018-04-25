@@ -6,13 +6,14 @@ using System.Web.Script.Serialization;
 using System.Xml;
 using LitJson;
 using System.Data.SqlClient;
-using CFCA.Payment.Api;
+
 using System.Web.Configuration;
 using DBUtility;
 using System.Data;
 using System.Collections;
 
 using Com.Alipay;
+using CFCA.Payment.Api;
 
 /// <summary>
 ///OrderPay 的摘要说明

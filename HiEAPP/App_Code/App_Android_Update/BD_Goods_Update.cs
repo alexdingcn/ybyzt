@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
-using Aop.Api.Domain;
 using DBUtility;
 using Hi.Model;
 using LitJson;

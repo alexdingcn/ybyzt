@@ -7,7 +7,6 @@ using System.Web.Services;
 using LitJson;
 using System.Data;
 using System.Web.Configuration;
-using CFCA.Payment.Api;
 using System.Text;
 using System.Configuration;
 using System.Xml;
@@ -15,6 +14,7 @@ using System.Net.Mail;
 using System.Collections;
 using System.Data.SqlClient;
 using DBUtility;
+using CFCA.Payment.Api;
 
 /// <summary>
 ///WXService 的摘要说明
