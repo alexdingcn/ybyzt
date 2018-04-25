@@ -3734,8 +3734,20 @@ and ISNULL(pro.IsEnabled,0)=1 and isnull(pro.dr,0)=0 and  (pro.ProStartTime<=GET
             return true;
         }
         IDlist = "0";
-        return false;
-    
+        return false; 
+    }
+
+    public static List<Hi.Model.BD_Company> ListAllComps(bool addSelectAtFirst)
+    {
+        List<Hi.Model.BD_Company> ListComps = new Hi.BLL.BD_Company().GetList("ID,CompName", " isnull(dr,0)=0 and AuditState=2 and IsEnabled=1", "createdate desc");
+        if (addSelectAtFirst)
+        {
+            Hi.Model.BD_Company company = new Hi.Model.BD_Company();
+            company.ID = -1;
+            company.CompName = "请选择";
+            ListComps.Insert(0, company);
+        }
+        return ListComps;
     }
 
     /// <summary>

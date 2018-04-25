@@ -120,8 +120,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr id='tr_<%# Eval("Id") %>'>
-                                <td>
-                                    <%# Common.GetCompValue(Eval("CompID").ToString().ToInt(0),"CompName") %>
+                                <td><a href="/<%# Eval("CompID") %>.html" target="_blank"><%# Common.GetCompValue(Eval("CompID").ToString().ToInt(0),"CompName") %></a>
                                 </td>
                                 <td>
                                     <%# Eval("CMName")%>

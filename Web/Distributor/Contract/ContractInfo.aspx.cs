@@ -13,6 +13,8 @@ using System.Web.UI.HtmlControls;
 public partial class Company_Contract_ContractEdit : DisPageBase
 {
     public string cid = "0";
+    public int contractCompId = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         cid = Request.QueryString["cid"];
@@ -39,8 +41,15 @@ public partial class Company_Contract_ContractEdit : DisPageBase
             if (contractModel != null) {
 
                 Hi.Model.BD_Company comp = new Hi.BLL.BD_Company().GetModel(Convert.ToInt32(contractModel.CompID));
-                if(comp!=null)
-                this.txtCompName.Value = comp.CompName;
+                if (comp != null)
+                {
+                    this.txtCompName.Value = comp.CompName;
+                    this.contractCompId = comp.ID;
+                    if (this.CompID <= 0)
+                    {
+                        this.hidCompId.Value = comp.ID.ToString();
+                    }
+                }
                 this.txtcontractNO.Value = contractModel.contractNO;
                 this.txtcontractDate.Value = contractModel.contractDate.ToString("yyyy-MM-dd");
                 this.txtForceDate.Value = contractModel.ForceDate.ToString("yyyy-MM-dd");

@@ -219,7 +219,7 @@
                                                      <%if (IsShow == 0)
                                                   {%>
                                                     <span><a target="_blank" href="/Distributor/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>">
-                                                    <img src="<%# SelectGoodsInfo.GetGoodsPic(Convert.ToString(Eval("Pic"))) %>" width="60" height="60"></a></span> 
+                                                    <img src="<%# Common.GetPicURL(Convert.ToString(Eval("Pic")), "resize200", orderCompId) %>" width="60" height="60"></a></span> 
                                                 <a target="_blank" href="/Distributor/GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                     <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit"))) %>
                                                 </a>
@@ -228,7 +228,7 @@
                                                          <% }
                                                   else { %>
                                                     <span><a target="_blank" href="../GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>">
-                                                    <img src="<%# SelectGoodsInfo.GetGoodsPic(Convert.ToString(Eval("Pic"))) %>" width="60" height="60"></a></span> 
+                                                    <img src="<%# Common.GetPicURL(Convert.ToString(Eval("Pic")), "resize200", orderCompId) %>" width="60" height="60"></a></span> 
                                                 <a target="_blank" href="../GoodsInfo.aspx?goodsId=<%# Eval("GoodsID") %>&goodsInfoId=<%# Eval("GoodsInfoID") %>" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                     <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit"))) %>
                                                 </a>
@@ -366,12 +366,15 @@
                                     <tr>
                                         <td>
                                             <div class="sPic">
-                                                <span><a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# CompID %>_.html">
-                                                    <img src="<%# SelectGoodsInfo.GetGoodsPic(Convert.ToString(Eval("Pic"))) %>" width="60"
-                                                        height="60"></a></span> <a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# CompID %>_.html" class="code">商品编码：<%# Eval("GoodsCode")%>
+                                                <span>
+                                                    <a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# orderCompId %>_.html">
+                                                    <img src="<%# Common.GetPicURL(Convert.ToString(Eval("Pic")), "resize200", orderCompId) %>" width="60" height="60"/>
+                                                    </a>
+                                                </span> 
+                                                <a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# orderCompId %>_.html" class="code">商品编码：<%# Eval("GoodsCode")%>
                                                             <%# SelectGoodsInfo.protitle(Convert.ToString(Eval("ProID")), Convert.ToString(Eval("Protype")),Convert.ToString(Eval("Unit"))) %>
-                                                        </a><a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# CompID %>_.html" class="name">
-                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),20,"...")%><i><%# Eval("GoodsName")%></i></a>
+                                                        </a><a target="_blank" href="../../e<%# Eval("GoodsInfoID") %>_<%# orderCompId %>_.html" class="name">
+                                                            <%# Common.MySubstring(Convert.ToString(Eval("GoodsName")),30,"...")%><i><%# Eval("GoodsName")%></i></a>
                                             </div>
                                         </td>
                                         <td>
@@ -425,7 +428,7 @@
                     <div class="t">
                         未付款金额：<b class="red">￥<%=paymoney%></b></div>
                     <div class="btn" runat="server" id="btn_pay">
-                        <a href="#" id="btn_pay_xs" onclick="payDB('<%=Common.PaySetingsValue(this.CompID) %>','<%=Common.DesEncrypt(KeyID.ToString(),Common.EncryptKey) %>')"
+                        <a href="#" id="btn_pay_xs" onclick="payDB('<%=Common.PaySetingsValue(Convert.ToInt32(orderCompId)) %>','<%=Common.DesEncrypt(KeyID.ToString(),Common.EncryptKey) %>')"
                             class="bule-btn">在线支付</a><a href="#" runat="server" id="btn_pay_xx" class="bule-btn">线下支付</a></div>
                 </div>
                 <!--金额 end -->

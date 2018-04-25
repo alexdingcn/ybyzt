@@ -38,6 +38,7 @@ public partial class Distributor_newOrder_orderdetail : DisPageBase
     public string sendde = string.Empty;
     public string signde = string.Empty;
     public string fulfil = string.Empty;
+    public string orderCompId = string.Empty;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -119,6 +120,7 @@ public partial class Distributor_newOrder_orderdetail : DisPageBase
                 hidOstate.Value = dt.Rows[0]["OState"].ToString();
 
                 lblCompID.InnerText = Common.Getcom(dt.Rows[0]["CompID"].ToString().ToInt(0), "CompName");
+                orderCompId = Convert.ToString(dt.Rows[0]["CompID"]);
 
                 hidIsOutstate.Value = dt.Rows[0]["IsOutState"].ToString();
 

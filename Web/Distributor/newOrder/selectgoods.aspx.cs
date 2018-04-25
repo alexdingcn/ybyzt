@@ -55,7 +55,7 @@ public partial class Distributor_newOrder_selectgoods : System.Web.UI.Page
             hidIsInve.Value = IsInve.ToString();
             hidCompId.Value = CompId.ToString();
             hidDisId.Value = DisID.ToString();
-            hidImgViewPath.Value = Common.GetPicBaseUrl();
+            hidImgViewPath.Value = Common.GetPicBaseUrl(CompId.ToString());
             //databind();
 
             menu2.InnerHtml = GoodsCategory();

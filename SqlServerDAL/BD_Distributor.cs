@@ -593,7 +593,7 @@ and users.UserName='{0}'", username);
             strSql.Append(" from SYS_CompUser cu left join BD_Distributor dis on cu.DisID=dis.ID");
             if (!string.IsNullOrEmpty(strWhere))
             {
-                strSql.AppendFormat(" where cu.CType=2 and cu.UType=5 and cu.IsAudit=2 and cu.IsEnabled=1 {0}", strWhere);
+                strSql.AppendFormat(" where cu.CType=2 and cu.UType=5 {0}", strWhere);
             }
             if (CountNum == 0)
             {

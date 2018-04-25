@@ -16,12 +16,10 @@ public partial class Distributor_CMerchants_CMerchantsList : DisPageBase
 
     protected void Page_Load(object sender, EventArgs e)
     {
-       
         if (!IsPostBack)
         {
             this.txtPager.Value = Common.PageSize;
-            Common.ListFMComps(this.ddrComp, this.UserID.ToString(), this.DisID.ToString());
-
+           
             Bind();
         }
     }
@@ -31,6 +29,14 @@ public partial class Distributor_CMerchants_CMerchantsList : DisPageBase
     /// </summary>
     public void Bind()
     {
+        // 公司选择器
+        string selectedCompId = this.ddrComp.Value;
+        ddrComp.DataSource = Common.ListAllComps(true);
+        ddrComp.DataTextField = "CompName";
+        ddrComp.DataValueField = "id";
+        ddrComp.DataBind();
+        ddrComp.Value = selectedCompId;
+
         int pageCount=0;
         int Counts=0;
         string strwhere = "and dr=0 and isnull(IsEnabled,0)=1 and (ISNULL(ForceDate,0)=0 or ForceDate <= getdate() ) and (ISNULL(InvalidDate,0)=0 or InvalidDate>=getdate())";
@@ -39,16 +45,16 @@ public partial class Distributor_CMerchants_CMerchantsList : DisPageBase
             strwhere += ViewState["strwhere"].ToString();
         }
 
-        string compstr = this.ddrComp.Value != "" ? " and fca.CompID=" + this.ddrComp.Value : "";
-        string compstr1 = this.ddrComp.Value != "" ? " and CompID=" + this.ddrComp.Value : "";
-
-        strwhere += " and id in ( select fca.CMID from YZT_FCArea fca left join BD_Distributor dis on (fca.Province+fca.City+fca.Area=dis.Province+dis.City+dis.Area or fca.Province+fca.City=dis.Province+dis.City or fca.Province=dis.Province) and dis.IsEnabled=1 where 1=1 and  dis.ID= " + this.DisID + compstr + " union select fcd.CMID from YZT_FCDis fcd where fcd.DisID=" + this.DisID + compstr1 + " union select ID from YZT_CMerchants where type=1 and dr=0" + compstr1 + ")";
-
-        if (this.ddrComp.Value != "")
+        string compstr = string.Empty;
+        string compstr1 = string.Empty;
+        if (!string.IsNullOrEmpty(selectedCompId) && selectedCompId != "-1")
         {
-            strwhere += " and CompID=" + this.ddrComp.Value;
+            compstr = " and fca.CompID=" + selectedCompId;
+            compstr1 = " and CompID=" + selectedCompId;
         }
-
+        
+        strwhere += " and id in ( select fca.CMID from YZT_FCArea fca left join BD_Distributor dis on (fca.Province+fca.City+fca.Area=dis.Province+dis.City+dis.Area or fca.Province+fca.City=dis.Province+dis.City or fca.Province=dis.Province) and dis.IsEnabled=1 where 1=1 and  dis.ID= " + this.DisID + compstr + " union select fcd.CMID from YZT_FCDis fcd where fcd.DisID=" + this.DisID + compstr1 + " union select ID from YZT_CMerchants where type=1 and dr=0" + compstr1 + ")";
+        strwhere += compstr1;
 
         List<Hi.Model.YZT_CMerchants> l = CMerchantsBll.GetList(Pager.PageSize, Pager.CurrentPageIndex, "CreateDate", true, strwhere, out pageCount, out Counts);
 
