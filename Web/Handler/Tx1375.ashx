@@ -344,8 +344,8 @@ public class Tx1375 : IHttpHandler, IRequiresSessionState
                     sxf = 0;
                 }
             }
-            //支付总金额（含手续费）
-            payPrice = payPrice + Math.Round(sxf, 2);
+            //支付总金额（含手续费）四舍五入
+            payPrice = payPrice + Math.Round(sxf, 2,MidpointRounding.AwayFromZero);
 
             #endregion  计算支付手续费 end
 

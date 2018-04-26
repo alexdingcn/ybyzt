@@ -61,7 +61,8 @@ public partial class Distributor_Pay_Pay : DisPageBase
         {
 
             Bind();//绑定
-            BindPaySettings(Cmpid); //给页面隐藏域赋值
+            orderModel = new Hi.BLL.DIS_Order().GetModel(KeyID);
+            BindPaySettings(orderModel.CompID); //给页面隐藏域赋值
 
         }
     }
@@ -178,7 +179,7 @@ public partial class Distributor_Pay_Pay : DisPageBase
         {
             this.txtPayOrder.Value = Convert.ToDecimal(this.txtPayOrder.Value).ToString("0.00");
         }
-           
+
         this.hidUserName.Value = this.UserName;
 
         decimal sumPrice = new Hi.BLL.PAY_PrePayment().sums(orderModel.DisID, orderModel.CompID);

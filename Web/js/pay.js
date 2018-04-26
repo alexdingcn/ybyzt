@@ -655,14 +655,15 @@ function Js_sxf(kjzf_price, wyzf_price) {
     if ($("#hida2").val() == "1") {
         if (a2zfje > 0) {
             var a2_sxf = a2zfje * parseFloat($("#pay_kjzfbl").val()).toFixed(3); //比例
-            var kjzfstart = parseFloat($("#pay_kjzfstart").val()).toFixed(2); //封底
-            var kjzfend = parseFloat($("#pay_kjzfend").val()).toFixed(2); //封顶
+            
+            //var kjzfstart = parseFloat($("#pay_kjzfstart").val()).toFixed(2); //封底
+           // var kjzfend = parseFloat($("#pay_kjzfend").val()).toFixed(2); //封顶
 
-            if (a2_sxf <= kjzfstart)
-                a2_price = kjzfstart;
-            else if (a2_sxf >= kjzfend)
-                a2_price = kjzfend;
-            else
+           // if (a2_sxf <= kjzfstart)
+            //    a2_price = kjzfstart;
+           // else if (a2_sxf >= kjzfend)
+            //    a2_price = kjzfend;
+           // else
                 a2_price = a2_sxf;
         } else {
             $("#lblPrice2_sxf").html("0.00"); //快捷支付手续费赋值

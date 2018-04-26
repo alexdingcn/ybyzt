@@ -36,7 +36,7 @@ public class Common
     public static string aredIdList = string.Empty;
     public static string typeIdList = string.Empty;
     public static string cateIdList = string.Empty;
-    public static string EncryptKey = "YiBanJinFu";
+    public static string EncryptKey = "HaiYuSE9SFOT";
     public Common()
     {
         //

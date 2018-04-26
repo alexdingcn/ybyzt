@@ -884,7 +884,10 @@ public partial class Admin_Systems_CompEdit : AdminPageBase
             //int CompId = Convert.ToInt32(Request["hid_compID"]);
 
             //手续费收取
-            int pay_sxfsq = 2;//厂商收费 Convert.ToInt32(Request["pay_sxfsq"]);
+            //手续费收取
+            int pay_sxfsq = 1;//手续费收取(0,平台 1，经销商 2，核心企业)
+
+            //int pay_sxfsq = 2;//厂商收费 Convert.ToInt32(Request["pay_sxfsq"]);
 
             //支付方式
             int pay_zffs = 0;//线上支付 Convert.ToInt32(Request["pay_zffs"]);
