@@ -1142,8 +1142,7 @@ public class Dis_Order_Version3
                                 class_ver3.Pic pic = new class_ver3.Pic();
                                 pic.ProductID = goodsInfo_orderoutd.GoodsID.ToString();
                                 pic.IsDeafult = "1";
-                                pic.PicUrl = ConfigurationManager.AppSettings["ImgViewPath"].ToString().Trim() + "GoodsImg/" +
-                                             goods_orderoutd.Pic;
+                                pic.PicUrl = Common.GetPicURL(goods_orderoutd.Pic, "resize400", Convert.ToInt32(compID));
                                 Pic.Add(pic);
                             }
                             orderoutdetailinfo.ProductPicUrlList = Pic;
@@ -1252,8 +1251,7 @@ public class Dis_Order_Version3
                             class_ver3.Pic pic = new class_ver3.Pic();
                             pic.ProductID = goodsInfo_orderoutd.GoodsID.ToString();
                             pic.IsDeafult = "1";
-                            pic.PicUrl = ConfigurationManager.AppSettings["ImgViewPath"].ToString().Trim() + "GoodsImg/" +
-                                         goods_orderoutd.Pic;
+                            pic.PicUrl = Common.GetPicURL(goods_orderoutd.Pic, "resize400", Convert.ToInt32(compID));
                             Pic_unsend.Add(pic);
                         }
                         unsendoutdetail.ProductPicUrlList = Pic_unsend;
@@ -1355,8 +1353,7 @@ public class Dis_Order_Version3
                     class_ver3.Pic pic = new class_ver3.Pic();
                     pic.ProductID = goodsInfo.GoodsID.ToString();
                     pic.IsDeafult = "1";
-                    pic.PicUrl = ConfigurationManager.AppSettings["ImgViewPath"].ToString().Trim() + "GoodsImg/" +
-                                 goods.Pic;
+                    pic.PicUrl = Common.GetPicURL(goods.Pic, "resize400", Convert.ToInt32(compID));
                     Pic.Add(pic);
                 }
                 ordetail.ProductPicUrlList = Pic;

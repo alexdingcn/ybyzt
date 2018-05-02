@@ -427,7 +427,18 @@ public class class_ver3
             public String ts { get; set; }
             public List<Invoce> InvoceList { get; set; }//开票信息list
             public Account Account { get; set; }//登录账号List
+            public List<FCMaterial> FCMaterialList { get; set; }    // 首营材料
         }
+
+    //首营材料
+    public class FCMaterial
+    {
+        public String category { get; set; }
+        public String validDate { get; set; }
+        public String fileUrl { get; set; }
+        public int dateDiff { get; set; }
+        public int DisID { get; set; }
+    }
 
     //开票信息
         public class Invoce

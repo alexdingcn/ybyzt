@@ -368,13 +368,15 @@ public class CheckCode
         string CompanyName = string.Empty;
         string Captcha = string.Empty;
         string SendId = string.Empty;
+        string Type = string.Empty;
         int compid = 0;
         try
         {
             #region//JSon取值
             JsonData JInfo = JsonMapper.ToObject(JSon);
             if (JInfo.Count > 0 && JInfo["PhoneNumb"].ToString().Trim() != "" && JInfo["LoginName"].ToString().Trim() != "" && JInfo["Captcha"].ToString().Trim() != "" &&
-                JInfo["PassWord"].ToString().Trim() != "" && JInfo["CompanyName"].ToString().Trim() != "" && JInfo["SendId"].ToString().Trim() != "")
+                JInfo["PassWord"].ToString().Trim() != "" && JInfo["CompanyName"].ToString().Trim() != "" && JInfo["SendId"].ToString().Trim() != "" &&
+                JInfo["Type"].ToString().Trim() != "")
             {
                 PhoneNumb = Common.NoHTML(JInfo["PhoneNumb"].ToString());
                 LoginName = Common.NoHTML(JInfo["LoginName"].ToString());
@@ -384,6 +386,7 @@ public class CheckCode
                 CompanyName = Common.NoHTML(JInfo["CompanyName"].ToString());
                 Captcha = JInfo["Captcha"].ToString();
                 SendId = JInfo["SendId"].ToString();
+                Type = JInfo["Type"].ToString();
             }
             else
             {
@@ -414,99 +417,247 @@ public class CheckCode
 
             #endregion
             //如果验证码正确的话，修改验证码状态
-         try
-         {
-          if (new Hi.BLL.SYS_PhoneCode().Update(code,mytran))//验证码状态修改成功的话，开始进行注册流程
+            try
             {
-             
-                    //首先在bd_company表中新增一条数据
-                    Hi.Model.BD_Company comp = new Hi.Model.BD_Company();
-                    comp.CompName = CompanyName;
-                    comp.LegalTel = PhoneNumb;
-                    comp.Phone = PhoneNumb;
-                    comp.AuditState = 0;
-                    comp.IsEnabled = 1;
-                    comp.FirstShow = 1;
-                    comp.Erptype = 0;
-                    comp.SortIndex = "001";
-                    comp.HotShow = 1;
-                    comp.CreateDate = DateTime.Now;
-                    comp.CreateUserID = 0;
-                    comp.ts = DateTime.Now;
-                    comp.modifyuser = 0;
-                    compid = new Hi.BLL.BD_Company().Add(comp,mytran);
-                    //bd_company表中数据新增成功后,在sys_users表中新增一条数据
-                    if (compid <= 0)
+                if (new Hi.BLL.SYS_PhoneCode().Update(code, mytran))//验证码状态修改成功的话，开始进行注册流程
+                {
+                    if (Type == "distributor")
                     {
-                        mytran.Rollback();
-                        conn.Close();
-                        return new ResultCompEnter() { Result ="F",Description = "注册核心企业失败"};
+                        Boolean result = RegisterDistributor(CompanyName, PhoneNumb, PassWord, mytran);
+                        if (result)
+                        {
+                            return new ResultCompEnter() { Result = "T", Description = "注册成功" };
+                        }
+                        else
+                        {
+                            return new ResultCompEnter() { Result = "F", Description = "注册用户失败" };
+                        }
                     }
-                    //在表sys_users表中新增一条数据
-                    Hi.Model.SYS_Users user = new Hi.Model.SYS_Users();
-                    user.UserName = LoginName;
-                    user.TrueName = "";
-                    user.UserPwd = new GetPhoneCode().md5(PassWord);
-                    user.Phone = PhoneNumb;
-                    user.CreateDate = DateTime.Now;
-                    user.CreateUserID = 0;
-                    user.ts = DateTime.Now;
-                    user.modifyuser = 0;
-                    user.AuditState = 2;
-                    user.IsEnabled = 1;
-                    int userid = new Hi.BLL.SYS_Users().Add(user,mytran);
-                    if (userid <= 0)
+                    else
                     {
-                        mytran.Rollback();
-                        conn.Close();
-                        return new ResultCompEnter() { Result = "F", Description = "注册用户失败" };
+                        //首先在bd_company表中新增一条数据
+                        Hi.Model.BD_Company comp = new Hi.Model.BD_Company();
+                        comp.CompName = CompanyName;
+                        comp.LegalTel = PhoneNumb;
+                        comp.Phone = PhoneNumb;
+                        comp.AuditState = 0;
+                        comp.IsEnabled = 1;
+                        comp.FirstShow = 1;
+                        comp.Erptype = 0;
+                        comp.SortIndex = "001";
+                        comp.HotShow = 1;
+                        comp.CreateDate = DateTime.Now;
+                        comp.CreateUserID = 0;
+                        comp.ts = DateTime.Now;
+                        comp.modifyuser = 0;
+                        compid = new Hi.BLL.BD_Company().Add(comp, mytran);
+                        //bd_company表中数据新增成功后,在sys_users表中新增一条数据
+                        if (compid <= 0)
+                        {
+                            mytran.Rollback();
+                            conn.Close();
+                            return new ResultCompEnter() { Result = "F", Description = "注册核心企业失败" };
+                        }
+                        //在表sys_users表中新增一条数据
+                        Hi.Model.SYS_Users user = new Hi.Model.SYS_Users();
+                        user.UserName = LoginName;
+                        user.TrueName = "";
+                        user.UserPwd = new GetPhoneCode().md5(PassWord);
+                        user.Phone = PhoneNumb;
+                        user.CreateDate = DateTime.Now;
+                        user.CreateUserID = 0;
+                        user.ts = DateTime.Now;
+                        user.modifyuser = 0;
+                        user.AuditState = 2;
+                        user.IsEnabled = 1;
+                        int userid = new Hi.BLL.SYS_Users().Add(user, mytran);
+                        if (userid <= 0)
+                        {
+                            mytran.Rollback();
+                            conn.Close();
+                            return new ResultCompEnter() { Result = "F", Description = "注册用户失败" };
+                        }
+
+                        //sys_users新增成功的话，在sys_compuser表中新增一条数据
+                        Hi.Model.SYS_CompUser compuser = new Hi.Model.SYS_CompUser();
+                        compuser.CompID = compid;
+                        compuser.DisID = 0;
+                        compuser.CreateDate = DateTime.Now;
+                        compuser.CreateUserID = 0;
+                        compuser.ts = DateTime.Now;
+                        compuser.modifyuser = 0;
+                        compuser.CType = 1;
+                        compuser.UType = 4;
+                        compuser.dr = 0;
+                        compuser.IsAudit = 0;
+                        compuser.IsEnabled = 1;
+                        compuser.UserID = userid;
+                        int compuserid = new Hi.BLL.SYS_CompUser().Add(compuser, mytran);
+                        if (compuserid <= 0)
+                        {
+                            mytran.Rollback();
+                            conn.Close();
+                            return new ResultCompEnter() { Result = "F", Description = "用户与核心企业关联失败" };
+                        }
+                        else
+                        {
+                            // 通知运营
+                            string SendRegiPhone = System.Configuration.ConfigurationManager.AppSettings["SendTels"].ToString();
+                            string[] Phones = SendRegiPhone.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                            foreach (string tel in Phones)
+                            {
+                                GetPhoneCode phoneCode = new GetPhoneCode();
+                                phoneCode.GetUser(
+                                        System.Configuration.ConfigurationManager.AppSettings["PhoneCodeAccount"].ToString(),
+                                        System.Configuration.ConfigurationManager.AppSettings["PhoneCodePwd"].ToString());
+                                phoneCode.ReturnComp(tel, comp.CompName);
+                            }
+                        }
                     }
-              
-                    //sys_users新增成功的话，在sys_compuser表中新增一条数据
-                    Hi.Model.SYS_CompUser compuser = new Hi.Model.SYS_CompUser();
-                    compuser.CompID = compid;
-                    compuser.DisID = 0;
-                    compuser.CreateDate = DateTime.Now;
-                    compuser.CreateUserID = 0;
-                    compuser.ts = DateTime.Now;
-                    compuser.modifyuser = 0;
-                    compuser.CType = 1;
-                    compuser.UType = 4;
-                    compuser.dr = 0;
-                    compuser.IsAudit = 0;
-                    compuser.IsEnabled = 1;
-                    compuser.UserID = userid;
-                    int compuserid = new Hi.BLL.SYS_CompUser().Add(compuser, mytran);
-                    if (compuserid <= 0)
-                    {
-                        mytran.Rollback();
-                        conn.Close();
-                        return new ResultCompEnter() { Result = "F", Description = "用户与核心企业关联失败" };
-                    }
-          }
-          else
-          {
-              mytran.Rollback();
-              conn.Close();
-              return new ResultCompEnter() { Result = "F", Description = "验证码异常" };
-          }
-        }
-                catch
+                }
+                else
                 {
                     mytran.Rollback();
                     conn.Close();
+                    return new ResultCompEnter() { Result = "F", Description = "验证码异常" };
                 }
-                mytran.Commit();
+            }
+            catch
+            {
+                mytran.Rollback();
                 conn.Close();
+            }
+            mytran.Commit();
+            conn.Close();
 
 
-                return new ResultCompEnter() { Result = "T", Description = "注册成功", CompID = compid.ToString()};
+            return new ResultCompEnter() { Result = "T", Description = "注册成功", CompID = compid.ToString() };
         }
         catch (Exception ex)
         {
             Common.CatchInfo(ex.Message + ":" + ex.StackTrace, "SendEnterRequest" + JSon);
             return new ResultCompEnter() { Result = "F", Description = "参数异常" };
         }
+    }
+
+    private bool RegisterDistributor(string distributorName, string phone, string password, SqlTransaction Tran)
+    {
+        try
+        {
+            int Compid = 0;
+            int UserID = 0;
+
+            Hi.Model.BD_Distributor Distributor = new Hi.Model.BD_Distributor();
+            Distributor.CompID = Compid;
+            Distributor.DisName = distributorName;
+            Distributor.IsEnabled = 1;
+            Distributor.Paypwd = new GetPhoneCode().md5(password);
+            Distributor.Phone = phone;
+            Distributor.AuditState = 2;
+            Distributor.CreateDate = DateTime.Now;
+            Distributor.CreateUserID = UserID;
+            Distributor.ts = DateTime.Now;
+            Distributor.modifyuser = UserID;
+            Distributor.IsCheck = 0;
+            Distributor.CreditType = 0;
+
+            int DistributorID = 0;
+
+            if ((DistributorID = new Hi.BLL.BD_Distributor().Add(Distributor, Tran)) > 0)
+            {
+                int Roid = 0;
+
+                //新增角色（企业管理员）
+                Hi.Model.SYS_Role role = new Hi.Model.SYS_Role();
+                role.CompID = Compid;
+                role.DisID = DistributorID;
+                role.RoleName = "企业管理员";
+                role.IsEnabled = 1;
+                role.SortIndex = "1";
+                role.CreateDate = DateTime.Now;
+                role.CreateUserID = UserID;
+                role.ts = DateTime.Now;
+                role.modifyuser = UserID;
+                role.dr = 0;
+                Roid = new Hi.BLL.SYS_Role().Add(role, Tran);
+
+                //新增角色权限表
+                Hi.Model.SYS_RoleSysFun rolesys = null;
+                List<Hi.Model.SYS_SysFun> funList = new Hi.BLL.SYS_SysFun().GetList("FunCode,FunName", " Type=2", "");
+                foreach (Hi.Model.SYS_SysFun sys in funList)
+                {
+                    rolesys = new Hi.Model.SYS_RoleSysFun();
+                    rolesys.CompID = Compid;
+                    rolesys.DisID = DistributorID;
+                    rolesys.RoleID = Roid;
+                    rolesys.FunCode = sys.FunCode;
+                    rolesys.FunName = sys.FunName;
+                    rolesys.IsEnabled = 1;
+                    rolesys.CreateUserID = UserID;
+                    rolesys.CreateDate = DateTime.Now;
+                    rolesys.ts = DateTime.Now;
+                    rolesys.modifyuser = UserID;
+                    new Hi.BLL.SYS_RoleSysFun().Add(rolesys, Tran);
+                }
+
+                Hi.Model.SYS_Users user = new Hi.Model.SYS_Users();
+                user.UserName = phone;
+                user.TrueName = phone;
+                user.DisID = DistributorID;
+                user.TrueName = "";
+                user.UserPwd = new GetPhoneCode().md5(password);
+                user.IsEnabled = 1;
+                user.Phone = phone;
+                user.CreateDate = DateTime.Now;
+                user.CreateUserID = UserID;
+                user.ts = DateTime.Now;
+                user.modifyuser = UserID;
+                user.AuditState = 2;
+                int userid = 0;
+                userid = new Hi.BLL.SYS_Users().Add(user, Tran);
+
+                ///用户明细表
+                Hi.Model.SYS_CompUser CompUser = new Hi.Model.SYS_CompUser();
+                CompUser.CompID = Compid;
+                CompUser.DisID = DistributorID;
+                CompUser.CreateDate = DateTime.Now;
+                CompUser.CreateUserID = UserID;
+                CompUser.modifyuser = UserID;
+                CompUser.CType = 2;
+                CompUser.UType = 5;
+                //CompUser.IsEnabled = 1;
+                CompUser.IsAudit = 2;
+                CompUser.RoleID = Roid;
+                CompUser.ts = DateTime.Now;
+                CompUser.dr = 0;
+                CompUser.UserID = userid;
+                CompUser.IsEnabled = 1;
+                new Hi.BLL.SYS_CompUser().Add(CompUser, Tran);
+            }
+            else
+            {
+                return false;
+            }
+            Tran.Commit();
+            return true;
+        }
+        catch (Exception)
+        {
+            if (Tran != null && Tran.Connection != null)
+            { 
+                Tran.Rollback();
+            }
+            return false;
+        }
+        finally
+        {
+            if (Tran != null && Tran.Connection != null)
+            {
+                Tran.Rollback();
+            }
+        }
+
     }
     #endregion
 

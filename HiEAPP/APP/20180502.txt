@@ -1,0 +1,26 @@
+﻿
+=========================[2018-05-02 11:35:15] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/5/2 11:35:15
+
+=================================记录结束======================================
+
+=========================[2018-05-02 11:45:15] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/5/2 11:45:15
+
+=================================记录结束======================================
+
+=========================[2018-05-02 12:14:22] 记录开始==============================
+描述： 在从服务器接收结果时发生传输级错误。 (provider: TCP Provider, error: 0 - 由本地系统中止网络连接。):   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 820
+   在 Hi.SQLServerDAL.BD_Company.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\SqlServerDAL\Code\BD_Company.cs:行号 758
+   在 Hi.BLL.BD_Company.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\BLL\Code\BD_Company.cs:行号 95
+   在 BD_Goods_ver3.CompanyProductSearch(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 722
+接口： CompanyProductSearch:{"CompID":"1005","Condition":"","CriticalProductID":"155065","Filter":{"Classif":"-1","IsSales":"","MaxPrice":"","MinPrice":"","ProductStatus":"0"},"GetType":"1","ResellerID":"","Type":"0","UserID":1002}
+时间： 2018/5/2 12:14:22
+
+=================================记录结束======================================

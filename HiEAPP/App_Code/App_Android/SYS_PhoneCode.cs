@@ -327,7 +327,7 @@ public class SYS_PhoneCode
             }
             else
             {
-                return new ResultCaptcha() { Result = "F",Description = "发送失败"};
+                return new ResultCaptcha() { Result = "F",Description = "发送失败 " + rstr};
             }
         }
         catch (Exception ex)

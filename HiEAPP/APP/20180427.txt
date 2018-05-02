@@ -1,0 +1,581 @@
+﻿
+=========================[2018-04-27 09:27:18] 记录开始==============================
+描述： 在从服务器接收结果时发生传输级错误。 (provider: TCP Provider, error: 0 - 指定的网络名不再可用。):   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 Hi.SQLServerDAL.SYS_CompUser.GetDataSet(String strWhat, String strWhere, String strOrderby) 位置 \\Mac\Home\Documents\code\ybyzt\SqlServerDAL\Code\SYS_CompUser.cs:行号 274
+   在 Hi.SQLServerDAL.SYS_CompUser.GetList(String strWhat, String strWhere, String strOrderby) 位置 \\Mac\Home\Documents\code\ybyzt\SqlServerDAL\Code\SYS_CompUser.cs:行号 282
+   在 Hi.BLL.SYS_CompUser.GetList(String strWhat, String strWhere, String strOrderby) 位置 \\Mac\Home\Documents\code\ybyzt\BLL\Code\SYS_CompUser.cs:行号 112
+   在 BD_Company.GetUserCompany(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_Company.cs:行号 113
+接口： GetUserCompany ：{"UserID":1020}
+时间： 2018/4/27 9:27:18
+
+=================================记录结束======================================
+
+=========================[2018-04-27 09:50:16] 记录开始==============================
+描述： 关键字 'where' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetGoodsSaleReport(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1231
+接口： GetGoodsSaleReport:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-27","EndDate":"2018-04-27"}}
+时间： 2018/4/27 9:50:16
+
+=================================记录结束======================================
+
+=========================[2018-04-27 09:50:44] 记录开始==============================
+描述： 关键字 'where' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetGoodsSaleReport(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1231
+接口： GetGoodsSaleReport:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-27","EndDate":"2018-04-27"}}
+时间： 2018/4/27 9:50:44
+
+=================================记录结束======================================
+
+=========================[2018-04-27 09:52:18] 记录开始==============================
+描述： 关键字 'where' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetGoodsSaleReport(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1231
+接口： GetGoodsSaleReport:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-27","EndDate":"2018-04-27"}}
+时间： 2018/4/27 9:52:18
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:13:06] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 Dis_Order_Version3.GetCompanyOrderList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2721
+接口： GetCompanyOrderList:{"CriticalOrderID":"-1","GetType":"1","Rows":"10","SortType":"0","Sort":"0","State":"1","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1","ExpressNo":"-1"}}
+时间： 2018/4/27 11:13:06
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:13:42] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/4/27 11:13:42
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:14:03] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/4/27 11:14:03
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:14:37] 记录开始==============================
+描述： 在从服务器接收结果时发生传输级错误。 (provider: TCP Provider, error: 0 - 指定的网络名不再可用。):   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 820
+   在 Hi.SQLServerDAL.SYS_Users.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\SqlServerDAL\Code\SYS_Users.cs:行号 373
+   在 Hi.BLL.SYS_Users.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\BLL\Code\SYS_Users.cs:行号 95
+   在 Common.IsLegitUser(Int32 userID, SYS_Users& one, Int32 compID, Int32 disID) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\Common\Common.cs:行号 72
+   在 BD_Goods_ver3.CompanyProductSearch(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 724
+接口： CompanyProductSearch:{"CompID":1003,"Condition":"","CriticalProductID":"-1","Filter":{"Classif":"-1","IsSales":"","MaxPrice":"","MinPrice":"","ProductStatus":"0"},"GetType":"1","ResellerID":"","Type":"0","UserID":1002}
+时间： 2018/4/27 11:14:37
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:32:31] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/4/27 11:32:31
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:37:16] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:37:16
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:43:54] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:43:54
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:48:28] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:48:28
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:48:56] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:48:56
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:51:33] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:51:33
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:53:41] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:53:41
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:53:48] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:53:48
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:54:53] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:54:53
+
+=================================记录结束======================================
+
+=========================[2018-04-27 11:58:30] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 768:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 11:58:30
+
+=================================记录结束======================================
+
+=========================[2018-04-27 12:13:07] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 12:13:07
+
+=================================记录结束======================================
+
+=========================[2018-04-27 12:13:13] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 12:13:13
+
+=================================记录结束======================================
+
+=========================[2018-04-27 12:13:45] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 12:13:45
+
+=================================记录结束======================================
+
+=========================[2018-04-27 12:15:18] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 12:15:18
+
+=================================记录结束======================================
+
+=========================[2018-04-27 12:21:18] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 12:21:18
+
+=================================记录结束======================================
+
+=========================[2018-04-27 14:09:04] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 14:09:04
+
+=================================记录结束======================================
+
+=========================[2018-04-27 15:20:32] 记录开始==============================
+描述：    在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 820
+   在 Hi.SQLServerDAL.BD_Company.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\SqlServerDAL\Code\BD_Company.cs:行号 758
+   在 Hi.BLL.BD_Company.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\BLL\Code\BD_Company.cs:行号 95
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 778:在从服务器接收结果时发生传输级错误。 (provider: TCP Provider, error: 0 - 指定的网络名不再可用。)
+接口： SearchGoodsList : {"CompanyID":"1003","GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 15:20:32
+
+=================================记录结束======================================
+
+=========================[2018-04-27 16:19:40] 记录开始==============================
+描述：    在 DBUtility.SqlHelper.Query(String connectionString, String SQLString, SqlParameter[] cmdParms) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 820
+   在 Hi.SQLServerDAL.BD_Company.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\SqlServerDAL\Code\BD_Company.cs:行号 758
+   在 Hi.BLL.BD_Company.GetModel(Int32 ID) 位置 \\Mac\Home\Documents\code\ybyzt\BLL\Code\BD_Company.cs:行号 95
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 778:在从服务器接收结果时发生传输级错误。 (provider: TCP Provider, error: 0 - 指定的网络名不再可用。)
+接口： SearchGoodsList : {"CompanyID":"1003","GoodsID":"155045","ResellerID":""}
+时间： 2018/4/27 16:19:40
+
+=================================记录结束======================================
+
+=========================[2018-04-27 16:50:33] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0"}
+时间： 2018/4/27 16:50:33
+
+=================================记录结束======================================
+
+=========================[2018-04-27 16:52:32] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_Goods_ver3.CompanyProductSearch(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 696
+接口： CompanyProductSearch:{"CompID":"1003","Condition":"","CriticalProductID":"-1","Filter":{"Classif":"-1","IsSales":"","MaxPrice":"","MinPrice":"","ProductStatus":"0"},"GetType":"1","ResellerID":"","Type":"0"}
+时间： 2018/4/27 16:52:32
+
+=================================记录结束======================================
+
+=========================[2018-04-27 16:52:53] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_Goods_ver3.CompanyProductSearch(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\BD_Goods_ver3.cs:行号 696
+接口： CompanyProductSearch:{"CompID":"1003","Condition":"","CriticalProductID":"-1","Filter":{"Classif":"-1","IsSales":"","MaxPrice":"","MinPrice":"","ProductStatus":"0"},"GetType":"1","ResellerID":"","Type":"0"}
+时间： 2018/4/27 16:52:53
+
+=================================记录结束======================================
+
+=========================[2018-04-27 16:54:44] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 16:54:43
+
+=================================记录结束======================================
+
+=========================[2018-04-27 16:58:58] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 16:58:58
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:07:59] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:07:59
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:08:28] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:08:28
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:08:46] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:08:46
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:11:14] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:11:14
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:11:19] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:11:19
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:11:54] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:11:54
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:12:18] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:12:18
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:13:40] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:13:40
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:13:47] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155047","ResellerID":""}
+时间： 2018/4/27 17:13:47
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:13:52] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"undefined"}
+时间： 2018/4/27 17:13:51
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:14:36] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155047","ResellerID":""}
+时间： 2018/4/27 17:14:36
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:15:45] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155047","ResellerID":""}
+时间： 2018/4/27 17:15:45
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:15:50] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:15:50
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:15:53] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:15:53
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:15:58] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155047","ResellerID":""}
+时间： 2018/4/27 17:15:58
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:16:01] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0"}
+时间： 2018/4/27 17:16:01
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:16:08] 记录开始==============================
+描述：    在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.SearchGoodsList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 765:给定关键字不在字典中。
+接口： SearchGoodsList : {"GoodsID":"155047","ResellerID":""}
+时间： 2018/4/27 17:16:08
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:16:11] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:16:11
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:17:44] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:17:44
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:18:19] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:18:18
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:18:36] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:18:36
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:21:04] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:21:04
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:21:23] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:21:23
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:21:37] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:21:36
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:23:21] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:23:21
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:23:29] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:23:29
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:24:13] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:24:13
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:24:31] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:24:31
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:24:40] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:24:40
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:29:52] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 Company.GetCompanyInfo(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Company.cs:行号 26
+接口： GetCompanyInfo:{"CompID":"1003"}
+时间： 2018/4/27 17:29:52
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:30:07] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 Company.GetCompanyInfo(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Company.cs:行号 26
+接口： GetCompanyInfo:{"CompID":"1003"}
+时间： 2018/4/27 17:30:07
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:39:10] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Company.GetCompanyInfo(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Company.cs:行号 64
+接口： GetCompanyInfo:{"UserID":1020,"CompID":1003}
+时间： 2018/4/27 17:39:10
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:39:18] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Company.GetCompanyInfo(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Company.cs:行号 64
+接口： GetCompanyInfo:{"UserID":1020,"CompID":1003}
+时间： 2018/4/27 17:39:18
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:40:11] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Company.GetCompanyInfo(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Company.cs:行号 64
+接口： GetCompanyInfo:{"UserID":1020,"CompID":1003}
+时间： 2018/4/27 17:40:11
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:40:34] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Company.GetCompanyInfo(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Company.cs:行号 64
+接口： GetCompanyInfo:{"UserID":1020,"CompID":1003}
+时间： 2018/4/27 17:40:34
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:40:53] 记录开始==============================
+描述： 未将对象引用设置到对象的实例。:   在 Company.GetCompanyInfo(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Company.cs:行号 64
+接口： GetCompanyInfo:{"UserID":1020,"CompID":1003}
+时间： 2018/4/27 17:40:53
+
+=================================记录结束======================================
+
+=========================[2018-04-27 17:46:17] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 17:46:17
+
+=================================记录结束======================================
+
+=========================[2018-04-27 18:47:27] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 18:47:27
+
+=================================记录结束======================================
+
+=========================[2018-04-27 18:48:00] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 18:48:00
+
+=================================记录结束======================================
+
+=========================[2018-04-27 18:48:44] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 18:48:44
+
+=================================记录结束======================================
+
+=========================[2018-04-27 18:51:54] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1003"}
+时间： 2018/4/27 18:51:54
+
+=================================记录结束======================================

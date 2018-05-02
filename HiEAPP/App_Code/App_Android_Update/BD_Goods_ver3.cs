@@ -681,7 +681,6 @@ public class BD_Goods_ver3
      */
     public ResultCompanyProductSearch CompanyProductSearch(string JSon)
     {
-        string UserID = string.Empty;
         string CompID = string.Empty;
         string disID = string.Empty;
         string CriticalProductID = string.Empty;
@@ -693,14 +692,13 @@ public class BD_Goods_ver3
         {
             #region//JSon取值
             JsonData JInfo = JsonMapper.ToObject(JSon);
-            if (JInfo["UserID"].ToString() == ""  || JInfo["CriticalProductID"].ToString() == "" ||
+            if (JInfo["CriticalProductID"].ToString() == "" ||
                 JInfo["GetType"].ToString() == "" || JInfo["Type"].ToString() == "" || JInfo["CompID"].ToString() == "")
             {
                 return new ResultCompanyProductSearch() { Result = "F", Description = "参数异常" };
             }
             else
             {
-                UserID = JInfo["UserID"].ToString();
                 CompID = JInfo["CompID"].ToString();
                 CriticalProductID = JInfo["CriticalProductID"].ToString();
                 disID = JInfo["ResellerID"].ToString();
@@ -720,11 +718,6 @@ public class BD_Goods_ver3
             //返回的商品列表
             List<class_ver3.ProductSimple> list_resultproduct = new List<class_ver3.ProductSimple>();
 
-
-            if (!new Common().IsLegitUser(Int32.Parse(UserID), out one, Int32.Parse(CompID == "" ? "0" : CompID)))
-            {
-                return new ResultCompanyProductSearch() { Result = "F", Description = "登录信息异常" };
-            }
             //判断核心企业是否异常
             comp = new Hi.BLL.BD_Company().GetModel(Int32.Parse(CompID));
             if (comp == null || comp.dr == 1 || comp.IsEnabled == 0 || comp.AuditState == 0)
@@ -941,7 +934,10 @@ public class BD_Goods_ver3
             if (dsList != null)
             {
                 if (dsList.Rows.Count == 0)
-                    return new ResultCompanyProductSearch() { Result = "T", Description = "没有更多数据",ProductSimpleList =null};
+                {
+                    return new ResultCompanyProductSearch() { Result = "T", Description = "没有更多数据", ProductSimpleList = null };
+                }
+          
                 Hi.Model.BD_Goods goodsmodel = null;
                 //取出此核心企业或经销商所有被收藏的商品ID（用于后面判断商品是否被收藏）
                 List<Hi.Model.BD_DisCollect> Colist = new List<Hi.Model.BD_DisCollect>();
@@ -995,8 +991,7 @@ public class BD_Goods_ver3
                         class_ver3.Pic pic = new class_ver3.Pic();
                         pic.ProductID = goodsmodel.ID.ToString();
                         pic.IsDeafult = "1";
-                        pic.PicUrl = ConfigurationManager.AppSettings["ImgViewPath"].ToString().Trim() + "GoodsImg/" +
-                                     goodsmodel.Pic;
+                        pic.PicUrl = Common.GetPicURL(goodsmodel.Pic, "resize400", int.Parse(CompID));
                         Pic.Add(pic);
                     }
 
@@ -1008,7 +1003,14 @@ public class BD_Goods_ver3
 
                     list_resultproduct.Add(productsimple);
                 }
-                return new ResultCompanyProductSearch() { Result = "T", Description = "返回成功", ProductSimpleList = list_resultproduct };
+                return new ResultCompanyProductSearch()
+                {
+                    Result = "T",
+                    Description = "返回成功",
+                    CompanyID = comp.ID.ToString(),
+                    CompanyName = comp.CompName,
+                    ProductSimpleList = list_resultproduct
+                };
             }
             else
             {
@@ -1102,7 +1104,7 @@ public class BD_Goods_ver3
                 {
                     List<Hi.Model.BD_Promotion> promotionList = new Hi.BLL.BD_Promotion().GetList("",
                            " compID=" + CompID.ToInt() + " and ProStartTime<='" + DateTime.Now + "' and ProEndTime >='" +
-                           DateTime.Now + "' and IsEnabled=1", "");http://localhost:56777/HiEAPP/App_Code/App_Android_Update/BD_Goods_ver3.cs
+                           DateTime.Now + "' and IsEnabled=1", "");
                     List<Hi.Model.BD_PromotionDetail> detailList = new List<BD_PromotionDetail>();
                     if (promotionList != null && promotionList.Count > 0)
                     {
@@ -1346,8 +1348,7 @@ public class BD_Goods_ver3
                         class_ver3.Pic pic = new class_ver3.Pic();
                         pic.ProductID = goodsmodel.ID.ToString();
                         pic.IsDeafult = "1";
-                        pic.PicUrl = ConfigurationManager.AppSettings["ImgViewPath"].ToString().Trim() + "GoodsImg/" +
-                                     goodsmodel.Pic;
+                        pic.PicUrl = Common.GetPicURL(goodsmodel.Pic, "resize400", goodsmodel.CompID);
                         Pic.Add(pic);
                     }
 
@@ -2554,6 +2555,8 @@ where a.ID=b.TemplateID and c.TemplateAttrID=b.ID and a.CompID=" + CompID + " an
     {
         public string Result { get; set; }
         public string Description { get; set; }
+        public string CompanyID { get; set; }
+        public string CompanyName { get; set; }
         public List<class_ver3.ProductSimple> ProductSimpleList {get;set;}
     }
     ////修改商品上下架跟库存时传入的sku实体

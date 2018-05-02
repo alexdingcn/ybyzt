@@ -332,6 +332,24 @@ public class AppService : System.Web.Services.WebService {
         }
     }
 
+    [WebMethod(Description = "经销商订单报表")]
+    public string GetDistributorOrderList(string JSon, string from)
+    {
+        DIS_Order bll = new DIS_Order();
+        DIS_Order.ResultOrderList result = bll.GetCompanyOrderListGroupByDistributor(AESHelper.Decrypt_android(JSon));
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        return AESHelper.Encrypt_android(js.Serialize(result));
+    }
+
+    [WebMethod(Description = "商品销量报表")]
+    public string GetGoodsSaleReport(string JSon, string from)
+    {
+        DIS_Order bll = new DIS_Order();
+        DIS_Order.ResultGoodsSaleList result = bll.GetGoodsSaleReport(AESHelper.Decrypt_android(JSon));
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        return AESHelper.Encrypt_android(js.Serialize(result));
+    }
+
     [WebMethod(Description = "企业根据订单号或经销商名称/编码获取订单列表")]
     public string CompanyOrderSearch(string JSon,string from)
     {

@@ -1,0 +1,58 @@
+﻿
+=========================[2018-04-28 09:36:23] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1009"}
+时间： 2018/4/28 9:36:23
+
+=================================记录结束======================================
+
+=========================[2018-04-28 09:37:15] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1009"}
+时间： 2018/4/28 9:37:15
+
+=================================记录结束======================================
+
+=========================[2018-04-28 14:54:44] 记录开始==============================
+描述： 输入字符串的格式不正确。:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 CheckCode.SendEnterRequest(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\CheckCode.cs:行号 394
+接口： SendEnterRequest{"CompanyName":"山姆2","PhoneNumb":"13761499529","LoginName":"13761499529","SendId":{},"PassWord":"123456","Captcha":"770432","AndroidKey":"","IOSKey":""}
+时间： 2018/4/28 14:54:44
+
+=================================记录结束======================================
+
+=========================[2018-04-28 15:12:18] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1010"}
+时间： 2018/4/28 15:12:18
+
+=================================记录结束======================================
+
+=========================[2018-04-28 15:16:48] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1009"}
+时间： 2018/4/28 15:16:48
+
+=================================记录结束======================================
+
+=========================[2018-04-28 16:22:22] 记录开始==============================
+描述： 此 SqlTransaction 已完成；它再也无法使用。:   在 System.Data.SqlClient.SqlTransaction.ZombieCheck()
+   在 System.Data.SqlClient.SqlTransaction.Commit()
+   在 CheckCode.SendEnterRequest(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\CheckCode.cs:行号 523
+接口： SendEnterRequest{"CompanyName":"ab","PhoneNumb":"13761499529","LoginName":"13761499529","SendId":"145","PassWord":"123456","Captcha":"253100","Type":"distributor","AndroidKey":"","IOSKey":""}
+时间： 2018/4/28 16:22:22
+
+=================================记录结束======================================
+
+=========================[2018-04-28 17:23:31] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/4/28 17:23:31
+
+=================================记录结束======================================

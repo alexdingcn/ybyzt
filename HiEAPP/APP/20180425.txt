@@ -1,0 +1,8 @@
+﻿
+=========================[2018-04-25 17:29:16] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/4/25 17:29:16
+
+=================================记录结束======================================

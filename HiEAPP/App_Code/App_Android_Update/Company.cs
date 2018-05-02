@@ -27,11 +27,12 @@ public class Company
                 return new class_ver3.CompanyInfo(){Result="F",Description = "参数异常"};
             UserID = JInfo["UserID"].ToString();
             CompID = JInfo["CompID"].ToString();
-            //判断登录信息是否正确
+            //判断登录信息是否正确, 
             Hi.Model.SYS_Users one = new Hi.Model.SYS_Users();
             if (!new Common().IsLegitUser(Int32.Parse(UserID), out one, Int32.Parse(CompID == "" ? "0" : CompID)))
             {
-                return new class_ver3.CompanyInfo() { Result = "F", Description = "登录信息异常" };
+                //所有代理商可以查看厂家资料，所以不检查
+                //return new class_ver3.CompanyInfo() { Result = "F", Description = "登录信息异常" };
             }
             //判断核心企业是否异常
             Hi.Model.BD_Company comp = new Hi.BLL.BD_Company().GetModel(Int32.Parse(CompID));
@@ -60,11 +61,15 @@ public class Company
             ResultCompInfo.CompInfo = compinfo;
             //获取此用户的登录信息返回
             class_ver3.CompAccount compAccount = new class_ver3.CompAccount();
-            compAccount.UserName = one.UserName;
-            compAccount.TrueName = one.TrueName;
-            compAccount.Phone = one.Phone;
-            compAccount.Email = one.Email;
-            compAccount.Ts=one.ts.ToString();
+            if (one != null)
+            {
+                compAccount.UserName = one.UserName;
+                compAccount.TrueName = one.TrueName;
+                compAccount.Phone = one.Phone;
+                compAccount.Email = one.Email;
+                compAccount.Ts = one.ts.ToString();
+            }
+
             ResultCompInfo.CompAccount = compAccount;
              //获取核心企业的系统配置
              class_ver3.SysSettings sysSettings = new class_ver3.SysSettings();

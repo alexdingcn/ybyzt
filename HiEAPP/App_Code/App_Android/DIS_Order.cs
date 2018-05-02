@@ -1170,6 +1170,251 @@ public class DIS_Order
     #region 企业
 
     /// <summary>
+    /// 订单信息列表-按照商品group
+    /// </summary>
+    /// <param name="JSon"></param>
+    /// <returns></returns>
+    public ResultGoodsSaleList GetGoodsSaleReport(string JSon)
+    {
+        JsonData JInfo = JsonMapper.ToObject(JSon);
+        if (JInfo.Count == 0 || !JInfo.Keys.Contains("UserID") || !JInfo.Keys.Contains("CompanyID"))
+        {
+            return new ResultGoodsSaleList() { Result = "F", Description = "参数异常" };
+        }
+
+        #region JSon取值
+        string userID = JInfo["UserID"].ToString();
+        string compID = JInfo["CompanyID"].ToString();
+
+        if (string.IsNullOrEmpty(userID) || string.IsNullOrEmpty(compID))
+        {
+            return new ResultGoodsSaleList() { Result = "F", Description = "参数异常" };
+        }
+
+        string strWhere = string.Empty;
+        #endregion
+
+        Hi.Model.SYS_Users one = new Hi.Model.SYS_Users();
+        if (!new Common().IsLegitUser(int.Parse(userID), out one, int.Parse(compID == "" ? "0" : compID)))
+        {
+            return new ResultGoodsSaleList() { Result = "F", Description = "登录信息异常" };
+        }
+
+        JsonData JMsg = JInfo["Search"];
+        if (JMsg.Count > 0)
+        {
+            if (JMsg["BeginDate"].ToString().Trim() != "-1")
+            {
+                strWhere += " and o.CreateDate >= '" + Convert.ToDateTime(JMsg["BeginDate"].ToString()) + "'";
+            }
+            if (JMsg["EndDate"].ToString().Trim() != "-1")
+            {
+                strWhere += " and o.CreateDate < '" + Convert.ToDateTime(JMsg["EndDate"].ToString()).AddDays(1) + "'";
+            }
+        }
+
+        try {
+            string sqlstr = string.Format(@"
+                SELECT g.CompID, g.Pic, gi.ValueInfo, g.GoodsName , gi.BarCode, r.*
+                FROM
+                [dbo].[BD_GoodsInfo] gi, [dbo].[BD_Goods] g,
+                (SELECT d.GoodsinfoID, sum(d.SharePrice) as Total, 
+                    sum(d.GoodsNum) as GoodsCount, count(1) as OrderCount,
+                    min(d.AuditAmount) as MinPrice, max(d.AuditAmount) as MaxPrice
+                FROM [dbo].[DIS_OrderDetail] d, [dbo].[DIS_Order] o
+                where o.compID='{0}' and o.OState in (2,3,4,5,7)
+                and ISNULL(o.dr,0)=0 and o.Otype != 9
+                and o.ID = d.OrderId
+                {1}
+                group by d.GoodsinfoID) r
+                where r.GoodsinfoID = gi.ID and gi.GoodsID = g.ID", JInfo["CompanyID"].ToString(), strWhere);
+            DataSet ds = SqlHelper.Query(SqlHelper.LocalSqlServer, sqlstr);
+            if (ds.Tables.Count == 0 || ds.Tables[0] == null || ds.Tables[0].Rows.Count == 0)
+            {
+                return new ResultGoodsSaleList() { Result = "T", Description = "没有数据" };
+            }
+
+            DataTable orderList = ds.Tables[0];
+            List<GoodsSaleReport> resultList = new List<GoodsSaleReport>();
+
+            foreach (DataRow row in orderList.Rows)
+            {
+                GoodsSaleReport goodsReport = new GoodsSaleReport();
+                goodsReport.GoodsInfoID = row["GoodsinfoID"].ToString();
+                goodsReport.Barcode = row["BarCode"].ToString();
+                goodsReport.TotalAmount = Convert.ToDecimal(row["Total"]).ToString("0.##");
+                goodsReport.OrderCount = Convert.ToDecimal(row["OrderCount"]).ToString("0.##");
+                goodsReport.GoodsCount = Convert.ToDecimal(row["GoodsCount"]).ToString("0.##");
+                goodsReport.Description = row["ValueInfo"].ToString();
+                goodsReport.GoodsName = row["GoodsName"].ToString();
+                goodsReport.MinPrice = Convert.ToDecimal(row["MinPrice"]).ToString("0.##");
+                goodsReport.MaxPrice = Convert.ToDecimal(row["MaxPrice"]).ToString("0.##");
+                goodsReport.GoodsPicUrl = Common.GetPicURL(row["Pic"].ToString(), "resize400", Convert.ToInt32(row["CompID"]));
+
+                resultList.Add(goodsReport);
+            }
+
+            return new ResultGoodsSaleList()
+            {
+                Result = "T",
+                Description = "获取成功",
+                GoodsSaleList = resultList
+            };
+        }
+        catch (Exception ex)
+        {
+            Common.CatchInfo(ex.Message + ":" + ex.StackTrace, "GetGoodsSaleReport:" + JSon);
+            return new ResultGoodsSaleList() { Result = "F", Description = "参数异常" };
+        }
+    }
+
+    /// <summary>
+    /// 订单信息列表-按照经销商group
+    /// </summary>
+    /// <param name="JSon"></param>
+    /// <returns></returns>
+    public ResultOrderList GetCompanyOrderListGroupByDistributor(string JSon)
+    {
+        try
+        {
+            string strWhere = string.Empty;
+
+            #region JSon取值
+
+            string userID = string.Empty;
+            string compID = string.Empty;
+            string state = string.Empty;
+            //string oState = string.Empty;
+            string payState = string.Empty;
+
+            JsonData JInfo = JsonMapper.ToObject(JSon);
+            if (JInfo.Count > 0 && JInfo["UserID"].ToString() != "" && JInfo["CompanyID"].ToString() != "" &&
+                JInfo["State"].ToString() != "")
+            {
+                //{"CompanyID":"1004","CriticalOrderID":"-1","GetType":"1","OState":"-2","PayState":"-1","Rows":"10","Search":{},"Sort":"0","SortType":"0","State":"2","UserID":"1006"}
+
+                userID = JInfo["UserID"].ToString();
+                compID = JInfo["CompanyID"].ToString();
+                strWhere = " where o.compID='" + compID + "' and o.OState between 1 and 5";
+
+                state = JInfo["State"].ToString();
+                //if (JInfo["OState"].ToString() != "")
+                //    oState = JInfo["OState"].ToString();
+                if (JInfo["PayState"].ToString() != "")
+                {
+                    payState = JInfo["PayState"].ToString();
+                }
+            }
+            else
+            {
+                return new ResultOrderList() { Result = "F", Description = "参数异常" };
+            }
+
+            Hi.Model.SYS_Users one = new Hi.Model.SYS_Users();
+            if (!new Common().IsLegitUser(int.Parse(userID), out one, int.Parse(compID == "" ? "0" : compID)))
+            {
+                return new ResultOrderList() { Result = "F", Description = "登录信息异常" };
+            }
+
+            if (!string.IsNullOrEmpty(payState) && payState != "-1")
+            {
+                strWhere += " and o.PayState in(" + payState + ")";
+            }
+                
+
+            JsonData JMsg = JInfo["Search"];
+            if (JMsg.Count > 0)
+            {
+                if (JMsg["BeginDate"].ToString().Trim() != "-1")
+                {
+                    strWhere += " and o.CreateDate >= '" + Convert.ToDateTime(JMsg["BeginDate"].ToString()) + "'";
+                }
+                if (JMsg["EndDate"].ToString().Trim() != "-1")
+                {
+                    strWhere += " and o.CreateDate < '" + Convert.ToDateTime(JMsg["EndDate"].ToString()).AddDays(1) + "'";
+                }
+            }
+
+            if (state != "0" && state != "2" && state != "14" && state != "7" && state != "9" && state != "13")
+            {
+                return new ResultOrderList() { Result = "F", Description = "状态异常" };
+            }
+     
+            switch (state) //0：全部 1：待付款 2：待发货 3：待收货 4：已收货 5：退款/售后 
+                            //6：已审核 7：未审核 8：已拒绝 9：已发货 10：已付款 11：部分付款 12：已取消 
+                            //13:待支付 14:退货退款待审核
+            {
+                case "2":
+                    strWhere += " and (o.ostate=" + (int)Enums.OrderState.已审 +
+                                //" and ((Otype in (" + (int)Enums.OType.销售订单 + "," + (int)Enums.OType.特价订单 + " )" +
+                                //" and paystate in (" + (int) Enums.PayState.已支付 + "," + (int) Enums.PayState.部分支付 + " )" +
+                                "  or (o.ostate = " + (int)Enums.OrderState.已发货 +
+                                " and  isnull(o.IsOutState,4) in (1,2))) and o.otype = 0";
+                    break;
+                case "7":
+                    strWhere += " and o.ostate=" + (int)Enums.OrderState.待审核 + " and o.ReturnState=" +
+                                (int)Enums.ReturnState.未退货;
+                    break;
+                case "9":
+                    strWhere += " and o.ostate=" + (int)Enums.OrderState.已发货;
+                    break;
+                case "13":
+                    strWhere += " and ((o.Otype=1 and o.OState not in (-1,0,1)  and o.PayState in (0,1) ) or( o.Otype<>1 and o.OState in(2,4,5) and o.PayState in (0,1) )) and o.OState<>6 and o.CompID='"
+                        + compID + "' and o.ReturnState<> 3 and isnull(o.dr,0)=0";
+                    break;
+                case "14":
+                    strWhere += " and o.OState=5 and o.ReturnState ='" + (int)Enums.ReturnState.申请退货 + "'";
+                    break;
+            }
+
+            strWhere += " and ISNULL(o.dr,0)=0 and o.Otype!=9 and o.OState !=" + (int)Enums.OrderState.退回;
+            strWhere += " and o.DisID = dis.ID";
+            #endregion
+
+            #region 赋值
+
+            string tabName = " [dbo].[DIS_Order] o, [dbo].[BD_Distributor] dis"; //表名
+            string groupBy = " group by dis.ID, dis.DisName";
+            string strSql = "SELECT dis.ID as DisId, dis.DisName, sum(o.TotalAmount) as Total, sum( o.PayedAmount) as Paid, count(1) as Cnt FROM " + tabName + strWhere + groupBy;
+
+            DataSet ds = SqlHelper.Query(SqlHelper.LocalSqlServer, strSql);
+            if (ds.Tables.Count == 0 || ds.Tables[0] == null || ds.Tables[0].Rows.Count == 0)
+            {
+                return new ResultOrderList() { Result = "T", Description = "没有数据" };
+            }
+               
+            DataTable orderList = ds.Tables[0];
+            List<Order> resultList = new List<Order>();
+
+            foreach (DataRow row in orderList.Rows)
+            {
+                Order order = new Order();
+                order.DisID = Convert.ToString(row["DisId"]);
+                order.DisName = Convert.ToString(row["DisName"]);
+                order.TotalAmount = Convert.ToDecimal(row["Total"]).ToString("0.00");
+                order.PayedAmount = Convert.ToDecimal(row["Paid"]).ToString("0.00");
+                order.OrderCount = Convert.ToInt32(row["Cnt"]);
+
+                resultList.Add(order);
+            }
+
+            #endregion
+
+            return new ResultOrderList()
+            {
+                Result = "T",
+                Description = "获取成功",
+                OrderList = resultList
+            };
+        }
+        catch (Exception ex)
+        {
+            Common.CatchInfo(ex.Message + ":" + ex.StackTrace, "GetCompanyOrderListGroupByDistributor:" + JSon);
+            return new ResultOrderList() { Result = "F", Description = "参数异常" };
+        }
+    }
+
+    /// <summary>
     /// 订单信息列表
     /// </summary>
     /// <param name="JSon"></param>
@@ -3358,8 +3603,33 @@ public class DIS_Order
         public List<Order> OrderList { get; set; }
     }
 
+    public class ResultGoodsSaleList
+    {
+        public String Result { get; set; }
+        public String Description { get; set; }
+        public List<GoodsSaleReport> GoodsSaleList { get; set; }
+    }
+
+    public class GoodsSaleReport
+    {
+        public String GoodsID { get; set; }
+        public String GoodsInfoID { get; set; }
+        public String GoodsName { get; set; }
+        public String Barcode { get; set; }
+        public String Description { get; set; }
+        // 销售额
+        public String TotalAmount { get; set; }
+        // 销售数量
+        public String GoodsCount { get; set; }
+        public String OrderCount { get; set; }
+        public String MinPrice { get; set; }
+        public String MaxPrice { get; set; }
+        public String GoodsPicUrl { get; set; }
+    }
+
     public class Order
     {
+        public int OrderCount { get; set; }
         public String OrderID { get; set; }
         public String CompID { get; set; }
         public String CompName { get; set; }

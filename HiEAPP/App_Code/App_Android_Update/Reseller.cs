@@ -205,7 +205,40 @@ public class Reseller
             #endregion
             res.InvoceList = list_invoce;
             res.Account = account;
-            return new ResultResellerDetail() { Result ="T",Description = "获取成功",Reseller= res};
+
+
+            string sqlstr = string.Format(@"select b.DisID, a.type, a.validDate, a.fileName 
+                    from YZT_Annex a, YZT_FCmaterials b where b.dr=0 and a.dr=0 and
+                    b.DisID={0} and b.ID=a.fcID and a.fileAlias=4", DisID);
+            DataSet ds = SqlHelper.Query(SqlHelper.LocalSqlServer, sqlstr);
+            if (ds.Tables.Count > 0)
+            {
+                List<class_ver3.FCMaterial> materials = new List<class_ver3.FCMaterial>();
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    class_ver3.FCMaterial fcMaterial = new class_ver3.FCMaterial();
+                    
+                    fcMaterial.category = Common.GetAnnexDescription(SqlHelper.GetInt(r["type"]));
+                    fcMaterial.validDate = SqlHelper.GetString(r["validDate"]);
+
+                    DateTime expireDate = SqlHelper.GetDateTime(r["validDate"]);
+                    if (expireDate != null && !string.IsNullOrEmpty(fcMaterial.validDate))
+                    {
+                        fcMaterial.dateDiff = (expireDate - DateTime.Now).Days;
+                    }
+
+                    fcMaterial.fileUrl = SqlHelper.GetString(r["fileName"]);
+                    if (!string.IsNullOrEmpty(fcMaterial.fileUrl))
+                    {
+                        fcMaterial.fileUrl = ConfigurationManager.AppSettings["OssImgPath"] + "/UploadFile/" + fcMaterial.fileUrl;
+                    }
+                    fcMaterial.DisID = SqlHelper.GetInt(r["DisID"]);
+                    materials.Add(fcMaterial);
+                }
+                res.FCMaterialList = materials;
+            }
+
+            return new ResultResellerDetail() { Result ="T", Description = "获取成功", Reseller = res};
         }
         catch(Exception ex)
         {

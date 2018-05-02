@@ -603,11 +603,16 @@ public class SYS_Users
                         resultUser.IsEnabled = user.IsEnabled; //列表无判断，前台要使用此状态
 
                         Hi.Model.BD_Company comp = new Hi.BLL.BD_Company().GetModel(compUser.CompID);
-                        if (comp == null)
-                            return new ResultLogin() { Result = "F", Description = "核心企业异常" };
-                        resultUser.Erptype = comp.Erptype;
-                        resultUser.CompName = comp.CompName;
-
+                        if (comp != null)
+                        {
+                            resultUser.Erptype = comp.Erptype;
+                            resultUser.CompName = comp.CompName;
+                        }
+                        else
+                        {
+                            // return new ResultLogin() { Result = "F", Description = "核心企业异常" };
+                        }
+                          
                         resultUser.UType = compUser.UType;
                         resultUser.CType = compUser.CType; // 1：核心企业  2：经销商
                         resultUser.CompUserID = compUser.ID;

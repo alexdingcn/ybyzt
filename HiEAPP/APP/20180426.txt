@@ -1,0 +1,209 @@
+﻿
+=========================[2018-04-26 10:18:20] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/4/26 10:18:20
+
+=================================记录结束======================================
+
+=========================[2018-04-26 10:18:37] 记录开始==============================
+描述： 多次为 'x' 指定了列 'ID'。:   在 SqlAccess.ExecuteSqlDataTable(String sqlcmd, String Account) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\SqlAccess.cs:行号 218
+   在 Dis_Order_Version3.GetResellerList(String JSon, String version) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android_Update\Dis_Order_Version3.cs:行号 2662
+接口： GetResellerList:{"UserID":1002,"CompID":1003,"Search":"","ClassifyID":"-1","IsEnabled":"1","CriticalOrderID":"1638","GetType":"1","Rows":"10","SortType":"0","ResellerID":"0","Sort":"0"}
+时间： 2018/4/26 10:18:37
+
+=================================记录结束======================================
+
+=========================[2018-04-26 14:57:03] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1194
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 14:57:03
+
+=================================记录结束======================================
+
+=========================[2018-04-26 14:57:58] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1194
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 14:57:58
+
+=================================记录结束======================================
+
+=========================[2018-04-26 14:58:52] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1194
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 14:58:52
+
+=================================记录结束======================================
+
+=========================[2018-04-26 14:59:19] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1194
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 14:59:19
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:03:07] 记录开始==============================
+描述： 关键字 'and' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1280
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:03:07
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:46:14] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:46:14
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:46:59] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:46:59
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:47:21] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:47:21
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:49:23] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:49:23
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:49:30] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:49:30
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:51:16] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:51:16
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:51:35] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:51:35
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:51:49] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:51:49
+
+=================================记录结束======================================
+
+=========================[2018-04-26 15:53:34] 记录开始==============================
+描述： 'o' 附近有语法错误。:   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 500
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1281
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 15:53:34
+
+=================================记录结束======================================
+
+=========================[2018-04-26 16:25:05] 记录开始==============================
+描述： 该字符串未被识别为有效的 DateTime。:   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.Convert.ToDateTime(String value)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1231
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"State":"0","PayState":"-1","ResellerID":"0","Search":{"BeginDate":"","EndDate":""}}
+时间： 2018/4/26 16:25:05
+
+=================================记录结束======================================
+
+=========================[2018-04-26 16:47:41] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1192
+接口： GetCompanyOrderList:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-26","EndDate":"2018-04-26"}}
+时间： 2018/4/26 16:47:41
+
+=================================记录结束======================================
+
+=========================[2018-04-26 18:00:34] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1261
+接口： GetCompanyOrderListGroupByDistributor:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-26","EndDate":"2018-04-26"}}
+时间： 2018/4/26 18:00:34
+
+=================================记录结束======================================
+
+=========================[2018-04-26 18:00:37] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1261
+接口： GetCompanyOrderListGroupByDistributor:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-19","EndDate":"2018-04-26"}}
+时间： 2018/4/26 18:00:37
+
+=================================记录结束======================================
+
+=========================[2018-04-26 18:00:38] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1261
+接口： GetCompanyOrderListGroupByDistributor:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-03-27","EndDate":"2018-04-26"}}
+时间： 2018/4/26 18:00:38
+
+=================================记录结束======================================
+
+=========================[2018-04-26 18:00:39] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1261
+接口： GetCompanyOrderListGroupByDistributor:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 18:00:39
+
+=================================记录结束======================================
+
+=========================[2018-04-26 18:00:40] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1261
+接口： GetCompanyOrderListGroupByDistributor:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"-1","EndDate":"-1"}}
+时间： 2018/4/26 18:00:39
+
+=================================记录结束======================================
+
+=========================[2018-04-26 18:01:00] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 DIS_Order.GetCompanyOrderListGroupByDistributor(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1261
+接口： GetCompanyOrderListGroupByDistributor:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-26","EndDate":"2018-04-26"}}
+时间： 2018/4/26 18:01:00
+
+=================================记录结束======================================
+
+=========================[2018-04-26 18:06:50] 记录开始==============================
+描述： 将指定的计数添加到该信号量中会导致其超过最大计数。:   在 System.Threading.Semaphore.Release(Int32 releaseCount)
+   在 System.Data.ProviderBase.DbConnectionPool.PutNewObject(DbConnectionInternal obj)
+   在 System.Data.ProviderBase.DbConnectionPool.DeactivateObject(DbConnectionInternal obj)
+   在 System.Data.ProviderBase.DbConnectionPool.PutObject(DbConnectionInternal obj, Object owningObject)
+   在 System.Data.ProviderBase.DbConnectionInternal.CloseConnection(DbConnection owningObject, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Close()
+   在 System.Data.SqlClient.SqlConnection.Dispose(Boolean disposing)
+   在 System.ComponentModel.Component.Dispose()
+   在 DBUtility.SqlHelper.Query(String connectionString, String SQLString) 位置 \\Mac\Home\Documents\code\ybyzt\DBUtility\SqlHelper.cs:行号 502
+   在 DIS_Order.GetGoodsSaleReport(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\DIS_Order.cs:行号 1203
+接口： GetGoodsSaleReport:{"UserID":1002,"CompanyID":1003,"Search":{"BeginDate":"2018-04-26","EndDate":"2018-04-26"}}
+时间： 2018/4/26 18:06:50
+
+=================================记录结束======================================

@@ -3157,4 +3157,37 @@ and ISNULL(pro.IsEnabled,0)=1 and isnull(pro.dr,0)=0 and  (pro.ProStartTime<=GET
      return Htmlstring;
 
  }
+    /// <summary>
+    /// 获取图片路径
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <param name="resizeFormat"></param>
+    /// <param name="compId"></param>
+    /// <returns></returns>
+    public static string GetPicURL(string fileName, string resizeFormat = null, int compId = 0)
+    {
+        string basePath = ConfigurationManager.AppSettings["OssImgPath"] + "company/" + Convert.ToString(compId) + "/";
+
+        if (!string.IsNullOrEmpty(fileName) && fileName.Trim() != "X")
+        {
+            return basePath + fileName + (!string.IsNullOrEmpty(resizeFormat) ? "?x-oss-process=style/" + resizeFormat : "");
+        }
+        return ConfigurationManager.AppSettings["OssImgPath"] + "havenopicmax.gif";
+    }
+
+    public static string GetAnnexDescription(int annexType)
+    {
+        switch(annexType)
+        {
+            case 5:
+                return "营业执照";
+            case 7:
+                return "医疗器械经营许可证";
+            case 8:
+                return "医疗器械备案号";
+            case 9:
+                return "开户许可证";
+        }
+        return string.Empty;
+    }
 }

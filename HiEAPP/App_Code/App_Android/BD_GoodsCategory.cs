@@ -742,8 +742,6 @@ public class BD_GoodsCategory
         try
         {
             #region JSon取值
-
-            string userID = string.Empty;
             string disID = string.Empty;
             string goodsID = string.Empty;
             string compID = string.Empty;
@@ -751,10 +749,9 @@ public class BD_GoodsCategory
             JsonData JInfo = JsonMapper.ToObject(JSon);
             if (version.ToLower() == "android" || version.ToLower() == "ios" || float.Parse(version) < 5)//版本1跟之前版本没有传入核心企业id
             {
-                if (JInfo.Count > 0 && JInfo["UserID"].ToString() != "" && JInfo["ResellerID"].ToString() != "" &&
+                if (JInfo.Count > 0 && JInfo["ResellerID"].ToString() != "" &&
                     JInfo["GoodsID"].ToString() != "")
                 {
-                    userID = JInfo["UserID"].ToString();
                     disID = JInfo["ResellerID"].ToString();
                     goodsID = JInfo["GoodsID"].ToString();
                 }
@@ -765,10 +762,9 @@ public class BD_GoodsCategory
             }
             else if (float.Parse(version) >= 5)
             {
-                if (JInfo.Count > 0 && JInfo["UserID"].ToString() != "" && (JInfo["ResellerID"].ToString() != "" || JInfo["CompanyID"].ToString() != "") &&
+                if (JInfo.Count > 0 && (JInfo["ResellerID"].ToString() != "" || JInfo["CompanyID"].ToString() != "") &&
     JInfo["GoodsID"].ToString() != "")
                 {
-                    userID = JInfo["UserID"].ToString();
                     disID = JInfo["ResellerID"].ToString();
                     goodsID = JInfo["GoodsID"].ToString();
                     compID = JInfo["CompanyID"].ToString();
@@ -778,9 +774,7 @@ public class BD_GoodsCategory
                     return new ResultProductList() { Result = "F", Description = "参数异常" };
                 }
             }
-            Hi.Model.SYS_Users one = new Hi.Model.SYS_Users();
-            if (!new Common().IsLegitUser(int.Parse(userID), out one, int.Parse(compID == "" ? "0" : compID)))
-                return new ResultProductList() { Result = "F", Description = "登录信息异常" };
+
             Hi.Model.BD_Company comp = new Hi.BLL.BD_Company().GetModel(int.Parse(compID));
             if (comp == null || comp.dr == 1 || comp.IsEnabled == 0)
             {
@@ -895,24 +889,24 @@ public class BD_GoodsCategory
                 //product.Title = row["Title"].ToString();
                 product.Unit = row["Unit"].ToString();
 
-                List<Pic> Pic = new List<Pic>();
 
                 #region List<Pic> Pic
 
-                if (row["Pic"].ToString() != "" && row["Pic"].ToString() != "X")
+                List<Pic> Pic = new List<Pic>();
+                List<Hi.Model.BD_ImageList> imgList = new Hi.BLL.BD_ImageList().GetList("", " dr=0 and GoodsID='" + goodsID + "'", "");
+                if (imgList != null && imgList.Count > 0)
                 {
-                    Pic pic = new Pic();
-                    pic.ProductID = row["ID"].ToString();
-                    pic.IsDeafult = "1";
-                    pic.PicUrl = ConfigurationManager.AppSettings["ImgViewPath"].ToString().Trim() + "GoodsImg/" +
-                                 row["Pic"];
-                    Pic.Add(pic);
-
+                    foreach (var img in imgList)
+                    {
+                        Pic pic = new Pic();
+                        pic.ProductID = row["ID"].ToString();
+                        pic.IsDeafult = "0";
+                        pic.PicUrl = Common.GetPicURL(img.Pic, "resize400", int.Parse(compID));
+                        Pic.Add(pic);
+                    }
                 }
-                //Pic.AddRange(GetPicList(row["ID"].ToString()));
-                BD_Goods bd_goods = new BD_Goods();
-                Pic.AddRange(bd_goods.GetPicList(row["ID"].ToString()));
-                //图片二
+
+             
                 //if (row["Pic2"].ToString() != "" && row["Pic2"].ToString() != "X")
                 //{
                 //    Pic pic = new Pic();
