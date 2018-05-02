@@ -869,7 +869,11 @@ public class BD_GoodsCategory
                 //获取属性模板ID
                 product.TemplateID = ClsSystem.gnvl(row["TemplateId"], "");
                 product.ts = row["ts"].ToString();
- 
+                // Registered Cert
+                if (row["registeredCertificate"] != null) {
+                    product.certUrl = ConfigurationManager.AppSettings["OssImgPath"] + "UploadFile/" + row["registeredCertificate"].ToString();
+                }
+               
 
                 SKUName += product.ProductName;
                 //list中的商品价格应该根据bd_goods表中的viewinfoid（该商品对应的第一个goodsinfoid）的此规格属性的价格
@@ -2595,6 +2599,7 @@ JInfo["GoodsID"].ToString() != "")
         public String TemplateID { get; set; }//属性模板ID
         public String ts { get; set; }
         public String url { get; set; }//商品介绍url
+        public String certUrl { get; set; }
     }
     public class GoodsSpan
     {

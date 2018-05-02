@@ -221,7 +221,7 @@ public partial class productsview : LoginPageBase
             }
             if (!Util.IsEmpty(model.registeredCertificate.Trim()))
             {
-                string url = Common.GetWebConfigKey("ImgViewPath") + "UploadFile/" + model.registeredCertificate;
+                string url = Common.GetWebConfigKey("OssImgPath") + "UploadFile/" + model.registeredCertificate;
                 this.lblGoodsDetali1.InnerHtml = "<img width=\"600\" src=\"" + url + "\"/>";
             }
             //this.lblPrice.InnerText = "¥" + decimal.Parse(string.Format("{0:N2}", Convert.ToDecimal(model.SalePrice.ToString()).ToString())).ToString("#,##0.00"); ;//商品价格
