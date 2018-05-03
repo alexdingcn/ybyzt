@@ -113,11 +113,29 @@ public class AppService : System.Web.Services.WebService {
         return AESHelper.Encrypt_android(js.Serialize(result));
     }
 
+    [WebMethod(Description = "企业列表")]
+    public string GetCompanyList(string JSon, string from)
+    {
+        BD_Company bll = new BD_Company();
+        BD_Company.ResultList result = bll.GetCompanyList(AESHelper.Decrypt_android(JSon));
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        return AESHelper.Encrypt_android(js.Serialize(result));
+    }
+
     [WebMethod(Description = "获取登录用户厂商信息")]
     public string GetUserCompany(string JSon, string from)
     {
         BD_Company bll = new BD_Company();
         BD_Company.ResultList result = bll.GetUserCompany(AESHelper.Decrypt_android(JSon));
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        return AESHelper.Encrypt_android(js.Serialize(result));
+    }
+
+    [WebMethod(Description = "获取招商列表")]
+    public string GetZSList(string JSon, string from)
+    {
+        BD_Company bll = new BD_Company();
+        BD_Company.FCMerchantList result = bll.GetMerchantList(AESHelper.Decrypt_android(JSon));
         JavaScriptSerializer js = new JavaScriptSerializer();
         return AESHelper.Encrypt_android(js.Serialize(result));
     }
@@ -631,6 +649,15 @@ public class AppService : System.Web.Services.WebService {
     #endregion
 
     #region 新闻公告
+
+    [WebMethod(Description = "系统新闻")]
+    public string GetSysNotice(string JSon, string from)
+    {
+        SYS_NewsNotice snn = new SYS_NewsNotice();
+        SYS_NewsNotice.ResuletInfo result = snn.GetNoticeList(AESHelper.Decrypt_android(JSon));
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        return AESHelper.Encrypt_android(js.Serialize(result));
+    }
 
     [WebMethod(Description = "未读新闻公告个数")]
     public string GetAnnouncement(string JSon,string from)

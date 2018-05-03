@@ -24,3 +24,19 @@
 时间： 2018/5/2 12:14:22
 
 =================================记录结束======================================
+
+=========================[2018-05-02 13:30:12] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1012"}
+时间： 2018/5/2 13:30:12
+
+=================================记录结束======================================
+
+=========================[2018-05-02 16:59:28] 记录开始==============================
+描述： 给定关键字不在字典中。:   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 BD_GoodsCategory.GetResellerProductClassifyList(String JSon) 位置 \\mac\home\Documents\code\ybyzt\HiEAPP\App_Code\App_Android\BD_GoodsCategory.cs:行号 34
+接口： GetResellerProductClassifyList ：{"ResellerID":"0","CompanyID":"1005"}
+时间： 2018/5/2 16:59:28
+
+=================================记录结束======================================
