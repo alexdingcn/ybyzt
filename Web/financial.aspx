@@ -22,12 +22,41 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>--%>
+    <style>
+        @media only screen and (max-device-width : 736px) and (orientation : portrait) {
+            .topnav, .plat-header,.foot1,.foot2, .financial-banner {
+                display: none;
+            }
+            .w1200 {
+                width: 100%;
+            }
+            .textContent {padding:0 30px;margin-top:70px;}
+            .f-con1 { padding: 0 }
+            .f-nr { width: 60%; line-height:24px; }
+            .f-icon1, .f-icon2, .f-icon3, .f-icon4 { width: 30%; margin-top:0;}
+            header{
+                display: block!important;
+                background-color:#008fde;
+                position:fixed; 
+                z-index:2;
+                top:0; left:0;
+                width:100%;
+                height:60px;
+                padding:0;
+            }
+            header a, header a:visited, header a:link { color:white; font-size: 24px; line-height: 60px; text-decoration:none; padding-left:15px;}
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
 
 <uc1:Top ID="top1" runat="server" />
 <uc1:TopSec ID="top2" runat="server" />
+
+<header style="display:none">
+    <a href="javascript:;" onclick="history.go(-1);">返回</a>
+</header>
 
 <!--banner 开始-->
 <div class="financial-banner">
@@ -38,7 +67,7 @@
 
 
 <!--医贷通 start-->
-<div>	
+<div class="textContent">	
 <div class="f-con1 w1200">
 	<div class="f-title"><h3>医贷通</h3>医疗人自己的“微粒贷”“蚂蚁借呗”<p class="f-line"></p></div>
 	<div class="f-nr fl"><b>【产品简介】</b>全线上操作、纯信用（无抵押担保），有发票数据就能贷款，T+1工作日放款，最高额度100万元，最长期限6个月。<br><br>
