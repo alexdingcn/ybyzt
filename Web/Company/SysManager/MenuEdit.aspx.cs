@@ -258,7 +258,7 @@ public partial class MenuEdit : CompPageBase
         //我要维护 -- 修改登录密码
         if (NodeID == "1512" || NodeID == "15")
         {
-            Role = "checked=\"checked\"";
+           // Role = "checked=\"checked\"";
         }
         if (NodeID == "2513" || NodeID == "25")
         {
