@@ -81,8 +81,8 @@
                     <label class="text" data-default="企业的法律名称，2-20个汉字或字母">
                         企业的法律名称，2-20个汉字或字母</label></li>
 
-
-                <li><i class="label" runat="server" id="Leading">法人姓名：</i><div class="regBox">
+                    <!--
+                    <li><i class="label" runat="server" id="Leading">法人姓名：</i><div class="regBox">
                         <input id="txt_Leading" autocomplete="off" runat="server" type="text" maxlength="30"
                             class="box" />
                         </div>
@@ -100,6 +100,7 @@
                         </div>
                         <label class="text" data-default="请输入统一社会信用代码">
                             请输入统一社会信用代码</label></li>
+                    -->
                     <li><i class="label" runat="server" id="TrueName">联系人姓名：</i><div class="regBox">
                         <input id="txt_TrueName" autocomplete="off" runat="server" type="text" maxlength="30"
                             class="box" />
@@ -119,7 +120,7 @@
                     <input id="txt_CheckPassWord" autocomplete="off" maxlength="20" type="password" class="box" /></div>
                     <label class="text" data-default="请再输入确认密码">
                         请再输入确认密码</label></li>
-                <li><i class="label">附件上传：</i>
+                <li><i class="label">附件上传（可选）：</i>
                     <div class="teamR" style="height: 30px; margin-top: 7px;">
                         <div class="verFile" style="margin: 0px; display: inline; float: left;">
                             <span class="verFileCon">

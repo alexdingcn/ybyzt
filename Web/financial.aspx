@@ -24,27 +24,27 @@
     </script>--%>
     <style>
         @media only screen and (max-device-width : 736px) and (orientation : portrait) {
-            .topnav, .plat-header,.foot1,.foot2, .financial-banner {
+            .topnav, .plat-header,.foot1,.foot2, .financial-banner, .footer {
                 display: none;
             }
             .w1200 {
                 width: 100%;
             }
-            .textContent {padding:0 30px;margin-top:70px;}
+            .textContent {padding:0 10px;margin-top:55px;}
             .f-con1 { padding: 0 }
             .f-nr { width: 60%; line-height:24px; }
             .f-icon1, .f-icon2, .f-icon3, .f-icon4 { width: 30%; margin-top:0;}
             header{
                 display: block!important;
-                background-color:#008fde;
+                background-color:#296ecc;
                 position:fixed; 
                 z-index:2;
                 top:0; left:0;
                 width:100%;
-                height:60px;
+                height:45px;
                 padding:0;
             }
-            header a, header a:visited, header a:link { color:white; font-size: 24px; line-height: 60px; text-decoration:none; padding-left:15px;}
+            header a, header a:visited, header a:link { color:white; font-size: 18px; line-height: 45px; text-decoration:none; padding-left:15px;}
         }
     </style>
 </head>

@@ -340,14 +340,14 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                         }
                         if (ReturnMessge.IsRegis)
                         {
-                            if (Json.Count != 9)
+                            if (Json.Count < 6)
                             {
                                 throw new ApplicationException("请求参数异常，请重试或刷新页面");
                             }
                         }
                         else
                         {
-                            if (Json.Count != 9)
+                            if (Json.Count < 6)
                             {
                                 throw new ApplicationException("请求参数异常，请重试或刷新页面");
                             }
@@ -386,7 +386,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                         comp.SortIndex = "001";
                         comp.HotShow = 1;
                         comp.Phone = Phone;
-                        comp.CustomCompinfo = "本公司产品种类丰富、质量优良、价格公道、服务周到。感谢您长期的支持与厚爱，您的满意是我们最高的追求，我们将竭诚为您提供优质、贴心的服务！";
+                        comp.CustomCompinfo = "公司简介";
                         comp.Attachment = FileValue;
                         comp.CreateDate = DateTime.Now;
                         comp.CreateUserID = UserID;
