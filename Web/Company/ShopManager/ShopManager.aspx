@@ -644,9 +644,10 @@
         });
     </script>
     <style>
-  .ebled {
-    background: rgb(129,129,129) !important;
-}
+    .ebled {
+        background: rgb(129,129,129) !important;
+    }
+    .a-upload.cbule input { right: 0;}
     </style>
 </head>
 <body >
