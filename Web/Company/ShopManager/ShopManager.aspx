@@ -647,6 +647,8 @@
     .ebled {
         background: rgb(129,129,129) !important;
     }
+    .add-pic .a-upload {padding-left: 15px; }
+    .add-pic .a-upload input {right: 0;}
     .a-upload.cbule input { right: 0;}
     </style>
 </head>
