@@ -198,7 +198,7 @@
          <ItemTemplate>
          <li class="g-li">
 		<div class="pic"><a target="_blank" href="/e<%#Eval("ID")%>_<%#Eval("CompID")%>.html">
-        <img alt="暂无图片" width="190px" height="190px" src="<%# ResolveUrl(Common.GetPicURL(Eval("Pic2").ToString(),"3")) %>" onerror="this.src='/images/Goods400x400.jpg'"/></a></div>
+        <img alt="暂无图片" width="190px" height="190px" src="<%# Common.GetPicURL(Eval("Pic").ToString(), "resize200", Eval("CompID").ToString()) %>" onerror="this.src='/images/Goods400x400.jpg'"/></a></div>
 		<div class="title"><a target="_blank" title='<%#Eval("GoodsName") %>' href='/e<%#Eval("ID")%>_<%#Eval("CompID")%>.html'> <%#Eval("GoodsName") %></a></div>
 		<div class="name"><a target="_blank" href="/<%#Eval("CompID")%>.html"><i class="hxBule"></i><%# Eval("CompName") %></a></div>
         <a class="exp" target="_blank" title='<%#Eval("GoodsName") %>' href='/e<%#Eval("ID")%>_<%#Eval("CompID")%>.html'>

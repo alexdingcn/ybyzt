@@ -185,7 +185,7 @@ public partial class goodslist : LoginPageBase
         if (A_Type.Value == "0" || A_Type.Value == "2")
         {
 
-            SqlQuery = @"(select gc.ID IndID, BD_Goods.ID,BD_Goods.GoodsName,BD_Goods.CompID,Pic2,BD_Goods.CreateDate,bc.CompName,bc.ManageInfo,bc.CompAddr,bc.Principal,bc.Phone,bc.Address
+            SqlQuery = @"(select gc.ID IndID, BD_Goods.ID,BD_Goods.GoodsName,BD_Goods.CompID,BD_Goods.Pic,BD_Goods.CreateDate,bc.CompName,bc.ManageInfo,bc.CompAddr,bc.Principal,bc.Phone,bc.Address
                 from  BD_Goods join BD_Company bc 
 				on BD_Goods.CompID=bc.ID and bc.dr=0 and bc.AuditState=2 and bc.IsEnabled=1 and FirstShow in(1,2)
                 join SYS_GType gc on BD_Goods.CategoryID=gc.id
@@ -198,7 +198,7 @@ public partial class goodslist : LoginPageBase
         }
         else if (A_Type.Value == "1")
         {
-            SqlQuery = @" (select  gc.ID IndID,gb.num, BD_Goods.ID,BD_Goods.GoodsName,BD_Goods.CompID,Pic2,BD_Goods.CreateDate,bc.CompName,bc.ManageInfo,bc.CompAddr,bc.Principal,bc.Phone,bc.Address
+            SqlQuery = @" (select  gc.ID IndID,gb.num, BD_Goods.ID,BD_Goods.GoodsName,BD_Goods.CompID,BD_Goods.Pic,BD_Goods.CreateDate,bc.CompName,bc.ManageInfo,bc.CompAddr,bc.Principal,bc.Phone,bc.Address
                 from  BD_Goods  join BD_Company bc 
 				on BD_Goods.CompID=bc.ID and bc.dr=0 and bc.AuditState=2 and bc.IsEnabled=1 and FirstShow in(1,2)
                 join SYS_GType gc on BD_Goods.CategoryID=gc.id
@@ -220,7 +220,7 @@ public partial class goodslist : LoginPageBase
         }
         else if (A_Type.Value == "3")
         {
-            SqlQuery = @" (select bp.CreateDate cdate,gc.ID IndID,BD_Goods.ID,BD_Goods.GoodsName,BD_Goods.CompID,Pic2,BD_Goods.CreateDate,
+            SqlQuery = @" (select bp.CreateDate cdate,gc.ID IndID,BD_Goods.ID,BD_Goods.GoodsName,BD_Goods.CompID,BD_Goods.Pic,BD_Goods.CreateDate,
           bc.CompName,bc.ManageInfo,bc.CompAddr,bc.Principal,bc.Phone,bc.Address
           from  BD_Goods  join BD_Company bc 
 	      on BD_Goods.CompID=bc.ID and bc.dr=0 and bc.AuditState=2 and bc.IsEnabled=1 and FirstShow in(1,2)
