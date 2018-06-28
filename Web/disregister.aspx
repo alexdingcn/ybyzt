@@ -75,7 +75,7 @@
                         </div>
                         <label class="text" data-default="营业执照上的名称，2-20个汉字或字母">
                             营业执照上的名称，2-20个汉字或字母</label></li>
-                    <li><i class="label" runat="server" id="Leading">法人姓名：</i><div class="regBox">
+<%--                    <li><i class="label" runat="server" id="Leading">法人姓名：</i><div class="regBox">
                         <input id="txt_Leading" autocomplete="off" runat="server" type="text" maxlength="30"
                             class="box" />
                         </div>
@@ -92,7 +92,7 @@
                             class="box" />
                         </div>
                         <label class="text" data-default="请输入统一社会信用代码">
-                            请输入统一社会信用代码</label></li>
+                            请输入统一社会信用代码</label></li>--%>
                     <li><i class="label" runat="server" id="TrueName">联系人姓名：</i><div class="regBox">
                         <input id="txt_TrueName" autocomplete="off" runat="server" type="text" maxlength="30"
                             class="box" />

@@ -490,27 +490,28 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                     case "disRegi":
                         try
                         {
-                            bool falg =  true;
+                            bool flag =  true;
+                            /*
                             //工商四元素
                             GetBusines bu = new GetBusines();
                             string ss = bu.GetBus(CompDisName, txt_Licence, txt_creditCode, txt_Leading);
                             if (ss == null || ss != "SUCCESS")
                             {
-                                falg = false;
+                                flag = false;
                                 Msg.Result = false;
                                 Msg.Msg = "工商信息有误，无法完成注册，请填写正确的信息";
                                 Msg.Error = true;
                                 Msg.Code = ss;
                                 throw new ApplicationException("工商信息有误，无法完成注册，请填写正确的信息");
                             }
-
+                            */
                             Hi.Model.BD_Distributor Distributor = new Hi.Model.BD_Distributor();
                             Distributor.CompID = Compid.ToInt(0);
                             Distributor.DisName = CompDisName;
-                            Distributor.IsEnabled = falg == false ? 0 : 1;
+                            Distributor.IsEnabled = flag == false ? 0 : 1;
                             Distributor.Paypwd = Util.md5("123456");
                             Distributor.Phone = Phone;
-                            Distributor.AuditState = falg == false ? 0 : 2;
+                            Distributor.AuditState = flag == false ? 0 : 2;
                             Distributor.CreateDate = DateTime.Now;
                             Distributor.CreateUserID = UserID;
                             Distributor.ts = DateTime.Now;
@@ -571,7 +572,7 @@ public class RegisterCheck : loginInfoMation, IReadOnlySessionState, IHttpHandle
                                 user.CreateUserID = UserID;
                                 user.ts = DateTime.Now;
                                 user.modifyuser = UserID;
-                                user.AuditState = falg == false ? 0 : 2;
+                                user.AuditState = flag == false ? 0 : 2;
                                 int userid = 0;
                                 userid = new Hi.BLL.SYS_Users().Add(user, Tran);
 
