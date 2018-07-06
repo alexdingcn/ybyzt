@@ -317,7 +317,7 @@ public partial class Admin_Systems_CompInfo : AdminPageBase
             {
                 TRORG.Visible = false;
                 liOrgBind.Visible = true;
-            };
+            }
             if (UserType == 3 || UserType == 4) {
                 if (comp.OrgID != OrgID) {
                     Response.Write("数据不存在");
