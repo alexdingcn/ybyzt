@@ -48,8 +48,7 @@
         }
 
 .floating_ck{position:fixed;right:20px;top:270px;z-index:1;}
-.floating_ck dl dd{position:relative;width:120px;height:60px;background-color:#646577;border-bottom:solid 1px #555666;text-align:center;background-repeat:no-repeat;background-position:center 20%;cursor:pointer;}
-.floating_ck dl dd:hover{background-color:#e40231;border-bottom:solid 1px #a40324;}
+.floating_ck dl dd{position:relative;width:120px;height:60px;background-color:#FF4040;border-bottom:solid 1px #555666;text-align:center;background-repeat:no-repeat;background-position:center 20%;cursor:pointer;}
 .floating_ck dd a{color:#fff;display:block;padding-top:25px;}
     </style>
 </head>
