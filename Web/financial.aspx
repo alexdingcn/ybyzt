@@ -46,6 +46,11 @@
             }
             header a, header a:visited, header a:link { color:white; font-size: 18px; line-height: 45px; text-decoration:none; padding-left:15px;}
         }
+
+.floating_ck{position:fixed;right:20px;top:270px;z-index:1;}
+.floating_ck dl dd{position:relative;width:120px;height:60px;background-color:#646577;border-bottom:solid 1px #555666;text-align:center;background-repeat:no-repeat;background-position:center 20%;cursor:pointer;}
+.floating_ck dl dd:hover{background-color:#e40231;border-bottom:solid 1px #a40324;}
+.floating_ck dd a{color:#fff;display:block;padding-top:25px;}
     </style>
 </head>
 <body>
@@ -64,6 +69,18 @@
  </div>
 </div>
 <!--banner 结束-->
+
+                    <!--悬浮按钮 start-->
+        <div class="floating_ck">
+	<dl>
+    	<dt></dt>
+        <dd class="consult">
+        	<a href="http://erp.yibanjf.com/page/#/loan/bizlicense">申请金融服务</a>
+        </dd>
+    </dl>
+</div>
+
+<!--悬浮按钮 end-->
 
 
 <!--医贷通 start-->
