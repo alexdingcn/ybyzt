@@ -885,7 +885,7 @@ public partial class Admin_Systems_CompEdit : AdminPageBase
 
             //手续费收取
             //手续费收取
-            int pay_sxfsq = 1;//手续费收取(0,平台 1，经销商 2，核心企业)
+            int pay_sxfsq = 0;//手续费收取(0,平台 1，经销商 2，核心企业) update by wk 2018-7-19 int pay_sxfsq = 1 改为 int pay_sxfsq = 0
 
             //int pay_sxfsq = 2;//厂商收费 Convert.ToInt32(Request["pay_sxfsq"]);
 
