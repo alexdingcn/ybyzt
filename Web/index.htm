@@ -20,8 +20,8 @@
                 注册</a>
         <div class="role-cur" style="right:0;padding-left:30px;"><a href="javascript:void(0)" class="out" style="color:#008be3">退出</a></div></div>
         
-        
         <ul id="top1_disTop" class="fr">
+            <li class="fore1" style="color:#F00"><span>备案编号：（粤）网械平台备字（2018）第00008号</span></li>
             <li class="fore1"><a href="javascript:;" class="a1">我的医站通</a> <i class="down-i"></i>
                 <div class="cur">
                     <a href="/Distributor/OrderList.aspx">我的订单</a> <a href="/Distributor/pay/orderPayList.aspx">
@@ -98,21 +98,19 @@
 <!--顶部导航结束-->	
 <!--页头开始-->
 <div class="header">
-  <div class="m-logo"> <a href="http://localhost:90"> <img src="images/logo2.0.png" alt="医站通"></a></div>
- <div class="search">
-    <div class="s-box">
-      <input type="text" id="txtcontent" runat="server" autocomplete="off" class="box"  value="请输入厂商名称" onfocus="if(value==defaultValue){value=''}" maxlength="40">
-        <ul class="search-li" id="selectul">
-       </ul>
-        <a id="btn_SearCh" href="#" class="btn sCompN" onclick="checkpro()">搜索</a> 
-      <div class="opt" type="0" id="opt" runat="server">店铺<i class="down-i"></i><div class="cur"><i>商品</i></div></div>
+    <div class="m-logo"> <a href="http://localhost:90"> <img src="images/logo2.0.png" alt="医站通"></a></div>
+    <div class="search">
+        <div class="s-box">
+            <input type="text" id="txtcontent" runat="server" autocomplete="off" class="box" value="请输入厂商名称" onfocus="if(value==defaultValue){value=''}" maxlength="40">
+            <ul class="search-li" id="selectul"></ul>
+            <a id="btn_SearCh" href="#" class="btn sCompN" onclick="checkpro()">搜索</a>
+            <div class="opt" type="0" id="opt" runat="server">店铺<i class="down-i"></i><div class="cur"><i>商品</i></div></div>
+        </div>
+        <div class="hot clear" runat="server" id="SelectValue">
+
+        </div>
     </div>
-    <div class="hot clear" runat="server" id="SelectValue">
-    		
-    </div>
-  </div>
-	
-  <div class="or-app"> <span> <img alt="医站通公众号" src="images/wx-qr.png" width="80" height="80"></span><i>医站通公众号</i></div>
+    <div class="or-app"> <span> <img alt="医站通公众号" src="images/wx-qr.png" width="80" height="80"></span><i>医站通公众号</i></div>
 </div>
 <!--页头结束-->
 <!--主导航开始-->
