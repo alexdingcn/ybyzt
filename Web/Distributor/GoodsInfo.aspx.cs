@@ -210,7 +210,13 @@ public partial class Distributor_GoodsInfo : DisPageBase
             if (!Util.IsEmpty(model.registeredCertificate.Trim()))
             {
                 string url = Common.GetWebConfigKey("OssImgPath") + "/UploadFile/" + model.registeredCertificate;
-                this.lblGoodsDetali1.InnerHtml = "<img width=\"600\" src=\"" + url + "\"/>";
+                if (url.IndexOf(".pdf") < 0)
+                {
+                    this.lblGoodsDetali1.InnerHtml = "<img width=\"600\" src=\"" + url + "\"/>";
+                }
+                else {
+                    this.lblGoodsDetali1.InnerHtml = "<span width=\"600\"><a :href=\"" + url + "\" ></a></span>";
+                }
             }
 
             if (model != null && !string.IsNullOrEmpty(model.Pic))
